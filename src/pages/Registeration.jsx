@@ -9,7 +9,8 @@ import Programs, { getProgramData } from '../api/Programs';
 import Courses, { getCourseData } from '../api/Courses';
 // components
 import RegistrationHeader from '../components/Registration/RegistrationHeader';
-import PersonalInfoSection from '../components/Registration/PersonalInfoSection';
+import BasicPersonalInfo from '../components/Registration/BasicPersonalInfo';
+import RegistrationForm from '../components/Registration/RegistrationForm';
 import ProgramTypeSelector from '../components/Registration/ProgramTypeSelector';
 import ProgramSelectionSection from '../components/Registration/ProgramSelectionSection';
 import DiplomaSpecificSection from '../components/Registration/DiplomaSpecificSection';
@@ -85,20 +86,21 @@ const RegistrationPage = () => {
 
   const steps = useMemo(() => {
     const baseSteps = [
-      { id: 0, title: { ar: 'المعلومات الشخصية', en: 'Personal Info' }, fields: ['fullName', 'email', 'phone', 'nationalId', 'degree'] },
-      { id: 1, title: { ar: 'تفاصيل البرنامج', en: 'Program Details' }, fields: ['selectedProgram'] },
+      { id: 0, title: { ar: 'المعلومات الشخصية', en: 'Personal Info' }, fields: ['fullName', 'phone'] },
+      { id: 1, title: { ar: 'نموذج التسجيل', en: 'Registration Form' }, fields: ['email', 'nationalId', 'degree'] },
+      { id: 2, title: { ar: 'تفاصيل البرنامج', en: 'Program Details' }, fields: ['selectedProgram'] },
     ];
 
     if (formData.programType === 'diploma') {
       baseSteps.push({
-        id: 2,
+        id: 3,
         title: { ar: 'معلومات الدبلوم', en: 'Diploma Info' },
         fields: ['priorExperience', 'careerGoals', 'studySchedule', 'financialSupport']
       });
     }
 
     baseSteps.push({
-      id: formData.programType === 'diploma' ? 3 : 2,
+      id: formData.programType === 'diploma' ? 4 : 3,
       title: { ar: 'الدفع والتأكيد', en: 'Payment & Confirm' },
       fields: ['agreeToTerms', 'paymentMethod']
     });
@@ -493,15 +495,22 @@ ${data.notes || 'لا توجد ملاحظات'}
           <form onSubmit={(e) => e.preventDefault()} className="grid lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2 space-y-6">
 
-              {/* Step 1: Info */}
+              {/* Step 1: Basic Personal Info */}
               {activeTab === 0 && (
                 <div className="space-y-6 animate-fadeIn">
-                  <PersonalInfoSection formData={formData} handleInputChange={handleInputChange} errors={errors} degrees={degrees} lang={lang} t={t} />
+                  <BasicPersonalInfo formData={formData} handleInputChange={handleInputChange} errors={errors} lang={lang} t={t} />
                 </div>
               )}
 
-              {/* Step 2: Program */}
+              {/* Step 2: Registration Form */}
               {activeTab === 1 && (
+                <div className="space-y-6 animate-fadeIn">
+                  <RegistrationForm formData={formData} handleInputChange={handleInputChange} errors={errors} degrees={degrees} lang={lang} t={t} />
+                </div>
+              )}
+
+              {/* Step 3: Program */}
+              {activeTab === 2 && (
                 <div className="animate-fadeIn">
                   <ProgramTypeSelector programType={formData.programType} handleProgramTypeChange={handleProgramTypeChange} lang={lang} t={t} />
                   <ProgramSelectionSection
@@ -517,14 +526,14 @@ ${data.notes || 'لا توجد ملاحظات'}
                 </div>
               )}
 
-              {/* Step 3: Diploma (If applicable) */}
-              {formData.programType === 'diploma' && activeTab === 2 && (
+              {/* Step 4: Diploma (If applicable) */}
+              {formData.programType === 'diploma' && activeTab === 3 && (
                 <div className="animate-fadeIn">
                   <DiplomaSpecificSection formData={formData} handleInputChange={handleInputChange} errors={errors} lang={lang} />
                 </div>
               )}
 
-              {/* Step 4 (or 3): Payment */}
+              {/* Step 5 (or 4): Payment */}
               {activeTab === steps.length - 1 && (
                 <div className="animate-fadeIn">
                   <PaymentSection formData={formData} handleInputChange={handleInputChange} errors={errors} lang={lang} />
