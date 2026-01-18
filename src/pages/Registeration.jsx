@@ -95,7 +95,7 @@ const RegistrationPage = () => {
       baseSteps.push({
         id: 3,
         title: { ar: 'معلومات الدبلوم', en: 'Diploma Info' },
-        fields: ['priorExperience', 'careerGoals', 'studySchedule', 'financialSupport']
+        fields: ['priorExperience', 'studySchedule', 'financialSupport']
       });
     }
 
@@ -227,9 +227,6 @@ const RegistrationPage = () => {
     if (formData.programType === 'diploma') {
       if (!formData.priorExperience) {
         newErrors.priorExperience = lang === 'ar' ? 'الرجاء تحديد خبرتك السابقة' : 'Please select your prior experience';
-      }
-      if (!formData.careerGoals.trim()) {
-        newErrors.careerGoals = lang === 'ar' ? 'الرجاء شرح أهدافك المهنية' : 'Please explain your career goals';
       }
       if (!formData.studySchedule) {
         newErrors.studySchedule = lang === 'ar' ? 'الرجاء اختيار الجدول الدراسي المفضل' : 'Please select your preferred study schedule';
