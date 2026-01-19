@@ -19,7 +19,7 @@ function ProgramSelectionSection({ programs, formData, handleInputChange, handle
       
       <div className="space-y-4 mb-8">
         <label className="block text-gray-700 mb-2 font-medium">
-          {lang === 'ar' ? 'البرنامج المتاح' : 'Available Program'} *
+          {lang === 'ar' ? 'البرنامج المتاح' : 'Available Program'} {lang === 'ar' ? '(اختياري)' : '(Optional)'}
         </label>
         <div className="relative">
           <select
@@ -30,9 +30,15 @@ function ProgramSelectionSection({ programs, formData, handleInputChange, handle
               errors.selectedProgram ? 'border-red-500' : 'border-gray-300'
             } focus:outline-none focus:ring-2 focus:ring-[#23A0D0] focus:border-transparent appearance-none`}
           >
+            <option value="" disabled>
+              {lang === 'ar' ? 
+                (programType === 'diploma' ? 'الرجاء اختيار برنامج دبلوم' : 'الرجاء اختيار دورة') : 
+                (programType === 'diploma' ? 'Please select a diploma' : 'Please select a course')
+              }
+            </option>
             {programs.map(program => (
               <option key={program.id} value={program.id}>
-                {program.title} - {program.category} ({program.price.toLocaleString()} {lang === 'ar' ? 'ر.س' : 'SAR'})
+                {program.title} - {program.category}
               </option>
             ))}
           </select>
@@ -42,7 +48,7 @@ function ProgramSelectionSection({ programs, formData, handleInputChange, handle
         )}
       </div>
       
-      <div>
+      {/* <div>
         <label className="block text-gray-700 mb-4 font-medium">
           {lang === 'ar' ? 'خدمات إضافية (اختياري)' : 'Additional Services (Optional)'}
         </label>
@@ -79,7 +85,7 @@ function ProgramSelectionSection({ programs, formData, handleInputChange, handle
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
