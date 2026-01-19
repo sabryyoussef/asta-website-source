@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useParams, useSearchParams } from 'react-router-dom';
 import {
   CheckCircleIcon,
   ArrowLeftIcon,
@@ -13,7 +13,16 @@ const StandardsPage = () => {
   const [isBookmarked, setIsBookmarked] = useState({});
   const standardsdata = standardsData;
   const { lang } = useParams();
+  const [searchParams] = useSearchParams();
   const isRTL = lang === 'ar';
+
+  // Handle query parameter for specific standard
+  useEffect(() => {
+    const standardParam = searchParams.get('standard');
+    if (standardParam && standardsData[standardParam]) {
+      setActiveStandard(standardParam);
+    }
+  }, [searchParams]);
 
   const activeData = standardsdata[activeStandard] || {};
 
