@@ -244,12 +244,12 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             {/* Copyright */}
             <div className="text-gray-400 text-sm text-center md:text-right">
-              © {new Date().getFullYear()} {isRTL ? 'أكاديمية المهارات التطبيقية' : 'Academy of Applied Skills'} - {isRTL ? 'جميع الحقوق محفوظة' : 'All rights reserved'}
+              {new Date().getFullYear()} {isRTL ? 'أكاديمية المهارات التطبيقية' : 'Academy of Applied Skills'} - {isRTL ? 'جميع الحقوق محفوظة' : 'All rights reserved'}
              </div>
             
             {/* Policies Links */}
             <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
-              <a href={`/${lang}/academic-integrity`} className="hover:text-white transition-colors duration-200">
+              <a href={`/${lang}/academic-integrity?standard=privacy`} className="hover:text-white transition-colors duration-200">
                 {isRTL ? 'سياسة الخصوصية' : 'Privacy Policy'}
               </a>
               <a href={`/${lang}/academic-integrity`} className="hover:text-white transition-colors duration-200">
