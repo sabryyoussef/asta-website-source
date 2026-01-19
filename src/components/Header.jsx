@@ -601,7 +601,7 @@ export default function Navbar() {
                   <span className="text-black! font-medium! text-lg!">{t("header.nav.diplomas")}</span>
                 </div>
               </a>
-
+{/* 
               <a
                 href={`/${lang}/student-services`}
                 onClick={() => setOpen(false)}
@@ -611,7 +611,7 @@ export default function Navbar() {
                   <UserGroupIcon className="w-5 h-5 text-[#202C5B]" />
                   <span className="text-black! font-medium! text-lg!">{t("header.nav.student-services")}</span>
                 </div>
-              </a>
+              </a> */}
 
               <a
                 href={`/${lang}/about-us`}
@@ -651,20 +651,8 @@ export default function Navbar() {
               </button>
             </div>
             <div className=" mt-auto p-3! text-center!">
-              <div className="text-black! font-medium! mb-3! text-lg!">
+              <div className="text-black! font-medium! mb-3 text-lg!">
                 {t("header.footer.academyName")}
-              </div>
-              <div className="flex! justify-center! gap-3!">
-                <a href="mailto:info@ASTA.EDU.SA">
-                  <img src="/icons/7.svg" alt="email" className="w-6! h-6!" />
-                </a>
-                <a href="https://wa.me/966920016205" target="_blank">
-                  <img
-                    src="/icons/6.svg"
-                    alt="whatsapp"
-                    className="w-6! h-6!"
-                  />
-                </a>
               </div>
             </div>
           </div>
