@@ -97,8 +97,9 @@ export default function Navbar() {
           <div className="container max-w-[1300px] mx-auto px-2">
             <div className="header-top-content flex justify-between items-center gap-5 text-sm">
               <div className="contact-info flex gap-5">
-                <a
-                  href="https://wa.me/966920016205"
+                <div className="flex items-center gap-3">
+                  <a
+                  href="tel:+966920016205"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white no-underline flex items-center gap-2 hover:opacity-80 transition-opacity"
@@ -106,6 +107,17 @@ export default function Navbar() {
                   <PhoneIcon className="w-4 h-4 text-white" />
                   <span>{t('global.phoneNumber')}</span>
                 </a>
+                <i className="fab fa-whatsapp text-white text-lg"></i>
+                <a
+                  href="https://wa.me/966555881726"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white no-underline flex items-center gap-2 hover:opacity-80 transition-opacity"
+                >
+                  <span>{t('global.whatsappNumber')}</span>
+                </a>
+              </div>
+
                 <a
                   href="mailto:info@asta.edu.sa"
                   className="text-white no-underline flex items-center gap-2 hover:opacity-80 transition-opacity"
