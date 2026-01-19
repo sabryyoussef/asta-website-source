@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsupButton";
+import CallButton from "../components/CallButton";
 
 export default function SharedLayout() {
     const { lang } = useParams();
@@ -23,6 +24,7 @@ export default function SharedLayout() {
             <Outlet />
             <Footer />
             <WhatsAppButton />
+            <CallButton />
         </div>
     );
 }
