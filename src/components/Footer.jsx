@@ -19,7 +19,7 @@ export default function Footer() {
   const footerData = {
     contactInfo: [
       { icon: 'fa-map-marker-alt', text: t('footer.address') },
-      { icon: 'fa-phone', text: t('global.phoneNumber'), href: 'https://wa.me/966920016205', target: '_blank' },
+      // { icon: 'fa-phone', text: t('global.phoneNumber'), href: 'https://wa.me/966920016205', target: '_blank' },
       { icon: 'fa-envelope', text: 'info@asta.edu.sa', href: 'mailto:info@asta.edu.sa', target: '_blank' }
     ],
     
@@ -78,6 +78,27 @@ export default function Footer() {
               
               {/* Contact Information */}
               <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <a
+                    href="tel:+966920016205"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white no-underline flex items-center gap-2 hover:opacity-80 transition-opacity"
+                  >
+                    <i className="fas fa-phone text-[#23a0d0] text-sm"></i>
+                    <span className="text-gray-300 hover:text-white transition-colors duration-200 text-sm">{t('global.phoneNumber')}</span>
+                  </a>
+                  <span className="text-gray-400">-</span>
+                  <a
+                    href="https://wa.me/966555881726"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white no-underline flex items-center gap-2 hover:opacity-80 transition-opacity"
+                  >
+                    <i className="fab fa-whatsapp text-[#23a0d0] text-lg"></i>
+                    <span className="text-gray-300 hover:text-white transition-colors duration-200 text-sm">{t('global.whatsappNumber')}</span>
+                  </a>
+                </div>
                 {footerData.contactInfo.map((contact, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <i className={`fas ${contact.icon} text-[#23a0d0] mt-1 text-sm`}></i>

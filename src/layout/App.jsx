@@ -10,7 +10,7 @@ import ProgramDetails from '../pages/ProgramDetails';
 import Courses from '../pages/Courses';
 import CourseDetails from '../pages/CourseDetails';
 import CategoryPage from '../pages/CategoryPage';
-import Registeration from '../pages/Registeration';
+import Registeration2 from '../pages/Registeration2';
 import StudentServices from '../pages/StudentServices';
 import TermsAndConditions from '../pages/Terms&Conditions';
 import AcademicIntegrityPage from '../pages/AcademicIntegrityPage';
@@ -33,7 +33,7 @@ export default function App() {
           <Route path="courses" element={<Courses />} />
           <Route path="courses/:id" element={<CourseDetails />} />
           <Route path="categories/:categoryId" element={<CategoryPage />} />
-          <Route path="registration" element={<Registeration />} />
+          <Route path="registration" element={<Registeration2 />} />
           <Route path="student-services" element={<StudentServices />} />
           <Route path="terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="admission&registration" element={<AdmissionAndRegistration />} />

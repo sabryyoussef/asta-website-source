@@ -5,7 +5,8 @@
     "readMore": "Read more",
     "downloadProfile": "Profile File",
     "details": "Details",
-    "phoneNumber": "+966920016205"
+    "phoneNumber": "+966920016205",
+    "whatsappNumber": "+966555881726"
   },
 
   "header": {
@@ -251,7 +252,7 @@
     "personalInfo": {
       "title": "Personal Information",
       "description": "Enter your basic data",
-      "fullName": "Full Name",
+      "fullName": "Name",
       "email": "Email",
       "phone": "Phone",
       "emergencyPhone": "Emergency Phone",
