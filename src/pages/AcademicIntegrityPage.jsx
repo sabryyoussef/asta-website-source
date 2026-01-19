@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useParams, useSearchParams } from 'react-router-dom';
 import {
   CheckCircleIcon,
   ArrowLeftIcon,
@@ -13,7 +13,16 @@ const StandardsPage = () => {
   const [isBookmarked, setIsBookmarked] = useState({});
   const standardsdata = standardsData;
   const { lang } = useParams();
+  const [searchParams] = useSearchParams();
   const isRTL = lang === 'ar';
+
+  // Handle query parameter for specific standard
+  useEffect(() => {
+    const standardParam = searchParams.get('standard');
+    if (standardParam && standardsData[standardParam]) {
+      setActiveStandard(standardParam);
+    }
+  }, [searchParams]);
 
   const activeData = standardsdata[activeStandard] || {};
 
@@ -210,7 +219,7 @@ const StandardsPage = () => {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Sidebar Navigation */}
           <aside className="lg:w-1/4">
-            <div className="bg-white rounded-2xl shadow-lg p-6 sticky top-8">
+            <div className="bg-white rounded-2xl shadow-lg p-6">
               <h2 className="text-xl font-bold text-gray-800 mb-6">{isRTL ? 'جميع المعايير' : 'All Standards'}</h2>
               
               <nav className="space-y-3 mb-8">
