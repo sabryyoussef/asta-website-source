@@ -210,7 +210,7 @@ const StandardsPage = () => {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Sidebar Navigation */}
           <aside className="lg:w-1/4">
-            <div className="bg-white rounded-2xl shadow-lg p-6 sticky top-8">
+            <div className="bg-white rounded-2xl shadow-lg p-6">
               <h2 className="text-xl font-bold text-gray-800 mb-6">{isRTL ? 'جميع المعايير' : 'All Standards'}</h2>
               
               <nav className="space-y-3 mb-8">
