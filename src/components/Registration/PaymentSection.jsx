@@ -20,9 +20,9 @@
           </label>
           <div className="space-y-4">
             {[
-              { id: 'full', label: {ar: 'دفع كامل', en: 'Full Payment'}, desc: {ar: 'خصم 5% عند الدفع الكامل', en: '5% discount for full payment'} },
-              { id: 'installment', label: {ar: 'تقسيط', en: 'Installment'}, desc: {ar: 'دفع على 12 شهر بدون فوائد', en: 'Pay in 12 months without interest'} },
-              { id: 'bank', label: {ar: 'تحويل بنكي', en: 'Bank Transfer'}, desc: {ar: 'خصم إضافي 2% للتحويل البنكي', en: 'Additional 2% discount for bank transfer'} }
+              { id: 'full', label: {ar: 'دفع كامل', en: 'Full Payment'} },// desc: {ar: 'خصم 5% عند الدفع الكامل', en: '5% discount for full payment'}
+              { id: 'installment', label: {ar: 'تقسيط', en: 'Installment'} },// desc: {ar: 'دفع على 12 شهر بدون فوائد', en: 'Pay in 12 months without interest'}
+              // { id: 'bank', label: {ar: 'تحويل بنكي', en: 'Bank Transfer'} }// desc: {ar: 'خصم إضافي 2% للتحويل البنكي', en: 'Additional 2% discount for bank transfer'}
             ].map(method => (
               <div
                 key={method.id}

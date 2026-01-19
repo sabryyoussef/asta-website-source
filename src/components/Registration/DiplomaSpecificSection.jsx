@@ -43,7 +43,7 @@ function DiplomaSpecificSection({ formData, handleInputChange, errors, lang }) {
         {/* Career Goals */}
         <div>
           <label className="block text-gray-700 mb-2 font-medium">
-            {lang === 'ar' ? 'أهدافك المهنية' : 'Your career goals'} *
+            {lang === 'ar' ? 'أهدافك المهنية' : 'Your career goals'}
           </label>
           <div className="relative">
             <textarea

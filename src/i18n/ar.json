@@ -250,7 +250,7 @@
     "personalInfo": {
       "title": "المعلومات الشخصية",
       "description": "أدخل بياناتك الأساسية",
-      "fullName": "الاسم الكامل",
+      "fullName": "الاسم",
       "email": "البريد الإلكتروني",
       "phone": "رقم الهاتف",
       "emergencyPhone": "رقم الطوارئ",

@@ -20,7 +20,7 @@ function SuccessConfirmation ({ formData, selectedProgram, calculateTotal, lang 
           {lang === 'ar' ? 'تم إرسال تسجيلك بنجاح! 🎉' : 'Registration submitted successfully! 🎉'}
         </h1>
         
-        <div className="bg-gray-50 rounded-xl p-6 mb-8 text-right">
+        {/* <div className="bg-gray-50 rounded-xl p-6 mb-8 text-right">
           <h3 className="font-bold text-gray-800 mb-4">{lang === 'ar' ? 'تفاصيل التسجيل:' : 'Registration Details:'}</h3>
           <div className="space-y-3">
             <div className="flex justify-between items-center">
@@ -44,7 +44,7 @@ function SuccessConfirmation ({ formData, selectedProgram, calculateTotal, lang 
               <span className="font-bold text-gray-800">{new Date().toLocaleString(lang === 'ar' ? 'ar-SA' : 'en-US')}</span>
             </div>
           </div>
-        </div>
+        </div> */}
         
         <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-8">
           <div className="flex items-center gap-3 mb-4">

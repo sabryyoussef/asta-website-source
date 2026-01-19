@@ -251,7 +251,7 @@
     "personalInfo": {
       "title": "Personal Information",
       "description": "Enter your basic data",
-      "fullName": "Full Name",
+      "fullName": "Name",
       "email": "Email",
       "phone": "Phone",
       "emergencyPhone": "Emergency Phone",
