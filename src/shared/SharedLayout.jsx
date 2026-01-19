@@ -3,6 +3,7 @@ import { Outlet, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import WhatsAppButton from "../components/WhatsupButton";
 
 export default function SharedLayout() {
     const { lang } = useParams();
@@ -21,6 +22,7 @@ export default function SharedLayout() {
             <Header />
             <Outlet />
             <Footer />
+            <WhatsAppButton />
         </div>
     );
 }
