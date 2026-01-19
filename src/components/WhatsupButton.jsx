@@ -1,21 +1,29 @@
 "use client";
 
 import React from 'react';
+import { useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function WhatsAppButton({ 
   phoneNumber = "+966555881726", 
   position = "bottom-right",
   showNotification = true,
-  notificationText = "راسلنا على واتساب",
+  notificationText,
   size = "medium",
   pulseEffect = false
 }) {
+  const { lang } = useParams();
+  const { t } = useTranslation();
+
   // Format phone number (remove any non-digit characters)
   const formattedNumber = phoneNumber.replace(/\D/g, '');
   
   // Create the WhatsApp URL
   const whatsappUrl = `https://wa.me/${formattedNumber}`;
   
+  // Use translated text if not provided
+  const translatedNotificationText = notificationText || t('global.contactUsOnWhatsapp');
+
   const handleClick = () => {
     if (showNotification) {
       // You can add any analytics or tracking here
@@ -37,39 +45,69 @@ export default function WhatsAppButton({
     large: 'w-7 h-7 md:w-8 md:h-8'
   };
 
-  // Position classes
-  const positionClasses = {
-    'bottom-right': 'bottom-4 right-4 md:bottom-6 md:right-6',
-    'bottom-left': 'bottom-4 left-4 md:bottom-6 md:left-6',
-    'top-right': 'top-4 right-4 md:top-6 md:right-6',
-    'top-left': 'top-4 left-4 md:top-6 md:left-6'
+  // Position classes - For English (ltr), position on left; for Arabic (rtl), position on right
+  const getPositionClasses = () => {
+    const isEnglish = lang === 'en';
+    
+    switch(position) {
+      case 'bottom-right':
+        return isEnglish ? 'bottom-4 left-4 md:bottom-6 md:left-6' : 'bottom-4 right-4 md:bottom-6 md:right-6';
+      case 'bottom-left':
+        return isEnglish ? 'bottom-4 right-4 md:bottom-6 md:right-6' : 'bottom-4 left-4 md:bottom-6 md:left-6';
+      case 'top-right':
+        return isEnglish ? 'top-4 left-4 md:top-6 md:left-6' : 'top-4 right-4 md:top-6 md:right-6';
+      case 'top-left':
+        return isEnglish ? 'top-4 right-4 md:top-6 md:right-6' : 'top-4 left-4 md:top-6 md:left-6';
+      default:
+        return isEnglish ? 'bottom-4 left-4 md:bottom-6 md:left-6' : 'bottom-4 right-4 md:bottom-6 md:right-6';
+    }
   };
 
   // Notification position classes
-  const notificationPositionClasses = {
-    'bottom-right': 'right-16 md:right-20 top-1/2 -translate-y-1/2',
-    'bottom-left': 'left-16 md:left-20 top-1/2 -translate-y-1/2',
-    'top-right': 'right-16 md:right-20 top-1/2 -translate-y-1/2',
-    'top-left': 'left-16 md:left-20 top-1/2 -translate-y-1/2'
+  const getNotificationPositionClasses = () => {
+    const isEnglish = lang === 'en';
+    
+    switch(position) {
+      case 'bottom-right':
+        return isEnglish ? 'left-16 md:left-20 top-1/2 -translate-y-1/2' : 'right-16 md:right-20 top-1/2 -translate-y-1/2';
+      case 'bottom-left':
+        return isEnglish ? 'right-16 md:right-20 top-1/2 -translate-y-1/2' : 'left-16 md:left-20 top-1/2 -translate-y-1/2';
+      case 'top-right':
+        return isEnglish ? 'left-16 md:left-20 top-1/2 -translate-y-1/2' : 'right-16 md:right-20 top-1/2 -translate-y-1/2';
+      case 'top-left':
+        return isEnglish ? 'right-16 md:right-20 top-1/2 -translate-y-1/2' : 'left-16 md:left-20 top-1/2 -translate-y-1/2';
+      default:
+        return isEnglish ? 'left-16 md:left-20 top-1/2 -translate-y-1/2' : 'right-16 md:right-20 top-1/2 -translate-y-1/2';
+    }
   };
 
   // Arrow position classes
-  const arrowPositionClasses = {
-    'bottom-right': 'right-0 -mr-1.5 border-l-green-50 border-t-transparent border-b-transparent border-l-8',
-    'bottom-left': 'left-0 -ml-1.5 border-r-green-50 border-t-transparent border-b-transparent border-r-8',
-    'top-right': 'right-0 -mr-1.5 border-l-green-50 border-t-transparent border-b-transparent border-l-8',
-    'top-left': 'left-0 -ml-1.5 border-r-green-50 border-t-transparent border-b-transparent border-r-8'
+  const getArrowPositionClasses = () => {
+    const isEnglish = lang === 'en';
+    
+    switch(position) {
+      case 'bottom-right':
+        return isEnglish ? 'left-0 -ml-1.5 border-r-green-50 border-t-transparent border-b-transparent border-r-8' : 'right-0 -mr-1.5 border-l-green-50 border-t-transparent border-b-transparent border-l-8';
+      case 'bottom-left':
+        return isEnglish ? 'right-0 -mr-1.5 border-l-green-50 border-t-transparent border-b-transparent border-l-8' : 'left-0 -ml-1.5 border-r-green-50 border-t-transparent border-b-transparent border-r-8';
+      case 'top-right':
+        return isEnglish ? 'left-0 -ml-1.5 border-r-green-50 border-t-transparent border-b-transparent border-r-8' : 'right-0 -mr-1.5 border-l-green-50 border-t-transparent border-b-transparent border-l-8';
+      case 'top-left':
+        return isEnglish ? 'right-0 -mr-1.5 border-l-green-50 border-t-transparent border-b-transparent border-l-8' : 'left-0 -ml-1.5 border-r-green-50 border-t-transparent border-b-transparent border-r-8';
+      default:
+        return isEnglish ? 'left-0 -ml-1.5 border-r-green-50 border-t-transparent border-b-transparent border-r-8' : 'right-0 -mr-1.5 border-l-green-50 border-t-transparent border-b-transparent border-l-8';
+    }
   };
 
   return (
-    <div className={`fixed z-50 ${positionClasses[position]}`}>
+    <div className={`fixed z-50 ${getPositionClasses()}`}>
       {/* Notification Bubble */}
       {showNotification && (
-        <div className={`absolute ${notificationPositionClasses[position]}`}>
+        <div className={`absolute ${getNotificationPositionClasses()}`}>
           <div className="relative">
             <div className="bg-white text-gray-800 px-3 py-2 rounded-2xl shadow-lg text-sm font-bold whitespace-nowrap animate-fade-in">
-              {notificationText}
-              <div className={`absolute top-1/2 -translate-y-1/2 w-0 h-0 ${arrowPositionClasses[position]}`}></div>
+              {translatedNotificationText}
+              <div className={`absolute top-1/2 -translate-y-1/2 w-0 h-0 ${getArrowPositionClasses()}`}></div>
             </div>
           </div>
         </div>
