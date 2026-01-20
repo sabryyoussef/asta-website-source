@@ -39,7 +39,7 @@ function ProgramHeader({ program, lang }) {
             </p>
             
             <div className="flex flex-wrap gap-4 items-center">
-              <div className="flex items-center gap-4 bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3">
+              {/* <div className="flex items-center gap-4 bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3">
                 <div className="flex items-center gap-1">
                   {[...Array(5)].map((_, i) => (
                     <StarIcon key={i} className="h-5 w-5 text-[#FFD166] fill-current" />
@@ -49,7 +49,7 @@ function ProgramHeader({ program, lang }) {
                   <div className="font-bold text-lg">{program.rating}</div>
                   <div className="text-sm text-blue-100">({program.reviews} {isRTL ? 'تقييم' : 'reviews'})</div>
                 </div>
-              </div>
+              </div> */}
               
               {/* <div className="flex items-center gap-2 text-blue-100">
                 <UserIcon className="h-5 w-5" />
