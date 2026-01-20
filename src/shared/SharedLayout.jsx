@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsupButton";
 import CallButton from "../components/CallButton";
+import AIBotButton from "../components/AIBotButton";
 
 export default function SharedLayout() {
     const { lang } = useParams();
@@ -25,6 +26,7 @@ export default function SharedLayout() {
             <Footer />
             <WhatsAppButton />
             <CallButton />
+            <AIBotButton />
         </div>
     );
 }
