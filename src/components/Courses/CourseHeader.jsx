@@ -52,10 +52,10 @@ function CourseHeader({ course }) {
                 </div>
               </div>
               
-              <div className="flex items-center gap-2 text-blue-100">
+              {/* <div className="flex items-center gap-2 text-blue-100">
                 <UserIcon className="h-5 w-5" />
                 <span>{isRTL ? 'د.' : 'Dr.'} {localizedCourse.instructor.name}</span>
-              </div>
+              </div> */}
             </div>
           </div>
           
@@ -77,10 +77,10 @@ function CourseHeader({ course }) {
                   <ClockIcon className="h-5 w-5 text-blue-200" />
                   <span>{isRTL ? 'مدة' : 'Duration'} {localizedCourse.duration}</span>
                 </div>
-                <div className="flex items-center gap-3">
+                {/* <div className="flex items-center gap-3">
                   <UserIcon className="h-5 w-5 text-blue-200" />
                   <span>{isRTL ? 'د.' : 'Dr.'} {localizedCourse.instructor.name}</span>
-                </div>
+                </div> */}
                 <div className="flex items-center gap-3">
                   <img src="/images/tabby-logo-1.png" className='w-15' alt="" />
                   <img src="/images/tamaralogo_ar.png" className='w-15' alt="" />
