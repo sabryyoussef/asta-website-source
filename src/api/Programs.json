@@ -1697,13 +1697,13 @@
       "ar": {
         "days": ["يحدد حسب الجدول"],
         "time": "حسب الجدول التدريبي",
-        "mode": "حضوري",
+        "mode": "حضوري - مدمج - عن بعد",
         "location": "أكاديمية المهارات التطبيقية للتدريب"
       },
       "en": {
         "days": ["Specified by the schedule"],
         "time": "According to the training schedule",
-        "mode": "Face-to-face",
+        "mode": "Face-to-face - Blended - Online",
         "location": "Applied Skills Training Academy"
       }
     },
