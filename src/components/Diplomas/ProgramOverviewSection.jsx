@@ -59,8 +59,8 @@ function OverviewSection({ program, lang }) {
                   <span className="font-bold text-gray-800">{localizedProgram.schedule?.time || (isRTL ? 'غير محدد' : 'Not specified')}</span>
                 </div>
                 <div className="flex items-center justify-between py-3">
-                  <span className="text-gray-600">{isRTL ? 'نظام الدراسة' : 'Study Mode'}</span>
-                  <span className="font-bold text-gray-800">{localizedProgram.schedule?.mode || (isRTL ? 'غير محدد' : 'Not specified')}</span>
+                  <span className="text-gray-600">{isRTL ? 'نمط التدريب' : 'Training Style'}</span>
+                  <span className="font-bold text-gray-800">{localizedProgram.schedule.mode || (isRTL ? 'غير محدد' : 'Not specified')}</span>
                 </div>
               </div>
               

@@ -331,5 +331,23 @@
       "title": "Connection Problem",
       "message": "Please check your internet connection"
     }
+  },
+
+  "aiBot": {
+    "title": "Asta AI Assistant",
+    "status": "Online",
+    "welcomeMessage": "Hello! I'm Asta AI Assistant. How can I help you today? I can provide information about our courses, certifications, registration, and more!",
+    "responseMessage": "Thank you for your message! I'm here to help you with information about ASTA courses, certifications, and registration. How else can I assist you?",
+    "inputPlaceholder": "Type your message...",
+    "quickActions": {
+      "courses": "Courses",
+      "registration": "Registration",
+      "certifications": "Certifications"
+    },
+    "quickQuestions": {
+      "courses": "What courses do you offer?",
+      "registration": "How do I register?",
+      "certifications": "What certifications are available?"
+    }
   }
 }
