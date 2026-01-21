@@ -10,22 +10,22 @@ import "swiper/css/pagination";
 
 const slides = [
   {
-    img: "/images/bg/pic1@4x.png",
+    img: "/images/Student.png",
     title: "بدعم من صندوق تنمية الموارد البشرية - هدف",
     desc: "بعد الحصول على الشهادة المهنية الاحترافية يتم التعويض عن التكاليف المدفوعة وفق اشتراطات وضوابط صندوق تنمية الموارد البشرية بترخيص من المؤسسه العامه لتعليم الفني والتدريب."
   },
   {
-    img: "/images/bg/pic2@4x.png",
+    img: "/images/Student2.png",
     title: "أفضل الكورسات لتطوير مهاراتك",
     desc: "أفضل الكورسات المجانية لتطوير مهاراتك لبداية طريق جديد او استكمال رحلتك للوصول لحلمك و تحقيق اهدافك."
   },
   {
-    img: "/images/bg/pic2@4x.png",
+    img: "/images/Student2.png",
     title: "أفضل الكورسات لتطوير مهاراتك",
     desc: "أفضل الكورسات المجانية لتطوير مهاراتك لبداية طريق جديد او استكمال رحلتك للوصول لحلمك و تحقيق اهدافك."
   },
   {
-    img: "/images/bg/pic1@4x.png",
+    img: "/images/Student.png",
     title: "بدعم من صندوق تنمية الموارد البشرية - هدف",
     desc: "بعد الحصول على الشهادة المهنية الاحترافية يتم التعويض عن التكاليف المدفوعة وفق اشتراطات وضوابط صندوق تنمية الموارد البشرية بترخيص من المؤسسه العامه لتعليم الفني والتدريب."
   }
@@ -67,7 +67,7 @@ export default function Hero() {
       <div className="absolute left-0 top-0 z-0 w-full h-full">
         <img
           className="w-full h-full"
-          src="/images/bg/Rectangle 58.png"
+          src="/images/Rectangle 58.png"
           alt=""
         />
       </div>
@@ -130,14 +130,14 @@ export default function Hero() {
               {/* Animated Image with Parallax Floating Elements */}
               <div className="flex flex-[80%] max-w-[50%] justify-center md:mt-0 relative">
                 <img
-                  src="/images/bg/triangle.png"
+                  src="/images/triangle.png"
                   className="absolute bottom-0 left-0 w-full z-0"
                   alt="base"
                 />
 
                 {/* Floating images with parallax effect */}
                 <img
-                  src="/images/bg/2@4x.png"
+                  src="/images/2@4x.png"
                   alt="floating-1"
                   className="absolute top-[80%] right-[-1%] w-[32px] z-0 transition-transform duration-150 ease-out"
                   style={{
@@ -145,7 +145,7 @@ export default function Hero() {
                   }}
                 />
                 <img
-                  src="/images/bg/3@4x.png"
+                  src="/images/3@4x.png"
                   alt="floating-2"
                   className="absolute top-[55%] left-[1%] w-[48px] z-0 transition-transform duration-150 ease-out"
                   style={{
@@ -153,7 +153,7 @@ export default function Hero() {
                   }}
                 />
                 <img
-                  src="/images/bg/4@4x.png"
+                  src="/images/4@4x.png"
                   alt="floating-3"
                   className="absolute top-[15%] left-[20%] w-[72px] z-0 transition-transform duration-150 ease-out"
                   style={{

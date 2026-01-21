@@ -56,7 +56,7 @@ export default function PartnersSection() {
         </h2>
       </div>
 
-      <div>
+      <div className="container">
         <div className="relative mx-auto!"
           onMouseEnter={() => swiperRef.current.swiper.autoplay.stop()}
           onMouseLeave={() => swiperRef.current.swiper.autoplay.start()}
