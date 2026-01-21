@@ -28,6 +28,8 @@ export default function Navbar() {
   const [coursesDropdown, setCoursesDropdown] = useState(false);
   const [studnetServicesDropdown, setStudentServicesDropdown] = useState(false);
   const [openCategoryId, setOpenCategoryId] = useState(null);
+  const [hoveredDropdown, setHoveredDropdown] = useState(null);
+  const timeoutRef = useRef(null);
   // const router = useRouter();
   const location = useLocation();
   const pathname = location.pathname;
@@ -88,6 +90,40 @@ export default function Navbar() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  const handleDropdownHover = (dropdownName) => {
+    // Clear any existing timeout
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setHoveredDropdown(dropdownName);
+    if (dropdownName === 'courses') {
+      setCoursesDropdown(true);
+      setDiplomasDropdown(false);
+      setAboutDropdown(false);
+      setStudentServicesDropdown(false);
+    } else if (dropdownName === 'diplomas') {
+      setDiplomasDropdown(true);
+      setCoursesDropdown(false);
+      setAboutDropdown(false);
+      setStudentServicesDropdown(false);
+    } else if (dropdownName === 'about') {
+      setAboutDropdown(true);
+      setCoursesDropdown(false);
+      setDiplomasDropdown(false);
+      setStudentServicesDropdown(false);
+    }
+  };
+
+  const handleDropdownLeave = () => {
+    setHoveredDropdown(null);
+    timeoutRef.current = setTimeout(() => {
+      setCoursesDropdown(false);
+      setDiplomasDropdown(false);
+      setAboutDropdown(false);
+      setStudentServicesDropdown(false);
+    }, 150);
+  };
 
   return (
     // the Navbar
@@ -246,8 +282,8 @@ export default function Navbar() {
               </a>
               <div className="min-h-[37px] w-[1px] mx-[2px] bg-[#1a2555]"></div>
 
-              {/* Diplomas dropdown */}
-              <div className="relative" ref={aboutRef}>
+              {/* Courses dropdown */}
+              <div className="relative" ref={coursesRef} onMouseEnter={() => handleDropdownHover('courses')} onMouseLeave={handleDropdownLeave}>
                 <button
                   onClick={() => {
                     setCoursesDropdown(!coursesDropdown);
@@ -280,7 +316,7 @@ export default function Navbar() {
                   </svg>
                 </button>
                 {coursesDropdown && (
-                  <div className="absolute top-full right-0 mt-1 w-56 bg-white rounded-lg shadow-[0px_2px_6px_2px_rgba(0,0,0,0.1)] z-20">
+                  <div className="absolute top-full right-0 mt-1 pt-4 w-56 bg-white rounded-lg shadow-[0px_2px_6px_2px_rgba(0,0,0,0.1)] z-20" onMouseEnter={() => setHoveredDropdown('courses')} onMouseLeave={handleDropdownLeave}>
                     <div className="py-1">
                       <a
                         href={`/${lang}/courses`}
@@ -388,7 +424,7 @@ export default function Navbar() {
               {/* <div className="min-h-[37px] w-[1px] mx-[2px] bg-[#1a2555]"></div> */}
 
               {/* Diplomas dropdown */}
-              <div className="relative" ref={aboutRef}>
+              <div className="relative" ref={programsRef} onMouseEnter={() => handleDropdownHover('diplomas')} onMouseLeave={handleDropdownLeave}>
                 <button
                   onClick={() => {
                     setDiplomasDropdown(!diplomasDropdown);
@@ -421,7 +457,7 @@ export default function Navbar() {
                   </svg>
                 </button>
                 {diplomasDropdown && (
-                  <div className="absolute top-full right-0 mt-1 w-56 bg-white rounded-lg shadow-[0px_2px_6px_2px_rgba(0,0,0,0.1)] z-20">
+                  <div className="absolute top-full right-0 mt-1 pt-4 w-56 bg-white rounded-lg shadow-[0px_2px_6px_2px_rgba(0,0,0,0.1)] z-20" onMouseEnter={() => setHoveredDropdown('diplomas')} onMouseLeave={handleDropdownLeave}>
                     <div className="py-1">
                       <a
                         href={`/${lang}/programs`}
@@ -447,7 +483,7 @@ export default function Navbar() {
               <div className="min-h-[37px] w-[1px] mx-[2px] bg-[#1a2555]"></div>
 
               {/* About dropdown */}
-              <div className="relative" ref={aboutRef}>
+              <div className="relative" ref={aboutRef} onMouseEnter={() => handleDropdownHover('about')} onMouseLeave={handleDropdownLeave}>
                 <button
                   onClick={() => {
                     setAboutDropdown(!aboutDropdown);
@@ -480,7 +516,7 @@ export default function Navbar() {
                   </svg>
                 </button>
                 {aboutDropdown && (
-                  <div className="absolute top-full right-0 mt-1 w-44 bg-white rounded-lg shadow-[0px_2px_6px_2px_rgba(0,0,0,0.1)] z-20">
+                  <div className="absolute top-full right-0 mt-1 pt-4 w-44 bg-white rounded-lg shadow-[0px_2px_6px_2px_rgba(0,0,0,0.1)] z-20" onMouseEnter={() => setHoveredDropdown('about')} onMouseLeave={handleDropdownLeave}>
                     <div className="py-1">
                       <a
                         href={`/${lang}/about-us`}

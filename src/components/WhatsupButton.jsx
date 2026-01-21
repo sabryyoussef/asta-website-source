@@ -34,15 +34,15 @@ export default function WhatsAppButton({
   // Size classes
   const sizeClasses = {
     small: 'w-12 h-12',
-    medium: 'w-14 h-14 md:w-16 md:h-16',
-    large: 'w-16 h-16 md:w-20 md:h-20'
+    medium: 'w-12 h-12',
+    large: 'w-12 h-12'
   };
 
   // Icon sizes
   const iconSizes = {
     small: 'w-5 h-5',
-    medium: 'w-6 h-6 md:w-7 md:h-7',
-    large: 'w-7 h-7 md:w-8 md:h-8'
+    medium: 'w-5 h-5',
+    large: 'w-5 h-5'
   };
 
   // Position classes - For English (ltr), position on left; for Arabic (rtl), position on right
@@ -51,15 +51,15 @@ export default function WhatsAppButton({
     
     switch(position) {
       case 'bottom-right':
-        return isEnglish ? 'bottom-4 left-4 md:bottom-6 md:left-6' : 'bottom-4 right-4 md:bottom-6 md:right-6';
+        return isEnglish ? 'bottom-23 left-4' : 'bottom-23 right-4';
       case 'bottom-left':
-        return isEnglish ? 'bottom-4 right-4 md:bottom-6 md:right-6' : 'bottom-4 left-4 md:bottom-6 md:left-6';
+        return isEnglish ? 'bottom-23 right-4' : 'bottom-23 left-4';
       case 'top-right':
         return isEnglish ? 'top-4 left-4 md:top-6 md:left-6' : 'top-4 right-4 md:top-6 md:right-6';
       case 'top-left':
         return isEnglish ? 'top-4 right-4 md:top-6 md:right-6' : 'top-4 left-4 md:top-6 md:left-6';
       default:
-        return isEnglish ? 'bottom-4 left-4 md:bottom-6 md:left-6' : 'bottom-4 right-4 md:bottom-6 md:right-6';
+        return isEnglish ? 'bottom-23 left-4' : 'bottom-23 right-4';
     }
   };
 
@@ -69,15 +69,15 @@ export default function WhatsAppButton({
     
     switch(position) {
       case 'bottom-right':
-        return isEnglish ? 'left-16 md:left-20 top-1/2 -translate-y-1/2' : 'right-16 md:right-20 top-1/2 -translate-y-1/2';
+        return isEnglish ? 'left-14 top-1/2 -translate-y-1/2' : 'right-14 top-1/2 -translate-y-1/2';
       case 'bottom-left':
-        return isEnglish ? 'right-16 md:right-20 top-1/2 -translate-y-1/2' : 'left-16 md:left-20 top-1/2 -translate-y-1/2';
+        return isEnglish ? 'right-14 top-1/2 -translate-y-1/2' : 'left-14 top-1/2 -translate-y-1/2';
       case 'top-right':
         return isEnglish ? 'left-16 md:left-20 top-1/2 -translate-y-1/2' : 'right-16 md:right-20 top-1/2 -translate-y-1/2';
       case 'top-left':
         return isEnglish ? 'right-16 md:right-20 top-1/2 -translate-y-1/2' : 'left-16 md:left-20 top-1/2 -translate-y-1/2';
       default:
-        return isEnglish ? 'left-16 md:left-20 top-1/2 -translate-y-1/2' : 'right-16 md:right-20 top-1/2 -translate-y-1/2';
+        return isEnglish ? 'left-14 top-1/2 -translate-y-1/2' : 'right-14 top-1/2 -translate-y-1/2';
     }
   };
 

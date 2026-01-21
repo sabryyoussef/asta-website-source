@@ -30,14 +30,14 @@ export default function CallButton({
 
   // Size classes (mobile only, smaller than WhatsApp)
   const sizeClasses = {
-    small: 'w-10 h-10',
-    medium: 'w-11 h-11',
+    small: 'w-12 h-12',
+    medium: 'w-12 h-12',
     large: 'w-12 h-12'
   };
 
   // Icon sizes (mobile only)
   const iconSizes = {
-    small: 'w-4 h-4',
+    small: 'w-5 h-5',
     medium: 'w-5 h-5',
     large: 'w-5 h-5'
   };
@@ -46,7 +46,7 @@ export default function CallButton({
   // For English (ltr), position on left; for Arabic (rtl), position on right
   const getPositionClasses = () => {
     const isEnglish = lang === 'en';
-    const basePosition = 'bottom-20';
+    const basePosition = 'bottom-36';
     
     switch(position) {
       case 'bottom-right':
@@ -68,15 +68,15 @@ export default function CallButton({
     
     switch(position) {
       case 'bottom-right':
-        return isEnglish ? 'left-16 top-1/2 -translate-y-1/2' : 'right-16 top-1/2 -translate-y-1/2';
+        return isEnglish ? 'left-14 top-1/2 -translate-y-1/2' : 'right-14 top-1/2 -translate-y-1/2';
       case 'bottom-left':
-        return isEnglish ? 'right-16 top-1/2 -translate-y-1/2' : 'left-16 top-1/2 -translate-y-1/2';
+        return isEnglish ? 'right-14 top-1/2 -translate-y-1/2' : 'left-14 top-1/2 -translate-y-1/2';
       case 'top-right':
         return isEnglish ? 'left-16 top-1/2 -translate-y-1/2' : 'right-16 top-1/2 -translate-y-1/2';
       case 'top-left':
         return isEnglish ? 'right-16 top-1/2 -translate-y-1/2' : 'left-16 top-1/2 -translate-y-1/2';
       default:
-        return isEnglish ? 'left-16 top-1/2 -translate-y-1/2' : 'right-16 top-1/2 -translate-y-1/2';
+        return isEnglish ? 'left-14 top-1/2 -translate-y-1/2' : 'right-14 top-1/2 -translate-y-1/2';
     }
   };
 

@@ -100,6 +100,11 @@ html[lang="ar"] textarea {
   -webkit-locale: "en";
 }
 
+html[lang="ar"] input::placeholder,
+html[lang="ar"] textarea::placeholder {
+  font-family: "GE", sans-serif !important;
+}
+
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
 }

@@ -88,11 +88,11 @@ const ProgramsHeroSection = () => {
 
           {/* الصورة */}
           <div className="relative">
-            <img src="/images/Student.png" alt="برامج تدريبية" className="rounded-2xl shadow-lg w-full h-auto object-cover col-span-2 lg:col-span-1" />
+            <img src="/images/Student.png" alt="برامج تدريبية" className="rounded-2xl shadow-lg w-full h-auto object-cover col-span-2 lg:col-span-1 relative z-10" />
 
             {/* بطاقات عائمة */}
-            <div className="absolute -top-6 -left-6 w-64 bg-gradient-to-r from-[#23A0D0] to-[#30AFC1] rounded-2xl p-6 shadow-2xl transform rotate-3">
-              <div className="flex items-center gap-3 mb-4">
+            <div className={`absolute -top-10 md:-top-6 ${isRTL ? '-left-6' : '-right-6'} md:w-64 w-48 bg-gradient-to-r from-[#23A0D0] to-[#30AFC1] rounded-2xl p-6 shadow-2xl transform rotate-3`}>
+              <div className={`flex items-center gap-3 mb-4 ${isRTL ? '' : 'flex-row-reverse'}`}>
                 <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
                   <AcademicCapIcon className="h-6 w-6 text-white" />
                 </div>
@@ -104,8 +104,8 @@ const ProgramsHeroSection = () => {
               <div className="text-sm"> {isRTL ? 'تعلم المهارات المطلوبة في سوق العمل' : 'Learn the skills needed in the job market'}</div>
             </div>
 
-            <div className="absolute -bottom-6 -right-6 w-56 bg-gradient-to-r from-[#3CBEB3] to-[#23A0D0] rounded-2xl p-6 shadow-2xl transform -rotate-3">
-              <div className="flex items-center gap-3 mb-4">
+            <div className={`absolute -bottom-30 md:-bottom-6 ${isRTL ? '-right-6' : '-left-6'} w-56 bg-gradient-to-r from-[#3CBEB3] to-[#23A0D0] rounded-2xl p-6 shadow-2xl transform -rotate-3 z-20`}>
+              <div className={`flex items-center gap-3 mb-4 ${isRTL ? '' : 'flex-row-reverse'}`}>
                 <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
                   <ChartBarIcon className="h-6 w-6 text-white" />
                 </div>
@@ -120,7 +120,7 @@ const ProgramsHeroSection = () => {
         </div>
 
         {/* شريط التمرير */}
-        <div className="mt-20 text-center">
+        <div className="mt-35 text-center">
           <div className="animate-bounce">
             <ArrowDownIcon className="h-8 w-8 mx-auto text-white/60" />
           </div>

@@ -244,7 +244,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             {/* Copyright */}
             <div className="text-gray-400 text-sm text-center md:text-right">
-              {new Date().getFullYear()} {isRTL ? 'أكاديمية المهارات التطبيقية' : 'Academy of Applied Skills'} - {isRTL ? 'جميع الحقوق محفوظة' : 'All rights reserved'}
+              {isRTL ? 'جميع الحقوق محفوظة' : 'All rights reserved'} - {isRTL ? 'أكاديمية المهارات التطبيقية' : 'Academy of Applied Skills'} &copy; {new Date().getFullYear()}
              </div>
             
             {/* Policies Links */}
