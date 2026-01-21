@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 // import Image from "next/image";
-import CourseCard from "../Courses/CourseCard";
+import CourseCard2 from "../Courses/CourseCard2";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -74,7 +74,7 @@ const CourseSlider = ({ title, bg = "bg-white", courses = [] }) => {
               >
                 {courses?.map((course) => (
                   <SwiperSlide className="!h-[unset]" key={course.id}>
-                    <CourseCard course={course} />
+                    <CourseCard2 course={course} />
                   </SwiperSlide>
                 ))}
               </Swiper>

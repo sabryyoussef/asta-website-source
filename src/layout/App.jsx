@@ -15,6 +15,7 @@ import StudentServices from '../pages/StudentServices';
 import TermsAndConditions from '../pages/Terms&Conditions';
 import AcademicIntegrityPage from '../pages/AcademicIntegrityPage';
 import AdmissionAndRegistration from '../pages/AdmissionAndRegistration';
+import CertificateChecker from '../pages/CertificateChecker';
 
 // Styles
 import '../style/App.css';
@@ -37,6 +38,7 @@ export default function App() {
           <Route path="student-services" element={<StudentServices />} />
           <Route path="terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="admission&registration" element={<AdmissionAndRegistration />} />
+          <Route path="certificate-checker" element={<CertificateChecker />} />
         </Route>
       </Routes>
   );

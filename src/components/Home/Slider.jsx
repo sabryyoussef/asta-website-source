@@ -8,7 +8,7 @@ import {A11y, Navigation} from "swiper/modules";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation"; // If you use Swiper's built-in navigation styles (we are using custom)
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 // import Loading from "@/components/Loading";
 
 // Import programs data
@@ -17,12 +17,13 @@ import ProgramsData from "../../api/Programs.json";
 // Program details (remains the same)
 
 export default function ResponsiveDataPathSlider({mainTitle}) {
+    const {lang} = useParams();
     // const dispatch = useDispatch();
-    const initialCategoryIndex = 0;
+    const initialProgramIndex = 0;
     // const {routes, categories, status} = useSelector(
     //     (state) => state.courses
     // );
-    const [currentIndex, setCurrentIndex] = useState(initialCategoryIndex);
+    const [currentIndex, setCurrentIndex] = useState(initialProgramIndex);
     const [currentContent, setCurrentContent] = useState(null);
     const swiperRef = useRef(null);
     
@@ -30,8 +31,8 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
     const categories = useMemo(() => 
         ProgramsData.map((program) => ({
             id: program.id,
-            name: program.title.ar,
-            description: program.subtitle.ar,
+            name: program.title[lang],
+            description: program.subtitle[lang],
             image_url: program.image
         })), []
     );
@@ -60,21 +61,21 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
         setCurrentContent(categories[nextIndex]);
     };
 
-    useEffect(() => {
-        if (categories.length > 0) {
-            setCurrentContent(categories[initialCategoryIndex]);
-        }
-    }, [categories]);
-
-
     // useEffect(() => {
-    //     const timer = setTimeout(() => {
-    //         autoSlide();
-    //     }, 5000);
+    //     if (categories.length > 0) {
+    //         setCurrentContent(categories[initialProgramIndex]);
+    //     }
+    // }, [categories]);
+
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            autoSlide();
+        }, 5000);
 
         // Cleanup to prevent multiple timers
-    //     return () => clearTimeout(timer);
-    // }, [currentIndex, categories]);
+        return () => clearTimeout(timer);
+    }, [currentIndex, categories]);
 
 
     // TODO: Replace with loading state when API is ready
@@ -169,15 +170,15 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
                                         dir="ltr"
                                     >
                                         <div
-                                            className="order-1! lg:order-1! flex! flex-col! items-center! justify-center! w-full lg:w-[320px]">
-                                            <div className="rounded-2xl p-[16px] w-full">
+                                            className="order-1! lg:order-1! flex! flex-col! items-center! justify-center! w-full lg:w-[320px] h-full">
+                                            <div className="rounded-2xl p-[16px] w-full h-full aspect-square">
                                                 <div
-                                                    className="bg-gradient-to-r from-[#23a0d01a] to-[#3CBEB31A] aspect-square w-full shadow-[0px_0px_12px_6px_rgba(255,255,255,0.8)] overflow-hidden flex justify-center items-center duration-300 hover:scale-[1.05]"
+                                                    className="bg-gradient-to-r from-[#23a0d01a] to-[#3CBEB31A] w-full h-full shadow-[0px_0px_12px_6px_rgba(255,255,255,0.8)] overflow-hidden flex justify-center items-center duration-300 hover:scale-[1.05]"
                                                 >
                                                     <img
                                                         src={currentContent?.image_url}
                                                         alt={currentContent?.name}
-                                                        className="w-full h-full object-contain p-[8px]"
+                                                        className="w-full h-full object-cover"
                                                     />
                                                 </div>
                                             </div>
@@ -191,41 +192,11 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
                                                 {currentContent?.description}
                                             </p>
                                             
-                                            {/* Additional content */}
-                                            <div className="mb-6 space-y-3">
-                                                <div className="flex items-center gap-2 text-sm text-gray-600">
-                                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                                    </svg>
-                                                    <span>مدة البرنامج: {currentContent?.duration || 'N/A'}</span>
-                                                </div>
-                                                <div className="flex items-center gap-2 text-sm text-gray-600">
-                                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                                    </svg>
-                                                    <span>المستوى: {currentContent?.level || 'N/A'}</span>
-                                                </div>
-                                                <div className="flex items-center gap-2 text-sm text-gray-600">
-                                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
-                                                    </svg>
-                                                    <span>الشهادة: {currentContent?.category || 'N/A'}</span>
-                                                </div>
-                                                {currentContent?.price && (
-                                                    <div className="flex items-center gap-2 text-sm text-gray-600">
-                                                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v2a2 2 0 002 2h12a2 2 0 002-2v-2a2 2 0 00-2-2h-2m-4 4h16m-4-8h16" />
-                                                        </svg>
-                                                        <span>السعر: {currentContent.price.toLocaleString()} ريال</span>
-                                                    </div>
-                                                )}
-                                            </div>
-                                            
                                             <Link
-                                                href="/Routes"
+                                                to={`/${lang}/programs/${currentContent?.id}`}
                                                 className="mt-auto md:py-4 py-[8px] px-[12px] cursor-pointer text-white font-semibold bg-gradient-to-r from-[#23A0D0] to-[#3CBEB3] hover:opacity-90 md:w-[240px] w-[150px] text-center"
                                             >
-                                                استعراض المسارات
+                                                عرض تفاصيل الدوبلوم
                                             </Link>
                                         </div>
                                     </div>

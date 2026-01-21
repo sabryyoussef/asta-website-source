@@ -13,6 +13,7 @@ import CoursesTabs from "../components/Home/CoursesTabs";
 // import DashboardSection from "@/app/components/DashboardSection";
 // import Learning from "@/app/components/Learning";
 // import NewsLetter from "./components/NewsLetter";
+import Courses from "../api/Courses.js";
 // import { useAuth } from "../context/AuthContext";
 import { useEffect } from "react";
 // import { getSuggestions } from "@/store/slices/userDataSlice";
@@ -51,7 +52,7 @@ export default function Home() {
               <Slider />
               <CourseSlider
                 bg="bg-gradient-to-r from-[#23a0d01a] to-[#3CBEB31A]"
-                courses={mockFilteredCourses.data}
+                courses={Courses}
                 title="الدورات المهنية الدولية"
               ></CourseSlider>
               <CoursesTabs />
