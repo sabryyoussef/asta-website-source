@@ -1,6 +1,7 @@
 import { CheckCircleIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 import { getCourseData } from '../../api/Courses';
 import { getProgramData } from '../../api/Programs';
+import { useEffect } from 'react';
 
 function SuccessConfirmation ({ formData, selectedProgram, calculateTotal, lang }) {
     // Get localized program data
@@ -9,6 +10,38 @@ function SuccessConfirmation ({ formData, selectedProgram, calculateTotal, lang 
             ? getCourseData(selectedProgram, lang)
             : getProgramData(selectedProgram, lang)
     ) : null;
+
+    // Push enhanced conversions data to Google Tag Manager
+    useEffect(() => {
+        // Only push if we have user data
+        if (formData.email || formData.phone) {
+            const enhancedData = {
+                email: formData.email || '',
+                phone_number: formData.phone || ''
+            };
+
+            // Push conversion event with enhanced data
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: 'registration_conversion',
+                enhanced_conversions: {
+                    email: enhancedData.email,
+                    phone_number: enhancedData.phone_number
+                }
+            });
+
+            // Also push standard conversion tracking
+            window.dataLayer.push({
+                event: 'conversion',
+                send_to: 'AW-17874906768/conversion_label',
+                value: calculateTotal(),
+                currency: 'SAR'
+            });
+
+            console.log('Enhanced conversions data sent:', enhancedData);
+        }
+    }, [formData.email, formData.phone, calculateTotal]);
+
     return (
     <div className="max-w-3xl mx-auto px-4 py-12">
       <div className="bg-white rounded-2xl p-8 shadow-lg text-center">
@@ -55,9 +88,9 @@ function SuccessConfirmation ({ formData, selectedProgram, calculateTotal, lang 
             {lang === 'ar' ? 'تم إرسال بيانات تسجيلك إلى قسم التسجيل' : 'Your registration data has been sent to the registration department'}
           </p>
           
-          <p className="text-gray-600">
+          {/* <p className="text-gray-600">
             {lang === 'ar' ? 'وسيصلك نسخة تأكيدية على بريدك:' : 'You will receive a confirmation copy at your email:'} <span className="font-bold">{formData.email}</span>
-          </p>
+          </p> */}
         </div>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
