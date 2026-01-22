@@ -24,7 +24,12 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-      gtag("config", "AW-17874906768");
+      gtag("config", "AW-17874906768", {
+        enhanced_conversions: {
+          allow_auto_matching: true,
+          allow_enhanced_conversions: true
+        }
+      });
     </script>
     <!-- TikTok Pixel Code Start -->
     <script>
