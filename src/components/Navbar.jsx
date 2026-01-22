@@ -58,35 +58,35 @@ export default function Navbar() {
   // Use localized programs data from Programs.js
   const programs = Programs;
   
-  const [isVisible, setIsVisible] = useState(true);
+//   const [isVisible, setIsVisible] = useState(true);
 
-  // const dispatch = useDispatch();
+//   // const dispatch = useDispatch();
 
-  useEffect(() => {
-  let lastScrollY = window.scrollY;
-  let timeoutId;
+//   useEffect(() => {
+//   let lastScrollY = window.scrollY;
+//   let timeoutId;
 
-  const handleScroll = () => {
-    const currentScrollY = window.scrollY;
-    clearTimeout(timeoutId);
+//   const handleScroll = () => {
+//     const currentScrollY = window.scrollY;
+//     clearTimeout(timeoutId);
 
-    timeoutId = setTimeout(() => {
-      if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        setIsVisible(false);
-      } else if (currentScrollY < lastScrollY || currentScrollY < 50) {
-        setIsVisible(true);
-      }
-      lastScrollY = currentScrollY;
-    }, 150);
-  };
+//     timeoutId = setTimeout(() => {
+//       if (currentScrollY > lastScrollY && currentScrollY > 50) {
+//         setIsVisible(false);
+//       } else if (currentScrollY < lastScrollY || currentScrollY < 50) {
+//         setIsVisible(true);
+//       }
+//       lastScrollY = currentScrollY;
+//     }, 150);
+//   };
 
-  window.addEventListener("scroll", handleScroll);
-  return () => {
-    window.removeEventListener("scroll", handleScroll);
-    clearTimeout(timeoutId);
-  };
-}, []);
-
+//   window.addEventListener("scroll", handleScroll);
+//   return () => {
+//     window.removeEventListener("scroll", handleScroll);
+//     clearTimeout(timeoutId);
+//   };
+// }, []);
+  
   // useEffect(() => {
   //   // console.log("Dispatching getCoursesByFilter...");
   //   dispatch(getCategories());
@@ -245,14 +245,8 @@ export default function Navbar() {
   return (
     <nav className={`w-full sticky top-0 z-30 ${isRTL ? 'rtl' : 'ltr'}`}>
       <div
-        className={`${
-          isVisible
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 -translate-y-full"
-        } transition-all duration-500 ease-in-out ${
-          isVisible ? "shadow-md" : ""
-        }`}
-        style={{ position: isVisible ? "sticky" : "absolute", top: 0, direction: isRTL ? 'rtl' : 'ltr' }}
+        className="opacity-100 translate-y-0 transition-all duration-500 ease-in-out shadow-md"
+        style={{ position: "sticky", top: 0, direction: isRTL ? 'rtl' : 'ltr' }}
       >
       <div className="bg-gradient-to-r from-[#202C5B] via-[#226796] via-[#23A0D0] via-[#30AFC1] to-[#3CBEB3] text-white">
         <div className="h-[48px] px-4 lg:px-8">
