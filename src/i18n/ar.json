@@ -5,7 +5,7 @@
     "readMore": "اقرأ المزيد",
     "downloadProfile": "الملف التعريفي",
     "details": "تفاصيل",
-    "phoneNumber": "966920016205+",
+    "phoneNumber": "+966920016205",
     "whatsappNumber": "966555881726+",
     "callUs": "اتصل بنا",
     "contactUsOnWhatsapp": "راسلنا على واتساب"
@@ -15,16 +15,21 @@
     "nav": {
       "home": "الرئيسية",
       "courses": "الدورات الإحترافية",
+      "course": "دورة",
+      "category": "قسم",
+      "supCategory": "قسم - فرعي",
       "allCourses": "جميع الدورات الاحترافية",
       "student-services": "خدمات الطلاب",
       "allServices": "جميع الخدمات",
       "diplomas": "البرامج التدريبية",
+      "diploma": "دوبلوم",
       "allPrograms": "جميع البرامج التدريبية",
       "registration": "التسجيل",
       "about": "من نحن",
       "aboutAcademy": "عن الأكاديمية",
       "standarts": "معايير الأكاديمية",
-      "contact": "اتصل بنا"
+      "contact": "اتصل بنا",
+      "team": "فريقنا"
     },
     "mobile": {
       "courses": "الدورات",
@@ -34,7 +39,9 @@
       "changeLanguage": "تغيير اللغة"
     },
     "actions": {
-      "verifyCertificate": "فحص الشهادة"
+      "verifyCertificate": "فحص الشهادة",
+      "signin": "تسجيل الدخول",
+      "signUp": " إنشاء حساب"
     },
     "footer": {
       "academyName": "أكاديمية المهارات التطبيقية للتدريب"

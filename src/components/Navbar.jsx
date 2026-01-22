@@ -4,26 +4,52 @@ import { Link } from "react-router-dom";
 // import Image from "next/image";
 import { Bars3Icon } from "@heroicons/react/24/solid";
 // import { useAuth } from "../../context/AuthContext";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
 // import { getCategories } from "@/store/slices/courseSlice";
 // import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
+import categoriesData from "../api/Categories.json";
+import Programs from "../api/Programs";
 
 export default function Navbar() {
   const navigate = useNavigate();
   const [search, setSearch] = useState(false);
   const [open, setOpen] = useState(false);
   const [trainersDropdown, setTrainersDropdown] = useState(false);
-  const [degrees, setDegrees] = useState(false);
+  const [courses, setCourses] = useState(false);
   const [aboutDropdown, setAboutDropdown] = useState(false);
   const [profile, setProfile] = useState(false);
   const [url, setUrl] = useState(true);
+  const [openCategoryId, setOpenCategoryId] = useState(null);
+  const [diplomasDropdown, setDiplomasDropdown] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchSuggestions, setSearchSuggestions] = useState([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
   const trainersRef = useRef(null);
-  const degreesRef = useRef(null);
+  const coursesRef = useRef(null);
   const aboutRef = useRef(null);
+  const diplomasRef = useRef(null);
   const location = useLocation();
+  const { lang = 'ar' } = useParams();
+  const { t } = useTranslation();
+  const isRTL = lang === 'ar';
   // const { categories, status, error } = useSelector(
   //   (state) => state.courses // Accessing filteredCourses directly
   // );
+  
+  // Transform categories data from JSON
+  const categories = Object.entries(categoriesData.categories).map(([key, category]) => ({
+    id: key,
+    name: category[lang],
+    sup_categories: category.sup_categories?.map(sub => ({
+      id: sub.id,
+      name: sub[lang]
+    })) || []
+  }));
+  
+  // Use localized programs data from Programs.js
+  const programs = Programs;
+  
   const [isVisible, setIsVisible] = useState(true);
 
   // const dispatch = useDispatch();
@@ -95,7 +121,7 @@ export default function Navbar() {
 
   useEffect(() => {
     if (
-      location.pathname.toLowerCase().includes("degrees") ||
+      location.pathname.toLowerCase().includes("courses") ||
       location.pathname.toLowerCase().includes("courses") ||
       location.pathname.toLowerCase().includes("/search")
     ) {
@@ -117,8 +143,8 @@ export default function Navbar() {
       if (aboutRef.current && !aboutRef.current.contains(event.target)) {
         setAboutDropdown(false);
       }
-      if (degreesRef.current && !degreesRef.current.contains(event.target)) {
-        setDegrees(false);
+      if (coursesRef.current && !coursesRef.current.contains(event.target)) {
+        setCourses(false);
       }
     }
 
@@ -130,12 +156,86 @@ export default function Navbar() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    console.log(e.currentTarget.elements[0].value);
-    navigate.replace(`/search?q=${e.currentTarget.elements[0].value}`);
+    const formData = new FormData(e.currentTarget);
+    const searchValue = formData.get('search') || e.currentTarget.elements[0]?.value;
+    console.log(searchValue);
+    
+    if (searchValue.trim()) {
+      // Navigate to search page with language parameter
+      navigate(`/${lang}/search?q=${encodeURIComponent(searchValue)}`);
+      setShowSuggestions(false);
+    }
+  };
+
+  const handleSearchInputChange = (e) => {
+    const value = e.target.value;
+    setSearchQuery(value);
+    
+    if (value.trim()) {
+      const suggestions = getSearchSuggestions(value);
+      setSearchSuggestions(suggestions);
+      setShowSuggestions(true);
+    } else {
+      setSearchSuggestions([]);
+      setShowSuggestions(false);
+    }
+  };
+
+  const handleSuggestionClick = (suggestion) => {
+    setSearchQuery(suggestion.title);
+    setShowSuggestions(false);
+    navigate(suggestion.url);
+  };
+
+  // Create search suggestions from categories and diplomas
+  const getSearchSuggestions = (query) => {
+    if (!query.trim()) return [];
+    
+    const lowercaseQuery = query.toLowerCase();
+    const suggestions = [];
+    
+    // Add course categories first
+    categories.forEach(category => {
+      if (category.name.toLowerCase().includes(lowercaseQuery)) {
+        suggestions.push({
+          type: 'category',
+          title: category.name,
+          url: `/${lang}/categories/${category.id}`
+        });
+      }
+    });
+    
+    // Then add individual courses from all categories
+    categories.forEach(category => {
+      category.sup_categories?.forEach(subCategory => {
+        // Add the subcategory as a course suggestion
+        if (subCategory.name.toLowerCase().includes(lowercaseQuery)) {
+          suggestions.push({
+            type: 'course',
+            title: subCategory.name,
+            url: `/${lang}/categories/${category.id}?sup_category=${encodeURIComponent(subCategory.id)}`
+          });
+        }
+      });
+    });
+    
+    // Add diplomas with proper language handling
+    programs.forEach(program => {
+      const programTitle = program.title[lang] || program.title.ar || program.title.en || program.title;
+      if (programTitle.toLowerCase().includes(lowercaseQuery)) {
+        suggestions.push({
+          type: 'diploma',
+          title: programTitle,
+          url: `/${lang}/programs/${program.id}`
+        });
+      }
+    });
+    
+    return suggestions.slice(0, 100); // Limit to 5 suggestions
   };
 
   return (
-    <nav className="w-full sticky top-0 z-30">
+    <nav className={`w-full sticky top-0 z-30 ${isRTL ? 'rtl' : 'ltr'}`}>
       <div
         className={`${
           isVisible
@@ -144,23 +244,23 @@ export default function Navbar() {
         } transition-all duration-500 ease-in-out ${
           isVisible ? "shadow-md" : ""
         }`}
-        style={{ position: isVisible ? "sticky" : "absolute", top: 0 }}
+        style={{ position: isVisible ? "sticky" : "absolute", top: 0, direction: isRTL ? 'rtl' : 'ltr' }}
       >
       <div className="bg-gradient-to-r from-[#202C5B] via-[#226796] via-[#23A0D0] via-[#30AFC1] to-[#3CBEB3] text-white">
         <div className="h-[48px] px-4 lg:px-8">
           <div className="h-full md:container">
             <div className="flex items-center justify-between h-full max-md:hidden max-w-[1025.69px] mx-auto">
               <div className="font-medium font-GE md:text-sm lg:text-lg text-[16px]">
-                أكاديمية المهارات التطبيقية للتدريب
+                {t("global.academyName")}
               </div>
               <div className="flex gap-4 items-center md:gap-2 lg:gap-4">
                 <div className="flex gap-1 items-center">
                   <a
-                    href="mailto:info@ASTA.EDU.SA"
+                    href="mailto:info@asta.edu.sa"
                     target="_blank"
                     className="md:text-sm lg:text-[16px] hover:opacity-80 transition-opacity"
                   >
-                    INFO@ASTA.EDU.SA
+                    info@asta.edu.sa
                   </a>
                   <svg
                     width="14"
@@ -174,12 +274,12 @@ export default function Navbar() {
                 </div>
                 <div className="flex gap-1 items-center">
                   <a
-                    href="https://wa.me/+996558919492"
+                    href="tel:+966920016205"
                     target="_blank"
                     className="md:text-sm lg:text-[16px] hover:opacity-80 transition-opacity"
                     dir="ltr"
                   >
-                    +996-55 8919492
+                    {t("global.phoneNumber")}
                   </a>
                   <svg
                     width="14"
@@ -191,12 +291,32 @@ export default function Navbar() {
                     <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
                   </svg>
                 </div>
-                <div className="flex items-center gap-2 cursor-pointer">
+                <div className="flex gap-1 items-center">
+                  <a
+                    href="https://wa.me/966555881726"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="md:text-sm lg:text-[16px] hover:opacity-80 transition-opacity"
+                  >
+                    {t("global.whatsappNumber")}
+                  </a>
+                  <i className="fab fa-whatsapp text-white text-lg"></i>
+                </div>
+                {/* Change Language */}
+                <div 
+                  className="flex items-center gap-2 cursor-pointer"
+                  onClick={() => {
+                    const newPath = isRTL 
+                      ? location.pathname.replace(`/${lang}`, '/en')
+                      : location.pathname.replace(`/${lang}`, '/ar');
+                    navigate(newPath);
+                  }}
+                >
                   <div>
                     <img
-                      src={"/images/saudiFlag.webp"}
+                      src={isRTL ? "/images/saudiFlag.webp" : "/images/uKFlag.webp"}
                       className="w-[28px]"
-                      alt="اللغة العربية"
+                      alt={isRTL ? "اللغة العربية" : "English Language"}
                     />
                   </div>
                   <svg
@@ -222,7 +342,7 @@ export default function Navbar() {
         <div className="md:container">
           <div className="hidden md:flex max-md:container items-center pb-[20px]">
             <div className="flex-shrink-0">
-              <Link href="/">
+              <Link to={`/${lang}`}>
                 <img
                   src="/images/logo.webp"
                   alt="ASTA Logo"
@@ -239,7 +359,7 @@ export default function Navbar() {
             >
               {url && (
                 <button onClick={() => navigate.push("/Check")} className="py-[12px] px-[12px] rounded-full! cursor-pointer hover:text-[#1a2555] text-white lg:text-[16px] sm:text-[14px] font-bold bg-gradient-to-r! from-[#23A0D0]! to-68% to-[#3CBEB3]! focus:outline-none! shadow-md! transition! hover:opacity-80! !leading-[1.25] duration-300">
-                  فحص الشهادة
+               {t("header.actions.verifyCertificate")}
                 </button>
               )}
               <div
@@ -274,48 +394,23 @@ export default function Navbar() {
                       </div>
                       <form
                         action=""
-                        className="w-full"
+                        className="w-full relative z-[9999]"
                         onSubmit={(e) => handleSearch(e)}
                       >
                         <input
                           type="text"
-                          placeholder="عن ماذا تبحث؟"
+                          name="search"
+                          value={searchQuery}
+                          onChange={handleSearchInputChange}
+                          placeholder={isRTL ? "عن ماذا تبحث؟" : "Search"}
                           className="text-[16px] font-medium placeholder:text-[#878787] text-[#202C5B] h-[28px] w-full"
                         />
                         <button type="submit" className="hidden"></button>
                       </form>
                     </div>
-                    <form
-                      action=""
-                      className="md:hidden"
-                      onSubmit={(e) => handleSearch(e)}
-                    >
-                      <div
-                        className={
-                          "absolute top-[calc(100%+12px)] w-[320px] lg:hidden flex py-1 px-[12px] items-center gap-[12px] after:w-[calc(100%-2PX)] after:h-[calc(100%-2PX)] bg-red after:absolute after:left-[1px] after:top-[1px] rounded-3xl after:rounded-3xl after:bg-white after:z-[-1] z-1 bg-gradient-to-r from-[#202C5B] via-[#23A0D0] to-[#3CBEB3] duration-300 " +
-                          (search ? "" : "invisible opacity-0")
-                        }
-                      >
-                        <img src="/svgs/search.svg" alt="" />
-                        <input
-                          type="text"
-                          placeholder="عن ماذا تبحث؟"
-                          className="text-[16px] font-medium placeholder:text-[#878787] text-[#202C5B] h-[36px] w-full"
-                        />
-                        <button type="submit" className="hidden"></button>
-                      </div>
-                    </form>
                   </div>
                 )}
                 {/* {user && token ? (
-                  <div className="flex gap-[24px] ms-[19px] items-center relative">
-                    <a href="/fav">
-                      <img src="/icons/H-login/nav-heart.svg" alt="" />
-                    </a>
-                    <a href="/notification">
-                      <img src="/icons/H-login/notification.svg" alt="" />
-                    </a>
-                    <div
                       className="flex gap-[8px] items-center relative"
                       onClick={() => {
                         setProfile(!profile);
@@ -410,7 +505,7 @@ export default function Navbar() {
                       }}
                       className="py-1 md:py-2 lg:py-2 text-sm md:text-sm lg:text-base text-[#202C5B] hover:text-gradient-to-r from-cyan-500 to-emerald-400 hover:bg-[#1A2555] rounded-full hover:text-white font-bold px-3 transition duration-300"
                     >
-                      تسجيل الدخول
+                     {t("header.actions.signin")}
                     </a>
 
                     <a
@@ -421,7 +516,7 @@ export default function Navbar() {
                       }}
                       className="px-3 py-[12px] text-sm md:px-3 md:py-[12px] md:text-sm lg:px-3 lg:py-[12px] lg:text-[16px] hover:text-[#1a2555] text-white font-bold rounded-full bg-gradient-to-r! from-[#23A0D0]! to-68% to-[#3CBEB3]! focus:outline-none! shadow-md! transition! hover:opacity-80! !leading-[1.25] duration-300"
                     >
-                      إنشاء حساب
+                     {t("header.actions.signUp")}
                     </a>
                   </div>
                 {/* )} */}
@@ -436,7 +531,7 @@ export default function Navbar() {
               <div className="flex items-center justify-between">
                 {/* Mobile Logo - Right side */}
                 <div className="flex-shrink-0">
-                  <Link href={"/"}>
+                  <Link to={`/${lang}`}>
                     <img
                       src="/images/logo.webp"
                       alt="ASTA Logo"
@@ -518,15 +613,15 @@ export default function Navbar() {
           <div className="hidden sm:flex justify-start items-center py-3 border-gray-200 bg-white  top-0">
             <div className="flex items-center">
               <Link
-                href="/"
+                to={`/${lang}`}
                 className={
                   "md:text-[18px] lg:text-[20px] px-[12px] py-[6px] font-medium hover:text-[#ffffff] hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] duration-300 transition-colors !leading-[1.25] " +
-                  (location.pathname === "/"
+                  (location.pathname === `/${lang}` || location.pathname === "/"
                     ? "text-[#ffffff] active-nav-link relative bg-gradient-to-r from-[#23A0D0] to-68% to-[#3CBEB3]"
                     : "text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff]")
                 }
               >
-                الرئيسية
+                {t("header.nav.home")}
               </Link>
               <div className="min-h-[37px] w-[1px] mx-[2px] bg-[#1a2555]"></div>
               {/* {user && token && (
@@ -545,48 +640,26 @@ export default function Navbar() {
                   <div className="min-h-[37px] w-[1px] mx-[2px] bg-[#1a2555]"></div>
                 </>
               )} */}
-              <a
-                href={"/Courses"}
-                className={
-                  "md:text-[18px] lg:text-[20px] px-[12px] py-[6px] font-medium hover:text-[#ffffff] hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] duration-300 transition-colors !leading-[1.25] " +
-                  (location.pathname === "/Courses"
-                    ? "text-[#ffffff] active-nav-link relative bg-gradient-to-r from-[#23A0D0] to-68% to-[#3CBEB3]"
-                    : "text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff]")
-                }
-              >
-                الدورات
-              </a>
-              <div className="min-h-[37px] w-[1px] mx-[2px] bg-[#1a2555]"></div>
-              <Link
-                href="/Degrees"
-                className={
-                  "md:text-[18px] lg:text-[20px] px-[12px] py-[6px] font-medium hover:text-[#ffffff] hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] duration-300 transition-colors !leading-[1.25] " +
-                  (location.pathname === "/Degrees"
-                    ? "text-[#ffffff] active-nav-link relative bg-gradient-to-r from-[#23A0D0] to-68% to-[#3CBEB3]"
-                    : "text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff]")
-                }
-              >
-                المسارات المهنية
-              </Link>
-              <div className="min-h-[37px] w-[1px] mx-[2px] bg-[#1a2555]"></div>
 
-              <div className="relative" ref={degreesRef}>
+              {/* Courses dropdown */}
+              <div className="relative" ref={coursesRef}>
                 <button
                   onClick={() => {
-                    setDegrees(!degrees);
+                    setCourses(!courses);
                     setAboutDropdown(false);
+                    setTrainersDropdown(false);
                   }}
                   className={
-                    "flex items-center cursor-pointer gap-1 md:text-[18px] lg:text-[20px] px-[12px]  font-medium hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 transition-colors !leading-[1.25] min-h-[44px] " +
-                    (location.pathname.includes("/Routes/")
+                    "flex items-center cursor-pointer gap-1 md:text-[18px] lg:text-[20px] px-[12px] font-medium hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 transition-colors !leading-[1.25] min-h-[44px] " +
+                    (location.pathname.includes("/Courses/") || location.pathname === "/Courses"
                       ? "text-[#ffffff] bg-gradient-to-r from-[#23A0D0] to-68% to-[#3CBEB3] active-nav-link relative"
                       : "text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff]")
                   }
                 >
-                  {"الاقسام المهنية"}
+                  {t("header.nav.courses")}
                   <svg
                     className={`w-3 h-3 transition-transform ${
-                      degrees ? "rotate-180" : ""
+                      courses ? "rotate-180" : ""
                     }`}
                     fill="none"
                     stroke="currentColor"
@@ -600,43 +673,96 @@ export default function Navbar() {
                     />
                   </svg>
                 </button>
-                {degrees && (
+                {courses && (
                   <div className="absolute top-full right-0 mt-1 w-max bg-white rounded-lg shadow-[0px_2px_6px_2px_rgba(0,0,0,0.1)] z-20">
                     <div className="py-1">
-                      {categories.map((cat) => {
-                        return (
-                          <Link
-                            key={cat.id}
-                            href={`/Routes/${cat.id}`}
-                            className="block px-4 py-2 md:text-sm lg:text-lg hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff] transition-colors"
+                      <a
+                        href={`/${lang}/courses`}
+                        className="block px-4 py-2 md:text-sm lg:text-lg hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff] transition-colors"
+                      >
+                        {t("header.nav.allCourses")}
+                      </a>
+                      {categories && categories.map((category) => (
+                        <div key={category.id} className="group" style={{ textAlign: "unset" }}>
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setOpenCategoryId((prev) =>
+                                prev === category.id ? null : category.id
+                              )
+                            }
+                            className="w-full flex gap-2 px-4 py-2 md:text-sm lg:text-lg hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff] transition-colors font-medium"
                           >
-                            {cat.name}
-                          </Link>
-                        );
-                      })}
+                            <span style={{ textAlign: "initial" }}>{category.name}</span>
+                            <svg
+                              className={`w-4 h-4 transition-transform ${
+                                openCategoryId === category.id ? "rotate-180" : ""
+                              }`}
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M19 9l-7 7-7-7"
+                              />
+                            </svg>
+                          </button>
+                          {category.sup_categories &&
+                            category.sup_categories.length > 0 &&
+                            openCategoryId === category.id && (
+                              <div className="pl-4">
+                                <a 
+                                  href={`/${lang}/categories/${category.id}`} 
+                                  className="block px-4 py-2 md:text-sm lg:text-sm hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff] transition-colors"
+                                >
+                                  - {t("courses.certificates")}
+                                </a>
+                                {category.sup_categories.map((subCategory) => (
+                                  <a
+                                    key={subCategory.id}
+                                    href={`/${lang}/categories/${category.id}?sup_category=${encodeURIComponent(
+                                      subCategory.id
+                                    )}`}
+                                    className="block px-4 py-2 md:text-sm lg:text-sm hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff] transition-colors"
+                                  >
+                                    - {subCategory.name}
+                                  </a>
+                                ))}
+                                <div className="min-h-[1px] w-full bg-[#1a2555] my-2"></div>
+                              </div>
+                            )}
+                        </div>
+                      ))}
                     </div>
                   </div>
                 )}
               </div>
+
               <div className="min-h-[37px] w-[1px] mx-[2px] bg-[#1a2555]"></div>
-              {/* Trainers dropdown */}
-              <div className="relative" ref={trainersRef}>
+
+              {/* Diplomas dropdown */}
+              <div className="relative" ref={diplomasRef}>
                 <button
                   onClick={() => {
-                    setTrainersDropdown(!trainersDropdown);
+                    setDiplomasDropdown(!diplomasDropdown);
+                    setCourses(false);
                     setAboutDropdown(false);
+                    setTrainersDropdown(false);
                   }}
                   className={
-                    "flex items-center cursor-pointer gap-1 md:text-[18px] lg:text-[20px] px-[12px]  font-medium hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 transition-colors !leading-[1.25] min-h-[44px] " +
-                    (location.pathname === "/BeTrainer" || location.pathname === "/Trainers"
+                    "flex items-center cursor-pointer gap-1 md:text-[18px] lg:text-[20px] px-[12px] font-medium hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 transition-colors !leading-[1.25] min-h-[44px] " +
+                    (location.pathname.includes("/programs/")
                       ? "text-[#ffffff] bg-gradient-to-r from-[#23A0D0] to-68% to-[#3CBEB3] active-nav-link relative"
                       : "text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff]")
                   }
                 >
-                  {location.pathname === "/BeTrainer" ? "كن مدربا" : "المدربين"}
+                  {t("header.nav.diplomas")}
                   <svg
                     className={`w-3 h-3 transition-transform ${
-                      trainersDropdown ? "rotate-180" : ""
+                      diplomasDropdown ? "rotate-180" : ""
                     }`}
                     fill="none"
                     stroke="currentColor"
@@ -650,25 +776,29 @@ export default function Navbar() {
                     />
                   </svg>
                 </button>
-                {trainersDropdown && (
-                  <div className="absolute top-full right-0 mt-1 w-44 bg-white rounded-lg shadow-[0px_2px_6px_2px_rgba(0,0,0,0.1)]">
+                {diplomasDropdown && (
+                  <div className="absolute top-full right-0 mt-1 pt-4 w-56 bg-white rounded-lg shadow-[0px_2px_6px_2px_rgba(0,0,0,0.1)] z-20">
                     <div className="py-1">
                       <a
-                        href="/Trainers"
+                        href={`/${lang}/programs`}
                         className="block px-4 py-2 md:text-sm lg:text-lg hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff] transition-colors"
                       >
-                        المدربين
+                        {t("header.nav.allPrograms")}
                       </a>
-                      <a
-                        href="/Register?type=instructor"
-                        className="block px-4 py-2 md:text-sm lg:text-lg hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff] transition-colors"
-                      >
-                        كن مدربا
-                      </a>
+                      {programs.map((program) => (
+                        <a
+                          key={program.id}
+                          href={`/${lang}/programs/${program.id}`}
+                          className="block px-4 py-2 md:text-sm lg:text-lg hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff] transition-colors"
+                        >
+                          {program.title}
+                        </a>
+                      ))}
                     </div>
                   </div>
                 )}
               </div>
+
               <div className="min-h-[37px] w-[1px] mx-[2px] bg-[#1a2555]"></div>
 
               {/* About dropdown */}
@@ -685,7 +815,7 @@ export default function Navbar() {
                       : "text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff]")
                   }
                 >
-                  من نحن
+                  {t("header.nav.about")}
                   <svg
                     className={`w-3 h-3 transition-transform ${
                       aboutDropdown ? "rotate-180" : ""
@@ -706,33 +836,47 @@ export default function Navbar() {
                   <div className="absolute top-full right-0 mt-1 w-44 bg-white rounded-lg shadow-[0px_2px_6px_2px_rgba(0,0,0,0.1)] z-20">
                     <div className="py-1">
                       <a
-                        href="/AboutUs"
+                        href={`/${lang}/about-us`}
                         className="block px-4 py-2 md:text-sm lg:text-lg hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff] transition-colors"
                       >
-                        عن الأكاديمية
+                        {t("header.nav.aboutAcademy")}
                       </a>
                       <a
-                        href="/Vission&Mission"
+                        href={`/${lang}/Vission&Mission`}
                         className="block px-4 py-2 md:text-sm lg:text-lg hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff] transition-colors"
                       >
-                        رؤيتنا ورسالتنا
+                        {t("header.nav.standarts")}
                       </a>
                       <a
-                        href="/Team"
+                        href={`/${lang}/team`}
                         className="block px-4 py-2 md:text-sm lg:text-lg hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff] transition-colors"
                       >
-                        فريق العمل
+                        {t("header.nav.team")}
                       </a>
                       <a
                         href="#"
                         className="block px-4 py-2 md:text-sm lg:text-lg hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff] transition-colors"
                       >
-                        اتصل بنا
+                        {t("header.nav.contact")}
                       </a>
                     </div>
                   </div>
                 )}
               </div>
+
+              <div className="min-h-[37px] w-[1px] mx-[2px] bg-[#1a2555]"></div>
+
+              <a
+                href={`/${lang}/registration`}
+                className={
+                  "md:text-[18px] lg:text-[20px] px-[12px] py-[6px] font-medium hover:text-[#4fd1c5] duration-300 transition-colors !leading-[1.25] " +
+                  (location.pathname === `/${lang}/registration` 
+                    ? "text-[#4fd1c5]"
+                    : "text-[#202C5B]")
+                }
+              >
+                {t("header.nav.registration")}
+              </a>
             </div>
           </div>
           </div>
@@ -859,7 +1003,7 @@ export default function Navbar() {
                 className="px-3! py-[12px]! flex! items-center! justify-between! border-b border-[#2FAFC2]!"
                 onClick={(e) => {
                   e.preventDefault();
-                  navigate.push("/Degrees");
+                  navigate.push("/Courses");
                   setOpen(false);
                 }}
               >
@@ -995,6 +1139,27 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+      
+      {/* Global Search Suggestions Dropdown */}
+      {showSuggestions && searchSuggestions.length > 0 && (
+        <div className="fixed top-30 left-1/2 transform -translate-x-1/2 w-[400px] bg-white rounded-lg shadow-[0px_4px_12px_4px_rgba(0,0,0,0.15)] z-[9999] max-h-60 overflow-y-auto">
+          {searchSuggestions.map((suggestion, index) => (
+            <div
+              key={index}
+              className="px-4 py-3 hover:bg-gray-50 cursor-pointer flex items-center gap-3 border-b border-gray-100 last:border-b-0"
+              onClick={() => handleSuggestionClick(suggestion)}
+            >
+              <span className="text-xs text-gray-500 bg-gray-200 px-2 py-1 rounded font-medium">
+                {suggestion.type === 'category' && t('header.nav.category')}
+                {suggestion.type === 'subcategory' && t('header.nav.subCategory')}
+                {suggestion.type === 'diploma' && t('header.nav.diploma')}
+                {suggestion.type === 'course' && t('header.nav.course')}
+              </span>
+              <span className="text-sm text-gray-800 font-medium">{suggestion.title}</span>
+            </div>
+          ))}
+        </div>
+      )}
     </nav>
   );
 }
