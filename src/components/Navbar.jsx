@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 // import Image from "next/image";
-import { Bars3Icon } from "@heroicons/react/24/solid";
+// import { Bars3Icon } from "@heroicons/react/24/solid";
 // import { useAuth } from "../../context/AuthContext";
 import { useNavigate, useLocation, useParams } from "react-router-dom";
 // import { getCategories } from "@/store/slices/courseSlice";
@@ -10,6 +10,14 @@ import { useNavigate, useLocation, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import categoriesData from "../api/Categories.json";
 import Programs from "../api/Programs";
+import { 
+  Bars3Icon, 
+  BookOpenIcon, 
+  AcademicCapIcon, 
+  InformationCircleIcon, 
+  ClipboardDocumentCheckIcon, 
+  GlobeAltIcon 
+} from '@heroicons/react/24/outline';
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -231,7 +239,7 @@ export default function Navbar() {
       }
     });
     
-    return suggestions.slice(0, 100); // Limit to 5 suggestions
+    return suggestions.slice(0, 100); // Limit to 100 suggestions
   };
 
   return (
@@ -888,13 +896,13 @@ export default function Navbar() {
 
       <div
         className={
-          "fixed! inset-0! z-50! md:hidden! min-h-screen duration-500 " +
+          "fixed! inset-0! z-50! md:hidden! h-screen duration-500 " +
           (open ? "w-full" : "w-0")
         }
       >
         <div
           className={
-            "fixed! inset-0! bg-black/50! min-h-screen " +
+            "fixed! inset-0! bg-black/50! h-screen " +
             (open ? "w-full" : "w-0")
           }
           onClick={() => setOpen(false)}
@@ -902,8 +910,8 @@ export default function Navbar() {
 
         <div
           className={
-            "fixed! flex flex-col inset-y-0 w-80! min-h-screen bg-[#EEEEEE]! duration-300 " +
-            (open ? "right-0" : "right-0 transform translate-x-[100%]")
+            "fixed! top-0! bottom-0! w-80! min-h-screen bg-[#EEEEEE]! duration-300 z-50 " +
+            (open ? (isRTL ? "right-0" : "left-0") : (isRTL ? "right-0 transform translate-x-full" : "left-0 transform -translate-x-full"))
           }
         >
           {/* Mobile menu header */}
@@ -920,7 +928,7 @@ export default function Navbar() {
                   }}
                   className="text-black! text-lg! font-medium!  rounded-lg! px-3! py-2!"
                 >
-                  تسجيل الدخول
+                 {t("header.actions.signin")}
                 </button>
                 <button
                   onClick={(e) => {
@@ -930,57 +938,105 @@ export default function Navbar() {
                   }}
                   className="text-black! bg-white! text-lg! font-medium! rounded-lg! px-3! py-2!"
                 >
-                  إنشاء حساب
+                 {t("header.actions.signUp")}
                 </button>
               </div>
             </div>
           {/* )} */}
 
           <div className="p-3! space-y-3! flex flex-col grow">
-            {/* {user && (
-              <div
-                className="bg-white! rounded-full! p-1 flex! items-center! gap-3!"
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigate.push(
-                    user.role[0] != "student"
-                      ? "/instructor/settings"
-                      : "/settings"
-                  );
-                  setOpen(false);
-                }}
+            <div className="flex items-center justify-between px-3! py-2!">
+              <a href={`/${lang}/`} onClick={() => setOpen(false)} className="flex items-center gap-2">
+                <img
+                  src="/svgs/ASTA_Nav_Logo.svg"
+                  alt="ASTA Logo"
+                  width={63}
+                  height={17}
+                  className="h-auto"
+                />
+              </a>
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-white text-[#23A0D0]"
+                aria-label="Close menu"
               >
-                <div className="rounded-full! flex! items-center! justify-center!">
-                  <img
-                    src={user.image || "/images/prof.png"}
-                    alt="courses"
-                    className="w-[24px] aspect-square"
-                  />
-                </div>
-                <div className="text-black! font-medium! text-lg!">
-                  إعدادات الحساب
-                </div>
-              </div>
-            )} */}
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
 
             {/* Menu items */}
             <div className="space-y-2!">
-              <div className="px-3! py-[12px]! flex! items-center! justify-between! border-b border-[#2FAFC2]!">
+              <a
+                href={`/${lang}/courses`}
+                onClick={() => setOpen(false)}
+                className="px-3! py-[12px]! flex! items-center! justify-between! border-b border-[#2FAFC2]!"
+              >
                 <div className="flex! items-center! gap-3!">
-                  <img
-                    src="/icons/Vector.svg "
-                    alt="courses"
-                    className="w-4! h-4!"
-                  />
-                  <a
-                    href="/Courses"
-                    // href={coursesText == "الدورات" ? "Courses" : "MyCourses"}
-                    className="text-black! font-medium! text-lg!"
-                  >
-                    {"الدورات"}
-                  </a>
+                  <BookOpenIcon className="w-5 h-5 text-[#202C5B]" />
+                  <span className="text-black! font-medium! text-lg!">{t("header.mobile.courses")}</span>
                 </div>
+              </a>
+
+              <a
+                href={`/${lang}/programs`}
+                onClick={() => setOpen(false)}
+                className="px-3! py-[12px]! flex! items-center! justify-between! border-b border-[#2FAFC2]!"
+              >
+                <div className="flex! items-center! gap-3!">
+                  <AcademicCapIcon className="w-5 h-5 text-[#202C5B]" />
+                  <span className="text-black! font-medium! text-lg!">{t("header.nav.diplomas")}</span>
+                </div>
+              </a>
+
+              <a
+                href={`/${lang}/about-us`}
+                onClick={() => setOpen(false)}
+                className="px-3! py-[12px]! flex! items-center! justify-between! border-b border-[#2FAFC2]!"
+              >
+                <div className="flex! items-center! gap-3!">
+                  <InformationCircleIcon className="w-5 h-5 text-[#202C5B]" />
+                  <span className="text-black! font-medium! text-lg!">{t("header.nav.about")}</span>
+                </div>
+              </a>
+
+              <a
+                href={`/${lang}/registration`}
+                onClick={() => setOpen(false)}
+                className="px-3! py-[12px]! flex! items-center! justify-between! border-b border-[#2FAFC2]!"
+              >
+                <div className="flex! items-center! gap-3!">
+                  <ClipboardDocumentCheckIcon className="w-5 h-5 text-[#202C5B]" />
+                  <span className="text-black! font-medium! text-lg!">{t("header.nav.registration")}</span>
+                </div>
+              </a>
+
+              <button
+                type="button"
+                onClick={() => {
+                  const newPath = isRTL 
+                    ? location.pathname.replace(`/${lang}`, '/en')
+                    : location.pathname.replace(`/${lang}`, '/ar');
+                  navigate(newPath);
+                  setOpen(false);
+                }}
+                className="w-full px-3! py-[12px]! flex! items-center! justify-between! border-b border-[#2FAFC2]!"
+              >
+                <div className="flex! items-center! gap-3!">
+                  <GlobeAltIcon className="w-5 h-5 text-[#202C5B]" />
+                  <span className="text-black! font-medium! text-lg!">{t("header.mobile.changeLanguage")}</span>
+                </div>
+                <span className="text-[#202C5B] font-bold!">{lang === "en" ? "AR" : "EN"}</span>
+              </button>
+            </div>
+            <div className=" mt-auto p-3! text-center!">
+              <div className="text-black! font-medium! mb-3 text-lg!">
+                {t("header.footer.academyName")}
               </div>
+            </div>
+          </div>
               {/* {user && token && (
                 <div className="px-3! py-[12px]! flex! items-center! justify-between! border-b border-[#2FAFC2]!">
                   <div className="flex! items-center! gap-3!">
@@ -999,79 +1055,6 @@ export default function Navbar() {
                 </div>
               )} */}
 
-              <div
-                className="px-3! py-[12px]! flex! items-center! justify-between! border-b border-[#2FAFC2]!"
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigate.push("/Courses");
-                  setOpen(false);
-                }}
-              >
-                <div className="flex! items-center! gap-3!">
-                  <img src="/icons/1.svg" alt="paths" className="w-4! h-4!" />
-                  <span className="text-black! font-medium! text-lg!">
-                    المسارات المهنية
-                  </span>
-                </div>
-              </div>
-
-              <div
-                className="px-3! py-[12px]! flex! items-center! justify-between! border-b border-[#2FAFC2]!"
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigate.push("/Trainers");
-                  setOpen(false);
-                }}
-              >
-                <div className="flex! items-center! gap-3!">
-                  <img
-                    src="/icons/2.svg"
-                    alt="trainers"
-                    className="w-4! h-4!"
-                  />
-                  <span className="text-black! font-medium! text-lg!">
-                    المدربين
-                  </span>
-                </div>
-              </div>
-
-              <div
-                className="px-3! py-[12px]! flex! items-center! justify-between! border-b border-[#2FAFC2]!"
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigate.push("/Register?type=instructor");
-                  setOpen(false);
-                }}
-              >
-                <div className="flex! items-center! gap-3!">
-                  <img src="/icons/3.svg" alt="join" className="w-4! h-4!" />
-                  <span className="text-black! font-medium! text-lg!">
-                    كن مدربا
-                  </span>
-                </div>
-              </div>
-
-              <div className="px-3! py-[12px]! flex! items-center! justify-between! border-b border-[#2FAFC2]!">
-                <div className="flex! items-center! gap-3!">
-                  <img src="/icons/4.svg" alt="about" className="w-4! h-4!" />
-                  <span className="text-black! font-medium! text-lg!">
-                    من نحن
-                  </span>
-                </div>
-              </div>
-
-              <div className="px-3! py-[12px]! flex! items-center! justify-between! border-b border-[#2FAFC2]!">
-                <div className="flex! items-center! gap-3!">
-                  <img
-                    src="/icons/5.svg"
-                    alt="language"
-                    className="w-4! h-4!"
-                  />
-                  <span className="text-black! font-medium! text-lg!">
-                    تغيير اللغة
-                  </span>
-                </div>
-              </div>
               {/* {user && token && (
                 <>
                   <div className="px-3! py-[12px]! flex! items-center! justify-between! border-b border-[#2FAFC2]!">
@@ -1118,27 +1101,7 @@ export default function Navbar() {
                 </>
               )} */}
             </div>
-
-            <div className=" mt-auto p-3! text-center!">
-              <div className="text-black! font-medium! mb-3! text-lg!">
-                أكاديمية المهارات التطبيقية للتدريب
-              </div>
-              <div className="flex! justify-center! gap-3!">
-                <a href="mailto:info@ASTA.EDU.SA">
-                  <img src="/icons/7.svg" alt="email" className="w-6! h-6!" />
-                </a>
-                <a href="https://wa.me/+996558919492" target="_blank">
-                  <img
-                    src="/icons/6.svg"
-                    alt="whatsapp"
-                    className="w-6! h-6!"
-                  />
-                </a>
-              </div>
-            </div>
           </div>
-        </div>
-      </div>
       
       {/* Global Search Suggestions Dropdown */}
       {showSuggestions && searchSuggestions.length > 0 && (
