@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { Outlet, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import Header from "../components/Header";
+import Navbar from "../components/NavBar";
+// import Header from "../components/Header";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsupButton";
 import CallButton from "../components/CallButton";
@@ -22,7 +23,8 @@ export default function SharedLayout() {
 
     return (
         <div>
-            <Header />
+            <Navbar />
+            {/* <Header /> */}
             <Outlet />
             <Footer />
             <WhatsAppButton />
