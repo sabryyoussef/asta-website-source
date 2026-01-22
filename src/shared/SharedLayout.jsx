@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Outlet, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import Navbar from "../components/NavBar";
+import Navbar from "../components/Navbar";
 // import Header from "../components/Header";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsupButton";
