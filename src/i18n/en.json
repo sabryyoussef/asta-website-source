@@ -24,7 +24,8 @@
       "about": "About Us",
       "aboutAcademy": "About Academy",
       "standarts": "Our Standards",
-      "contact": "Contact us"
+      "contact": "Contact us",
+      "team": "Our Team"
     },
     "mobile": {
       "courses": "Courses",
@@ -34,7 +35,9 @@
       "changeLanguage": "Change Language"
     },
     "actions": {
-      "verifyCertificate": "Verify Certificate"
+      "verifyCertificate": "Verify Certificate",
+      "signin": "Sign In",
+      "signUp": "Sign Up"
     },
     "footer": {
       "academyName": "Applied Skills Training Academy"
