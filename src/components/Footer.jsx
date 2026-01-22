@@ -193,30 +193,39 @@ export default function Footer() {
             </div>
           </div>
           
-          {/* Column 3: Newsletter & Partners */}
+          {/* Column 3: Academy Location */}
           <div>
-            {/* Newsletter */}
             <div className="mb-8">
-              <h3 className={`text-xl font-bold mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 ${lang === 'ar' ? 'after:right-0' : 'after:left-0'} after:w-12 after:h-1 after:bg-gradient-to-r after:from-[#23a0d0] after:to-[#3cbeb3]`}>{t('footer.newsLetter')}</h3>
-              <p className="text-gray-300 text-sm mb-4">
-                {t('footer.newsLetterDescription')}
-              </p>
-              <form onSubmit={handleNewsletterSubmit} className="space-y-3">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder={t('forms.placeholders.email')}
-                  className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#23a0d0] focus:border-transparent text-sm"
-                  required
+              <h3 className={`text-xl font-bold mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 ${lang === 'ar' ? 'after:right-0' : 'after:left-0'} after:w-12 after:h-1 after:bg-gradient-to-r after:from-[#23a0d0] after:to-[#3cbeb3]`}>
+                {lang === 'ar' ? 'موقع الأكاديمية' : 'Academy Location'}
+              </h3>
+              <div className="relative rounded-lg overflow-hidden shadow-lg border border-white/20">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d915188.4398919921!2d49.597305838532456!3d26.360322505442543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49e5758e374549%3A0x72802ed4f5b4f3e4!2sASTA%20Academy!5e0!3m2!1sen!2ssa!4v1769085223023!5m2!1sen!2ssa"
+                  width="100%"
+                  height="250"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-64 md:h-72"
+                  title={lang === 'ar' ? 'موقع أكاديمية المهارات التطبيقية' : 'Academy of Applied Skills Location'}
                 />
-                <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-[#226796] to-[#3cbeb3] text-white py-3 rounded-lg font-semibold transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
-                >
-                 {lang === 'ar' ? 'اشتراك' : 'Subscribe'}
-                </button>
-              </form>
+              </div>
+              {/* <div className="mt-4 space-y-2">
+                <div className="flex items-start gap-3">
+                  <i className="fas fa-map-marker-alt text-[#23a0d0] mt-1 text-sm"></i>
+                  <span className="text-gray-300 text-sm leading-relaxed">
+                    {lang === 'ar' ? 'الدمام، المملكة العربية السعودية' : 'Dammam, Saudi Arabia'}
+                  </span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <i className="fas fa-clock text-[#23a0d0] text-sm"></i>
+                  <span className="text-gray-300 text-sm">
+                    {lang === 'ar' ? 'الأحد - الخميس: 9:00 ص - 6:00 م' : 'Sunday - Thursday: 9:00 AM - 6:00 PM'}
+                  </span>
+                </div>
+              </div> */}
             </div>
             
             {/* Partners

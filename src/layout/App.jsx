@@ -29,6 +29,8 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="academic-integrity" element={<AcademicIntegrityPage />} />
           <Route path="about-us" element={<AboutUs />} />
+          {/* vissionand mession */}
+          {/* Team */}
           <Route path="programs" element={<TrainingPrograms />} />
           <Route path="programs/:id" element={<ProgramDetails />} />
           <Route path="courses" element={<Courses />} />
