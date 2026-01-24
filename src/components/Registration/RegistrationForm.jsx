@@ -28,6 +28,7 @@ function RegistrationForm({ formData, handleInputChange, errors, degrees, t, lan
               name="email"
               value={formData.email}
               onChange={handleInputChange}
+              required
               className={`w-full pr-10 pl-10 py-3.5 rounded-xl border ${
                 errors.email ? 'border-red-500' : 'border-gray-300'
               } focus:outline-none focus:ring-2 focus:ring-[#23A0D0] focus:border-transparent`}
