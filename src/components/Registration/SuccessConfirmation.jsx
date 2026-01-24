@@ -11,13 +11,14 @@ function SuccessConfirmation ({ formData, selectedProgram, calculateTotal, lang 
             : getProgramData(selectedProgram, lang)
     ) : null;
 
-    // Push enhanced conversions data to Google Tag Manager
+    // Push enhanced conversions data to Google Tag Manager and Google Analytics
     useEffect(() => {
-        // Only push if we have user data
-        if (formData.email || formData.phone) {
-            const enhancedData = {
+        // Only push if we have mandatory user data
+        if (formData.fullName && formData.phone) {
+            const mandatoryData = {
+                full_name: formData.fullName,
                 email: formData.email || '',
-                phone_number: formData.phone || ''
+                phone_number: formData.phone
             };
 
             // Push conversion event with enhanced data
@@ -25,8 +26,8 @@ function SuccessConfirmation ({ formData, selectedProgram, calculateTotal, lang 
             window.dataLayer.push({
                 event: 'registration_conversion',
                 enhanced_conversions: {
-                    email: enhancedData.email,
-                    phone_number: enhancedData.phone_number
+                    email: mandatoryData.email,
+                    phone_number: mandatoryData.phone_number
                 }
             });
 
@@ -38,9 +39,37 @@ function SuccessConfirmation ({ formData, selectedProgram, calculateTotal, lang 
                 currency: 'SAR'
             });
 
-            console.log('Enhanced conversions data sent:', enhancedData);
+            // Google Analytics 4 event tracking
+            window.gtag = window.gtag || function(){(window.dataLayer = window.dataLayer || []).push(arguments);};
+            
+            // Track registration completion event with mandatory data only
+            window.gtag('event', 'registration_complete', {
+                event_category: 'registration',
+                event_label: 'form_submission',
+                value: calculateTotal(),
+                currency: 'SAR',
+                // Enhanced conversion data with mandatory fields
+                enhanced_conversions: {
+                    email: mandatoryData.email,
+                    phone_number: mandatoryData.phone_number
+                }
+            });
+
+            // Track lead generation event with mandatory data only
+            window.gtag('event', 'generate_lead', {
+                event_category: 'lead',
+                event_label: 'registration_form',
+                value: calculateTotal(),
+                currency: 'SAR',
+                enhanced_conversions: {
+                    email: mandatoryData.email,
+                    phone_number: mandatoryData.phone_number
+                }
+            });
+
+            console.log('Mandatory data sent to GA4:', mandatoryData);
         }
-    }, [formData.email, formData.phone, calculateTotal]);
+    }, [formData.fullName, formData.phone, formData.email, calculateTotal]);
 
     return (
     <div className="max-w-3xl mx-auto px-4 py-12">

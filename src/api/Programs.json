@@ -5,8 +5,111 @@
     "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": {
       "ar": "دبلوم ريادة الأعمال",
-      "en": "Business Entrepreneurship Diploma"
+      "en": "Entrepreneurship Diploma"
     },
+    "requirements": {
+      "ar": ["الحصول على مؤهل الثانوية العامة أو ما يعادلها"],
+      "en": ["Obtaining a high school diploma or equivalent"]
+    },
+    "overview": {
+      "ar": "دبلوم مهني تكتسب من خلاله العديد من المهارات التي تؤهلك للعمل في مجالات متنوعة ومتخصصة في مؤسسات القطاعين العام والخاص لتصبح رائد من  رواد الأعمال الفاعلين في أماكنهم ومجتمعاتهم ، وتحويل أفكارك الابتكارية إلى مشاريع ريادية تواكب تطورات بيئة الأعمال ، وتنمية قدراتك الذاتية للالتحاق بسوق العمل وذلك من خلال دورات احترافية  تؤهلك للحصول على شهادات مهنية  توائم للحصول على دبلوم متوسط.",
+      "en": "A professional diploma through which you acquire many skills that qualify you to work in diverse and specialized fields in public and private sector institutions to become a leading entrepreneur in your places and communities, and to transform your innovative ideas into entrepreneurial projects that keep pace with the developments of the business environment, and to develop your personal capabilities to join the labor market through professional courses that qualify you to obtain professional certificates that are equivalent to obtaining an intermediate diploma."
+    },
+    "objectives":
+      {
+        "ar": "يهدف هذا الدبلوم إلى اعداد متدربين مؤهلين بكفاءة وقادرين على الالتحاق بسوق العمل من خلال دراسة مقررات تنمى مهارات ريادة الاعمال ومتطلباتها في المجالات المختلفة.",
+        "en": "This diploma aims to prepare competent trainees who are able to join the labor market by studying courses that develop entrepreneurship skills and their requirements in various fields."
+      },
+    "level": {
+      "ar": "دبلوم متوسط مصنف على المستوى الخامس من الإطار الوطني للمؤهلات",
+      "en": "Intermediate Diploma classified at level 5 of the National Qualifications Framework"
+    },
+    "duration": {
+      "ar": "سنتين  مقسمة على أربعة فصول دراسية + التدريب التعاوني",
+      "en": "2 years 4 semesters + cooperative training"
+    },
+    "language": {
+      "ar": "اللغة العربية",
+      "en": "English"
+    },
+    "schedule": {
+      "ar": {
+        "days": ["يحدد حسب الجدول"],
+        "time": "حسب الجدول الدراسي",
+        "mode": "حضوري - مدمج",
+        "location": "أكاديمية المهارات التطبيقية للتدريب"
+      },
+      "en": {
+        "days": ["Specified by the schedule"],
+        "time": "According to the academic schedule",
+        "mode": "Face-to-face - Blended",
+        "location": "Applied Skills Training Academy"
+      }
+    },
+    "Mandatoryrequirements": {
+      "ar": "تدريب تعاوني لمدة 3 شهور  ونصف",
+      "en": "Cooperative training for 3 months and a half"
+    },
+    "curriculum": {
+      "ar": [
+        {
+          "semester": "الفصل الدراسي الأول",
+          "courses": ["مقدمة في تطبيقات الحاسب الآلي", "مباديء ريادة الأعمال(1)", "لغة إنجليزية عامة", "ريادة الأعمال(2)", "قانون الأعمال", "مباديء المحاسبة"]
+        },
+        {
+          "semester": "الفصل الدراسي الثاني",
+          "courses": ["لغة إنجليزية تخصصية(1)", "السلوك التنظيمي في مؤسسات الأعمال", "الإدارة الإقتصادية", "نظام الامتياز التجاري", "تطبيقات الحاسب الآلي المتقدمة", "إدارة التغيير"]
+        },
+        {
+          "semester": "الفصل الدراسي الثالث",
+          "courses": ["إدارة الأعمال الإلكترونية", "التنمية والتدريب الإداري", "إدارة المشتريات", "لغة إنجليزية تخصصية (2)", "تنظيم وإدارة الفاعليات", "مباديء التسويق الرقمي"]
+        },
+        {
+          "semester": "الفصل الدراسي الرابع",
+          "courses": ["عالم الأعمال", "إدارة الأعمال بالمشروعات", "التسويق والأعمال الدولية", "إدارة الأزمات والمخاطر", "الريادة وإدارة الأعمال الصغيرة", "موضوعات مختارة في ريادة الأعمال"]
+        }
+      ],
+      "en": [
+        {
+          "semester": "Semester 1",
+          "courses": ["Introduction to Computer Applications", "Entrepreneurship Fundamentals (1)", "General English", "Entrepreneurship (2)", "Business Law", "Accounting Fundamentals"]
+        },
+        {
+          "semester": "Semester 2",
+          "courses": ["Specialized English (1)", "Organizational Behavior in Business Organizations", "Economic Management", "Franchise System", "Advanced Computer Applications", "Change Management"]
+        },
+        {
+          "semester": "Semester 3",
+          "courses": ["Electronic Business Management", "Management Development and Training", "Purchasing Management", "Specialized English (2)", "Event Organization and Management", "Digital Marketing Fundamentals"]
+        },
+        {
+          "semester": "Semester 4",
+          "courses": ["Business World", "Project Business Management", "International Business and Marketing", "Crisis and Risk Management", "Entrepreneurship and Small Business Management", "Selected Topics in Entrepreneurship"]
+        }
+      ]
+    },
+    "Learningoutcomes": {
+      "ar": ["معرفة خصائص رواد الأعمال وسماتهم الشخصية","تفسير دوافع السلوك الإداري والتنظيمي  في مؤسسات الأعمال","تطبيق التكنولوجيا في مجالات الأعمال المختلفة","اكتساب مهارات التسويق الرقمي والدولي","اكتساب مهارات الشراء والتفاوض وإتمام الصفقات التجارية","إدارة الأزمات والمخاطر المحيطة بمنظمات الأعمال ","إدارة الابتكار وإدارة التغيير والإدارة الاقتصادية ","احترام القوانين واللوائح المنظمة لعالم الأعمال"],
+      "en": ["Understanding the characteristics and personal traits of entrepreneurs","Interpreting the reasons for administrative and organizational behavior in business organizations","Applying technology in different business fields","Acquiring digital marketing and international marketing skills","Acquiring purchasing and negotiation skills and closing business deals","Managing crises and risks associated with business organizations","Managing innovation and change and economic management","Respect for laws and regulations governing the business world"]
+    },
+    "targetJobs": {
+      "ar": ["إداري", "مساعد إداري", "مدير مشروع", "منسق فاعليات ومؤتمرات", "مسوق", "مساعد مدير مشتريات", "منسق مشروع", "أخصائي تنمية إدارية", "سكرتير تنفيذي"],
+      "en": ["Administrator", "Administrative Assistant", "Project Manager", "Events and Conferences Coordinator", "Marketer", "Assistant Purchasing Manager", "Project Coordinator", "Management Development Specialist", "Executive Secretary"]
+    },
+    "exitPoints": {
+      "ar": "يمكن الخروج بعد فصلين دراسيين والحصول على دبلوم مشارك في المستوى الرابع",
+      "en": "Can exit after two semesters and obtain an associate diploma at Level 4"
+    },
+    "certifications": {
+      "ar": ["شهادة مساعد مدير تسويق معتمد (Associate CMMP)", "شهادة محترف أعمال معتمد للشباب (CYBP)", "شهادة محترف أعمال معتمد في القيادة الإدارية (CBP)", "شهادة أخصائي مايكروسوفت أوفيس (MOS)"],
+      "en": ["Associate Certified Marketing Management Professional (CMMP)", "Certified Youth Business Professional (CYBP)", "Certified Business Professional in Management Leadership (CBP)", "Microsoft Office Specialist (MOS) Certificate"]
+    },
+    "felxabilty": {
+      "ar": ["مواعيد الحضور والتدريب ", "اختيار وتسجيل المقررات "],
+      "en": ["Attendance and training times are flexible", "Select and register courses as needed"]
+    },
+
+
     "subtitle": {
       "ar": "برنامج تأهيل رواد الأعمال والمديرين التنفيذيين",
       "en": "Program for qualifying entrepreneurs and executive managers"
@@ -14,14 +117,6 @@
     "category": {
       "ar": "دبلومات مهنية",
       "en": "Professional Diplomas"
-    },
-    "duration": {
-      "ar": "4 فصول دراسية + تدريب تعاوني",
-      "en": "4 semesters + cooperative training"
-    },
-    "level": {
-      "ar": "مستوى 5 - الإطار الوطني للمؤهلات",
-      "en": "Level 5 - National Qualifications Framework"
     },
     "startDate": {
       "ar": "",
@@ -57,99 +152,9 @@
         "en": "Specialized in entrepreneurship and innovative project development"
       }
     },
-    "overview": {
-      "ar": "دبلوم مهني يؤهلك للعمل في مجالات متنوعة ومتخصصة في مؤسسات القطاعين العام والخاص لتصبح رائد أعمال فاعل وتحويل أفكارك الابتكارية إلى مشاريع ريادية.",
-      "en": "A professional diploma that qualifies you to work in various specialized fields in public and private sector institutions, to become an active entrepreneur and transform your innovative ideas into entrepreneurial projects."
-    },
-    "objectives": [
-      {
-        "ar": "إعداد متدربين مؤهلين بكفاءة للالتحاق بسوق العمل",
-        "en": "Prepare efficiently qualified trainees to enter the job market"
-      },
-      {
-        "ar": "تنمية مهارات ريادة الأعمال ومتطلباتها",
-        "en": "Develop entrepreneurship skills and requirements"
-      },
-      {
-        "ar": "تحويل الأفكار الابتكارية إلى مشاريع ريادية",
-        "en": "Transform innovative ideas into entrepreneurial projects"
-      },
-      {
-        "ar": "تنمية القدرات الذاتية للالتحاق بسوق العمل",
-        "en": "Develop personal capabilities to enter the job market"
-      }
-    ],
-    "curriculum": {
-      "ar": [
-        {
-          "semester": "الفصل الأول",
-          "courses": ["مقدمة في تطبيقات الحاسب الآلي", "مباديء ريادة الأعمال(1)", "لغة إنجليزية عامة", "ريادة الأعمال(2)", "قانون الأعمال", "مباديء المحاسبة"]
-        },
-        {
-          "semester": "الفصل الثاني",
-          "courses": ["لغة إنجليزية تخصصية(1)", "السلوك التنظيمي في مؤسسات الأعمال", "الإدارة الإقتصادية", "نظام الامتياز التجاري", "تطبيقات الحاسب الآلي المتقدمة", "إدارة التغيير"]
-        },
-        {
-          "semester": "الفصل الثالث",
-          "courses": ["إدارة الأعمال الإلكترونية", "التنمية والتدريب الإداري", "إدارة المشتريات", "لغة إنجليزية تخصصية (2)", "تنظيم وإدارة الفاعليات", "مباديء التسويق الرقمي"]
-        },
-        {
-          "semester": "الفصل الرابع",
-          "courses": ["عالم الأعمال", "إدارة الأعمال بالمشروعات", "التسويق والأعمال الدولية", "إدارة الأزمات والمخاطر", "الريادة وإدارة الأعمال الصغيرة", "موضوعات مختارة في ريادة الأعمال"]
-        }
-      ],
-      "en": [
-        {
-          "semester": "Semester 1",
-          "courses": ["Introduction to Computer Applications", "Entrepreneurship Fundamentals (1)", "General English", "Entrepreneurship (2)", "Business Law", "Accounting Fundamentals"]
-        },
-        {
-          "semester": "Semester 2",
-          "courses": ["Specialized English (1)", "Organizational Behavior in Business Organizations", "Economic Management", "Franchise System", "Advanced Computer Applications", "Change Management"]
-        },
-        {
-          "semester": "Semester 3",
-          "courses": ["Electronic Business Management", "Management Development and Training", "Purchasing Management", "Specialized English (2)", "Event Organization and Management", "Digital Marketing Fundamentals"]
-        },
-        {
-          "semester": "Semester 4",
-          "courses": ["Business World", "Project Business Management", "International Business and Marketing", "Crisis and Risk Management", "Entrepreneurship and Small Business Management", "Selected Topics in Entrepreneurship"]
-        }
-      ]
-    },
-    "requirements": {
-      "ar": ["الحصول على مؤهل الثانوية العامة أو ما يعادلها"],
-      "en": ["Obtaining a high school diploma or equivalent"]
-    },
     "benefits": {
       "ar": ["دبلوم متوسط معتمد", "4 شهادات احترافية", "تدريب تعاوني 3.5 أشهر", "دعم من صندوق الموارد البشرية (هدف)"],
       "en": ["Certified Intermediate Diploma", "4 Professional Certificates", "3.5 months of cooperative training", "Support from Human Resources Development Fund (HRDF)"]
-    },
-    "schedule": {
-      "ar": {
-        "days": ["يحدد حسب الجدول"],
-        "time": "حسب الجدول الدراسي",
-        "mode": "حضوري - مدمج",
-        "location": "أكاديمية المهارات التطبيقية للتدريب"
-      },
-      "en": {
-        "days": ["Specified by the schedule"],
-        "time": "According to the academic schedule",
-        "mode": "Face-to-face - Blended",
-        "location": "Applied Skills Training Academy"
-      }
-    },
-    "certifications": {
-      "ar": ["شهادة مساعد مدير تسويق معتمد (Associate CMMP)", "شهادة محترف أعمال معتمد للشباب (CYBP)", "شهادة محترف أعمال معتمد في القيادة الإدارية (CBP)", "شهادة أخصائي مايكروسوفت أوفيس (MOS)"],
-      "en": ["Associate Certified Marketing Management Professional (CMMP)", "Certified Youth Business Professional (CYBP)", "Certified Business Professional in Management Leadership (CBP)", "Microsoft Office Specialist (MOS) Certificate"]
-    },
-    "exitPoints": {
-      "ar": "يمكن الخروج بعد فصلين دراسيين والحصول على دبلوم مشارك في المستوى الرابع",
-      "en": "Can exit after two semesters and obtain an associate diploma at Level 4"
-    },
-    "targetJobs": {
-      "ar": ["إداري", "مساعد إداري", "مدير مشروع", "منسق فاعليات ومؤتمرات", "مسوق", "مساعد مدير مشتريات", "منسق مشروع", "أخصائي تنمية إدارية", "سكرتير تنفيذي"],
-      "en": ["Administrator", "Administrative Assistant", "Project Manager", "Events and Conferences Coordinator", "Marketer", "Assistant Purchasing Manager", "Project Coordinator", "Management Development Specialist", "Executive Secretary"]
     },
     "faqs": [
       {
