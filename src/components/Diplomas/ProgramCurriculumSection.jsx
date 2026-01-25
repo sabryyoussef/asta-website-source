@@ -16,7 +16,7 @@ function CurriculumSection({ program, lang }) {
           </h2>
           <div className="flex items-center gap-2 text-[#226796]">
             <ClockIcon className="h-5 w-5" />
-            <span className="font-bold">{isRTL ? '180 ساعة تدريبية' : '180 training hours'}</span>
+            <span className="font-bold">{localizedProgram.creditHours || 0} {isRTL ? 'ساعة معتمدة' : 'credit hours'}</span>
           </div>
         </div>
         

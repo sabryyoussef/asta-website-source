@@ -6,6 +6,11 @@ function OverviewSection({ program, lang }) {
   
   // Get localized program data
   const localizedProgram = getProgramData(program, lang);
+  
+  // Ensure objectives is an array
+  const objectives = Array.isArray(localizedProgram?.objectives) 
+    ? localizedProgram.objectives 
+    : (localizedProgram?.objectives ? [localizedProgram.objectives] : []);
 
   return (
     <section className="py-12 bg-white">
@@ -23,12 +28,17 @@ function OverviewSection({ program, lang }) {
             <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-8">
               <h3 className="text-xl font-bold text-gray-800 mb-6">{isRTL ? 'أهداف البرنامج' : 'Program Objectives'}</h3>
               <div className="grid md:grid-cols-2 gap-4">
-                {localizedProgram.objectives.map((objective, index) => (
+                {objectives.map((objective, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <CheckCircleIcon className="h-6 w-6 text-[#23A0D0] mt-1 flex-shrink-0" />
                     <span className="text-gray-700">{objective}</span>
                   </div>
                 ))}
+                {objectives.length === 0 && (
+                  <div className="col-span-2 text-center text-gray-500">
+                    {isRTL ? 'لا توجد أهداف محددة' : 'No specific objectives'}
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -47,6 +57,14 @@ function OverviewSection({ program, lang }) {
                   <span className="font-bold text-gray-800">{localizedProgram.level}</span>
                 </div>
                 <div className="flex items-center justify-between py-3 border-b border-gray-200">
+                  <span className="text-gray-600">{isRTL ? 'الساعات المعتمدة' : 'Credit Hours'}</span>
+                  <span className="font-bold text-gray-800">{localizedProgram.creditHours || (isRTL ? 'غير محدد' : 'Not specified')}</span>
+                </div>
+                <div className="flex items-center justify-between py-3 border-b border-gray-200">
+                  <span className="text-gray-600">{isRTL ? 'لغة التدريس' : 'Language'}</span>
+                  <span className="font-bold text-gray-800">{localizedProgram.language || (isRTL ? 'غير محدد' : 'Not specified')}</span>
+                </div>
+                <div className="flex items-center justify-between py-3 border-b border-gray-200">
                   <span className="text-gray-600">{isRTL ? 'أيام الدراسة' : 'Study Days'}</span>
                   <span className="font-bold text-gray-800">
                     {localizedProgram.schedule?.days ? 
@@ -60,7 +78,7 @@ function OverviewSection({ program, lang }) {
                 </div>
                 <div className="flex items-center justify-between py-3">
                   <span className="text-gray-600">{isRTL ? 'نمط التدريب' : 'Training Style'}</span>
-                  <span className="font-bold text-gray-800">{localizedProgram.schedule.mode || (isRTL ? 'غير محدد' : 'Not specified')}</span>
+                  <span className="font-bold text-gray-800">{localizedProgram.schedule?.mode || (isRTL ? 'غير محدد' : 'Not specified')}</span>
                 </div>
               </div>
               

@@ -5,44 +5,51 @@ import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 // import Loading from "@/components/Loading";
+import PartnersData from "../../api/Partners.json";
 
 export default function PartnersSection() {
   const swiperRef = useRef(null)
   const [partners, setPartners] = useState([]);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
 //   const [loading, setLoading] = useState(true);
 //   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchPartners = async () => {
-      try {
-        const response = await fetch(
-          "http://127.0.0.1:8000/api/partners"
-        );
-        if (!response.ok) {
-          throw new Error("Failed to fetch partners");
+    // Use JSON data instead of API call
+    setPartners(PartnersData);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
         }
-        const data = await response.json();
-        setPartners(data.data);
-      } catch (err) {
-        console.error("Error fetching partners:", err);
-        // setError(err.message);
-      } finally {
-        // setLoading(false);
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
       }
     };
-
-    fetchPartners();
   }, []);
 
   // if (loading) {
   //   return <Loading />;
   // }
 
-  // Use API data if available, otherwise use static data
-  const displayImages = partners.map((partner) => partner.image_url);
+  // Use JSON data directly
+  const displayImages = partners.map((partner) => partner.image);
 
   return (
-    <div className="bg-white">
+    <div ref={sectionRef} className={`bg-white transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
       <div className="w-full h-full mb-[12px] md:mb-8! text-center">
         <h2
           className="py-2! md:text-[32px] font-bold text-white mx-auto"

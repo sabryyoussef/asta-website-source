@@ -20,6 +20,7 @@ function ProgramCard({ program }) {
   const navigate = useNavigate();
   const { lang } = useParams();
   const { t } = useTranslation();
+  const isRTL = lang === 'ar';
   
   // Get localized program data
   const localizedProgram = getProgramData(program, lang);
@@ -119,9 +120,9 @@ function ProgramCard({ program }) {
             </span>
           </div>
           <div className="flex items-center gap-2 bg-gray-50 p-2 rounded-lg">
-            <StarIcon className="h-4 w-4 text-gray-500" />
+            <ChartBarIcon className="h-4 w-4 text-gray-500" />
             <span className="text-gray-700 text-xs font-medium">
-              {asText(programForRender.rating)}
+              {asText(programForRender.level)}
             </span>
           </div>
           <div className="flex items-center gap-2 bg-gray-50 p-2 rounded-lg">
@@ -131,9 +132,9 @@ function ProgramCard({ program }) {
             </span>
           </div>
           <div className="flex items-center gap-2 bg-gray-50 p-2 rounded-lg">
-            <UserIcon className="h-4 w-4 text-gray-500" />
+            <UserGroupIcon className="h-4 w-4 text-gray-500" />
             <span className="text-gray-700 text-xs font-medium">
-              {(programForRender.instructor?.name ?? '')}
+              {programForRender.creditHours} {isRTL ? 'ساعة معتمدة' : 'Credit Hours'}
             </span>
           </div>
         </div>

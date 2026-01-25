@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 // import Image from "next/image";
 import CourseCard2 from "../Courses/CourseCard2";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,20 +9,44 @@ import "swiper/css/pagination"; // Import the pagination styles
 
 const CourseSlider = ({ title, bg = "bg-white", courses = [] }) => {
   const swiperRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
   // console.log(courses);
   // console.log(courses.length);
 
   if (courses.length === 0) {
     return null;
   }
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 //   if (!Array.isArray(courses)) {
 //     return <Loading />;
 //   }
 
   return (
     <div
+      ref={sectionRef}
       className={
-        "flex flex-col items-center justify-center md:pb-[64px] md:pt-[64px] pt-[24px] pb-[24px]  " +
+        `flex flex-col items-center justify-center md:pb-[64px] md:pt-[64px] pt-[24px] pb-[24px] transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} ` +
         bg
       }
     >

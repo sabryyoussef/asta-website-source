@@ -33,6 +33,8 @@ export default function Navbar() {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchSuggestions, setSearchSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const [hoveredDropdown, setHoveredDropdown] = useState(null);
+  const timeoutRef = useRef(null);
   const trainersRef = useRef(null);
   const coursesRef = useRef(null);
   const aboutRef = useRef(null);
@@ -41,6 +43,40 @@ export default function Navbar() {
   const { lang = 'ar' } = useParams();
   const { t } = useTranslation();
   const isRTL = lang === 'ar';
+
+  const handleDropdownHover = (dropdownName) => {
+    // Clear any existing timeout
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setHoveredDropdown(dropdownName);
+    if (dropdownName === 'courses') {
+      setCourses(true);
+      setDiplomasDropdown(false);
+      setAboutDropdown(false);
+      setTrainersDropdown(false);
+    } else if (dropdownName === 'diplomas') {
+      setDiplomasDropdown(true);
+      setCourses(false);
+      setAboutDropdown(false);
+      setTrainersDropdown(false);
+    } else if (dropdownName === 'about') {
+      setAboutDropdown(true);
+      setCourses(false);
+      setDiplomasDropdown(false);
+      setTrainersDropdown(false);
+    }
+  };
+
+  const handleDropdownLeave = () => {
+    setHoveredDropdown(null);
+    timeoutRef.current = setTimeout(() => {
+      setCourses(false);
+      setDiplomasDropdown(false);
+      setAboutDropdown(false);
+      setTrainersDropdown(false);
+    }, 200);
+  };
   // const { categories, status, error } = useSelector(
   //   (state) => state.courses // Accessing filteredCourses directly
   // );
@@ -500,11 +536,11 @@ export default function Navbar() {
                 ) : ( */}
                   <div className="flex items-center gap-[12px]">
                     <a
-                      href="#"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        navigate.push("/Login");
-                      }}
+                      href="https://www.astalearn.org/"
+                      // onClick={(e) => {
+                      //   e.preventDefault();
+                      //   navigate.push("https://www.astalearn.org/");
+                      // }}
                       className="py-1 md:py-2 lg:py-2 text-sm md:text-sm lg:text-base text-[#202C5B] hover:text-gradient-to-r from-cyan-500 to-emerald-400 hover:bg-[#1A2555] rounded-full hover:text-white font-bold px-3 transition duration-300"
                     >
                      {t("header.actions.signin")}
@@ -617,10 +653,10 @@ export default function Navbar() {
               <Link
                 to={`/${lang}`}
                 className={
-                  "md:text-[18px] lg:text-[20px] px-[12px] py-[6px] font-medium hover:text-[#ffffff] hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] duration-300 transition-colors !leading-[1.25] " +
+                  "md:text-[18px] lg:text-[20px] px-[16px] py-[8px] font-medium hover:text-[#ffffff] hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] duration-300 transition-colors !leading-[1.25] rounded-lg " +
                   (location.pathname === `/${lang}` || location.pathname === "/"
                     ? "text-[#ffffff] active-nav-link relative bg-gradient-to-r from-[#23A0D0] to-68% to-[#3CBEB3]"
-                    : "text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff]")
+                    : "text-[#202C5B] bg-white")
                 }
               >
                 {t("header.nav.home")}
@@ -644,7 +680,7 @@ export default function Navbar() {
               )} */}
 
               {/* Courses dropdown */}
-              <div className="relative" ref={coursesRef}>
+              <div className="relative" ref={coursesRef} onMouseEnter={() => handleDropdownHover('courses')} onMouseLeave={handleDropdownLeave}>
                 <button
                   onClick={() => {
                     setCourses(!courses);
@@ -652,10 +688,10 @@ export default function Navbar() {
                     setTrainersDropdown(false);
                   }}
                   className={
-                    "flex items-center cursor-pointer gap-1 md:text-[18px] lg:text-[20px] px-[12px] font-medium hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 transition-colors !leading-[1.25] min-h-[44px] " +
+                    "flex items-center cursor-pointer gap-1 md:text-[18px] lg:text-[20px] px-[16px] py-[8px] font-medium hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 transition-colors !leading-[1.25] min-h-[44px] rounded-lg " +
                     (location.pathname.includes("/Courses/") || location.pathname === "/Courses"
                       ? "text-[#ffffff] bg-gradient-to-r from-[#23A0D0] to-68% to-[#3CBEB3] active-nav-link relative"
-                      : "text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff]")
+                      : "text-[#202C5B] bg-white")
                   }
                 >
                   {t("header.nav.courses")}
@@ -676,7 +712,7 @@ export default function Navbar() {
                   </svg>
                 </button>
                 {courses && (
-                  <div className="absolute top-full right-0 mt-1 w-max bg-white rounded-lg shadow-[0px_2px_6px_2px_rgba(0,0,0,0.1)] z-20">
+                  <div className="absolute top-full right-0 mt-1 w-max bg-white rounded-lg shadow-[0px_2px_6px_2px_rgba(0,0,0,0.1)] z-20" onMouseEnter={() => setHoveredDropdown('courses')} onMouseLeave={handleDropdownLeave}>
                     <div className="py-1">
                       <a
                         href={`/${lang}/courses`}
@@ -746,7 +782,7 @@ export default function Navbar() {
               <div className="min-h-[37px] w-[1px] mx-[2px] bg-[#1a2555]"></div>
 
               {/* Diplomas dropdown */}
-              <div className="relative" ref={diplomasRef}>
+              <div className="relative" ref={diplomasRef} onMouseEnter={() => handleDropdownHover('diplomas')} onMouseLeave={handleDropdownLeave}>
                 <button
                   onClick={() => {
                     setDiplomasDropdown(!diplomasDropdown);
@@ -755,10 +791,10 @@ export default function Navbar() {
                     setTrainersDropdown(false);
                   }}
                   className={
-                    "flex items-center cursor-pointer gap-1 md:text-[18px] lg:text-[20px] px-[12px] font-medium hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 transition-colors !leading-[1.25] min-h-[44px] " +
+                    "flex items-center cursor-pointer gap-1 md:text-[18px] lg:text-[20px] px-[16px] py-[8px] font-medium hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 transition-colors !leading-[1.25] min-h-[44px] rounded-lg " +
                     (location.pathname.includes("/programs/")
                       ? "text-[#ffffff] bg-gradient-to-r from-[#23A0D0] to-68% to-[#3CBEB3] active-nav-link relative"
-                      : "text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff]")
+                      : "text-[#202C5B] bg-white")
                   }
                 >
                   {t("header.nav.diplomas")}
@@ -779,7 +815,7 @@ export default function Navbar() {
                   </svg>
                 </button>
                 {diplomasDropdown && (
-                  <div className="absolute top-full right-0 mt-1 pt-4 w-56 bg-white rounded-lg shadow-[0px_2px_6px_2px_rgba(0,0,0,0.1)] z-20">
+                  <div className="absolute top-full right-0 mt-1 pt-4 w-56 bg-white rounded-lg shadow-[0px_2px_6px_2px_rgba(0,0,0,0.1)] z-20" onMouseEnter={() => setHoveredDropdown('diplomas')} onMouseLeave={handleDropdownLeave}>
                     <div className="py-1">
                       <a
                         href={`/${lang}/programs`}
@@ -804,17 +840,17 @@ export default function Navbar() {
               <div className="min-h-[37px] w-[1px] mx-[2px] bg-[#1a2555]"></div>
 
               {/* About dropdown */}
-              <div className="relative" ref={aboutRef}>
+              <div className="relative" ref={aboutRef} onMouseEnter={() => handleDropdownHover('about')} onMouseLeave={handleDropdownLeave}>
                 <button
                   onClick={() => {
                     setAboutDropdown(!aboutDropdown);
                     setTrainersDropdown(false);
                   }}
                   className={
-                    "flex items-center cursor-pointer gap-1 md:text-[18px] lg:text-[20px] px-[12px] font-medium transition-colors !leading-[1.25] hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 min-h-[44px] " +
+                    "flex items-center cursor-pointer gap-1 md:text-[18px] lg:text-[20px] px-[16px] py-[8px] font-medium transition-colors !leading-[1.25] hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 min-h-[44px] rounded-lg " +
                     (false
                       ? "text-[#ffffff] bg-gradient-to-r from-[#23A0D0] to-68% to-[#3CBEB3] active-nav-link relative"
-                      : "text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff]")
+                      : "text-[#202C5B] bg-white")
                   }
                 >
                   {t("header.nav.about")}
@@ -835,7 +871,7 @@ export default function Navbar() {
                   </svg>
                 </button>
                 {aboutDropdown && (
-                  <div className="absolute top-full right-0 mt-1 w-44 bg-white rounded-lg shadow-[0px_2px_6px_2px_rgba(0,0,0,0.1)] z-20">
+                  <div className="absolute top-full right-0 mt-1 w-44 bg-white rounded-lg shadow-[0px_2px_6px_2px_rgba(0,0,0,0.1)] z-20" onMouseEnter={() => setHoveredDropdown('about')} onMouseLeave={handleDropdownLeave}>
                     <div className="py-1">
                       <a
                         href={`/${lang}/about-us`}
@@ -871,10 +907,10 @@ export default function Navbar() {
               <a
                 href={`/${lang}/registration`}
                 className={
-                  "md:text-[18px] lg:text-[20px] px-[12px] py-[6px] font-medium hover:text-[#4fd1c5] duration-300 transition-colors !leading-[1.25] " +
+                  "md:text-[18px] lg:text-[20px] px-[16px] py-[8px] font-medium hover:text-[#ffffff] hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] duration-300 transition-colors !leading-[1.25] rounded-lg " +
                   (location.pathname === `/${lang}/registration` 
-                    ? "text-[#4fd1c5]"
-                    : "text-[#202C5B]")
+                    ? "text-[#ffffff] bg-gradient-to-r from-[#23A0D0] to-68% to-[#3CBEB3]"
+                    : "text-[#202C5B] bg-white")
                 }
               >
                 {t("header.nav.registration")}

@@ -17,6 +17,8 @@ const tabs = [
 export default function CoursesTabs() {
   const [activeTab, setActiveTab] = useState(tabs[0]);
   const swiperRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
   // const dispatch = useDispatch();
   // const {
   //   degrees,
@@ -33,6 +35,27 @@ export default function CoursesTabs() {
   //   dispatch(getFreeCourses());
   //   dispatch(getAllDegrees());
   // }, [dispatch]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   // Use a separate useEffect to set the local state based on activeTab
   useEffect(() => {
@@ -61,7 +84,7 @@ export default function CoursesTabs() {
   };
 
   return (
-    <div className="bg-white flex flex-col items-center justify-center md:pb-[32px] md:mb-[32px] pb-[12px] mb-[12px]">
+    <div ref={sectionRef} className={`bg-white flex flex-col items-center justify-center md:pb-[32px] md:mb-[32px] pb-[12px] mb-[12px] transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
       <div className="w-full mx-auto">
         <div className="bg-gradient-to-r from-[#23A0D0] to-68% to-[#3CBEB3] md:pt-[16px] max-md:py-[12px] text-white border-b-[#202C5B] border-[1px]">
           <div className="container">
