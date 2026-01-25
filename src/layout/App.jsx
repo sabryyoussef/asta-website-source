@@ -16,6 +16,7 @@ import TermsAndConditions from '../pages/Terms&Conditions';
 import AcademicIntegrityPage from '../pages/AcademicIntegrityPage';
 import AdmissionAndRegistration from '../pages/AdmissionAndRegistration';
 import CertificateChecker from '../pages/CertificateChecker';
+import SuccessConfirmation from '../pages/SuccessConfirmation';
 
 // Styles
 import '../style/App.css';
@@ -41,6 +42,7 @@ export default function App() {
           <Route path="terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="admission&registration" element={<AdmissionAndRegistration />} />
           <Route path="certificate-checker" element={<CertificateChecker />} />
+          <Route path="registration-success" element={<SuccessConfirmation />} />
         </Route>
       </Routes>
   );
