@@ -25,7 +25,9 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
     // );
     const [currentIndex, setCurrentIndex] = useState(initialProgramIndex);
     const [currentContent, setCurrentContent] = useState(null);
+    const [isVisible, setIsVisible] = useState(false);
     const swiperRef = useRef(null);
+    const sectionRef = useRef(null);
     
     // Extract programs from ProgramsData using useMemo to prevent re-renders
     const categories = useMemo(() => 
@@ -77,6 +79,27 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
         return () => clearTimeout(timer);
     }, [currentIndex, categories]);
 
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => {
+            if (sectionRef.current) {
+                observer.unobserve(sectionRef.current);
+            }
+        };
+    }, []);
+
 
     // TODO: Replace with loading state when API is ready
     // if (status.getCategories == "loading" || status.getCategories == "idle") {
@@ -85,7 +108,8 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
 
     return (
         <section
-            className="bg-gradient-to-r from-[#23a0d01a] to-[#3CBEB31A] relative! overflow-hidden! flex! items-center! justify-center! ">
+            ref={sectionRef}
+            className={`bg-gradient-to-r from-[#23a0d01a] to-[#3CBEB31A] relative! overflow-hidden! flex! items-center! justify-center! transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <div className="absolute! inset-0! opacity-5!">
                 <div className="absolute! top-20! left-20! w-32! h-32! bg-blue-500! rounded-full! blur-3xl!"></div>
                 <div className="absolute! bottom-20! right-20! w-40! h-40! bg-teal-500! rounded-full! blur-3xl!"></div>
