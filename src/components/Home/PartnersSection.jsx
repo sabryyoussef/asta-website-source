@@ -5,6 +5,7 @@ import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 // import Loading from "@/components/Loading";
+import PartnersData from "../../api/Partners.json";
 
 export default function PartnersSection() {
   const swiperRef = useRef(null)
@@ -15,25 +16,8 @@ export default function PartnersSection() {
 //   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchPartners = async () => {
-      try {
-        const response = await fetch(
-          "http://127.0.0.1:8000/api/partners"
-        );
-        if (!response.ok) {
-          throw new Error("Failed to fetch partners");
-        }
-        const data = await response.json();
-        setPartners(data.data);
-      } catch (err) {
-        console.error("Error fetching partners:", err);
-        // setError(err.message);
-      } finally {
-        // setLoading(false);
-      }
-    };
-
-    fetchPartners();
+    // Use JSON data instead of API call
+    setPartners(PartnersData);
   }, []);
 
   useEffect(() => {
@@ -61,8 +45,8 @@ export default function PartnersSection() {
   //   return <Loading />;
   // }
 
-  // Use API data if available, otherwise use static data
-  const displayImages = partners.map((partner) => partner.image_url);
+  // Use JSON data directly
+  const displayImages = partners.map((partner) => partner.image);
 
   return (
     <div ref={sectionRef} className={`bg-white transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
