@@ -9,6 +9,9 @@ import InstructorSection from "../components/Diplomas/ProgramInstructorSection";
 import RequirementsSection from "../components/Diplomas/ProgramRequirementsSection";
 import ProgramFAQSection from "../components/Diplomas/ProgramFAQSection";
 import RelatedProgramsSection from "../components/Diplomas/RelatedProgramsSection";
+import LearningOutcomesSection from "../components/Diplomas/LearningOutcomesSection";
+import TargetJobsSection from "../components/Diplomas/TargetJobsSection";
+import CertificationsSection from "../components/Diplomas/CertificationsSection";
 // data
 import Programs, { getProgramData } from "../api/Programs";
 const ProgramDetails = () => {
@@ -30,7 +33,10 @@ const ProgramDetails = () => {
     <div dir={isRTL ? 'rtl' : 'ltr'}>
       <ProgramHeader program={program} lang={lang} />
       <OverviewSection program={program} lang={lang} />
+      <LearningOutcomesSection program={program} lang={lang} />
       <CurriculumSection program={program} lang={lang} />
+      <TargetJobsSection program={program} lang={lang} />
+      <CertificationsSection program={program} lang={lang} />
       <InstructorSection program={program} lang={lang} />
       <RequirementsSection program={program} lang={lang} />
       <ProgramFAQSection program={program} lang={lang} />
