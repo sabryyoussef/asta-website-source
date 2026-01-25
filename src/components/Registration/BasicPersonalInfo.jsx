@@ -65,7 +65,7 @@ function BasicPersonalInfo({ formData, handleInputChange, errors, t, lang }) {
 
         <div>
           <label className="block text-gray-700 mb-2 font-medium">
-            {lang === 'ar' ? 'البريد الإلكتروني (اختياري)' : 'Email (Optional)'}
+            {lang === 'ar' ? 'البريد الإلكتروني' : 'Email'}
           </label>
           <div className="relative">
             <input
