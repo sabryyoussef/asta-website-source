@@ -108,11 +108,15 @@ export default function Footer() {
                         target={contact.target || '_self'}
                         rel={contact.target === '_blank' ? 'noopener noreferrer' : ''}
                         className="text-gray-300 hover:text-white transition-colors duration-200 text-sm"
+                        style={contact.text.includes('@') ? { fontFamily: 'optima' } : {}}
                       >
                         {contact.text}
                       </a>
                     ) : (
-                      <span className="text-gray-300 text-sm">{contact.text}</span>
+                      <span 
+                        className="text-gray-300 text-sm"
+                        style={contact.text.includes('@') ? { fontFamily: 'optima' } : {}}
+                      >{contact.text}</span>
                     )}
                   </div>
                 ))}
