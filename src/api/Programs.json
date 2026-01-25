@@ -8,47 +8,47 @@
       "en": "Entrepreneurship Diploma"
     },
     "requirements": {
-      "ar": ["الحصول على مؤهل الثانوية العامة أو ما يعادلها"],
+      "ar": ["الحصول على مؤهل الثانوية العامة أوما يعادلها"],
       "en": ["Obtaining a high school diploma or equivalent"]
     },
     "overview": {
-      "ar": "دبلوم مهني تكتسب من خلاله العديد من المهارات التي تؤهلك للعمل في مجالات متنوعة ومتخصصة في مؤسسات القطاعين العام والخاص لتصبح رائد من  رواد الأعمال الفاعلين في أماكنهم ومجتمعاتهم ، وتحويل أفكارك الابتكارية إلى مشاريع ريادية تواكب تطورات بيئة الأعمال ، وتنمية قدراتك الذاتية للالتحاق بسوق العمل وذلك من خلال دورات احترافية  تؤهلك للحصول على شهادات مهنية  توائم للحصول على دبلوم متوسط.",
-      "en": "A professional diploma through which you acquire many skills that qualify you to work in diverse and specialized fields in public and private sector institutions to become a leading entrepreneur in your places and communities, and to transform your innovative ideas into entrepreneurial projects that keep pace with the developments of the business environment, and to develop your personal capabilities to join the labor market through professional courses that qualify you to obtain professional certificates that are equivalent to obtaining an intermediate diploma."
+      "ar": "دبلوم مهني تكتسب من خلاله العديد من المهارات التي تؤهلك للعمل في مجالات متنوعة ومتخصصة في مؤسسات القطاعين العام والخاص لتصبح رائد من رواد الأعمال الفاعلين في أماكنهم ومجتمعاتهم ، وتحويل أفكارك الابتكارية إلى مشاريع ريادية تواكب تطورات بيئة الأعمال ، وتنمية قدراتك الذاتية للالتحاق بسوق العمل وذلك من خلال دورات احترافية تؤهلك للحصول على شهادات مهنية توائم للحصول على دبلوم متوسط.",
+      "en": "A professional diploma through which you acquire many skills that qualify you to work in diverse and specialized fields in public and private sector institutions to become an active entrepreneur in your communities, transforming your innovative ideas into entrepreneurial projects that keep pace with business environment developments, and developing your personal capabilities to join the labor market through professional courses that qualify you to obtain professional certificates equivalent to an intermediate diploma."
     },
-    "objectives":
-      {
-        "ar": "يهدف هذا الدبلوم إلى اعداد متدربين مؤهلين بكفاءة وقادرين على الالتحاق بسوق العمل من خلال دراسة مقررات تنمى مهارات ريادة الاعمال ومتطلباتها في المجالات المختلفة.",
-        "en": "This diploma aims to prepare competent trainees who are able to join the labor market by studying courses that develop entrepreneurship skills and their requirements in various fields."
-      },
+    "objectives": {
+      "ar": "يهدف هذا الدبلوم إلى اعداد متدربين مؤهلين بكفاءة وقادرين على الالتحاق بسوق العمل من خلال دراسة مقررات تنمى مهارات ريادة الاعمال ومتطلباتها في المجالات المختلفة.",
+      "en": "This diploma aims to prepare competent trainees who are able to join the labor market by studying courses that develop entrepreneurship skills and their requirements in various fields."
+    },
     "level": {
       "ar": "دبلوم متوسط مصنف على المستوى الخامس من الإطار الوطني للمؤهلات",
-      "en": "Intermediate Diploma classified at level 5 of the National Qualifications Framework"
+      "en": "Intermediate diploma classified at level 5 of the National Qualifications Framework"
     },
     "duration": {
-      "ar": "سنتين  مقسمة على أربعة فصول دراسية + التدريب التعاوني",
-      "en": "2 years 4 semesters + cooperative training"
+      "ar": "سنتين مقسمة على أربعة فصول دراسية + التدريب التعاوني",
+      "en": "Two years divided into four academic semesters + cooperative training"
     },
+    "creditHours":62,
     "language": {
-      "ar": "اللغة العربية",
-      "en": "English"
+      "ar": "العربية",
+      "en": "Arabic"
     },
     "schedule": {
       "ar": {
-        "days": ["يحدد حسب الجدول"],
-        "time": "حسب الجدول الدراسي",
-        "mode": "حضوري - مدمج",
-        "location": "أكاديمية المهارات التطبيقية للتدريب"
+        "days": [],
+        "time": "",
+        "mode": "حضوري -- مدمج",
+        "location": ""
       },
       "en": {
-        "days": ["Specified by the schedule"],
-        "time": "According to the academic schedule",
-        "mode": "Face-to-face - Blended",
-        "location": "Applied Skills Training Academy"
+        "days": [],
+        "time": "",
+        "mode": "In-person -- Blended",
+        "location": ""
       }
     },
     "Mandatoryrequirements": {
-      "ar": "تدريب تعاوني لمدة 3 شهور  ونصف",
-      "en": "Cooperative training for 3 months and a half"
+      "ar": "تدريب تعاوني لمدة 3 شهور ونصف",
+      "en": "Cooperative training for 3 and a half months"
     },
     "curriculum": {
       "ar": [
@@ -58,7 +58,7 @@
         },
         {
           "semester": "الفصل الدراسي الثاني",
-          "courses": ["لغة إنجليزية تخصصية(1)", "السلوك التنظيمي في مؤسسات الأعمال", "الإدارة الإقتصادية", "نظام الامتياز التجاري", "تطبيقات الحاسب الآلي المتقدمة", "إدارة التغيير"]
+          "courses": ["لغة أنجليزية تخصصية(1)", "السلوك التنظيمي في مؤسسات الأعمال", "الإدارة الإقتصادية", "نظام الامتياز التجاري", "تطبيقات الحاسب الآلي المتقدمة", "إدارة التغيير"]
         },
         {
           "semester": "الفصل الدراسي الثالث",
@@ -71,133 +71,90 @@
       ],
       "en": [
         {
-          "semester": "Semester 1",
-          "courses": ["Introduction to Computer Applications", "Entrepreneurship Fundamentals (1)", "General English", "Entrepreneurship (2)", "Business Law", "Accounting Fundamentals"]
+          "semester": "First Semester",
+          "courses": ["Introduction to Computer Applications", "Entrepreneurship Principles (1)", "General English", "Entrepreneurship (2)", "Business Law", "Accounting Principles"]
         },
         {
-          "semester": "Semester 2",
-          "courses": ["Specialized English (1)", "Organizational Behavior in Business Organizations", "Economic Management", "Franchise System", "Advanced Computer Applications", "Change Management"]
+          "semester": "Second Semester",
+          "courses": ["Specialized English (1)", "Organizational Behavior in Business Institutions", "Economic Management", "Commercial Franchise System", "Advanced Computer Applications", "Change Management"]
         },
         {
-          "semester": "Semester 3",
-          "courses": ["Electronic Business Management", "Management Development and Training", "Purchasing Management", "Specialized English (2)", "Event Organization and Management", "Digital Marketing Fundamentals"]
+          "semester": "Third Semester",
+          "courses": ["E-Business Management", "Administrative Development and Training", "Purchasing Management", "Specialized English (2)", "Event Organization and Management", "Digital Marketing Principles"]
         },
         {
-          "semester": "Semester 4",
-          "courses": ["Business World", "Project Business Management", "International Business and Marketing", "Crisis and Risk Management", "Entrepreneurship and Small Business Management", "Selected Topics in Entrepreneurship"]
+          "semester": "Fourth Semester",
+          "courses": ["Business World", "Project Business Management", "International Marketing and Business", "Crisis and Risk Management", "Entrepreneurship and Small Business Management", "Selected Topics in Entrepreneurship"]
         }
       ]
     },
     "Learningoutcomes": {
-      "ar": ["معرفة خصائص رواد الأعمال وسماتهم الشخصية","تفسير دوافع السلوك الإداري والتنظيمي  في مؤسسات الأعمال","تطبيق التكنولوجيا في مجالات الأعمال المختلفة","اكتساب مهارات التسويق الرقمي والدولي","اكتساب مهارات الشراء والتفاوض وإتمام الصفقات التجارية","إدارة الأزمات والمخاطر المحيطة بمنظمات الأعمال ","إدارة الابتكار وإدارة التغيير والإدارة الاقتصادية ","احترام القوانين واللوائح المنظمة لعالم الأعمال"],
-      "en": ["Understanding the characteristics and personal traits of entrepreneurs","Interpreting the reasons for administrative and organizational behavior in business organizations","Applying technology in different business fields","Acquiring digital marketing and international marketing skills","Acquiring purchasing and negotiation skills and closing business deals","Managing crises and risks associated with business organizations","Managing innovation and change and economic management","Respect for laws and regulations governing the business world"]
+      "ar": ["معرفة خصائص رواد الأعمال وسماتهم الشخصية", "تفسير دوافع السلوك الإداري والتنظيمي في مؤسسات الأعمال", "تطبيق التكنولوجيا في مجالات الأعمال المختلفة", "اكتساب مهارات التسويق الرقمي والدولي", "اكتساب مهارات الشراء والتفاوض وإتمام الصفقات التجارية", "إدارة الأزمات والمخاطر المحيطة بمنظمات الأعمال", "إدارة الابتكار وإدارة التغيير والإدارة الاقتصادية", "احترام القوانين واللوائح المنظمة لعلم الأعمال"],
+      "en": ["Knowledge of entrepreneurs' characteristics and personal traits", "Interpretation of motives for administrative and organizational behavior in business institutions", "Application of technology in different business fields", "Acquisition of digital and international marketing skills", "Acquisition of purchasing, negotiation, and business deal completion skills", "Management of crises and risks surrounding business organizations", "Management of innovation, change management, and economic management", "Respect for laws and regulations governing the business world"]
     },
     "targetJobs": {
-      "ar": ["إداري", "مساعد إداري", "مدير مشروع", "منسق فاعليات ومؤتمرات", "مسوق", "مساعد مدير مشتريات", "منسق مشروع", "أخصائي تنمية إدارية", "سكرتير تنفيذي"],
-      "en": ["Administrator", "Administrative Assistant", "Project Manager", "Events and Conferences Coordinator", "Marketer", "Assistant Purchasing Manager", "Project Coordinator", "Management Development Specialist", "Executive Secretary"]
+      "ar": ["إداري", "مساعد إداري", "إداري مشروع", "مساعد إداري مشروع", "منسق فاعليات ومؤتمرات", "مسوق", "مساعد مدير مشتريات", "منسق مشروع", "أخصائي تنمية إدارية", "سكرتير تنفيذي"],
+      "en": ["Administrator", "Administrative Assistant", "Project Administrator", "Project Administrative Assistant", "Events and Conferences Coordinator", "Marketer", "Assistant Purchasing Manager", "Project Coordinator", "Administrative Development Specialist", "Executive Secretary"]
     },
     "exitPoints": {
-      "ar": "يمكن الخروج بعد فصلين دراسيين والحصول على دبلوم مشارك في المستوى الرابع",
-      "en": "Can exit after two semesters and obtain an associate diploma at Level 4"
+      "ar": "تستطيع الخروج من الدبلوم بعد دراسة فصلين دراسيين والنجاح في الاختبارات النهائية والحصول على دبلوم مشارك في المستوى الرابع من الإطار الوطني للمؤهلات. مع إمكانية استكمال الدبلوم بعد ذلك.",
+      "en": "You can exit the diploma after studying two semesters and passing the final exams to obtain an associate diploma at level 4 of the National Qualifications Framework, with the possibility of completing the diploma afterward."
     },
     "certifications": {
-      "ar": ["شهادة مساعد مدير تسويق معتمد (Associate CMMP)", "شهادة محترف أعمال معتمد للشباب (CYBP)", "شهادة محترف أعمال معتمد في القيادة الإدارية (CBP)", "شهادة أخصائي مايكروسوفت أوفيس (MOS)"],
-      "en": ["Associate Certified Marketing Management Professional (CMMP)", "Certified Youth Business Professional (CYBP)", "Certified Business Professional in Management Leadership (CBP)", "Microsoft Office Specialist (MOS) Certificate"]
+      "ar": ["شهادة مساعد مدير تسويق معتمد Associate CMMP", "شهادة محترف اعمال معتمد للشباب CYBP", "شهادة محترف اعمال معتمد في القيادة الادارية CBP", "شهادة أخصائي مايكروسوفت أوفيس (MOS)"],
+      "en": ["Associate Certified Marketing Manager Professional (CMMP)", "Certified Youth Business Professional (CYBP)", "Certified Business Professional in Administrative Leadership (CBP)", "Microsoft Office Specialist (MOS) Certificate"]
     },
     "felxabilty": {
-      "ar": ["مواعيد الحضور والتدريب ", "اختيار وتسجيل المقررات "],
-      "en": ["Attendance and training times are flexible", "Select and register courses as needed"]
+      "ar": ["مواعيد الحضور والتدريب", "اختيار وتسجيل المقررات"],
+      "en": ["Attendance and training schedules", "Course selection and registration"]
     },
-
-
     "subtitle": {
-      "ar": "برنامج تأهيل رواد الأعمال والمديرين التنفيذيين",
-      "en": "Program for qualifying entrepreneurs and executive managers"
+      "ar": "",
+      "en": ""
     },
     "category": {
-      "ar": "دبلومات مهنية",
-      "en": "Professional Diplomas"
+      "ar": "",
+      "en": ""
     },
     "startDate": {
       "ar": "",
       "en": ""
     },
     "endDate": {
-      "ar": "يحدد حسب الدفعة",
-      "en": "Determined by batch"
+      "ar": "",
+      "en": ""
     },
     "status": {
-      "ar": "مفتوح للتسجيل",
-      "en": "Open for Registration"
+      "ar": "",
+      "en": ""
     },
-    "price": 21700,
-    "rating": 4.8,
-    "reviews": 56,
+    "price": 0,
+    "rating": 0,
+    "reviews": 0,
     "instructor": {
       "name": {
-        "ar": "خبير ريادة الأعمال معتمد",
-        "en": "Certified Entrepreneurship Expert"
+        "ar": "",
+        "en": ""
       },
       "title": {
-        "ar": "مستشار أعمال",
-        "en": "Business Consultant"
+        "ar": "",
+        "en": ""
       },
       "experience": {
-        "ar": "10+ سنوات",
-        "en": "10+ years"
+        "ar": "",
+        "en": ""
       },
       "image": "",
       "bio": {
-        "ar": "متخصص في ريادة الأعمال وتطوير المشاريع الابتكارية",
-        "en": "Specialized in entrepreneurship and innovative project development"
+        "ar": "",
+        "en": ""
       }
     },
     "benefits": {
-      "ar": ["دبلوم متوسط معتمد", "4 شهادات احترافية", "تدريب تعاوني 3.5 أشهر", "دعم من صندوق الموارد البشرية (هدف)"],
-      "en": ["Certified Intermediate Diploma", "4 Professional Certificates", "3.5 months of cooperative training", "Support from Human Resources Development Fund (HRDF)"]
+      "ar": [],
+      "en": []
     },
-    "faqs": [
-      {
-        "question": {
-          "ar": "ما هي شروط القبول في البرنامج؟",
-          "en": "What are the admission requirements for the program?"
-        },
-        "answer": {
-          "ar": "الحصول على مؤهل الثانوية العامة أو ما يعادلها",
-          "en": "Obtaining a high school diploma or equivalent"
-        }
-      },
-      {
-        "question": {
-          "ar": "ما هي مدة البرنامج؟",
-          "en": "What is the duration of the program?"
-        },
-        "answer": {
-          "ar": "4 فصول دراسية + تدريب تعاوني",
-          "en": "4 semesters + cooperative training"
-        }
-      },
-      {
-        "question": {
-          "ar": "هل يوجد دعم مالي؟",
-          "en": "Is there financial support?"
-        },
-        "answer": {
-          "ar": "نعم، يتوفر دعم من صندوق الموارد البشرية (هدف)",
-          "en": "Yes, there is support from the Human Resources Development Fund (HRDF)"
-        }
-      },
-      {
-        "question": {
-          "ar": "ما هي الشهادات التي سأحصل عليها؟",
-          "en": "What certificates will I obtain?"
-        },
-        "answer": {
-          "ar": "دبلوم متوسط معتمد + 4 شهادات احترافية",
-          "en": "Certified Intermediate Diploma + 4 Professional Certificates"
-        }
-      }
-    ]
+    "faqs": []
   },
   {
     "id": 2,
@@ -205,194 +162,156 @@
     "image": "https://images.unsplash.com/photo-1672552226199-69fbb8ae2bd1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": {
       "ar": "دبلوم سلاسل الإمداد والخدمات اللوجستية",
-      "en": "Supply Chain and Logistics Services Diploma"
+      "en": "Diploma in Supply Chain and Logistics"
     },
-    "subtitle": {
-      "ar": "برنامج متخصص في إدارة سلاسل التوريد والخدمات اللوجستية",
-      "en": "Specialized program in supply chain and logistics services management"
+    "requirements": {
+      "ar": ["الحصول على مؤهل الثانوية العامة أوما يعادلها"],
+      "en": ["Obtaining a high school diploma or equivalent"]
     },
-    "category": {
-      "ar": "دبلومات مهنية",
-      "en": "Professional Diplomas"
+    "overview": {
+      "ar": "دبلوم مهني تكتسب من خلاله العديد من المهارات التي تؤهلك للعمل في مجالات سلاسسل الإمداد واللوجستيات بدءاً من تدفق البضائع والخدمات،مروراً بالتخطيط والتوريد والمشتريات والمخزون والنقل والتوزيع ، وصولاً للمستهلك النهائي، مع التركيز على الجانب التقني مثل أنظمة المعلومات وتحليل الأسواق. وذلك من خلال دورات احترافية تؤهلك للحصول على شهادات مهنية توائم للحصول على دبلوم متوسط.",
+      "en": "A professional diploma through which you acquire many skills that qualify you to work in supply chain and logistics fields, starting from the flow of goods and services, through planning, supply, procurement, inventory, transportation, and distribution, reaching the end consumer, with a focus on the technical aspect such as information systems and market analysis. This is achieved through professional courses that qualify you to obtain professional certificates equivalent to an intermediate diploma."
     },
-    "duration": {
-      "ar": "4 فصول دراسية + تدريب تعاوني",
-      "en": "4 semesters + cooperative training"
+    "objectives": {
+      "ar": "يهدف هذا الدبلوم إلى اعداد متدربين مؤهلين بكفاءة وقادرين على الالتحاق بسوق العمل من خلال دراسة مقررات تنمى مهارات سلاسل الإمداد والنقل والخدمات اللوجستية",
+      "en": "This diploma aims to prepare competent trainees who are able to join the labor market by studying courses that develop supply chain, transportation, and logistics skills."
     },
     "level": {
-      "ar": "مستوى 5 - الإطار الوطني للمؤهلات",
-      "en": "Level 5 - National Qualifications Framework"
+      "ar": "دبلوم متوسط مصنف على المستوى الخامس من الإطار الوطني للمؤهلات",
+      "en": "Intermediate diploma classified at level 5 of the National Qualifications Framework"
+    },
+    "duration": {
+      "ar": "سنتين مقسمة على أربعة فصول دراسية + التدريب التعاوني",
+      "en": "Two years divided into four academic semesters + cooperative training"
+    },
+    "creditHours":62,
+    "language": {
+      "ar": "العربية",
+      "en": "Arabic"
+    },
+    "schedule": {
+      "ar": {
+        "days": [],
+        "time": "",
+        "mode": "حضوري -- مدمج -- عن بعد",
+        "location": ""
+      },
+      "en": {
+        "days": [],
+        "time": "",
+        "mode": "In-person -- Blended -- Remote",
+        "location": ""
+      }
+    },
+    "Mandatoryrequirements": {
+      "ar": "تدريب تعاوني لمدة 3 شهور ونصف",
+      "en": "Cooperative training for 3 and a half months"
+    },
+    "curriculum": {
+      "ar": [
+        {
+          "semester": "الفصل الدراسي الأول",
+          "courses": ["مقدمة في تطبيقات الحاسب الآلي", "مباديء القانون التجاري", "لغة إنجليزية عامة", "عمليات سلاسل الإمداد والتوريد", "مقدمة في الخدمات اللوجستية", "العقود التجارية وعقود النقل"]
+        },
+        {
+          "semester": "الفصل الدراسي الثاني",
+          "courses": ["لغة إنجليزية تخصصية(1)", "قانون النقل الدولي البري ولوائحه", "قانون الشحن الجوي والتعويضات (اتفاقية مونتريال)", "إدارة العمليات في الموانيء والمحطات", "الأمن والسلامة اللوجستية", "قانون النقل البحري الدولي (قواعد هامبورج / روتردام)"]
+        },
+        {
+          "semester": "الفصل الدراسي الثالث",
+          "courses": ["الأعمال اللوجستية والتخطيط", "تنظيم سلاسل الإمداد", "إدارة قنوات النقل والتوزيع", "إدارة الجودة في اللوجستيات", "التخطيط الاستراتيجي اللوجستي", "لغة إنجليزية تخصصية (2)"]
+        },
+        {
+          "semester": "الفصل الدراسي الرابع",
+          "courses": ["إدارة عمليات الإنتاج", "التعبئة والتغليف", "تطبيقات إلكترونية في اللوجستيات وسلاسل الإمداد", "الأعمال المحاسبية في المستودعات", "قانون الجمارك", "تطبيقات عملية في اللوجستيات وسلاسل الإمداد"]
+        }
+      ],
+      "en": [
+        {
+          "semester": "First Semester",
+          "courses": ["Introduction to Computer Applications", "Commercial Law Principles", "General English", "Supply Chain and Supply Operations", "Introduction to Logistics Services", "Commercial Contracts and Transportation Contracts"]
+        },
+        {
+          "semester": "Second Semester",
+          "courses": ["Specialized English (1)", "International Road Transport Law and Regulations", "Air Shipping Law and Compensation (Montreal Convention)", "Operations Management in Ports and Stations", "Logistics Security and Safety", "International Maritime Transport Law (Hamburg/Rotterdam Rules)"]
+        },
+        {
+          "semester": "Third Semester",
+          "courses": ["Logistics Operations and Planning", "Supply Chain Organization", "Transportation and Distribution Channels Management", "Quality Management in Logistics", "Strategic Logistics Planning", "Specialized English (2)"]
+        },
+        {
+          "semester": "Fourth Semester",
+          "courses": ["Production Operations Management", "Packaging and Wrapping", "Electronic Applications in Logistics and Supply Chains", "Accounting Operations in Warehouses", "Customs Law", "Practical Applications in Logistics and Supply Chains"]
+        }
+      ]
+    },
+    "Learningoutcomes": {
+      "ar": ["معرفة المفاهيم والمصطلحات الخاصة بالخدمات اللوجستية وسلاسل الإمداد", "فهم قوانين النقل البري والبحري والجوي والجمارك واللوائح المنظمة لعمليات النقل والتوريد والتوزيع", "تطبيق التكنولوجيا المتقدمة في مجالات سلاسل الإمداد والخدمات اللوجستية", "اكتساب مهارات إدارة المستودعات والمخازن", "اكتساب مهارات إدارة عمليات الإنتاج", "إدارة الأزمات والمخاطر في عمليات سلاسل الإمداد والخدمات اللوجستية"],
+      "en": ["Knowledge of concepts and terminology specific to logistics services and supply chains", "Understanding road, sea, air transport laws, customs, and regulations governing transport, supply, and distribution operations", "Application of advanced technology in supply chain and logistics fields", "Acquisition of warehouse and storage management skills", "Acquisition of production operations management skills", "Management of crises and risks in supply chain and logistics operations"]
+    },
+    "targetJobs": {
+      "ar": ["مساعد جرد", "مساعد مدير نقل", "مساعد مختص مشتريات", "مساعد أمين مخزن", "منسق خدمات لوجستية", "مساعد محتص مستودعات", "مساعد مدير إنتاج", "مساعد مدير توريد", "منسق مخازن"],
+      "en": ["Inventory Assistant", "Transportation Manager Assistant", "Procurement Specialist Assistant", "Warehouse Keeper Assistant", "Logistics Services Coordinator", "Warehouse Specialist Assistant", "Production Manager Assistant", "Supply Manager Assistant", "Warehouse Coordinator"]
+    },
+    "exitPoints": {
+      "ar": "تستطيع الخروج من الدبلوم بعد دراسة فصلين دراسيين والنجاح في الاختبارات النهائية والحصول على دبلوم مشارك في المستوى الرابع من الإطار الوطني للمؤهلات. مع إمكانية استكمال الدبلوم بعد ذلك.",
+      "en": "You can exit the diploma after studying two semesters and passing the final exams to obtain an associate diploma at level 4 of the National Qualifications Framework, with the possibility of completing the diploma afterward."
+    },
+    "certifications": {
+      "ar": ["الشهادة التمهيدية في اللوجستيات والنقل CILT", "الشهادة الدولية في اللوجستيات والنقل CILT", "شهادة محترف سلسلة التوريد المعتمد CSCP", "شهادة معهد تشاردر في المشتريات وعمليات الأمداد CIPS", "شهادة أخصائي مايكروسوفت أوفيس (MOS)"],
+      "en": ["Introductory Certificate in Logistics and Transport CILT", "International Certificate in Logistics and Transport CILT", "Certified Supply Chain Professional CSCP", "Chartered Institute of Procurement & Supply Certificate CIPS", "Microsoft Office Specialist (MOS) Certificate"]
+    },
+    "felxabilty": {
+      "ar": ["مواعيد الحضور والتدريب", "اختيار وتسجيل المقررات"],
+      "en": ["Attendance and training schedules", "Course selection and registration"]
+    },
+    "subtitle": {
+      "ar": "",
+      "en": ""
+    },
+    "category": {
+      "ar": "",
+      "en": ""
     },
     "startDate": {
       "ar": "",
       "en": ""
     },
     "endDate": {
-      "ar": "يحدد حسب الدفعة",
-      "en": "Determined by batch"
+      "ar": "",
+      "en": ""
     },
     "status": {
-      "ar": "مفتوح للتسجيل",
-      "en": "Open for Registration"
+      "ar": "",
+      "en": ""
     },
-    "price": 21700,
-    "rating": 4.7,
-    "reviews": 48,
+    "price": 0,
+    "rating": 0,
+    "reviews": 0,
     "instructor": {
       "name": {
-        "ar": "خبير لوجستيات معتمد",
-        "en": "Certified Logistics Expert"
+        "ar": "",
+        "en": ""
       },
       "title": {
-        "ar": "مدير سلسلة إمداد",
-        "en": "Supply Chain Manager"
+        "ar": "",
+        "en": ""
       },
       "experience": {
-        "ar": "12+ سنوات",
-        "en": "12+ years"
+        "ar": "",
+        "en": ""
       },
       "image": "",
       "bio": {
-        "ar": "متخصص في إدارة سلاسل الإمداد والنقل الدولي",
-        "en": "Specialized in supply chain management and international transport"
+        "ar": "",
+        "en": ""
       }
-    },
-    "overview": {
-      "ar": "دبلوم مهني يؤهلك للعمل في مجالات سلاسل الإمداد واللوجستيات بدءاً من تدفق البضائع والخدمات وصولاً للمستهلك النهائي، مع التركيز على الجانب التقني.",
-      "en": "Professional diploma that qualifies you to work in supply chain and logistics fields, starting from the flow of goods and services to the end consumer, with a focus on the technical aspect."
-    },
-    "objectives": [
-      {
-        "ar": "إعداد متدربين مؤهلين في مجال سلاسل الإمداد والنقل",
-        "en": "Prepare qualified trainees in the field of supply chain and transport"
-      },
-      {
-        "ar": "تنمية مهارات التخطيط والتوريد والمشتريات والمخزون",
-        "en": "Develop planning, supply, purchasing and inventory skills"
-      },
-      {
-        "ar": "تطبيق التكنولوجيا في مجالات اللوجستيات",
-        "en": "Apply technology in logistics fields"
-      },
-      {
-        "ar": "فهم قوانين النقل الدولي والجمارك",
-        "en": "Understand international transport and customs laws"
-      }
-    ],
-    "curriculum": {
-      "ar": [
-        {
-          "semester": "الفصل الأول",
-          "courses": ["مقدمة في تطبيقات الحاسب الآلي", "مباديء القانون التجاري", "لغة إنجليزية عامة", "عمليات سلاسل الإمداد والتوريد", "مقدمة في الخدمات اللوجستية", "العقود التجارية وعقود النقل"]
-        },
-        {
-          "semester": "الفصل الثاني",
-          "courses": ["لغة إنجليزية تخصصية(1)", "قانون النقل الدولي البري ولوائحه", "قانون الشحن الجوي والتعويضات", "إدارة العمليات في الموانيء والمحطات", "الأمن والسلامة اللوجستية", "قانون النقل البحري الدولي"]
-        },
-        {
-          "semester": "الفصل الثالث",
-          "courses": ["الأعمال اللوجستية والتخطيط", "تنظيم سلاسل الإمداد", "إدارة قنوات النقل والتوزيع", "إدارة الجودة في اللوجستيات", "التخطيط الاستراتيجي اللوجستي", "لغة إنجليزية تخصصية (2)"]
-        },
-        {
-          "semester": "الفصل الرابع",
-          "courses": ["إدارة عمليات الإنتاج", "التعبئة والتغليف", "تطبيقات إلكترونية في اللوجستيات وسلاسل الإمداد", "الأعمال المحاسبية في المستودعات", "قانون الجمارك", "تطبيقات عملية في اللوجستيات وسلاسل الإمداد"]
-        }
-      ],
-      "en": [
-        {
-          "semester": "Semester 1",
-          "courses": ["Introduction to Computer Applications", "Commercial Law Fundamentals", "General English", "Supply Chain and Supply Operations", "Introduction to Logistics Services", "Commercial Contracts and Transport Contracts"]
-        },
-        {
-          "semester": "Semester 2",
-          "courses": ["Specialized English (1)", "International Land Transport Law and Regulations", "Air Shipping Law and Compensation", "Port and Terminal Operations Management", "Logistics Security and Safety", "International Maritime Transport Law"]
-        },
-        {
-          "semester": "Semester 3",
-          "courses": ["Logistics Business and Planning", "Supply Chain Organization", "Transport and Distribution Channel Management", "Quality Management in Logistics", "Strategic Logistics Planning", "Specialized English (2)"]
-        },
-        {
-          "semester": "Semester 4",
-          "courses": ["Production Operations Management", "Packaging", "Electronic Applications in Logistics and Supply Chain", "Accounting Operations in Warehouses", "Customs Law", "Practical Applications in Logistics and Supply Chain"]
-        }
-      ]
-    },
-    "requirements": {
-      "ar": ["الحصول على مؤهل الثانوية العامة أو ما يعادلها"],
-      "en": ["Obtaining a high school diploma or equivalent"]
     },
     "benefits": {
-      "ar": ["دبلوم متوسط معتمد", "5 شهادات احترافية", "تدريب تعاوني 3.5 أشهر", "دعم من صندوق الموارد البشرية (هدف)"],
-      "en": ["Certified Intermediate Diploma", "5 Professional Certificates", "3.5 months of cooperative training", "Support from Human Resources Development Fund (HRDF)"]
+      "ar": [],
+      "en": []
     },
-    "schedule": {
-      "ar": {
-        "days": ["يحدد حسب الجدول"],
-        "time": "حسب الجدول الدراسي",
-        "mode": "حضوري - مدمج - عن بعد",
-        "location": "أكاديمية المهارات التطبيقية للتدريب"
-      },
-      "en": {
-        "days": ["Specified by the schedule"],
-        "time": "According to the academic schedule",
-        "mode": "Face-to-face - Blended - Remote",
-        "location": "Applied Skills Training Academy"
-      }
-    },
-    "certifications": {
-      "ar": ["الشهادة التمهيدية في اللوجستيات والنقل (CILT)", "الشهادة الدولية في اللوجستيات والنقل (CILT)", "شهادة محترف سلسلة التوريد المعتمد (CSCP)", "شهادة معهد تشاردر في المشتريات وعمليات الأمداد (CIPS)", "شهادة أخصائي مايكروسوفت أوفيس (MOS)"],
-      "en": ["Introductory Certificate in Logistics and Transport (CILT)", "International Certificate in Logistics and Transport (CILT)", "Certified Supply Chain Professional (CSCP)", "Chartered Institute of Procurement and Supply (CIPS)", "Microsoft Office Specialist (MOS) Certificate"]
-    },
-    "exitPoints": {
-      "ar": "يمكن الخروج بعد فصلين دراسيين والحصول على دبلوم مشارك في المستوى الرابع",
-      "en": "Can exit after two semesters and obtain an associate diploma at Level 4"
-    },
-    "targetJobs": {
-      "ar": ["مساعد جرد", "مساعد مدير نقل", "مساعد مختص مشتريات", "مساعد أمين مخزن", "منسق خدمات لوجستية", "مساعد محتص مستودعات", "مساعد مدير إنتاج", "مساعد مدير توريد", "منسق مخازن"],
-      "en": ["Inventory Assistant", "Transport Manager Assistant", "Purchasing Specialist Assistant", "Warehouse Keeper Assistant", "Logistics Services Coordinator", "Warehouse Specialist Assistant", "Production Manager Assistant", "Supply Manager Assistant", "Warehouse Coordinator"]
-    },
-    "faqs": [
-      {
-        "question": {
-          "ar": "ما هي شروط القبول في البرنامج؟",
-          "en": "What are the admission requirements for the program?"
-        },
-        "answer": {
-          "ar": "الحصول على مؤهل الثانوية العامة أو ما يعادلها",
-          "en": "Obtaining a high school diploma or equivalent"
-        }
-      },
-      {
-        "question": {
-          "ar": "ما هي مدة البرنامج؟",
-          "en": "What is the duration of the program?"
-        },
-        "answer": {
-          "ar": "4 فصول دراسية + تدريب تعاوني",
-          "en": "4 semesters + cooperative training"
-        }
-      },
-      {
-        "question": {
-          "ar": "هل يوجد دعم مالي؟",
-          "en": "Is there financial support?"
-        },
-        "answer": {
-          "ar": "نعم، يتوفر دعم من صندوق الموارد البشرية (هدف)",
-          "en": "Yes, there is support from the Human Resources Development Fund (HRDF)"
-        }
-      },
-      {
-        "question": {
-          "ar": "ما هي الشهادات التي سأحصل عليها؟",
-          "en": "What certificates will I obtain?"
-        },
-        "answer": {
-          "ar": "دبلوم متوسط معتمد + 5 شهادات احترافية",
-          "en": "Certified Intermediate Diploma + 5 Professional Certificates"
-        }
-      }
-    ]
+    "faqs": []
   },
   {
     "id": 3,
@@ -400,1371 +319,1097 @@
     "image": "https://images.unsplash.com/photo-1733503747506-773e56e4078f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": {
       "ar": "دبلوم التكنولوجيا المالية",
-      "en": "Financial Technology Diploma"
+      "en": "Diploma in Financial Technology"
     },
-    "subtitle": {
-      "ar": "برنامج متخصص في دمج التمويل والتكنولوجيا",
-      "en": "Specialized program in integrating finance and technology"
-    },
-    "category": {
-      "ar": "دبلومات مهنية",
-      "en": "Professional Diplomas"
-    },
-    "duration": {
-      "ar": "4 فصول دراسية + تدريب تعاوني",
-      "en": "4 semesters + cooperative training"
-    },
-    "level": {
-      "ar": "مستوى 5 - الإطار الوطني للمؤهلات",
-      "en": "Level 5 - National Qualifications Framework"
-    },
-    "startDate": {
-      "ar": "",
-      "en": ""
-    },
-    "endDate": {
-      "ar": "يحدد حسب الدفعة",
-      "en": "Determined by batch"
-    },
-    "status": {
-      "ar": "مفتوح للتسجيل",
-      "en": "Open for Registration"
-    },
-    "price": 21700,
-    "rating": 4.9,
-    "reviews": 62,
-    "instructor": {
-      "name": {
-        "ar": "خبير تكنولوجيا مالية",
-        "en": "Financial Technology Expert"
-      },
-      "title": {
-        "ar": "محلل أنظمة مالية",
-        "en": "Financial Systems Analyst"
-      },
-      "experience": {
-        "ar": "8+ سنوات",
-        "en": "8+ years"
-      },
-      "image": "",
-      "bio": {
-        "ar": "متخصص في تطوير الحلول المالية الرقمية والبلوك تشين",
-        "en": "Specialized in developing digital financial solutions and blockchain"
-      }
+    "requirements": {
+      "ar": ["الحصول على مؤهل الثانوية العامة أوما يعادلها"],
+      "en": ["Obtaining a high school diploma or equivalent"]
     },
     "overview": {
-      "ar": "برنامج يدمج بين التمويل والتكنولوجيا لتصبح قادراً على تصميم وتطوير وتطبيق الحلول المالية الرقمية المبتكرة مثل أنظمة الدفع، البلوك تشين، الذكاء الاصطناعي، والعملات الرقمية.",
-      "en": "A program that integrates finance and technology to enable you to design, develop and apply innovative digital financial solutions such as payment systems, blockchain, artificial intelligence, and digital currencies."
+      "ar": "حصرياً في المنطقة الشرقية نقدم لك دبلوم مهني في التكنولوجيا المالية برنامج يدمج بين التمويل والتكنولوجيا لتصبح قادراً على تصميم وتطوير وتطبيق الحلول المالية الرقمية المبتكرة، مثل أنظمة الدفع، البلوك تشين، الذكاء الاصطناعي، والعملات الرقمية، ويؤهلك للعمل في البنوك، وشركات التكنولوجيا، وقطاع التأمين، مع التركيز على المهارات العملية في تحليل البيانات والبرمجة والأمن السيبراني المالي، وتطبيق الجانب التقني مثل أنظمة المعلومات وتحليل الأسواق. وذلك من خلال دورات احترافية تؤهلك للحصول على شهادات مهنية توائم للحصول على دبلوم متوسط مهني في التكنولوجيا المالية.",
+      "en": "Exclusively in the Eastern Region, we offer you a professional diploma in financial technology. The program integrates finance and technology to enable you to design, develop, and apply innovative digital financial solutions, such as payment systems, blockchain, artificial intelligence, and digital currencies, qualifying you to work in banks, technology companies, and the insurance sector, with a focus on practical skills in data analysis, programming, financial cybersecurity, and applying technical aspects such as information systems and market analysis. This is achieved through professional courses that qualify you to obtain professional certificates equivalent to an intermediate professional diploma in financial technology."
     },
-    "objectives": [
-      {
-        "ar": "إعداد متدربين مؤهلين في مجال التكنولوجيا المالية",
-        "en": "Prepare qualified trainees in the field of financial technology"
+    "objectives": {
+      "ar": "يهدف هذا الدبلوم إلى اعداد متدربين مؤهلين بكفاءة وقادرين على الالتحاق بسوق العمل من خلال دراسة مقررات تنمى مهارات استخدام التطبيقات الحديثة في التعامل مع التكنولوجيا المالية وحمايتها.",
+      "en": "This diploma aims to prepare competent trainees who are able to join the labor market by studying courses that develop skills in using modern applications in dealing with and protecting financial technology."
+    },
+    "level": {
+      "ar": "دبلوم متوسط مصنف على المستوى الخامس من الإطار الوطني للمؤهلات",
+      "en": "Intermediate diploma classified at level 5 of the National Qualifications Framework"
+    },
+    "duration": {
+      "ar": "سنتين مقسمة على أربعة فصول دراسية + التدريب التعاوني",
+      "en": "Two years divided into four academic semesters + cooperative training"
+    },
+    "creditHours":62,
+    "language": {
+      "ar": "العربية",
+      "en": "Arabic"
+    },
+    "schedule": {
+      "ar": {
+        "days": [],
+        "time": "",
+        "mode": "حضوري -- مدمج",
+        "location": ""
       },
-      {
-        "ar": "تنمية مهارات استخدام التطبيقات الحديثة في التعامل مع التكنولوجيا المالية",
-        "en": "Develop skills in using modern applications in dealing with financial technology"
-      },
-      {
-        "ar": "تعلم تصميم وتطوير الحلول المالية الرقمية",
-        "en": "Learn to design and develop digital financial solutions"
-      },
-      {
-        "ar": "فهم أنظمة الدفع الرقمية والبلوك تشين",
-        "en": "Understand digital payment systems and blockchain"
+      "en": {
+        "days": [],
+        "time": "",
+        "mode": "In-person -- Blended",
+        "location": ""
       }
-    ],
+    },
+    "Mandatoryrequirements": {
+      "ar": "تدريب تعاوني لمدة 3 شهور ونصف",
+      "en": "Cooperative training for 3 and a half months"
+    },
     "curriculum": {
       "ar": [
         {
-          "semester": "الفصل الأول",
+          "semester": "الفصل الدراسي الأول",
           "courses": ["مقدمة في تطبيقات الحاسب الآلي", "مقدمة في التكنولوجيا المالية", "لغة إنجليزية عامة", "أساسيات المالية والمحاسبة", "لوائح التكنولوجيا المالية", "مقدمة في إدارة المخاطر"]
         },
         {
-          "semester": "الفصل الثاني",
+          "semester": "الفصل الدراسي الثاني",
           "courses": ["لغة إنجليزية تخصصية(1)", "لوائح التكنولوجيا التنظيمية", "الإدارة الإقتصادية", "سلسلة الكتل والمدفوعات", "تطبيقات الحاسب الآلي المتقدمة", "الخدمات والمنتجات المالية والمصرفية"]
         },
         {
-          "semester": "الفصل الثالث",
+          "semester": "الفصل الدراسي الثالث",
           "courses": ["إدارة الأعمال المالية الإلكترونية", "البلوك تشين والعملات الرقمية", "الابتكار المالي", "لغة إنجليزية تخصصية (2)", "نظم المعلومات المالية (1)", "مباديء التسويق الرقمي"]
         },
         {
-          "semester": "الفصل الرابع",
+          "semester": "الفصل الدراسي الرابع",
           "courses": ["التحليل المالي والإدارة المالية", "المدفوعات الرقمية", "نظم المعلومات المالية (2)", "إدارة مخاطر التكنولوجيا المالية", "الأسواق والمؤسسات المالية والمصرفية", "موضوعات مختارة في التكنولوجيا المالية"]
         }
       ],
       "en": [
         {
-          "semester": "Semester 1",
+          "semester": "First Semester",
           "courses": ["Introduction to Computer Applications", "Introduction to Financial Technology", "General English", "Finance and Accounting Fundamentals", "Financial Technology Regulations", "Introduction to Risk Management"]
         },
         {
-          "semester": "Semester 2",
+          "semester": "Second Semester",
           "courses": ["Specialized English (1)", "Regulatory Technology Regulations", "Economic Management", "Blockchain and Payments", "Advanced Computer Applications", "Financial and Banking Services and Products"]
         },
         {
-          "semester": "Semester 3",
-          "courses": ["Electronic Financial Business Management", "Blockchain and Digital Currencies", "Financial Innovation", "Specialized English (2)", "Financial Information Systems (1)", "Digital Marketing Fundamentals"]
+          "semester": "Third Semester",
+          "courses": ["Electronic Financial Business Management", "Blockchain and Digital Currencies", "Financial Innovation", "Specialized English (2)", "Financial Information Systems (1)", "Digital Marketing Principles"]
         },
         {
-          "semester": "Semester 4",
-          "courses": ["Financial Analysis and Financial Management", "Digital Payments", "Financial Information Systems (2)", "Financial Technology Risk Management", "Financial and Banking Markets and Institutions", "Selected Topics in Financial Technology"]
+          "semester": "Fourth Semester",
+          "courses": ["Financial Analysis and Financial Management", "Digital Payments", "Financial Information Systems (2)", "Financial Technology Risk Management", "Financial Markets and Banking Institutions", "Selected Topics in Financial Technology"]
         }
       ]
     },
-    "requirements": {
-      "ar": ["الحصول على مؤهل الثانوية العامة أو ما يعادلها"],
-      "en": ["Obtaining a high school diploma or equivalent"]
-    },
-    "benefits": {
-      "ar": ["دبلوم متوسط معتمد", "5 شهادات احترافية", "تدريب تعاوني 3.5 أشهر", "دعم من صندوق الموارد البشرية (هدف)"],
-      "en": ["Certified Intermediate Diploma", "5 Professional Certificates", "3.5 months of cooperative training", "Support from Human Resources Development Fund (HRDF)"]
-    },
-    "schedule": {
-      "ar": {
-        "days": ["يحدد حسب الجدول"],
-        "time": "حسب الجدول الدراسي",
-        "mode": "حضوري - مدمج",
-        "location": "أكاديمية المهارات التطبيقية للتدريب"
-      },
-      "en": {
-        "days": ["Specified by the schedule"],
-        "time": "According to the academic schedule",
-        "mode": "Face-to-face - Blended",
-        "location": "Applied Skills Training Academy"
-      }
-    },
-    "certifications": {
-      "ar": ["شهادة أساسيات التكنولوجيا المالية", "شهادة بلوك تشين للتطبيقات المالية", "شهادة أمن المدفوعات الرقمية", "شهادة تحليل البيانات المالية", "شهادة أخصائي مايكروسوفت أوفيس (MOS)"],
-      "en": ["Financial Technology Fundamentals Certificate", "Blockchain for Financial Applications Certificate", "Digital Payments Security Certificate", "Financial Data Analysis Certificate", "Microsoft Office Specialist (MOS) Certificate"]
-    },
-    "exitPoints": {
-      "ar": "يمكن الخروج بعد فصلين دراسيين والحصول على دبلوم مشارك في المستوى الرابع",
-      "en": "Can exit after two semesters and obtain an associate diploma at Level 4"
+    "Learningoutcomes": {
+      "ar": ["فهم مباديء وأساسيات التكنولوجيا المالية", "التعرف على الخدمات التي تقدم من خلال التكنولوجيا المالية وكيفية تطويرها", "إتقان مهارات الابتكار المالي واستخدام التكنولوجيا الرقمية في التكنولوجيا المالية", "إدارة مخاطر التكنولوجيا المالية", "التعرف على العملات الرقمية والبلوكتشين", "فهم طبيعة الأسواق المالية والمصرفية", "التعرف على نظم المعلومات المالية وأمن وحماية المعلومات"],
+      "en": ["Understanding principles and fundamentals of financial technology", "Identifying services provided through financial technology and how to develop them", "Mastering financial innovation skills and using digital technology in financial technology", "Managing financial technology risks", "Familiarity with digital currencies and blockchain", "Understanding the nature of financial and banking markets", "Familiarity with financial information systems and information security and protection"]
     },
     "targetJobs": {
-      "ar": ["محلل أنظمة مالية", "مطور حلول تكنولوجيا مالية", "أخصائي بلوك تشين", "محلل بيانات مالية", "مدير مشاريع تكنولوجيا مالية", "أخصائي أمن مدفوعات رقمية"],
-      "en": ["Financial Systems Analyst", "Financial Technology Solutions Developer", "Blockchain Specialist", "Financial Data Analyst", "Financial Technology Project Manager", "Digital Payments Security Specialist"]
+      "ar": ["مساعد أخصائي حلول الدفع الإلكتروني", "مساعد محلل بيانات مالية ورقمية", "مساعد مطور تطبيقات مالية", "مساعد مدير منتجات مالية", "مساعد أخصائي أمن الأنظمة المالية"],
+      "en": ["Electronic Payment Solutions Specialist Assistant", "Financial and Digital Data Analyst Assistant", "Financial Applications Developer Assistant", "Financial Products Manager Assistant", "Financial Systems Security Specialist Assistant"]
     },
-    "faqs": [
-      {
-        "question": {
-          "ar": "ما هي شروط القبول في البرنامج؟",
-          "en": "What are the admission requirements for the program?"
-        },
-        "answer": {
-          "ar": "الحصول على مؤهل الثانوية العامة أو ما يعادلها",
-          "en": "Obtaining a high school diploma or equivalent"
-        }
+    "exitPoints": {
+      "ar": "تستطيع الخروج من الدبلوم بعد دراسة فصلين دراسيين والنجاح في الاختبارات النهائية والحصول على دبلوم مشارك في المستوى الرابع من الإطار الوطني للمؤهلات. مع إمكانية استكمال الدبلوم بعد ذلك.",
+      "en": "You can exit the diploma after studying two semesters and passing the final exams to obtain an associate diploma at level 4 of the National Qualifications Framework, with the possibility of completing the diploma afterward."
+    },
+    "certifications": {
+      "ar": ["مقدمة في الأوراق المالية والاستثمار - المنهج الدولي CME-1A", "شهادة فني المحاسبة (SOCPA)"],
+      "en": ["Introduction to Securities and Investment - International Curriculum CME-1A", "Accounting Technician Certificate (SOCPA)"]
+    },
+    "felxabilty": {
+      "ar": ["مواعيد الحضور والتدريب", "اختيار وتسجيل المقررات"],
+      "en": ["Attendance and training schedules", "Course selection and registration"]
+    },
+    "subtitle": {
+      "ar": "",
+      "en": ""
+    },
+    "category": {
+      "ar": "",
+      "en": ""
+    },
+    "startDate": {
+      "ar": "",
+      "en": ""
+    },
+    "endDate": {
+      "ar": "",
+      "en": ""
+    },
+    "status": {
+      "ar": "",
+      "en": ""
+    },
+    "price": 0,
+    "rating": 0,
+    "reviews": 0,
+    "instructor": {
+      "name": {
+        "ar": "",
+        "en": ""
       },
-      {
-        "question": {
-          "ar": "ما هي مدة البرنامج؟",
-          "en": "What is the duration of the program?"
-        },
-        "answer": {
-          "ar": "4 فصول دراسية + تدريب تعاوني",
-          "en": "4 semesters + cooperative training"
-        }
+      "title": {
+        "ar": "",
+        "en": ""
       },
-      {
-        "question": {
-          "ar": "هل يوجد دعم مالي؟",
-          "en": "Is there financial support?"
-        },
-        "answer": {
-          "ar": "نعم، يتوفر دعم من صندوق الموارد البشرية (هدف)",
-          "en": "Yes, there is support from the Human Resources Development Fund (HRDF)"
-        }
+      "experience": {
+        "ar": "",
+        "en": ""
       },
-      {
-        "question": {
-          "ar": "ما هي الشهادات التي سأحصل عليها؟",
-          "en": "What certificates will I obtain?"
-        },
-        "answer": {
-          "ar": "دبلوم متوسط معتمد + 5 شهادات احترافية",
-          "en": "Certified Intermediate Diploma + 5 Professional Certificates"
-        }
+      "image": "",
+      "bio": {
+        "ar": "",
+        "en": ""
       }
-    ]
+    },
+    "benefits": {
+      "ar": [],
+      "en": []
+    },
+    "faqs": []
   },
   {
     "id": 4,
-    "icon": "ComputerDesktopIcon",
-    "image": "https://plus.unsplash.com/premium_photo-1764705700264-d3a655bcbdf9?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "title": {
-      "ar": "دبلوم أمن وشبكات الحاسب",
-      "en": "Computer Security and Networks Diploma"
-    },
-    "subtitle": {
-      "ar": "برنامج متخصص في تأمين الأنظمة والشبكات الرقمية",
-      "en": "Specialized program in securing digital systems and networks"
-    },
-    "category": {
-      "ar": "دبلومات تقنية",
-      "en": "Technical Diplomas"
-    },
-    "duration": {
-      "ar": "4 فصول دراسية + تدريب تعاوني",
-      "en": "4 semesters + cooperative training"
-    },
-    "level": {
-      "ar": "مستوى 5 - الإطار الوطني للمؤهلات",
-      "en": "Level 5 - National Qualifications Framework"
-    },
-    "startDate": {
-      "ar": "",
-      "en": ""
-    },
-    "endDate": {
-      "ar": "يحدد حسب الدفعة",
-      "en": "Determined by batch"
-    },
-    "status": {
-      "ar": "مفتوح للتسجيل",
-      "en": "Open for Registration"
-    },
-    "price": 26400,
-    "rating": 4.8,
-    "reviews": 52,
-    "instructor": {
-      "name": {
-        "ar": "خبير أمن سيبراني",
-        "en": "Cybersecurity Expert"
-      },
-      "title": {
-        "ar": "محلل أمن معلومات",
-        "en": "Information Security Analyst"
-      },
-      "experience": {
-        "ar": "10+ سنوات",
-        "en": "10+ years"
-      },
-      "image": "",
-      "bio": {
-        "ar": "متخصص في أمن الشبكات والتحقيق الجنائي الرقمي",
-        "en": "Specialized in network security and digital forensics"
-      }
-    },
-    "overview": {
-      "ar": "دبلوم مهني يركز على إعداد متخصصين قادرين على بناء وإدارة وحماية الأنظمة والشبكات والبيانات من التهديدات والهجمات الرقمية المتزايدة في عالمنا الرقمي.",
-      "en": "Professional diploma focusing on preparing specialists capable of building, managing and protecting systems, networks and data from the increasing digital threats and attacks in our digital world."
-    },
-    "objectives": [
-      {
-        "ar": "تأهيل المتدرب للعمل في مجال بناء وإدارة الشبكات",
-        "en": "Qualify trainees to work in the field of building and managing networks"
-      },
-      {
-        "ar": "تأمين وحماية المعلومات",
-        "en": "Secure and protect information"
-      },
-      {
-        "ar": "الاستجابة للحوادث الأمنية",
-        "en": "Respond to security incidents"
-      },
-      {
-        "ar": "التأهيل المهني والوظيفي في مجال الأمن السيبراني",
-        "en": "Professional and functional qualification in the field of cybersecurity"
-      }
-    ],
-    "curriculum": {
-      "ar": [
-        {
-          "semester": "الفصل الأول",
-          "courses": ["لغة إنجليزية عامة", "رياضيات", "مباديء إدارة الأعمال", "مقدمة في تقنية المعلومات", "أساسيات الشبكات والأمن", "مسارات الوصول إلى الشبكة"]
-        },
-        {
-          "semester": "الفصل الثاني",
-          "courses": ["لغة إنجليزية (2)", "أساسيات ريادة الأعمال", "مقدمة في الاختراق الأخلاقي", "بروتوكولات الشبكة", "أمن الحوسبة السحابية والشبكات اللاسلكية", "أساسيات التهديدات والهجمات السيبرانية"]
-        },
-        {
-          "semester": "الفصل الثالث",
-          "courses": ["لغة إنجليزية (3)", "مهارات إدارة الوقت", "الشبكات اللاسلكية والمتنقلة", "أساسيات التشفير", "إدارة المخاطر والامتثال", "تهديدات البرامج الضارة"]
-        },
-        {
-          "semester": "الفصل الرابع",
-          "courses": ["لغة إنجليزية (4)", "السلوك الوظيفي والمستقبل المهني", "اختراق خوادم الويب وتطبيقات الويب وقواعد البيانات", "الأتمتة وقابلية البرمجة", "أمن التطبيقات وقواعد البيانات", "اختراق الشبكات", "التحقيق الجنائي الرقمي"]
-        }
-      ],
-      "en": [
-        {
-          "semester": "Semester 1",
-          "courses": ["General English", "Mathematics", "Business Administration Fundamentals", "Introduction to Information Technology", "Network and Security Fundamentals", "Network Access Paths"]
-        },
-        {
-          "semester": "Semester 2",
-          "courses": ["English (2)", "Entrepreneurship Fundamentals", "Introduction to Ethical Hacking", "Network Protocols", "Cloud Computing and Wireless Networks Security", "Cyber Threats and Attacks Fundamentals"]
-        },
-        {
-          "semester": "Semester 3",
-          "courses": ["English (3)", "Time Management Skills", "Wireless and Mobile Networks", "Cryptography Fundamentals", "Risk Management and Compliance", "Malware Threats"]
-        },
-        {
-          "semester": "Semester 4",
-          "courses": ["English (4)", "Professional Behavior and Career Future", "Web Servers, Web Applications and Databases Hacking", "Automation and Programmability", "Applications and Databases Security", "Network Hacking", "Digital Forensics"]
-        }
-      ]
-    },
-    "requirements": {
-      "ar": ["الحصول على مؤهل الثانوية العامة أو ما يعادلها"],
-      "en": ["Obtaining a high school diploma or equivalent"]
-    },
-    "benefits": {
-      "ar": ["دبلوم متوسط معتمد", "شهادات احترافية عالمية", "تدريب تعاوني 3.5 أشهر", "دعم من صندوق الموارد البشرية (هدف)"],
-      "en": ["Certified Intermediate Diploma", "Global Professional Certificates", "3.5 months of cooperative training", "Support from Human Resources Development Fund (HRDF)"]
-    },
-    "schedule": {
-      "ar": {
-        "days": ["يحدد حسب الجدول"],
-        "time": "حسب الجدول الدراسي",
-        "mode": "حضوري - مدمج",
-        "location": "أكاديمية المهارات التطبيقية للتدريب"
-      },
-      "en": {
-        "days": ["Specified by the schedule"],
-        "time": "According to the academic schedule",
-        "mode": "Face-to-face - Blended",
-        "location": "Applied Skills Training Academy"
-      }
-    },
-    "certifications": {
-      "ar": ["CCNA", "CompTIA N+"],
-      "en": ["Cisco Certified Network Associate (CCNA)", "CompTIA Network+ Certification"]
-    },
-    "exitPoints": {
-      "ar": "يمكن الخروج بعد فصلين دراسيين والحصول على دبلوم مشارك في المستوى الرابع",
-      "en": "Can exit after two semesters and obtain an associate diploma at Level 4"
-    },
-    "targetJobs": {
-      "ar": ["الدعم الفني", "إدارة الشبكات", "تأمين الشبكات", "أمن المعلومات", "تحليل الثغرات الأمنية", "مختص شبكات"],
-      "en": ["Technical Support", "Network Management", "Network Security", "Information Security", "Vulnerability Analysis", "Network Specialist"]
-    },
-    "faqs": [
-      {
-        "question": {
-          "ar": "ما هي شروط القبول في البرنامج؟",
-          "en": "What are the admission requirements for the program?"
-        },
-        "answer": {
-          "ar": "الحصول على مؤهل الثانوية العامة أو ما يعادلها",
-          "en": "Obtaining a high school diploma or equivalent"
-        }
-      },
-      {
-        "question": {
-          "ar": "ما هي مدة البرنامج؟",
-          "en": "What is the duration of the program?"
-        },
-        "answer": {
-          "ar": "4 فصول دراسية + تدريب تعاوني",
-          "en": "4 semesters + cooperative training"
-        }
-      },
-      {
-        "question": {
-          "ar": "هل يوجد دعم مالي؟",
-          "en": "Is there financial support?"
-        },
-        "answer": {
-          "ar": "نعم، يتوفر دعم من صندوق الموارد البشرية (هدف)",
-          "en": "Yes, there is support from the Human Resources Development Fund (HRDF)"
-        }
-      },
-      {
-        "question": {
-          "ar": "ما هي الشهادات التي سأحصل عليها؟",
-          "en": "What certificates will I obtain?"
-        },
-        "answer": {
-          "ar": "دبلوم متوسط معتمد + شهادات احترافية عالمية",
-          "en": "Certified Intermediate Diploma + Global Professional Certificates"
-        }
-      }
-    ]
-  },
-  {
-    "id": 5,
-    "icon": "DevicePhoneMobileIcon",
-    "image": "https://images.unsplash.com/photo-1591439657848-9f4b9ce436b9?q=80&w=1602&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "title": {
-      "ar": "دبلوم البرمجة وتطبيقات الأجهزة الذكية",
-      "en": "Programming and Smart Devices Applications Diploma"
-    },
-    "subtitle": {
-      "ar": "برنامج متخصص في تطوير تطبيقات الهواتف الذكية",
-      "en": "Specialized program in developing smartphone applications"
-    },
-    "category": {
-      "ar": "دبلومات تقنية",
-      "en": "Technical Diplomas"
-    },
-    "duration": {
-      "ar": "4 فصول دراسية + تدريب تعاوني",
-      "en": "4 semesters + cooperative training"
-    },
-    "level": {
-      "ar": "مستوى 5 - الإطار الوطني للمؤهلات",
-      "en": "Level 5 - National Qualifications Framework"
-    },
-    "startDate": {
-      "ar": "",
-      "en": ""
-    },
-    "endDate": {
-      "ar": "يحدد حسب الدفعة",
-      "en": "Determined by batch"
-    },
-    "status": {
-      "ar": "مفتوح للتسجيل",
-      "en": "Open for Registration"
-    },
-    "price": 24000,
-    "rating": 4.7,
-    "reviews": 58,
-    "instructor": {
-      "name": {
-        "ar": "مطور تطبيقات ذكية",
-        "en": "Smart Applications Developer"
-      },
-      "title": {
-        "ar": "مهندس برمجيات",
-        "en": "Software Engineer"
-      },
-      "experience": {
-        "ar": "8+ سنوات",
-        "en": "8+ years"
-      },
-      "image": "",
-      "bio": {
-        "ar": "متخصص في تطوير تطبيقات Android وiOS وتطبيقات متعددة المنصات",
-        "en": "Specialized in developing Android and iOS applications and cross-platform applications"
-      }
-    },
-    "overview": {
-      "ar": "دبلوم مهني تكتسب من خلاله العديد من المهارات التي تؤهلك للعمل في مجالات متنوعة ومتخصصة في البرمجة وتطبيقات الأجهزة الذكية واكتساب أساسيات البرمجة الصلبة وأنظمة التشغيل.",
-      "en": "Professional diploma through which you acquire many skills that qualify you to work in various and specialized fields in programming and smart device applications, and acquire solid programming fundamentals and operating systems."
-    },
-    "objectives": [
-      {
-        "ar": "إكساب المتدربين المعارف والمهارات التقنية اللازمة",
-        "en": "Provide trainees with the necessary knowledge and technical skills"
-      },
-      {
-        "ar": "تصميم، تطوير، اختبار، ونشر تطبيقات برمجية متقدمة",
-        "en": "Design, develop, test, and deploy advanced software applications"
-      },
-      {
-        "ar": "تطوير تطبيقات تعمل على مختلف منصات الأجهزة الذكية",
-        "en": "Develop applications that work on different smart device platforms"
-      },
-      {
-        "ar": "تلبية متطلبات سوق العمل المتنامية في مجال تطوير التطبيقات",
-        "en": "Meet the growing market demands in the field of application development"
-      }
-    ],
-    "curriculum": {
-      "ar": [
-        {
-          "semester": "الفصل الأول",
-          "courses": ["لغة إنجليزية عامة", "رياضيات", "مباديء إدارة الأعمال", "مقدمة في البرمجة", "هياكل البيانات والخوارزميات", "مباديء قواعد البيانات"]
-        },
-        {
-          "semester": "الفصل الثاني",
-          "courses": ["لغة إنجليزية (2)", "أساسيات ريادة الأعمال", "مهارات التفاوض", "مقدمة في تطوير الويب", "أساسيات تطوير Android (باستخدام Java أو Kotlin)", "أساسيات تطوير iOS (باستخدام Swift أو Objective-C)"]
-        },
-        {
-          "semester": "الفصل الثالث",
-          "courses": ["لغة إنجليزية (3)", "رياضيات (2)", "مهارات إدارة الوقت", "البرمجة عبر المنصات (Cross-Platform Development)", "تصميم واجهات وتجربة المستخدم (UI/UX Design)", "الاتصال بخدمات الويب (APIs & Web Services)"]
-        },
-        {
-          "semester": "الفصل الرابع",
-          "courses": ["لغة إنجليزية (4)", "الجرائم الإلكترونية", "أمن تطبيقات الأجهزة الذكية", "اختبار التطبيقات ونشرها", "مشروع التخرج"]
-        }
-      ],
-      "en": [
-        {
-          "semester": "Semester 1",
-          "courses": ["General English", "Mathematics", "Business Administration Fundamentals", "Introduction to Programming", "Data Structures and Algorithms", "Database Fundamentals"]
-        },
-        {
-          "semester": "Semester 2",
-          "courses": ["English (2)", "Entrepreneurship Fundamentals", "Negotiation Skills", "Introduction to Web Development", "Android Development Fundamentals (using Java or Kotlin)", "iOS Development Fundamentals (using Swift or Objective-C)"]
-        },
-        {
-          "semester": "Semester 3",
-          "courses": ["English (3)", "Mathematics (2)", "Time Management Skills", "Cross-Platform Development", "UI/UX Design", "APIs & Web Services"]
-        },
-        {
-          "semester": "Semester 4",
-          "courses": ["English (4)", "Cybercrimes", "Smart Device Applications Security", "Application Testing and Deployment", "Graduation Project"]
-        }
-      ]
-    },
-    "requirements": {
-      "ar": ["الحصول على مؤهل الثانوية العامة أو ما يعادلها"],
-      "en": ["Obtaining a high school diploma or equivalent"]
-    },
-    "benefits": {
-      "ar": ["دبلوم متوسط معتمد", "شهادات احترافية عالمية", "تدريب تعاوني 3.5 أشهر", "دعم من صندوق الموارد البشرية (هدف)"],
-      "en": ["Certified Intermediate Diploma", "Global Professional Certificates", "3.5 months of cooperative training", "Support from Human Resources Development Fund (HRDF)"]
-    },
-    "schedule": {
-      "ar": {
-        "days": ["يحدد حسب الجدول"],
-        "time": "حسب الجدول الدراسي",
-        "mode": "حضوري - مدمج",
-        "location": "أكاديمية المهارات التطبيقية للتدريب"
-      },
-      "en": {
-        "days": ["Specified by the schedule"],
-        "time": "According to the academic schedule",
-        "mode": "Face-to-face - Blended",
-        "location": "Applied Skills Training Academy"
-      }
-    },
-    "certifications": {
-      "ar": ["Meta iOS Developer Professional Certificate", "Oracle Certified Professional: Java SE Developer"],
-      "en": ["Meta iOS Developer Professional Certificate", "Oracle Certified Professional: Java SE Developer"]
-    },
-    "exitPoints": {
-      "ar": "يمكن الخروج بعد فصلين دراسيين والحصول على دبلوم مشارك في المستوى الرابع",
-      "en": "Can exit after two semesters and obtain an associate diploma at Level 4"
-    },
-    "targetJobs": {
-      "ar": ["مساعد مبرمج ألعاب", "مساعد مطور تطبيقات الهواتف الذكية", "مساعد مهندس أنظمة مدمجة", "فني صيانة وإدارة الأنظمة"],
-      "en": ["Assistant Game Programmer", "Assistant Smartphone Applications Developer", "Assistant Embedded Systems Engineer", "System Maintenance and Management Technician"]
-    },
-    "faqs": [
-      {
-        "question": {
-          "ar": "ما هي شروط القبول في البرنامج؟",
-          "en": "What are the admission requirements for the program?"
-        },
-        "answer": {
-          "ar": "الحصول على مؤهل الثانوية العامة أو ما يعادلها",
-          "en": "Obtaining a high school diploma or equivalent"
-        }
-      },
-      {
-        "question": {
-          "ar": "ما هي مدة البرنامج؟",
-          "en": "What is the duration of the program?"
-        },
-        "answer": {
-          "ar": "4 فصول دراسية + تدريب تعاوني",
-          "en": "4 semesters + cooperative training"
-        }
-      },
-      {
-        "question": {
-          "ar": "هل يوجد دعم مالي؟",
-          "en": "Is there financial support?"
-        },
-        "answer": {
-          "ar": "نعم، يتوفر دعم من صندوق الموارد البشرية (هدف)",
-          "en": "Yes, there is support from the Human Resources Development Fund (HRDF)"
-        }
-      },
-      {
-        "question": {
-          "ar": "ما هي الشهادات التي سأحصل عليها؟",
-          "en": "What certificates will I obtain?"
-        },
-        "answer": {
-          "ar": "دبلوم متوسط معتمد + شهادات احترافية عالمية",
-          "en": "Certified Intermediate Diploma + Global Professional Certificates"
-        }
-      }
-    ]
-  },
-  {
-    "id": 6,
-    "icon": "CircleStackIcon",
-    "image": "https://images.unsplash.com/photo-1517134191118-9d595e4c8c2b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "title": {
-      "ar": "دبلوم قواعد البيانات وتطوير الويب",
-      "en": "Database and Web Development Diploma"
-    },
-    "subtitle": {
-      "ar": "برنامج متخصص في قواعد البيانات وتطوير مواقع الويب",
-      "en": "Specialized program in databases and website development"
-    },
-    "category": {
-      "ar": "دبلومات تقنية",
-      "en": "Technical Diplomas"
-    },
-    "duration": {
-      "ar": "4 فصول دراسية + تدريب تعاوني",
-      "en": "4 semesters + cooperative training"
-    },
-    "level": {
-      "ar": "مستوى 5 - الإطار الوطني للمؤهلات",
-      "en": "Level 5 - National Qualifications Framework"
-    },
-    "startDate": {
-      "ar": "",
-      "en": ""
-    },
-    "endDate": {
-      "ar": "يحدد حسب الدفعة",
-      "en": "Determined by batch"
-    },
-    "status": {
-      "ar": "مفتوح للتسجيل",
-      "en": "Open for Registration"
-    },
-    "price": 24000,
-    "rating": 4.6,
-    "reviews": 47,
-    "instructor": {
-      "name": {
-        "ar": "مطور ويب وقواعد بيانات",
-        "en": "Web and Database Developer"
-      },
-      "title": {
-        "ar": "مهندس برمجيات",
-        "en": "Software Engineer"
-      },
-      "experience": {
-        "ar": "9+ سنوات",
-        "en": "9+ years"
-      },
-      "image": "",
-      "bio": {
-        "ar": "متخصص في تطوير الويب وقواعد البيانات وتطبيقات الويب الديناميكية",
-        "en": "Specialized in web development, databases, and dynamic web applications"
-      }
-    },
-    "overview": {
-      "ar": "دبلوم مهني تكتسب من خلاله العديد من المهارات التي تؤهلك للعمل في مجالات متنوعة ومتخصصة في قواعد البيانات وتطوير الويب مثل التصميم، التنفيذ، الإدارة، والصيانة.",
-      "en": "Professional diploma through which you acquire many skills that qualify you to work in various specialized fields in databases and web development such as design, implementation, management, and maintenance."
-    },
-    "objectives": [
-      {
-        "ar": "تأهيل المتدرب للعمل في مجال قواعد البيانات وتطبيقات ومواقع الويب",
-        "en": "Qualify trainees to work in the field of databases and web applications and sites"
-      },
-      {
-        "ar": "تحقيق نمو مستدام للأعمال التجارية عبر القنوات الرقمية",
-        "en": "Achieve sustainable growth for businesses through digital channels"
-      },
-      {
-        "ar": "تطوير تطبيقات ومواقع الويب الاحترافية المتكاملة",
-        "en": "Develop integrated professional web applications and sites"
-      },
-      {
-        "ar": "إدارة أنظمة قواعد البيانات المتقدمة",
-        "en": "Manage advanced database systems"
-      }
-    ],
-    "curriculum": {
-      "ar": [
-        {
-          "semester": "الفصل الأول",
-          "courses": ["لغة إنجليزية (1)", "رياضيات (1)", "مبادئ إدارة أعمال", "مقدمة في الحاسب وتكنولوجيا المعلومات", "أساسيات البرمجة", "تصميم وتحليل قواعد البيانات"]
-        },
-        {
-          "semester": "الفصل الثاني",
-          "courses": ["لغة إنجليزية (2)", "أساسيات ريادة الأعمال", "مهارات التفاوض", "لغة الاستعلام الهيكلية (SQL)", "نظم إدارة قواعد البيانات (DBMS)", "برمجة قواعد البيانات"]
-        },
-        {
-          "semester": "الفصل الثالث",
-          "courses": ["لغة إنجليزية (3)", "رياضيات (2)", "مهارات إدارة الوقت", "أساسيات تطوير الويب", "لغات الواجهة الأمامية (Front-end)", "لغات الواجهة الخلفية (Back-end)"]
-        },
-        {
-          "semester": "الفصل الرابع",
-          "courses": ["لغة إنجليزية (4)", "الجرائم الإلكترونية", "أطر العمل (Frameworks)", "أمن تطبيقات الويب", "مشروع التخرج"]
-        }
-      ],
-      "en": [
-        {
-          "semester": "Semester 1",
-          "courses": ["English (1)", "Mathematics (1)", "Business Management Principles", "Introduction to Computer and Information Technology", "Programming Fundamentals", "Database Design and Analysis"]
-        },
-        {
-          "semester": "Semester 2",
-          "courses": ["English (2)", "Entrepreneurship Fundamentals", "Negotiation Skills", "Structured Query Language (SQL)", "Database Management Systems (DBMS)", "Database Programming"]
-        },
-        {
-          "semester": "Semester 3",
-          "courses": ["English (3)", "Mathematics (2)", "Time Management Skills", "Web Development Fundamentals", "Front-end Languages", "Back-end Languages"]
-        },
-        {
-          "semester": "Semester 4",
-          "courses": ["English (4)", "Cybercrimes", "Frameworks", "Web Applications Security", "Graduation Project"]
-        }
-      ]
-    },
-    "requirements": {
-      "ar": ["الحصول على مؤهل الثانوية العامة أو ما يعادلها"],
-      "en": ["Obtaining a high school diploma or equivalent"]
-    },
-    "benefits": {
-      "ar": ["دبلوم متوسط معتمد", "شهادات احترافية عالمية", "تدريب تعاوني 3.5 أشهر", "دعم من صندوق الموارد البشرية (هدف)"],
-      "en": ["Certified Intermediate Diploma", "Global Professional Certificates", "3.5 months of cooperative training", "Support from Human Resources Development Fund (HRDF)"]
-    },
-    "schedule": {
-      "ar": {
-        "days": ["يحدد حسب الجدول"],
-        "time": "حسب الجدول الدراسي",
-        "mode": "حضوري - مدمج",
-        "location": "أكاديمية المهارات التطبيقية للتدريب"
-      },
-      "en": {
-        "days": ["Specified by the schedule"],
-        "time": "According to the academic schedule",
-        "mode": "Face-to-face - Blended",
-        "location": "Applied Skills Training Academy"
-      }
-    },
-    "certifications": {
-      "ar": ["C# Programming Certificate", "Microsoft Certified: Azure Database Administrator Associate"],
-      "en": ["C# Programming Certificate", "Microsoft Certified: Azure Database Administrator Associate"]
-    },
-    "exitPoints": {
-      "ar": "يمكن الخروج بعد فصلين دراسيين والحصول على دبلوم مشارك في المستوى الرابع",
-      "en": "Can exit after two semesters and obtain an associate diploma at Level 4"
-    },
-    "targetJobs": {
-      "ar": ["مساعد مطور واجهة أمامية (Front-End Developer)", "مساعد مطور واجهة خلفية (Back-End Developer)", "مساعد مهندس قواعد بيانات", "مساعد مطور تطبيقات الويب والجوال", "مدخل بيانات", "مسؤول نظم البيانات"],
-      "en": ["Assistant Front-End Developer", "Assistant Back-End Developer", "Assistant Database Engineer", "Assistant Web and Mobile Applications Developer", "Data Entry", "Data Systems Administrator"]
-    },
-    "faqs": [
-      {
-        "question": {
-          "ar": "ما هي شروط القبول في البرنامج؟",
-          "en": "What are the admission requirements for the program?"
-        },
-        "answer": {
-          "ar": "الحصول على مؤهل الثانوية العامة أو ما يعادلها",
-          "en": "Obtaining a high school diploma or equivalent"
-        }
-      },
-      {
-        "question": {
-          "ar": "ما هي مدة البرنامج؟",
-          "en": "What is the duration of the program?"
-        },
-        "answer": {
-          "ar": "4 فصول دراسية + تدريب تعاوني",
-          "en": "4 semesters + cooperative training"
-        }
-      },
-      {
-        "question": {
-          "ar": "هل يوجد دعم مالي؟",
-          "en": "Is there financial support?"
-        },
-        "answer": {
-          "ar": "نعم، يتوفر دعم من صندوق الموارد البشرية (هدف)",
-          "en": "Yes, there is support from the Human Resources Development Fund (HRDF)"
-        }
-      },
-      {
-        "question": {
-          "ar": "ما هي الشهادات التي سأحصل عليها؟",
-          "en": "What certificates will I obtain?"
-        },
-        "answer": {
-          "ar": "دبلوم متوسط معتمد + شهادات احترافية عالمية",
-          "en": "Certified Intermediate Diploma + Global Professional Certificates"
-        }
-      }
-    ]
-  },
-  {
-    "id": 7,
-    "icon": "ShoppingCartIcon",
-    "image": "https://images.unsplash.com/photo-1763872011479-aa293bf083a8?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "title": {
-      "ar": "دبلوم التسويق الرقمي والتجارة الإلكترونية",
-      "en": "Digital Marketing and E-commerce Diploma"
-    },
-    "subtitle": {
-      "ar": "برنامج متخصص في التسويق الرقمي وإدارة المتاجر الإلكترونية",
-      "en": "Specialized program in digital marketing and e-commerce store management"
-    },
-    "category": {
-      "ar": "دبلومات تجارية",
-      "en": "Business Diplomas"
-    },
-    "duration": {
-      "ar": "4 فصول دراسية + تدريب تعاوني",
-      "en": "4 semesters + cooperative training"
-    },
-    "level": {
-      "ar": "مستوى 5 - الإطار الوطني للمؤهلات",
-      "en": "Level 5 - National Qualifications Framework"
-    },
-    "startDate": {
-      "ar": "",
-      "en": ""
-    },
-    "endDate": {
-      "ar": "يحدد حسب الدفعة",
-      "en": "Determined by batch"
-    },
-    "status": {
-      "ar": "مفتوح للتسجيل",
-      "en": "Open for Registration"
-    },
-    "price": 24000,
-    "rating": 4.8,
-    "reviews": 56,
-    "instructor": {
-      "name": {
-        "ar": "خبير تسويق رقمي",
-        "en": "Digital Marketing Expert"
-      },
-      "title": {
-        "ar": "مدير تسويق إلكتروني",
-        "en": "E-marketing Manager"
-      },
-      "experience": {
-        "ar": "10+ سنوات",
-        "en": "10+ years"
-      },
-      "image": "",
-      "bio": {
-        "ar": "متخصص في التسويق الرقمي والتجارة الإلكترونية وإدارة الحملات الإعلانية",
-        "en": "Specialized in digital marketing, e-commerce, and advertising campaign management"
-      }
-    },
-    "overview": {
-      "ar": "دبلوم مهني تكتسب من خلاله العديد من المهارات التي تؤهلك للعمل في مجالات التسويق الرقمي والتجارة الإلكترونية، من خلال استخدام أدوات التسويق الرقمي، ووضع الخطط التسويقية.",
-      "en": "Professional diploma through which you acquire many skills that qualify you to work in digital marketing and e-commerce fields, by using digital marketing tools and developing marketing plans."
-    },
-    "objectives": [
-      {
-        "ar": "تأهيل المتدربين ليكونوا محترفين في التسويق الرقمي",
-        "en": "Qualify trainees to become professionals in digital marketing"
-      },
-      {
-        "ar": "تطوير وتنفيذ استراتيجيات تسويق رقمي متكاملة",
-        "en": "Develop and implement integrated digital marketing strategies"
-      },
-      {
-        "ar": "إدارة منصات التجارة الإلكترونية بنجاح",
-        "en": "Successfully manage e-commerce platforms"
-      },
-      {
-        "ar": "تحقيق نمو مستدام للأعمال التجارية عبر القنوات الرقمية",
-        "en": "Achieve sustainable business growth through digital channels"
-      }
-    ],
-    "curriculum": {
-      "ar": [
-        {
-          "semester": "الفصل الأول",
-          "courses": ["لغة إنجليزية (1)", "رياضيات (1)", "مبادئ إدارة أعمال", "مقدمة في التسويق الرقمي وبناء الاستراتيجيات", "تحليل البيانات وقياس الأداء (Web Analytics)", "تحسين محركات البحث (SEO) والتسويق عبر المحتوى"]
-        },
-        {
-          "semester": "الفصل الثاني",
-          "courses": ["لغة إنجليزية (2)", "أساسيات ريادة الأعمال", "مهارات التفاوض", "الإعلان المدفوع (PPC) والتسويق عبر محركات البحث (SEM)", "التسويق عبر وسائل التواصل الاجتماعي والإعلان عليها", "التسويق عبر البريد الإلكتروني (Email Marketing)"]
-        },
-        {
-          "semester": "الفصل الثالث",
-          "courses": ["لغة إنجليزية (3)", "رياضيات (2)", "مهارات إدارة الوقت", "أساسيات التجارة الإلكترونية ونماذج الأعمال", "بناء وإدارة المتاجر الإلكترونية", "إدارة العمليات واللوجستيات"]
-        },
-        {
-          "semester": "الفصل الرابع",
-          "courses": ["لغة إنجليزية (4)", "الجرائم الإلكترونية", "القنوات التسويقية المتخصصة", "تحسين معدل التحويل (CRO) وتجربة المستخدم (UX)", "مشروع التخرج"]
-        }
-      ],
-      "en": [
-        {
-          "semester": "Semester 1",
-          "courses": ["English (1)", "Mathematics (1)", "Business Management Principles", "Introduction to Digital Marketing and Strategy Building", "Data Analysis and Performance Measurement (Web Analytics)", "Search Engine Optimization (SEO) and Content Marketing"]
-        },
-        {
-          "semester": "Semester 2",
-          "courses": ["English (2)", "Entrepreneurship Fundamentals", "Negotiation Skills", "Pay-Per-Click Advertising (PPC) and Search Engine Marketing (SEM)", "Social Media Marketing and Advertising", "Email Marketing"]
-        },
-        {
-          "semester": "Semester 3",
-          "courses": ["English (3)", "Mathematics (2)", "Time Management Skills", "E-commerce Fundamentals and Business Models", "Building and Managing E-commerce Stores", "Operations and Logistics Management"]
-        },
-        {
-          "semester": "Semester 4",
-          "courses": ["English (4)", "Cybercrimes", "Specialized Marketing Channels", "Conversion Rate Optimization (CRO) and User Experience (UX)", "Graduation Project"]
-        }
-      ]
-    },
-    "requirements": {
-      "ar": ["الحصول على مؤهل الثانوية العامة أو ما يعادلها"],
-      "en": ["Obtaining a high school diploma or equivalent"]
-    },
-    "benefits": {
-      "ar": ["دبلوم متوسط معتمد", "3 شهادات احترافية", "تدريب تعاوني 3.5 أشهر", "دعم من صندوق الموارد البشرية (هدف)"],
-      "en": ["Certified Intermediate Diploma", "3 Professional Certificates", "3.5 months of cooperative training", "Support from Human Resources Development Fund (HRDF)"]
-    },
-    "schedule": {
-      "ar": {
-        "days": ["يحدد حسب الجدول"],
-        "time": "حسب الجدول الدراسي",
-        "mode": "حضوري - مدمج",
-        "location": "أكاديمية المهارات التطبيقية للتدريب"
-      },
-      "en": {
-        "days": ["Specified by the schedule"],
-        "time": "According to the academic schedule",
-        "mode": "Face-to-face - Blended",
-        "location": "Applied Skills Training Academy"
-      }
-    },
-    "certifications": {
-      "ar": ["شهادة مساعد مدير تسويق معتمد (Associate CMMP)", "محترف أعمال معتمد في المبيعات (CBP)", "محترف أعمال معتمد في التسويق (CBP)"],
-      "en": ["Associate Certified Marketing Management Professional (CMMP)", "Certified Business Professional in Sales (CBP)", "Certified Business Professional in Marketing (CBP)"]
-    },
-    "exitPoints": {
-      "ar": "يمكن الخروج بعد فصلين دراسيين والحصول على دبلوم مشارك في المستوى الرابع",
-      "en": "Can exit after two semesters and obtain an associate diploma at Level 4"
-    },
-    "targetJobs": {
-      "ar": ["مسوق رقمي", "خبير تحسين محركات البحث (SEO)", "خبير تسويق عبر محركات البحث (PPC)", "مدير حسابات وسائل التواصل الاجتماعي", "متخصص استراتيجيات المحتوى", "مدير علامة تجارية", "محلل ويب", "محلل بيانات تسويقية", "محلل أعمال", "محلل تجارة إلكترونية", "أخصائي مبيعات", "مدير علاقات العملاء", "منسق تطوير أعمال", "مستشار أعمال إلكترونية", "مخطّط استراتيجيات تسويق"],
-      "en": ["Digital Marketer", "SEO Expert", "PPC Expert", "Social Media Accounts Manager", "Content Strategy Specialist", "Brand Manager", "Web Analyst", "Marketing Data Analyst", "Business Analyst", "E-commerce Analyst", "Sales Specialist", "Customer Relations Manager", "Business Development Coordinator", "E-business Consultant", "Marketing Strategy Planner"]
-    },
-    "faqs": [
-      {
-        "question": {
-          "ar": "ما هي شروط القبول في البرنامج؟",
-          "en": "What are the admission requirements for the program?"
-        },
-        "answer": {
-          "ar": "الحصول على مؤهل الثانوية العامة أو ما يعادلها",
-          "en": "Obtaining a high school diploma or equivalent"
-        }
-      },
-      {
-        "question": {
-          "ar": "ما هي مدة البرنامج؟",
-          "en": "What is the duration of the program?"
-        },
-        "answer": {
-          "ar": "4 فصول دراسية + تدريب تعاوني",
-          "en": "4 semesters + cooperative training"
-        }
-      },
-      {
-        "question": {
-          "ar": "هل يوجد دعم مالي؟",
-          "en": "Is there financial support?"
-        },
-        "answer": {
-          "ar": "نعم، يتوفر دعم من صندوق الموارد البشرية (هدف)",
-          "en": "Yes, there is support from the Human Resources Development Fund (HRDF)"
-        }
-      },
-      {
-        "question": {
-          "ar": "ما هي الشهادات التي سأحصل عليها؟",
-          "en": "What certificates will I obtain?"
-        },
-        "answer": {
-          "ar": "دبلوم متوسط معتمد + 3 شهادات احترافية",
-          "en": "Certified Intermediate Diploma + 3 Professional Certificates"
-        }
-      }
-    ]
-  },
-  {
-    "id": 8,
-    "icon": "BuildingOfficeIcon",
-    "image": "https://images.unsplash.com/photo-1666160621105-130f0e983577?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "title": {
-      "ar": "دبلوم تقنية السياحة والضيافة (الفندقة)",
-      "en": "Tourism and Hospitality Technology Diploma (Hotel Management)"
-    },
-    "subtitle": {
-      "ar": "برنامج متخصص في إدارة الفنادق والخدمات الفندقية",
-      "en": "Specialized program in hotel management and hotel services"
-    },
-    "category": {
-      "ar": "دبلومات خدمية",
-      "en": "Service Diplomas"
-    },
-    "duration": {
-      "ar": "سنتين (4 فصول دراسية + تدريب تعاوني)",
-      "en": "Two years (4 semesters + cooperative training)"
-    },
-    "level": {
-      "ar": "مستوى 5 - الإطار الوطني للمؤهلات",
-      "en": "Level 5 - National Qualifications Framework"
-    },
-    "startDate": {
-      "ar": "",
-      "en": ""
-    },
-    "endDate": {
-      "ar": "يحدد حسب الدفعة",
-      "en": "Determined by batch"
-    },
-    "status": {
-      "ar": "مفتوح للتسجيل",
-      "en": "Open for Registration"
-    },
-    "price": 22050,
-    "rating": 4.5,
-    "reviews": 42,
-    "instructor": {
-      "name": {
-        "ar": "خبير فندقة وسياحة",
-        "en": "Hotel and Tourism Expert"
-      },
-      "title": {
-        "ar": "مدير فندق",
-        "en": "Hotel Manager"
-      },
-      "experience": {
-        "ar": "12+ سنوات",
-        "en": "12+ years"
-      },
-      "image": "",
-      "bio": {
-        "ar": "متخصص في إدارة الفنادق والخدمات الفندقية والضيافة",
-        "en": "Specialized in hotel management, hotel services, and hospitality"
-      }
-    },
-    "overview": {
-      "ar": "دبلوم مهني يجمع بين النظرية والتطبيق لتزويد الطلاب بالمهارات اللازمة للعمل في قطاع الضيافة، ويركز على إدارة العمليات الفندقية، التسويق الفندقي، خدمة العملاء، وإدارة الأغذية والمشروبات.",
-      "en": "Professional diploma that combines theory and practice to provide students with the necessary skills to work in the hospitality sector, focusing on hotel operations management, hotel marketing, customer service, and food and beverage management."
-    },
-    "objectives": [
-      {
-        "ar": "تأهيل المتدربين ليكونوا مؤهلين للعمل في مجال الفندقة",
-        "en": "Qualify trainees to work in the hotel industry"
-      },
-      {
-        "ar": "اكتساب مهارات التعامل مع الضيوف وخدمة العملاء",
-        "en": "Acquire skills in guest interaction and customer service"
-      },
-      {
-        "ar": "إدارة الفاعليات والخدمات الفندقية",
-        "en": "Manage events and hotel services"
-      },
-      {
-        "ar": "التدريب العملي المكثف في الفنادق والمنتجعات",
-        "en": "Intensive practical training in hotels and resorts"
-      }
-    ],
-    "curriculum": {
-      "ar": [
-        {
-          "semester": "الفصل الأول",
-          "courses": ["لغة إنجليزية (1)", "مقدمة في تطبيقات الحاسب الآلي", "الرياضيات", "الكتابة الفنية", "الصحة والسلامة الفندقية", "مباديء إدارة الأعمال", "مدخل إلى صناعة السياحة والضيافة"]
-        },
-        {
-          "semester": "الفصل الثاني",
-          "courses": ["لغة إنجليزية (2)", "أساسيات ريادة الأعمال", "إدارة الموارد البشرية", "المكاتب الأمامية (1)", "مهارات خدمة ضيوف الفنادق", "إدارة التدبير الفندقي"]
-        },
-        {
-          "semester": "الفصل الثالث",
-          "courses": ["لغة إنجليزية (3)", "الدراسات الإسلامية", "ريادة الأعمال في مجال السياحة والضيافة", "استخدام الحاسب الآلي في الفندقة(1)", "المكاتب الأمامية (2)", "المحاسبة الفندقية"]
-        },
-        {
-          "semester": "الفصل الرابع",
-          "courses": ["لغة إنجليزية (4)", "السلوك الوظيفي والمستقبل المهني", "البيع والتسويق الفندقي", "استخدام الحاسب الآلي في الفندقة (2)", "المهارات الإشرافية الفندقية"]
-        }
-      ],
-      "en": [
-        {
-          "semester": "Semester 1",
-          "courses": ["English (1)", "Introduction to Computer Applications", "Mathematics", "Technical Writing", "Hotel Health and Safety", "Business Administration Fundamentals", "Introduction to Tourism and Hospitality Industry"]
-        },
-        {
-          "semester": "Semester 2",
-          "courses": ["English (2)", "Entrepreneurship Fundamentals", "Human Resources Management", "Front Office (1)", "Hotel Guest Service Skills", "Hotel Provision Management"]
-        },
-        {
-          "semester": "Semester 3",
-          "courses": ["English (3)", "Islamic Studies", "Entrepreneurship in Tourism and Hospitality", "Computer Use in Hospitality (1)", "Front Office (2)", "Hotel Accounting"]
-        },
-        {
-          "semester": "Semester 4",
-          "courses": ["English (4)", "Professional Behavior and Career Future", "Hotel Sales and Marketing", "Computer Use in Hospitality (2)", "Hotel Supervisory Skills"]
-        }
-      ]
-    },
-    "requirements": {
-      "ar": ["الحصول على مؤهل الثانوية العامة أو ما يعادلها"],
-      "en": ["Obtaining a high school diploma or equivalent"]
-    },
-    "benefits": {
-      "ar": ["دبلوم متوسط معتمد", "6 شهادات احترافية في الضيافة", "تدريب تعاوني 3.5 أشهر", "دعم من صندوق الموارد البشرية (هدف)"],
-      "en": ["Certified Intermediate Diploma", "6 Professional Certificates in Hospitality", "3.5 months of cooperative training", "Support from Human Resources Development Fund (HRDF)"]
-    },
-    "schedule": {
-      "ar": {
-        "days": ["يحدد حسب الجدول"],
-        "time": "حسب الجدول الدراسي",
-        "mode": "حضوري - مدمج",
-        "location": "أكاديمية المهارات التطبيقية للتدريب"
-      },
-      "en": {
-        "days": ["Specified by the schedule"],
-        "time": "According to the academic schedule",
-        "mode": "Face-to-face - Blended",
-        "location": "Applied Skills Training Academy"
-      }
-    },
-    "certifications": {
-      "ar": ["شهادة اعتماد خدمة الضيوف الذهبية المهنية (CGSP)", "شهادة معلم ضيافة معتمد (CHE)", "شهادة اعتماد مشرف ضيافة (CHS)", "شهادة اعتماد مدرب الضيافة (CHT)", "شهادة اعتماد مقدم طعام (CRS)", "شهادة محترف أعمال معتمد في خدمة العملاء (CBP)"],
-      "en": ["Certified Guest Service Professional (CGSP)", "Certified Hospitality Educator (CHE)", "Certified Hospitality Supervisor (CHS)", "Certified Hospitality Trainer (CHT)", "Certified Restaurant Server (CRS)", "Certified Business Professional in Customer Service (CBP)"]
-    },
-    "exitPoints": {
-      "ar": "يمكن الخروج بعد فصلين دراسيين والحصول على دبلوم مشارك في المستوى الرابع",
-      "en": "Can exit after two semesters and obtain an associate diploma at Level 4"
-    },
-    "targetJobs": {
-      "ar": ["موظف استقبال", "تسويق فندقي", "تنظيم الحفلات", "العلاقات العامة", "الضيافة الجوية", "خدمة العملاء", "السلامة الغذائية", "السلامة الفندقية"],
-      "en": ["Receptionist", "Hotel Marketing", "Event Organization", "Public Relations", "Airline Hospitality", "Customer Service", "Food Safety", "Hotel Safety"]
-    },
-    "faqs": [
-      {
-        "question": {
-          "ar": "ما هي شروط القبول في البرنامج؟",
-          "en": "What are the admission requirements for the program?"
-        },
-        "answer": {
-          "ar": "الحصول على مؤهل الثانوية العامة أو ما يعادلها",
-          "en": "Obtaining a high school diploma or equivalent"
-        }
-      },
-      {
-        "question": {
-          "ar": "ما هي مدة البرنامج؟",
-          "en": "What is the duration of the program?"
-        },
-        "answer": {
-          "ar": "4 فصول دراسية + تدريب تعاوني",
-          "en": "4 semesters + cooperative training"
-        }
-      },
-      {
-        "question": {
-          "ar": "هل يوجد دعم مالي؟",
-          "en": "Is there financial support?"
-        },
-        "answer": {
-          "ar": "نعم، يتوفر دعم من صندوق الموارد البشرية (هدف)",
-          "en": "Yes, there is support from the Human Resources Development Fund (HRDF)"
-        }
-      },
-      {
-        "question": {
-          "ar": "ما هي الشهادات التي سأحصل عليها؟",
-          "en": "What certificates will I obtain?"
-        },
-        "answer": {
-          "ar": "دبلوم متوسط معتمد + 6 شهادات احترافية في الضيافة",
-          "en": "Certified Intermediate Diploma + 6 Professional Certificates in Hospitality"
-        }
-      }
-    ]
-  },
-  {
-    "id": 9,
     "icon": "DocumentTextIcon",
     "image": "https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": {
       "ar": "دبلوم السكرتير القانوني",
       "en": "Legal Secretary Diploma"
     },
-    "subtitle": {
-      "ar": "برنامج متخصص في الأعمال السكرتارية القانونية والإدارية بالمكاتب القانونية",
-      "en": "Specialized program in legal and administrative secretarial work in law offices"
-    },
-    "category": {
-      "ar": "دبلومات قانونية وإدارية",
-      "en": "Legal and Administrative Diplomas"
-    },
-    "duration": {
-      "ar": "4 فصول دراسية + تدريب تعاوني",
-      "en": "4 semesters + cooperative training"
-    },
-    "level": {
-      "ar": "المستوى الخامس من نظام المؤهلات المهنية الوطنية",
-      "en": "Level 5 of the National Professional Qualifications System"
-    },
-    "startDate": {
-      "ar": "يحدد حسب الخطة التدريبية",
-      "en": "Determined by the training plan"
-    },
-    "endDate": {
-      "ar": "يحدد حسب الخطة التدريبية",
-      "en": "Determined by the training plan"
-    },
-    "status": {
-      "ar": "مفتوح للتسجيل",
-      "en": "Open for Registration"
-    },
-    "price": 21350,
-    "rating": 4.7,
-    "reviews": 0,
-    "instructor": {
-      "name": {
-        "ar": "د بلال الأنصاري",
-        "en": "Dr. Bilal Al-Ansari"
-      },
-      "title": {
-        "ar": "مستشار قانوني ممارس",
-        "en": "Practicing Legal Consultant"
-      },
-      "experience": {
-        "ar": "+ 24 سنة",
-        "en": "+ 24 years"
-      },
-      "image": "",
-      "bio": {
-        "ar": "دكتوراه في القانون ومستشار قانوني ممارس ومدرب محترف في الدبلومات القانونيه",
-        "en": "PhD in Law, practicing legal consultant and professional trainer in legal diplomas"
-      }
+    "requirements": {
+      "ar": [],
+      "en": []
     },
     "overview": {
-      "ar": "برنامج تدريبي متخصص يؤهل المتدربين للعمل كسكرتير قانوني محترف في المكاتب القانونية والإدارات القانونية بالشركات والجهات القضائية. يجمع البرنامج بين المعرفة القانونية والمهارات الإدارية والسكرتارية المتخصصة، مع التركيز على الجانب العملي التطبيقي.",
-      "en": "Specialized training program that qualifies trainees to work as professional legal secretaries in law offices, legal departments of companies, and judicial bodies. The program combines legal knowledge with administrative and specialized secretarial skills, with a focus on practical application."
+      "ar": "دبلوم مهني متوسط ومتخصص يركز على تزويد المشاركين بالمهارات اللازمة لدعم المحامين والمكاتب القانونية، ويغطي جوانب مثل المصطلحات القانونية، صياغة العقود والوثائق، تنظيم الملفات، والمهارات الإدارية والتنظيمية الضرورية للعمل في القطاع القانوني. و اكتساب مهارات التعامل مع المراسلات القانونية باللغة العربية والانجليزية، جدولة المواعيد، استخدام التكنولوجيا المكتبية، بالإضافة إلى مهارات الاتصال والتواصل مع العملاء وكتابة التقارير القانونية.",
+      "en": "An intermediate and specialized professional diploma that focuses on providing participants with the necessary skills to support lawyers and law offices, covering aspects such as legal terminology, contract and document drafting, file organization, and administrative and organizational skills necessary for working in the legal sector. It also includes acquiring skills in handling legal correspondence in Arabic and English, scheduling appointments, using office technology, in addition to communication and client interaction skills and writing legal reports."
     },
-    "objectives": [
-      {
-        "ar": "تنظيم وإدارة الملفات والقضايا القانونية وتأمين سرية المعلومات",
-        "en": "Organize and manage legal files and cases and ensure information confidentiality"
+    "objectives": {
+      "ar": "يهدف هذا الدبلوم إلى اعداد متدربين مؤهلين بكفاءة وقادرين على الالتحاق بسوق العمل من خلال دراسة مقررات تنمى مهارات التعامل مع النصوص القانونية واستخداماتها في الانشطة والمجالات القانونية المختلفة",
+      "en": "This diploma aims to prepare competent trainees who are able to join the labor market by studying courses that develop skills in dealing with legal texts and their uses in various legal activities and fields."
+    },
+    "level": {
+      "ar": "دبلوم متوسط مصنف على المستوى الخامس من الإطار الوطني للمؤهلات",
+      "en": "Intermediate diploma classified at level 5 of the National Qualifications Framework"
+    },
+    "duration": {
+      "ar": "سنتين ونصف",
+      "en": "Two and a half years"
+    },
+    "creditHours":61,
+    "language": {
+      "ar": "العربية",
+      "en": "Arabic"
+    },
+    "schedule": {
+      "ar": {
+        "days": [],
+        "time": "",
+        "mode": "حضوري -- مدمج -- عن بعد",
+        "location": ""
       },
-      {
-        "ar": "صياغة وتحرير المستندات القانونية الأساسية تحت إشراف المحامي",
-        "en": "Draft and edit basic legal documents under lawyer supervision"
-      },
-      {
-        "ar": "أداء مهام السكرتارية التنفيذية في المكاتب القانونية",
-        "en": "Perform executive secretarial tasks in law offices"
-      },
-      {
-        "ar": "متابعة الإجراءات والمواعيد القانونية والقضائية بفعالية",
-        "en": "Effectively follow up on legal and judicial procedures and deadlines"
+      "en": {
+        "days": [],
+        "time": "",
+        "mode": "In-person -- Blended -- Remote",
+        "location": ""
       }
-    ],
+    },
+    "Mandatoryrequirements": {
+      "ar": "تدريب تعاوني لمدة 3 شهور",
+      "en": "Cooperative training for 3 months"
+    },
     "curriculum": {
       "ar": [
         {
-          "semester": "الفصل الأول",
-          "courses": ["مقدمة في تطبيقات الحاسب الآلي (1)", "مبادئ القانون", "لغة إنجليزية عامة (1)", "القانون الإداري", "القانون التجاري", "مبادئ القانون الدولي"]
+          "semester": "الفصل الدراسي الأول",
+          "courses": ["مقدمة في تطبيقات الحساب الالي (1)", "مبادئ القانون", "لغة إنجليزية عامة (1)", "القانون الإداي", "القانون التجاري", "مبادئ القانون الدولي"]
         },
         {
-          "semester": "الفصل الثاني",
-          "courses": ["إدارة المكاتب الإدارية", "العقود الإدارية", "قانون الأسرة", "قانون الشركات", "تطبيقات الحاسب الآلي المتقدمة (2)", "مصادر الالتزام"]
+          "semester": "الفصل الدراسي الثاني",
+          "courses": ["أدارة المكاتب الإدارية", "العقود الإدارية", "قانون الأسرة", "قانون الشركات", "تطبيقات الحاسب الألي المتقدمة (2)", "مصادر الألتزام"]
         },
         {
-          "semester": "الفصل الثالث",
-          "courses": ["أصول الفقه", "المعاملات المالية (1)", "قانون العمل", "لغة إنجليزية تخصصية (2)", "نظام التنفيذ", "قانون الزكاة والضرائب"]
+          "semester": "الفصل الدراسي الثالث",
+          "courses": ["أصول الفقه", "المعاملات المالية (1)", "قانون العمل", "لغة انجليزية تخصصية (2)", "نظام التنفيذ", "قانون الزكاة والضرائب"]
         },
         {
-          "semester": "الفصل الرابع",
-          "courses": ["الأوراق التجارية والإفلاس", "العقود التجارية وعمليات البنوك", "الأسواق المالية", "المعاملات المالية (2)", "صياغة النصوص واللوائح", "لغة إنجليزية (3)"]
-        },
-        {
-          "semester": "الفصل الخامس",
-          "courses": ["التدريب التعاوني"]
+          "semester": "الفصل الدراسي الرابع",
+          "courses": ["الأوراق التجارية والإفلاس", "العقود التجارية وعمليات البنوك", "الأسواق المالية", "المعاملات المالية (2)", "صياغة النصوص واللوائح", "لغة انجليزية ( 3 )"]
         }
       ],
       "en": [
         {
-          "semester": "Semester 1",
-          "courses": ["Introduction to Computer Applications (1)", "Law Principles", "General English (1)", "Administrative Law", "Commercial Law", "International Law Principles"]
+          "semester": "First Semester",
+          "courses": ["Introduction to Computer Applications (1)", "Principles of Law", "General English (1)", "Administrative Law", "Commercial Law", "Principles of International Law"]
         },
         {
-          "semester": "Semester 2",
-          "courses": ["Administrative Office Management", "Administrative Contracts", "Family Law", "Corporate Law", "Advanced Computer Applications (2)", "Sources of Obligation"]
+          "semester": "Second Semester",
+          "courses": ["Administrative Office Management", "Administrative Contracts", "Family Law", "Company Law", "Advanced Computer Applications (2)", "Sources of Obligation"]
         },
         {
-          "semester": "Semester 3",
-          "courses": ["Jurisprudence Principles", "Financial Transactions (1)", "Labor Law", "Specialized English (2)", "Enforcement System", "Zakat and Tax Law"]
+          "semester": "Third Semester",
+          "courses": ["Principles of Jurisprudence", "Financial Transactions (1)", "Labor Law", "Specialized English (2)", "Execution System", "Zakat and Tax Law"]
         },
         {
-          "semester": "Semester 4",
+          "semester": "Fourth Semester",
           "courses": ["Commercial Papers and Bankruptcy", "Commercial Contracts and Banking Operations", "Financial Markets", "Financial Transactions (2)", "Text and Regulation Drafting", "English (3)"]
-        },
-        {
-          "semester": "Semester 5",
-          "courses": ["Cooperative Training"]
         }
       ]
     },
-    "requirements": {
-      "ar": ["الثانوية العامة أو ما يعادلها", "الكفاءة المتوسطة", "ألا يقل عمر المتدرب عن 17 سنة عند التخرج"],
-      "en": ["High school diploma or equivalent", "Intermediate proficiency", "Trainee must be at least 17 years old upon graduation"]
+    "Learningoutcomes": {
+      "ar": ["معرفة المفاهيم والمصطلحات الخاصة بدبلوم السكرتير القانوني", "تجهيز وإدارة الملفات القضائية والمستندات القانونية", "إتقان برامج مايكروسوفت أوفيس (Word, Outlook)، والتعامل مع التطبيقات القانونية المتخصصة، والطباعة الدقيقة", "صياغة التقارير والرسائل والمذكرات القانونية والإدارية", "فهم طبيعة قوانين العمل وكيفية التعامل معها", "التعامل مع البنوك وفهم طبيعة المعاملات المالية", "صياغة العقود والنصوص واللوائح ومراجعتها واستخلاص نقاط الضعف فيها", "فهم قانون الزكاة والدخل وآلية تطبيقه على الشركات والمؤسسات"],
+      "en": ["Knowledge of concepts and terminology specific to the Legal Secretary Diploma", "Preparing and managing judicial files and legal documents", "Mastering Microsoft Office programs (Word, Outlook), dealing with specialized legal applications, and precise typing", "Drafting reports, letters, and legal and administrative memoranda", "Understanding the nature of labor laws and how to deal with them", "Dealing with banks and understanding the nature of financial transactions", "Drafting, reviewing contracts, texts, and regulations and identifying weaknesses in them", "Understanding Zakat and Income Law and its application mechanism to companies and institutions"]
+    },
+    "targetJobs": {
+      "ar": ["سكرتير قانوني", "باحث قانوني", "مساعد قانوني", "كاتب قانوني", "محقق قانوني"],
+      "en": ["Legal Secretary", "Legal Researcher", "Legal Assistant", "Legal Writer", "Legal Investigator"]
+    },
+    "exitPoints": {
+      "ar": "تستطيع الخروج من الدبلوم بعد دراسة فصلين دراسيين والنجاح في الاختبارات النهائية والحصول على دبلوم مشارك في المستوى الرابع من الإطار الوطني للمؤهلات. مع إمكانية استكمال الدبلوم بعد ذلك.",
+      "en": "You can exit the diploma after studying two semesters and passing the final exams to obtain an associate diploma at level 4 of the National Qualifications Framework, with the possibility of completing the diploma afterward."
+    },
+    "certifications": {
+      "ar": [],
+      "en": []
+    },
+    "felxabilty": {
+      "ar": ["مواعيد الحضور والتدريب", "اختيار وتسجيل المقررات"],
+      "en": ["Attendance and training schedules", "Course selection and registration"]
+    },
+    "subtitle": {
+      "ar": "",
+      "en": ""
+    },
+    "category": {
+      "ar": "",
+      "en": ""
+    },
+    "startDate": {
+      "ar": "",
+      "en": ""
+    },
+    "endDate": {
+      "ar": "",
+      "en": ""
+    },
+    "status": {
+      "ar": "",
+      "en": ""
+    },
+    "price": 0,
+    "rating": 0,
+    "reviews": 0,
+    "instructor": {
+      "name": {
+        "ar": "",
+        "en": ""
+      },
+      "title": {
+        "ar": "",
+        "en": ""
+      },
+      "experience": {
+        "ar": "",
+        "en": ""
+      },
+      "image": "",
+      "bio": {
+        "ar": "",
+        "en": ""
+      }
     },
     "benefits": {
-      "ar": ["دبلوم معتمد من المؤسسة العامة للتدريب التقني والمهني", "تدريب عملي مكثف (360 ساعة تدريب تعاوني)", "تأهيل للحصول على المستوى الخامس من المؤهلات المهنية الوطنية", "فرص عمل في المكاتب القانونية والإدارات القانونية"],
-      "en": ["Diploma certified by the Technical and Vocational Training Corporation", "Intensive practical training (360 hours of cooperative training)", "Qualification for Level 5 of the National Professional Qualifications", "Job opportunities in law offices and legal departments"]
+      "ar": [],
+      "en": []
+    },
+    "faqs": []
+  },
+  {
+    "id": 5,
+    "icon": "ComputerDesktopIcon",
+    "image": "https://plus.unsplash.com/premium_photo-1764705700264-d3a655bcbdf9?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "title": {
+      "ar": "دبلوم أمن وشبكات الحاسب",
+      "en": "Diploma in Computer Security and Networks"
+    },
+    "requirements": {
+      "ar": ["الحصول على مؤهل الثانوية العامة أوما يعادلها"],
+      "en": ["Obtaining a high school diploma or equivalent"]
+    },
+    "overview": {
+      "ar": "دبلوم مهني يركز على إلى إعداد متخصصين قادرين على بناء وإدارة وحماية الأنظمة والشبكات والبيانات من التهديدات والهجمات الرقمية المتزايدة في عالمنا الرقمي، ويساعدك على اكتساب مهارات عملية في مجالات تحليل الثغرات الأمنية، والتشفير، واختبار الاختراق الأخلاقي، والاستجابة للحوادث السيبرانية ، وتنمية قدراتك الذاتية للالتحاق بسوق العمل وذلك من خلال دورات احترافية تؤهلك للحصول على شهادات مهنية توائم للحصول على دبلوم متوسط.",
+      "en": "A professional diploma that focuses on preparing specialists capable of building, managing, and protecting systems, networks, and data from increasing digital threats and attacks in our digital world, helping you acquire practical skills in areas such as vulnerability analysis, encryption, ethical hacking, cybersecurity incident response, and developing your personal capabilities to join the labor market through professional courses that qualify you to obtain professional certificates equivalent to an intermediate diploma."
+    },
+    "objectives": {
+      "ar": "يهدف هذا البرنامج إلى تأهيل المتدرب للعمل في مجال بناء وإدارة الشبكات،تأمين وحماية المعلومات، الاستجابة للحوادث الأمنية، والتأهيل المهني والوظيفي.",
+      "en": "This program aims to qualify trainees to work in the field of building and managing networks, securing and protecting information, responding to security incidents, and professional and vocational qualification."
+    },
+    "level": {
+      "ar": "دبلوم متوسط مصنف على المستوى الخامس من الإطار الوطني للمؤهلات",
+      "en": "Intermediate diploma classified at level 5 of the National Qualifications Framework"
+    },
+    "duration": {
+      "ar": "سنتين مقسمة على أربعة فصول دراسية + التدريب التعاوني",
+      "en": "Two years divided into four academic semesters + cooperative training"
+    },
+    "creditHours":66,
+    "language": {
+      "ar": "العربية",
+      "en": "Arabic"
     },
     "schedule": {
       "ar": {
-        "days": ["يحدد حسب الجدول"],
-        "time": "حسب الجدول التدريبي",
-        "mode": "حضوري - مدمج - عن بعد",
-        "location": "أكاديمية المهارات التطبيقية للتدريب"
+        "days": [],
+        "time": "",
+        "mode": "حضوري -- مدمج",
+        "location": ""
       },
       "en": {
-        "days": ["Specified by the schedule"],
-        "time": "According to the training schedule",
-        "mode": "Face-to-face - Blended - Online",
-        "location": "Applied Skills Training Academy"
+        "days": [],
+        "time": "",
+        "mode": "In-person -- Blended",
+        "location": ""
       }
     },
-    "certifications": {
-      "ar": ["شهادة دبلوم السكرتير القانوني", "مستوى 5 من نظام المؤهلات المهنية الوطنية"],
-      "en": ["Legal Secretary Diploma Certificate", "Level 5 of the National Professional Qualifications System"]
+    "Mandatoryrequirements": {
+      "ar": "تدريب تعاوني لمدة 3 شهور ونصف",
+      "en": "Cooperative training for 3 and a half months"
     },
-    "exitPoints": {
-      "ar": "يمكن الخروج بعد إكمال الفصول الدراسية الأربعة والحصول على شهادة الدبلوم",
-      "en": "Can exit after completing the four semesters and obtain the diploma certificate"
+    "curriculum": {
+      "ar": [
+        {
+          "semester": "الفصل الدراسي الأول",
+          "courses": ["لغة إنجليزية عامة", "رياضيات", "مباديء إدارة الأعمال", "مقدمة في تقنية المعلومات", "أساسيات الشبكات والأمن", "مسارات الوصول إلى الشبكة"]
+        },
+        {
+          "semester": "الفصل الدراسي الثاني",
+          "courses": ["لغة إنجليزية (2)", "أساسيات ريادة الأعمال", "مقدمة في الاختراق الأخلاقي", "بروتوكولات الشبكة", "أمن الحوسبة السحابية والشبكات اللاسلكية", "أساسيات التهديدات والهجمات السيبرانية"]
+        },
+        {
+          "semester": "الفصل الدراسي الثالث",
+          "courses": ["لغة إنجليزية (3)", "مهارات إدارة الوقت", "الشبكات اللاسلكية والمتنقلة", "أساسيات التشفير", "إدارة المخاطر والامتثال", "تهديدات البرامج الضارة"]
+        },
+        {
+          "semester": "الفصل الدراسي الرابع",
+          "courses": ["لغة إنجليزية (4)", "السلوك الوظيفي والمستقبل المهني", "اختراق خوادم الويب وتطبيقات الويب وقواعد البيانات", "الأتمتة وقابلية البرمجة", "أمن التطبيقات وقواعد البيانات", "اختراق الشبكات", "التحقيق الجنائي الرقمي"]
+        }
+      ],
+      "en": [
+        {
+          "semester": "First Semester",
+          "courses": ["General English", "Mathematics", "Business Management Principles", "Introduction to Information Technology", "Networks and Security Fundamentals", "Network Access Paths"]
+        },
+        {
+          "semester": "Second Semester",
+          "courses": ["English (2)", "Entrepreneurship Fundamentals", "Introduction to Ethical Hacking", "Network Protocols", "Cloud Computing Security and Wireless Networks", "Cyber Threat and Attack Fundamentals"]
+        },
+        {
+          "semester": "Third Semester",
+          "courses": ["English (3)", "Time Management Skills", "Wireless and Mobile Networks", "Encryption Fundamentals", "Risk Management and Compliance", "Malware Threats"]
+        },
+        {
+          "semester": "Fourth Semester",
+          "courses": ["English (4)", "Professional Behavior and Career Future", "Web Server, Web Applications, and Database Hacking", "Automation and Programmability", "Application and Database Security", "Network Hacking", "Digital Forensic Investigation"]
+        }
+      ]
+    },
+    "Learningoutcomes": {
+      "ar": ["القيام بأعمال بتأمين المعلومات والحماية من التهديدات السيبرانية ويشمل ذلك التعرف على أنواع الهجمات الإلكترونية، وفيروسات الحاسوب، والبرامج الضارة، وكيفية حماية الأنظمة منها", "القيام بأعمال التحقيق في الحوادث الأمنية ويشمل ذلك القدرة على جمع الأدلة الرقمية، وتحليل الحوادث الأمنية، وتحديد أسبابها", "القيام بتكوين وتهيئة أجهزة الشبكة الأساسية مثل الموجهات (Routers)، والمحولات (Switches)، ونقاط الوصول اللاسلكية (APs)", "تحديد مشكلات الدعم الفني المتعلقة بالشبكات والوقوف على تقديم حلول لها", "القيام بالحفاظ على سرية وخصوصية بيانات المستخدمين والمعلومات الحساسة التي يطلع عليها أثناء عمله، وألا يفصح عنها لأي طرف غير مصرح له", "تنفيذ القوانين واللوائح المحلية والدولية المتعلقة بجرائم المعلومات والأمن السيبراني (مثل نظام مكافحة الجرائم المعلوماتية في المملكة العربية السعودية)، وأن يلتزم بتطبيقها"],
+      "en": ["Performing information security and protection from cyber threats, including identifying types of electronic attacks, computer viruses, malware, and how to protect systems from them", "Conducting security incident investigations, including the ability to collect digital evidence, analyze security incidents, and determine their causes", "Configuring and setting up basic network devices such as routers, switches, and wireless access points (APs)", "Identifying technical support problems related to networks and providing solutions for them", "Maintaining confidentiality and privacy of user data and sensitive information accessed during work, and not disclosing it to any unauthorized party", "Implementing local and international laws and regulations related to information crimes and cybersecurity (such as the Anti-Cybercrime Law in the Kingdom of Saudi Arabia), and committing to their application"]
     },
     "targetJobs": {
-      "ar": ["سكرتير قانوني", "باحث قانوني", "مساعد قانوني", "كاتب قانوني","محقق قانوني"],
-      "en": ["Legal Secretary", "Legal Researcher", "Legal Assistant", "Legal Files Coordinator", "Legal investigator"]
+      "ar": ["الدعم الفني", "إدارة الشبكات", "تأمين الشبكات", "أمن المعلومات", "تحليل الثغرات الأمنية", "مختص شبكات"],
+      "en": ["Technical Support", "Network Management", "Network Security", "Information Security", "Vulnerability Analysis", "Network Specialist"]
     },
-    "faqs": [
-      {
-        "question": {
-          "ar": "ما هي شروط القبول في البرنامج؟",
-          "en": "What are the admission requirements for the program?"
-        },
-        "answer": {
-          "ar": "الثانوية العامة أو ما يعادلها، الكفاءة المتوسطة، وألا يقل عمر المتدرب عن 17 سنة عند التخرج",
-          "en": "High school diploma or equivalent, intermediate proficiency, and trainee must be at least 17 years old upon graduation"
-        }
+    "exitPoints": {
+      "ar": "تستطيع الخروج من الدبلوم بعد دراسة فصلين دراسيين والنجاح في الاختبارات النهائية والحصول على دبلوم مشارك في المستوى الرابع من الإطار الوطني للمؤهلات. مع إمكانية استكمال الدبلوم بعد ذلك.",
+      "en": "You can exit the diploma after studying two semesters and passing the final exams to obtain an associate diploma at level 4 of the National Qualifications Framework, with the possibility of completing the diploma afterward."
+    },
+    "certifications": {
+      "ar": ["CCNA", "CompTIA N+"],
+      "en": ["CCNA", "CompTIA N+"]
+    },
+    "felxabilty": {
+      "ar": ["مواعيد الحضور والتدريب", "اختيار وتسجيل المقررات"],
+      "en": ["Attendance and training schedules", "Course selection and registration"]
+    },
+    "subtitle": {
+      "ar": "",
+      "en": ""
+    },
+    "category": {
+      "ar": "",
+      "en": ""
+    },
+    "startDate": {
+      "ar": "",
+      "en": ""
+    },
+    "endDate": {
+      "ar": "",
+      "en": ""
+    },
+    "status": {
+      "ar": "",
+      "en": ""
+    },
+    "price": 0,
+    "rating": 0,
+    "reviews": 0,
+    "instructor": {
+      "name": {
+        "ar": "",
+        "en": ""
       },
-      {
-        "question": {
-          "ar": "ما هي مدة البرنامج؟",
-          "en": "What is the duration of the program?"
-        },
-        "answer": {
-          "ar": "سنتين (4 فصول دراسية + تدريب تعاوني)",
-          "en": "Two years (4 semesters of study + cooperative training)"
-        }
+      "title": {
+        "ar": "",
+        "en": ""
       },
-      {
-        "question": {
-          "ar": "ما هي فرص العمل بعد التخرج؟",
-          "en": "What are the job opportunities after graduation?"
-        },
-        "answer": {
-          "ar": "سكرتير قانوني, بحث قانوني, مساعد قانوني, كاتب قانوني, محقق قانوني",
-          "en": "Legal Clerk, Legal Researcher, Legal Assistant, Legal Files Coordinator, Legal investigator"
-        }
+      "experience": {
+        "ar": "",
+        "en": ""
       },
-      {
-        "question": {
-          "ar": "هل يتضمن البرنامج تدريباً عملياً؟",
-          "en": "Does the program include practical training?"
-        },
-        "answer": {
-          "ar": "نعم، يتضمن 3 أشهر تدريب تعاوني في سوق العمل",
-          "en": "Yes, includes 3 months of cooperative training in the job market"
-        }
+      "image": "",
+      "bio": {
+        "ar": "",
+        "en": ""
       }
-    ]
+    },
+    "benefits": {
+      "ar": [],
+      "en": []
+    },
+    "faqs": []
+  },
+  {
+    "id": 6,
+    "icon": "DevicePhoneMobileIcon",
+    "image": "https://images.unsplash.com/photo-1591439657848-9f4b9ce436b9?q=80&w=1602&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "title": {
+      "ar": "دبلوم البرمجة وتطبيقات الأجهزة الذكية",
+      "en": "Diploma in Programming and Smart Device Applications"
+    },
+    "requirements": {
+      "ar": ["الحصول على مؤهل الثانوية العامة أوما يعادلها"],
+      "en": ["Obtaining a high school diploma or equivalent"]
+    },
+    "overview": {
+      "ar": "دبلوم مهني تكتسب من خلاله العديد من المهارات التي تؤهلك للعمل في مجالات متنوعة ومتخصصة في البرمجة وتطبيقات الأجهزة الذكية و اكتساب أساسيات البرمجة الصلبة وأنظمة التشغيل ، وتصميم وتطوير التطبيقات البرمجية ، والتعامل مع مختلف منصات الأجهزة الذكية، لتصبح قادراً على تلبية متطلبات سوق العمل المتنامية في مجال تطوير التطبيقات، وذلك من خلال دورات احترافية تؤهلك للحصول على شهادات مهنية توائم للحصول على دبلوم متوسط.",
+      "en": "A professional diploma through which you acquire many skills that qualify you to work in diverse and specialized fields in programming and smart device applications, acquiring solid programming fundamentals and operating systems, designing and developing software applications, and dealing with various smart device platforms, to become capable of meeting the growing labor market requirements in application development, through professional courses that qualify you to obtain professional certificates equivalent to an intermediate diploma."
+    },
+    "objectives": {
+      "ar": "يهدف هذا البرنامج إلى إكساب المتدربين المعارف والمهارات التقنية اللازمة لتصميم، تطوير، اختبار، ونشر تطبيقات برمجية متقدمة وفعالة تعمل على مختلف منصات الأجهزة الذكية (مثل Android و iOS).",
+      "en": "This program aims to provide trainees with the necessary technical knowledge and skills to design, develop, test, and deploy advanced and effective software applications that work on various smart device platforms (such as Android and iOS)."
+    },
+    "level": {
+      "ar": "دبلوم متوسط مصنف على المستوى الخامس من الإطار الوطني للمؤهلات",
+      "en": "Intermediate diploma classified at level 5 of the National Qualifications Framework"
+    },
+    "duration": {
+      "ar": "سنتين مقسمة على أربعة فصول دراسية + التدريب التعاوني",
+      "en": "Two years divided into four academic semesters + cooperative training"
+    },
+    "creditHours":60,
+    "language": {
+      "ar": "العربية",
+      "en": "Arabic"
+    },
+    "schedule": {
+      "ar": {
+        "days": [],
+        "time": "",
+        "mode": "حضوري -- مدمج",
+        "location": ""
+      },
+      "en": {
+        "days": [],
+        "time": "",
+        "mode": "In-person -- Blended",
+        "location": ""
+      }
+    },
+    "Mandatoryrequirements": {
+      "ar": "تدريب تعاوني لمدة 3 شهور ونصف",
+      "en": "Cooperative training for 3 and a half months"
+    },
+    "curriculum": {
+      "ar": [
+        {
+          "semester": "الفصل الدراسي الأول",
+          "courses": ["لغة إنجليزية عامة", "رياضيات", "مباديء إدارة الأعمال", "مقدمة في البرمجة", "هياكل البيانات والخوارزميات", "مباديء قواعد البيانات"]
+        },
+        {
+          "semester": "الفصل الدراسي الثاني",
+          "courses": ["لغة إنجليزية (2)", "أساسيات ريادة الأعمال", "مهارات التفاوض", "مقدمة في تطوير الويب", "أساسيات تطوير Android (باستخدام Java أو Kotlin)", "أساسيات تطوير iOS (باستخدام Swift أو Objective-C)"]
+        },
+        {
+          "semester": "الفصل الدراسي الثالث",
+          "courses": ["لغة انجليزية (3)", "رياضيات (2)", "مهارات إدارة الوقت", "البرمجة عبر المنصات (Cross-Platform Development)", "تصميم واجهات وتجربة المستخدم (UI/UX Design)", "الاتصال بخدمات الويب (APIs & Web Services)"]
+        },
+        {
+          "semester": "الفصل الدراسي الرابع",
+          "courses": ["لغة انجليزية (4)", "الجرائم الالكترونية", "أمن تطبيقات الأجهزة الذكية", "اختبار التطبيقات ونشرها", "مشروع التخرج"]
+        }
+      ],
+      "en": [
+        {
+          "semester": "First Semester",
+          "courses": ["General English", "Mathematics", "Business Management Principles", "Introduction to Programming", "Data Structures and Algorithms", "Database Principles"]
+        },
+        {
+          "semester": "Second Semester",
+          "courses": ["English (2)", "Entrepreneurship Fundamentals", "Negotiation Skills", "Introduction to Web Development", "Android Development Fundamentals (using Java or Kotlin)", "iOS Development Fundamentals (using Swift or Objective-C)"]
+        },
+        {
+          "semester": "Third Semester",
+          "courses": ["English (3)", "Mathematics (2)", "Time Management Skills", "Cross-Platform Development", "User Interface and User Experience Design (UI/UX Design)", "Web Services Connection (APIs & Web Services)"]
+        },
+        {
+          "semester": "Fourth Semester",
+          "courses": ["English (4)", "Electronic Crimes", "Smart Device Application Security", "Application Testing and Deployment", "Graduation Project"]
+        }
+      ]
+    },
+    "Learningoutcomes": {
+      "ar": ["اكتساب القدرة على كتابة شيفرة برمجية محترفة وفعالة باستخدام لغات البرمجة المعتمدة في الدبلوم (مثل Kotlin, Swift، أو JavaScript/Dart لمنصات متعددة)", "تصميم واجهات مستخدم (UI) وتجربة مستخدم (UX) جذابة وسهلة الاستخدام ومتوافقة مع إرشادات المنصات (Human Interface Guidelines و Material Design)", "اكتساب مهارات بناء تطبيقات Native أساسية لمنصة واحدة على الأقل Android أو iOS أو تطبيقات Cross-platform باستخدام أطر عمل مثل Flutter أوReact Native", "اكتساب مهارات بناء تطبيقات Native أساسية لمنصة واحدة على الأقل Android أو iOS أو تطبيقات Cross-platform باستخدام أطر عمل مثل Flutter أوReact Native.", "اكتساب مهارات بناء تطبيقات Native أساسية لمنصة واحدة على الأقل Android أو iOS أو تطبيقات Cross-platform باستخدام أطر عمل مثل Flutter أوReact Native"],
+      "en": ["Acquiring the ability to write professional and effective code using programming languages approved in the diploma (such as Kotlin, Swift, or JavaScript/Dart for multiple platforms)", "Designing attractive, user-friendly user interfaces (UI) and user experiences (UX) compatible with platform guidelines (Human Interface Guidelines and Material Design)", "Acquiring skills in building basic native applications for at least one platform, Android or iOS, or cross-platform applications using frameworks such as Flutter or React Native", "Acquiring skills in building basic native applications for at least one platform, Android or iOS, or cross-platform applications using frameworks such as Flutter or React Native.", "Acquiring skills in building basic native applications for at least one platform, Android or iOS, or cross-platform applications using frameworks such as Flutter or React Native"]
+    },
+    "targetJobs": {
+      "ar": ["مساعد مبرمج ألعاب", "مساعد مطور تطبيقات الهواتف الذكية", "مساعد مهندس أنظمة مدمجة", "فني صيانة وإدارة الأنظمة"],
+      "en": ["Game Programmer Assistant", "Smartphone Application Developer Assistant", "Embedded Systems Engineer Assistant", "System Maintenance and Management Technician"]
+    },
+    "exitPoints": {
+      "ar": "تستطيع الخروج من الدبلوم بعد دراسة فصلين دراسيين والنجاح في الاختبارات النهائية والحصول على دبلوم مشارك في المستوى الرابع من الإطار الوطني للمؤهلات. مع إمكانية استكمال الدبلوم بعد ذلك.",
+      "en": "You can exit the diploma after studying two semesters and passing the final exams to obtain an associate diploma at level 4 of the National Qualifications Framework, with the possibility of completing the diploma afterward."
+    },
+    "certifications": {
+      "ar": ["Meta iOS Developer Professional Certificate", "Oracle Certified Professional: Java SE Develop"],
+      "en": ["Meta iOS Developer Professional Certificate", "Oracle Certified Professional: Java SE Developer"]
+    },
+    "felxabilty": {
+      "ar": ["مواعيد الحضور والتدريب", "اختيار وتسجيل المقررات"],
+      "en": ["Attendance and training schedules", "Course selection and registration"]
+    },
+    "subtitle": {
+      "ar": "",
+      "en": ""
+    },
+    "category": {
+      "ar": "",
+      "en": ""
+    },
+    "startDate": {
+      "ar": "",
+      "en": ""
+    },
+    "endDate": {
+      "ar": "",
+      "en": ""
+    },
+    "status": {
+      "ar": "",
+      "en": ""
+    },
+    "price": 0,
+    "rating": 0,
+    "reviews": 0,
+    "instructor": {
+      "name": {
+        "ar": "",
+        "en": ""
+      },
+      "title": {
+        "ar": "",
+        "en": ""
+      },
+      "experience": {
+        "ar": "",
+        "en": ""
+      },
+      "image": "",
+      "bio": {
+        "ar": "",
+        "en": ""
+      }
+    },
+    "benefits": {
+      "ar": [],
+      "en": []
+    },
+    "faqs": []
+  },
+  {
+    "id": 7,
+    "icon": "CircleStackIcon",
+    "image": "https://images.unsplash.com/photo-1517134191118-9d595e4c8c2b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "title": {
+      "ar": "دبلوم قواعد البيانات وتطوير الويب",
+      "en": "Diploma in Databases and Web Development"
+    },
+    "requirements": {
+      "ar": ["الحصول على مؤهل الثانوية العامة أوما يعادلها"],
+      "en": ["Obtaining a high school diploma or equivalent"]
+    },
+    "overview": {
+      "ar": "دبلوم مهني تكتسب من خلاله العديد من المهارات التي تؤهلك للعمل في مجالات متنوعة ومتخصصة في قواعد البيانات وتطوير الويب مثل التصميم، التنفيذ، الإدارة، والصيانة لكل من أنظمة قواعد البيانات وتطبيقات ومواقع الويب الاحترافية المتكاملة وتنمية قدراتك الذاتية للالتحاق بسوق العمل وذلك من خلال دورات احترافية تؤهلك للحصول على شهادات مهنية توائم للحصول على دبلوم متوسط.",
+      "en": "A professional diploma through which you acquire many skills that qualify you to work in diverse and specialized fields in databases and web development such as design, implementation, management, and maintenance of both database systems and integrated professional web applications and websites, and developing your personal capabilities to join the labor market through professional courses that qualify you to obtain professional certificates equivalent to an intermediate diploma."
+    },
+    "objectives": {
+      "ar": "يهدف هذا البرنامج إلى تأهيل المتدرب للعمل في مجال قواعد البيانات وتطبيقات ومواقع الويب الاحترافية المتكاملة، وتحقيق نمو مستدام للأعمال التجارية عبر القنوات الرقمية المختلفة.",
+      "en": "This program aims to qualify trainees to work in the field of databases and integrated professional web applications and websites, and achieve sustainable growth for businesses through various digital channels."
+    },
+    "level": {
+      "ar": "دبلوم متوسط مصنف على المستوى الخامس من الإطار الوطني للمؤهلات",
+      "en": "Intermediate diploma classified at level 5 of the National Qualifications Framework"
+    },
+    "duration": {
+      "ar": "سنتين مقسمة على أربعة فصول دراسية + التدريب التعاوني",
+      "en": "Two years divided into four academic semesters + cooperative training"
+    },
+    "creditHours":60,
+    "language": {
+      "ar": "العربية",
+      "en": "Arabic"
+    },
+    "schedule": {
+      "ar": {
+        "days": [],
+        "time": "",
+        "mode": "حضوري -- مدمج",
+        "location": ""
+      },
+      "en": {
+        "days": [],
+        "time": "",
+        "mode": "In-person -- Blended",
+        "location": ""
+      }
+    },
+    "Mandatoryrequirements": {
+      "ar": "تدريب تعاوني لمدة 3 شهور ونصف",
+      "en": "Cooperative training for 3 and a half months"
+    },
+    "curriculum": {
+      "ar": [
+        {
+          "semester": "الفصل الدراسي الأول",
+          "courses": ["لغة انجليزية (1)", "رياضيات (1)", "مبادئ إدارة اعمال", "مقدمة في الحاسب وتكنولوجيا المعلومات", "أساسيات البرمجة", "تصميم وتحليل قواعد البيانات"]
+        },
+        {
+          "semester": "الفصل الدراسي الثاني",
+          "courses": ["لغة انجليزية (2)", "اساسيات ريادة الاعمال", "مهارات التفاوض", "لغة الاستعلام الهيكلية (SQL)", "نظم إدارة قواعد البيانات (DBMS)", "برمجة قواعد البيانات"]
+        },
+        {
+          "semester": "الفصل الدراسي الثالث",
+          "courses": ["لغة انجليزية (3)", "رياضيات (2)", "مهارات إدارة الوقت", "أساسيات تطوير الويب", "لغات الواجهة الأمامية (Front-end)", "لغات الواجهة الخلفية (Back-end)"]
+        },
+        {
+          "semester": "الفصل الدراسي الرابع",
+          "courses": ["لغة انجليزية (4)", "الجرائم الالكترونية", "أطر العمل (Frameworks)", "أمن تطبيقات الويب", "مشروع التخرج"]
+        }
+      ],
+      "en": [
+        {
+          "semester": "First Semester",
+          "courses": ["English (1)", "Mathematics (1)", "Business Management Principles", "Introduction to Computers and Information Technology", "Programming Fundamentals", "Database Design and Analysis"]
+        },
+        {
+          "semester": "Second Semester",
+          "courses": ["English (2)", "Entrepreneurship Fundamentals", "Negotiation Skills", "Structured Query Language (SQL)", "Database Management Systems (DBMS)", "Database Programming"]
+        },
+        {
+          "semester": "Third Semester",
+          "courses": ["English (3)", "Mathematics (2)", "Time Management Skills", "Web Development Fundamentals", "Front-end Languages", "Back-end Languages"]
+        },
+        {
+          "semester": "Fourth Semester",
+          "courses": ["English (4)", "Electronic Crimes", "Frameworks", "Web Application Security", "Graduation Project"]
+        }
+      ]
+    },
+    "Learningoutcomes": {
+      "ar": ["اكتساب مهارات بناء وتطوير واجهات أمامية (Front-end) جذابة وتفاعلية باستخدام لغات وتقنيات مثل HTML، وCSS، وJavaScript", "اكتساب القدرة على القيام تطوير منطق خلفي (Back-end) قوي وفعال لإدارة البيانات، ومصادقة المستخدمين، وضمان أمان التطبيقات باستخدام لغات برمجة مثل PHP، أو Python، أو Node.js", "اكتساب مهارات إنشاء و ربط قواعد البيانات بتطبيقات الويب لإنشاء تطبيقات ديناميكية ومواقع تجارة إلكترونية وأنظمة إدارة محتوى متكاملة", "اكتساب مهارات أمن المعلومات لحماية البيانات وتطبيقات الويب من التهديدات السيبرانية", "اكتساب مهارات تحليل وتصميم أنظمة قواعد بيانات فعالة باستخدام نماذج ومبادئ متقدمة (مثل نمذجة الكيانات والعلاقات - ERD)"],
+      "en": ["Acquiring skills to build and develop attractive and interactive front-end (Front-end) interfaces using languages and technologies such as HTML, CSS, and JavaScript", "Acquiring the ability to develop strong and effective back-end (Back-end) logic for data management, user authentication, and ensuring application security using programming languages such as PHP, Python, or Node.js", "Acquiring skills in creating and linking databases to web applications to create dynamic applications, e-commerce websites, and integrated content management systems", "Acquiring information security skills to protect data and web applications from cyber threats", "Acquiring skills in analyzing and designing effective database systems using advanced models and principles (such as Entity-Relationship Modeling - ERD)"]
+    },
+    "targetJobs": {
+      "ar": ["مساعد مطور واجهة أمامية Front-End Developer", "مساعد مطور واجهة خلفية Back-End Developer", "مساعد مهندس قواعد بيانات", "مساعد مطور تطبيقات الويب والجوال", "مدخل بيانات", "مسؤول نظم البيانات"],
+      "en": ["Front-End Developer Assistant", "Back-End Developer Assistant", "Database Engineer Assistant", "Web and Mobile Applications Developer Assistant", "Data Entry Clerk", "Data Systems Administrator"]
+    },
+    "exitPoints": {
+      "ar": "تستطيع الخروج من الدبلوم بعد دراسة فصلين دراسيين والنجاح في الاختبارات النهائية والحصول على دبلوم مشارك في المستوى الرابع من الإطار الوطني للمؤهلات. مع إمكانية استكمال الدبلوم بعد ذلك.",
+      "en": "You can exit the diploma after studying two semesters and passing the final exams to obtain an associate diploma at level 4 of the National Qualifications Framework, with the possibility of completing the diploma afterward."
+    },
+    "certifications": {
+      "ar": ["C# Programming Certificate", "Microsoft Certified: Azure Database Administrator Associa"],
+      "en": ["C# Programming Certificate", "Microsoft Certified: Azure Database Administrator Associate"]
+    },
+    "felxabilty": {
+      "ar": ["مواعيد الحضور والتدريب", "اختيار وتسجيل المقررات"],
+      "en": ["Attendance and training schedules", "Course selection and registration"]
+    },
+    "subtitle": {
+      "ar": "",
+      "en": ""
+    },
+    "category": {
+      "ar": "",
+      "en": ""
+    },
+    "startDate": {
+      "ar": "",
+      "en": ""
+    },
+    "endDate": {
+      "ar": "",
+      "en": ""
+    },
+    "status": {
+      "ar": "",
+      "en": ""
+    },
+    "price": 0,
+    "rating": 0,
+    "reviews": 0,
+    "instructor": {
+      "name": {
+        "ar": "",
+        "en": ""
+      },
+      "title": {
+        "ar": "",
+        "en": ""
+      },
+      "experience": {
+        "ar": "",
+        "en": ""
+      },
+      "image": "",
+      "bio": {
+        "ar": "",
+        "en": ""
+      }
+    },
+    "benefits": {
+      "ar": [],
+      "en": []
+    },
+    "faqs": []
+  },
+  {
+    "id": 8,
+    "icon": "ShoppingCartIcon",
+    "image": "https://images.unsplash.com/photo-1763872011479-aa293bf083a8?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "title": {
+      "ar": "دبلوم التسويق الرقمي والتجارة الإلكترونية",
+      "en": "Diploma in Digital Marketing and E-commerce"
+    },
+    "requirements": {
+      "ar": ["الحصول على مؤهل الثانوية العامة أوما يعادلها"],
+      "en": ["Obtaining a high school diploma or equivalent"]
+    },
+    "overview": {
+      "ar": "دبلوم مهني تكتسب من خلاله العديد من المهارات التي تؤهلك للعمل في مجالات التسويق الرقمي والتجارة الإلكترونية ، من خلال استخدام أدوات التسويق الرقمي، ووضع الخطط التسويقية ، وتطوير استراتيجيات التسويق ، وإدارة حملات الإعلانات الرقمية ، وتحليل الأسواق ، وتنمية قدراتك الذاتية للالتحاق بسوق العمل، وذلك من خلال دورات احترافية تؤهلك للحصول على شهادات مهنية توائم للحصول على دبلوم متوسط.",
+      "en": "A professional diploma through which you acquire many skills that qualify you to work in digital marketing and e-commerce fields, through using digital marketing tools, developing marketing plans, formulating marketing strategies, managing digital advertising campaigns, analyzing markets, and developing your personal capabilities to join the labor market, through professional courses that qualify you to obtain professional certificates equivalent to an intermediate diploma."
+    },
+    "objectives": {
+      "ar": "يهدف هذا البرنامج إلى تأهيل المتدربين ليكونوا محترفين قادرين على تطوير وتنفيذ استراتيجيات تسويق رقمي متكاملة وفعالة، وإدارة منصات التجارة الإلكترونية بنجاح، وتحقيق نمو مستدام للأعمال التجارية عبر القنوات الرقمية المختلفة.",
+      "en": "This program aims to qualify trainees to become professionals capable of developing and implementing integrated and effective digital marketing strategies, successfully managing e-commerce platforms, and achieving sustainable growth for businesses through various digital channels."
+    },
+    "level": {
+      "ar": "دبلوم متوسط مصنف على المستوى الخامس من الإطار الوطني للمؤهلات",
+      "en": "Intermediate diploma classified at level 5 of the National Qualifications Framework"
+    },
+    "duration": {
+      "ar": "سنتين مقسمة على أربعة فصول دراسية + التدريب التعاوني",
+      "en": "Two years divided into four academic semesters + cooperative training"
+    },
+    "creditHours":60,
+    "language": {
+      "ar": "العربية",
+      "en": "Arabic"
+    },
+    "schedule": {
+      "ar": {
+        "days": [],
+        "time": "",
+        "mode": "حضوري -- مدمج",
+        "location": ""
+      },
+      "en": {
+        "days": [],
+        "time": "",
+        "mode": "In-person -- Blended",
+        "location": ""
+      }
+    },
+    "Mandatoryrequirements": {
+      "ar": "تدريب تعاوني لمدة 3 شهور ونصف",
+      "en": "Cooperative training for 3 and a half months"
+    },
+    "curriculum": {
+      "ar": [
+        {
+          "semester": "الفصل الدراسي الأول",
+          "courses": ["لغة انجليزية (1)", "رياضيات (1)", "مبادئ إدارة اعمال", "مقدمة في التسويق الرقمي وبناء الاستراتيجيات", "تحليل البيانات وقياس الأداء (Web Analytics)", "تحسين محركات البحث (SEO) والتسويق عبر المحتوى"]
+        },
+        {
+          "semester": "الفصل الدراسي الثاني",
+          "courses": ["لغة انجليزية (2)", "اساسيات ريادة الاعمال", "مهارات التفاوض", "الإعلان المدفوع (PPC) والتسويق عبر محركات البحث (SEM)", "التسويق عبر وسائل التواصل الاجتماعي والإعلان عليها", "التسويق عبر البريد الإلكتروني (Email Marketing)"]
+        },
+        {
+          "semester": "الفصل الدراسي الثالث",
+          "courses": ["لغة انجليزية (3)", "رياضيات (2)", "مهارات إدارة الوقت", "أساسيات التجارة الإلكترونية ونماذج الأعمال", "بناء وإدارة المتاجر الإلكترونية", "إدارة العمليات واللوجستيات"]
+        },
+        {
+          "semester": "الفصل الدراسي الرابع",
+          "courses": ["لغة انجليزية (4)", "الجرائم الالكترونية", "القنوات التسويقية المتخصصة", "تحسين معدل التحويل (CRO) وتجربة المستخدم (UX)", "مشروع التخرج"]
+        }
+      ],
+      "en": [
+        {
+          "semester": "First Semester",
+          "courses": ["English (1)", "Mathematics (1)", "Business Management Principles", "Introduction to Digital Marketing and Strategy Building", "Data Analysis and Performance Measurement (Web Analytics)", "Search Engine Optimization (SEO) and Content Marketing"]
+        },
+        {
+          "semester": "Second Semester",
+          "courses": ["English (2)", "Entrepreneurship Fundamentals", "Negotiation Skills", "Pay-Per-Click Advertising (PPC) and Search Engine Marketing (SEM)", "Social Media Marketing and Advertising", "Email Marketing"]
+        },
+        {
+          "semester": "Third Semester",
+          "courses": ["English (3)", "Mathematics (2)", "Time Management Skills", "E-commerce Fundamentals and Business Models", "Building and Managing E-commerce Stores", "Operations and Logistics Management"]
+        },
+        {
+          "semester": "Fourth Semester",
+          "courses": ["English (4)", "Electronic Crimes", "Specialized Marketing Channels", "Conversion Rate Optimization (CRO) and User Experience (UX)", "Graduation Project"]
+        }
+      ]
+    },
+    "Learningoutcomes": {
+      "ar": ["تقييم المشهد الرقمي والمنافسين وتحديد الفرص والتهديدات في بيئة الأعمال الإلكترونية", "تصميم خطة تسويق رقمي متكاملة تتماشى مع أهداف العمل العامة، مع تحديد الجمهور المستهدف بدقة (Buyer Personas)", "تطبيق التقنيات الداخلية (On-page) والخارجية (Off-page) لتحسين ترتيب الموقع في نتائج البحث العضوية", "إنشاء وإدارة وتحسين الحملات الإعلانية على منصات مثل Google Ads ومنصات التواصل الاجتماعي (Facebook Ads, Instagram Ads) لزيادة العائد على الاستثمار (ROI)", "تطوير استراتيجيات المحتوى والتفاعل مع الجمهور عبر مختلف المنصات لبناء الوعي بالعلامة التجارية وزيادة التفاعل", "تصميم وتنفيذ حملات بريد إلكتروني فعالة، وإدارة القوائم البريدية، وتحليل مؤشرات الأداء الرئيسية (KPIs)", "فهم وتنفيذ آليات إدارة المخزون، وبوابات الدفع الإلكتروني الآمنة، وعمليات الشحن والتوصيل"],
+      "en": ["Evaluating the digital landscape and competitors and identifying opportunities and threats in the e-business environment", "Designing a comprehensive digital marketing plan aligned with overall business goals, with precise targeting of the audience (Buyer Personas)", "Applying on-page and off-page techniques to improve website ranking in organic search results", "Creating, managing, and optimizing advertising campaigns on platforms such as Google Ads and social media platforms (Facebook Ads, Instagram Ads) to increase return on investment (ROI)", "Developing content strategies and interacting with the audience across various platforms to build brand awareness and increase engagement", "Designing and implementing effective email campaigns, managing mailing lists, and analyzing key performance indicators (KPIs)", "Understanding and implementing inventory management mechanisms, secure electronic payment gateways, and shipping and delivery operations"]
+    },
+    "targetJobs": {
+      "ar": ["مسوق رقمي", "خبير تحسين محركات البحث (SEO)", "خبير تسويق عبر محركات البحث (PPC) و إدارة المحتوى ووسائل التواصل الاجتماعي: مدير حسابات وسائل التواصل الاجتماعي", "متخصص في استراتيجيات المحتوى", "مدير علامة تجارية", "التحليل والبيانات", "محلل ويب", "محلل بيانات تسويقية", "محلل أعمال", "محلل تجارة إلكترونية", "المبيعات والعلاقات أخصائي مبيعات", "مدير علاقات العملاء", "منسق تطوير أعمال", "الاستشارات والتخطيط: مستشار أعمال إلكترونية", "مخطّط استراتيجيات تسويق"],
+      "en": ["Digital Marketer", "Search Engine Optimization (SEO) Expert", "Pay-Per-Click (PPC) Expert and Content and Social Media Management: Social Media Account Manager", "Content Strategies Specialist", "Brand Manager", "Analysis and Data: Web Analyst", "Marketing Data Analyst", "Business Analyst", "E-commerce Analyst", "Sales and Relationships: Sales Specialist", "Customer Relations Manager", "Business Development Coordinator", "Consulting and Planning: E-business Consultant", "Marketing Strategies Planner"]
+    },
+    "exitPoints": {
+      "ar": "تستطيع الخروج من الدبلوم بعد دراسة فصلين دراسيين والنجاح في الاختبارات النهائية والحصول على دبلوم مشارك في المستوى الرابع من الإطار الوطني للمؤهلات. مع إمكانية استكمال الدبلوم بعد ذلك.",
+      "en": "You can exit the diploma after studying two semesters and passing the final exams to obtain an associate diploma at level 4 of the National Qualifications Framework, with the possibility of completing the diploma afterward."
+    },
+    "certifications": {
+      "ar": ["شهادة مساعد مدير تسويق معتمد Associate CMMP", "محترف اعمال معتمد في المبيعات CBP", "محترف اعمال معتمد في التسويق CBP"],
+      "en": ["Associate Certified Marketing Manager Professional (CMMP)", "Certified Business Professional in Sales (CBP)", "Certified Business Professional in Marketing (CBP)"]
+    },
+    "felxabilty": {
+      "ar": ["مواعيد الحضور والتدريب", "اختيار وتسجيل المقررات"],
+      "en": ["Attendance and training schedules", "Course selection and registration"]
+    },
+    "subtitle": {
+      "ar": "",
+      "en": ""
+    },
+    "category": {
+      "ar": "",
+      "en": ""
+    },
+    "startDate": {
+      "ar": "",
+      "en": ""
+    },
+    "endDate": {
+      "ar": "",
+      "en": ""
+    },
+    "status": {
+      "ar": "",
+      "en": ""
+    },
+    "price": 0,
+    "rating": 0,
+    "reviews": 0,
+    "instructor": {
+      "name": {
+        "ar": "",
+        "en": ""
+      },
+      "title": {
+        "ar": "",
+        "en": ""
+      },
+      "experience": {
+        "ar": "",
+        "en": ""
+      },
+      "image": "",
+      "bio": {
+        "ar": "",
+        "en": ""
+      }
+    },
+    "benefits": {
+      "ar": [],
+      "en": []
+    },
+    "faqs": []
+  },
+  {
+    "id": 9,
+    "icon": "BuildingOfficeIcon",
+    "image": "https://images.unsplash.com/photo-1666160621105-130f0e983577?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "title": {
+      "ar": "دبلوم تقنية السياحة والضيافة (الفندقة)",
+      "en": "Diploma in Tourism and Hospitality Technology (Hospitality)"
+    },
+    "requirements": {
+      "ar": ["الحصول على مؤهل الثانوية العامة أوما يعادلها"],
+      "en": ["Obtaining a high school diploma or equivalent"]
+    },
+    "overview": {
+      "ar": "دبلوم مهني يجمع بين النظرية والتطبيق لتزويد الطلاب بالمهارات اللازمة للعمل في قطاع الضيافة ، ويركز على إدارة العمليات الفندقية (الاستقبال، الحجز)، التسويق الفندقي، خدمة العملاء، وإدارة الأغذية والمشروبات، مع تدريب عملي مكثف لضمان جاهزية الخريجين لوظائف إشرافية وإدارية في الفنادق والمنتجعات ، ومن خلال الدبلوم تستطيع تنمية قدراتك الذاتية للالتحاق بسوق العمل وذلك من خلال دورات احترافية تؤهلك للحصول على شهادات مهنية توائم للحصول على دبلوم متوسط.",
+      "en": "A professional diploma that combines theory and practice to provide students with the necessary skills to work in the hospitality sector, focusing on hotel operations management (reception, reservations), hotel marketing, customer service, and food and beverage management, with intensive practical training to ensure graduates' readiness for supervisory and administrative positions in hotels and resorts. Through the diploma, you can develop your personal capabilities to join the labor market through professional courses that qualify you to obtain professional certificates equivalent to an intermediate diploma."
+    },
+    "objectives": {
+      "ar": "يهدف هذا البرنامج إلى تأهيل المتدربين ليكونوا مؤهلين وقادرين على العمل في مجال الفندقة واكتساب مهارات التعامل مع الضيوف وخدمة العملاء وإدارة الفاعليات ،",
+      "en": "This program aims to qualify trainees to be competent and capable of working in the hospitality field and acquiring skills in dealing with guests, customer service, and event management."
+    },
+    "level": {
+      "ar": "دبلوم متوسط مصنف على المستوى الخامس من الإطار الوطني للمؤهلات",
+      "en": "Intermediate diploma classified at level 5 of the National Qualifications Framework"
+    },
+    "duration": {
+      "ar": "سنتين مقسمة على أربعة فصول دراسية + التدريب التعاوني",
+      "en": "Two years divided into four academic semesters + cooperative training"
+    },
+    "creditHours":63,
+    "language": {
+      "ar": "العربية",
+      "en": "Arabic"
+    },
+    "schedule": {
+      "ar": {
+        "days": [],
+        "time": "",
+        "mode": "حضوري -- مدمج",
+        "location": ""
+      },
+      "en": {
+        "days": [],
+        "time": "",
+        "mode": "In-person -- Blended",
+        "location": ""
+      }
+    },
+    "Mandatoryrequirements": {
+      "ar": "تدريب تعاوني لمدة 3 شهور ونصف",
+      "en": "Cooperative training for 3 and a half months"
+    },
+    "curriculum": {
+      "ar": [
+        {
+          "semester": "الفصل الدراسي الأول",
+          "courses": ["لغة إنجليزية (1)", "مقدمة في تطبيقات الحاسب الآلي", "الرياضيات", "الكتابة الفنية", "الصحة والسلامة الفندقية", "مباديء إدارة الأعمال", "مدخل إلى صناعة السياحة والضيافة"]
+        },
+        {
+          "semester": "الفصل الدراسي الثاني",
+          "courses": ["لغة إنجليزية (2)", "أساسيات ريادة الأعمال", "إدارة الموارد البشرية", "المكاتب الأمامية (1)", "مهارات خدمة ضيوف الفنادق", "إدارة التدبير الفندقي"]
+        },
+        {
+          "semester": "الفصل الدراسي الثالث",
+          "courses": ["لغة إنجليزية (3)", "الدراسات الإسلامية", "ريادة الأعمال في مجال السياحة والضيافة", "استخدام الحاسب الآلي في الفندقة(1)", "المكاتب الأمامية (2)", "المحاسبة الفندقية"]
+        },
+        {
+          "semester": "الفصل الدراسي الرابع",
+          "courses": ["لغة إنجليزية (4)", "السلوك الوظيفي والمستقبل المهني", "البيع والتسويق الفندقي", "استخدام الحاسب الآلي في الفندقة (2)", "المهارات الإشرافية الفندقية"]
+        }
+      ],
+      "en": [
+        {
+          "semester": "First Semester",
+          "courses": ["English (1)", "Introduction to Computer Applications", "Mathematics", "Technical Writing", "Hotel Health and Safety", "Business Management Principles", "Introduction to Tourism and Hospitality Industry"]
+        },
+        {
+          "semester": "Second Semester",
+          "courses": ["English (2)", "Entrepreneurship Fundamentals", "Human Resources Management", "Front Office (1)", "Hotel Guest Service Skills", "Hotel Procurement Management"]
+        },
+        {
+          "semester": "Third Semester",
+          "courses": ["English (3)", "Islamic Studies", "Entrepreneurship in Tourism and Hospitality", "Computer Use in Hospitality (1)", "Front Office (2)", "Hotel Accounting"]
+        },
+        {
+          "semester": "Fourth Semester",
+          "courses": ["English (4)", "Professional Behavior and Career Future", "Hotel Sales and Marketing", "Computer Use in Hospitality (2)", "Hotel Supervisory Skills"]
+        }
+      ]
+    },
+    "Learningoutcomes": {
+      "ar": ["التعامل مع طلبات الحجز وتنفيذها بدقة", "تجهيز قسم الاستقبال للعمل وطباعة التقارير", "استقبال الضيوف والرتحيب بهم", "تنفيذ مهام التسجيل والتسكين للأفراد والمجموعات السياحية", "تنمية مبيعات الغرف والفندق", "تلقي طلبات الضيوف وتنفيذها بكفاءة", "تنفيذ إجراءات المغادرة للأفراد والجماعات"],
+      "en": ["Handling reservation requests accurately and implementing them", "Preparing the reception department for work and printing reports", "Receiving and welcoming guests", "Performing check-in and accommodation tasks for individuals and tourist groups", "Developing room and hotel sales", "Receiving guest requests and implementing them efficiently", "Implementing check-out procedures for individuals and groups"]
+    },
+    "targetJobs": {
+      "ar": ["موظف استقبال", "تسويق فندقي", "تنظيم الحفلات", "العلاقات العامة", "الضيافة الجوية", "خدمة العملاء", "السلامة الغذائية", "السلامة الفندقية"],
+      "en": ["Receptionist", "Hotel Marketing", "Event Organization", "Public Relations", "Airline Hospitality", "Customer Service", "Food Safety", "Hotel Safety"]
+    },
+    "exitPoints": {
+      "ar": "تستطيع الخروج من الدبلوم بعد دراسة فصلين دراسيين والنجاح في الاختبارات النهائية والحصول على دبلوم مشارك في المستوى الرابع من الإطار الوطني للمؤهلات. مع إمكانية استكمال الدبلوم بعد ذلك.",
+      "en": "You can exit the diploma after studying two semesters and passing the final exams to obtain an associate diploma at level 4 of the National Qualifications Framework, with the possibility of completing the diploma afterward."
+    },
+    "certifications": {
+      "ar": ["شهادة اعتماد خدمة الضيوف الذهبية المهنية (CGSP)", "شهادة معلم ضيافة معتمد ( CHE)", "شهادة اعتماد مشرف ضيافة (CHS)", "شهادة اعتماد مدرب الضيافة (CHT)", "شهادة اعتماد مقدم طعام (CRS)", "شهادة محترف اعمال معتمد في خدمة العملاء (CBP)"],
+      "en": ["Certified Guest Service Professional (CGSP)", "Certified Hospitality Educator (CHE)", "Certified Hospitality Supervisor (CHS)", "Certified Hospitality Trainer (CHT)", "Certified Restaurant Server (CRS)", "Certified Business Professional in Customer Service (CBP)"]
+    },
+    "felxabilty": {
+      "ar": ["مواعيد الحضور والتدريب", "اختيار وتسجيل المقررات"],
+      "en": ["Attendance and training schedules", "Course selection and registration"]
+    },
+    "subtitle": {
+      "ar": "",
+      "en": ""
+    },
+    "category": {
+      "ar": "",
+      "en": ""
+    },
+    "startDate": {
+      "ar": "",
+      "en": ""
+    },
+    "endDate": {
+      "ar": "",
+      "en": ""
+    },
+    "status": {
+      "ar": "",
+      "en": ""
+    },
+    "price": 0,
+    "rating": 0,
+    "reviews": 0,
+    "instructor": {
+      "name": {
+        "ar": "",
+        "en": ""
+      },
+      "title": {
+        "ar": "",
+        "en": ""
+      },
+      "experience": {
+        "ar": "",
+        "en": ""
+      },
+      "image": "",
+      "bio": {
+        "ar": "",
+        "en": ""
+      }
+    },
+    "benefits": {
+      "ar": [],
+      "en": []
+    },
+    "faqs": []
   }
 ]
