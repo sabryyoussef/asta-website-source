@@ -36,13 +36,13 @@
       "ar": {
         "days": [],
         "time": "",
-        "mode": "حضوري -- مدمج",
+        "mode": "حضوري - مدمج",
         "location": ""
       },
       "en": {
         "days": [],
         "time": "",
-        "mode": "In-person -- Blended",
+        "mode": "In-person - Blended",
         "location": ""
       }
     },
@@ -128,7 +128,7 @@
       "ar": "",
       "en": ""
     },
-    "price": 0,
+    "price": 21700,
     "rating": 0,
     "reviews": 0,
     "instructor": {
@@ -193,13 +193,13 @@
       "ar": {
         "days": [],
         "time": "",
-        "mode": "حضوري -- مدمج -- عن بعد",
+        "mode": "حضوري - مدمج - عن بعد",
         "location": ""
       },
       "en": {
         "days": [],
         "time": "",
-        "mode": "In-person -- Blended -- Remote",
+        "mode": "In-person - Blended - Remote",
         "location": ""
       }
     },
@@ -285,7 +285,7 @@
       "ar": "",
       "en": ""
     },
-    "price": 0,
+    "price": 21700,
     "rating": 0,
     "reviews": 0,
     "instructor": {
@@ -350,13 +350,13 @@
       "ar": {
         "days": [],
         "time": "",
-        "mode": "حضوري -- مدمج",
+        "mode": "حضوري - مدمج",
         "location": ""
       },
       "en": {
         "days": [],
         "time": "",
-        "mode": "In-person -- Blended",
+        "mode": "In-person - Blended",
         "location": ""
       }
     },
@@ -442,7 +442,7 @@
       "ar": "",
       "en": ""
     },
-    "price": 0,
+    "price": 21700,
     "rating": 0,
     "reviews": 0,
     "instructor": {
@@ -507,13 +507,13 @@
       "ar": {
         "days": [],
         "time": "",
-        "mode": "حضوري -- مدمج -- عن بعد",
+        "mode": "حضوري - مدمج - عن بعد",
         "location": ""
       },
       "en": {
         "days": [],
         "time": "",
-        "mode": "In-person -- Blended -- Remote",
+        "mode": "In-person - Blended - Remote",
         "location": ""
       }
     },
@@ -599,7 +599,7 @@
       "ar": "",
       "en": ""
     },
-    "price": 0,
+    "price": 21350,
     "rating": 0,
     "reviews": 0,
     "instructor": {
@@ -664,13 +664,13 @@
       "ar": {
         "days": [],
         "time": "",
-        "mode": "حضوري -- مدمج",
+        "mode": "حضوري - مدمج",
         "location": ""
       },
       "en": {
         "days": [],
         "time": "",
-        "mode": "In-person -- Blended",
+        "mode": "In-person - Blended",
         "location": ""
       }
     },
@@ -756,7 +756,7 @@
       "ar": "",
       "en": ""
     },
-    "price": 0,
+    "price": 26400,
     "rating": 0,
     "reviews": 0,
     "instructor": {
@@ -821,13 +821,13 @@
       "ar": {
         "days": [],
         "time": "",
-        "mode": "حضوري -- مدمج",
+        "mode": "حضوري - مدمج",
         "location": ""
       },
       "en": {
         "days": [],
         "time": "",
-        "mode": "In-person -- Blended",
+        "mode": "In-person - Blended",
         "location": ""
       }
     },
@@ -913,7 +913,7 @@
       "ar": "",
       "en": ""
     },
-    "price": 0,
+    "price": 24000,
     "rating": 0,
     "reviews": 0,
     "instructor": {
@@ -978,13 +978,13 @@
       "ar": {
         "days": [],
         "time": "",
-        "mode": "حضوري -- مدمج",
+        "mode": "حضوري - مدمج",
         "location": ""
       },
       "en": {
         "days": [],
         "time": "",
-        "mode": "In-person -- Blended",
+        "mode": "In-person - Blended",
         "location": ""
       }
     },
@@ -1070,7 +1070,7 @@
       "ar": "",
       "en": ""
     },
-    "price": 0,
+    "price": 24000,
     "rating": 0,
     "reviews": 0,
     "instructor": {
@@ -1135,13 +1135,13 @@
       "ar": {
         "days": [],
         "time": "",
-        "mode": "حضوري -- مدمج",
+        "mode": "حضوري - مدمج",
         "location": ""
       },
       "en": {
         "days": [],
         "time": "",
-        "mode": "In-person -- Blended",
+        "mode": "In-person - Blended",
         "location": ""
       }
     },
@@ -1227,7 +1227,7 @@
       "ar": "",
       "en": ""
     },
-    "price": 0,
+    "price": 24000,
     "rating": 0,
     "reviews": 0,
     "instructor": {
@@ -1292,13 +1292,13 @@
       "ar": {
         "days": [],
         "time": "",
-        "mode": "حضوري -- مدمج",
+        "mode": "حضوري - مدمج",
         "location": ""
       },
       "en": {
         "days": [],
         "time": "",
-        "mode": "In-person -- Blended",
+        "mode": "In-person - Blended",
         "location": ""
       }
     },
@@ -1384,7 +1384,7 @@
       "ar": "",
       "en": ""
     },
-    "price": 0,
+    "price": 22050,
     "rating": 0,
     "reviews": 0,
     "instructor": {
