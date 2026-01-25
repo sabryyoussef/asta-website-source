@@ -5,7 +5,8 @@ import PartnersSection from "../components/Home/PartnersSection";
 import Slider from "../components/Home/Slider";
 // import PopularCoursesSection from "@/app/components/PopularCoursesSection";
 import CourseSlider from "../components/Home/CourseSlider";
-import CoursesTabs from "../components/Home/CoursesTabs";
+import AdvertisingSection from "../components/Home/AdvertisingSection";
+// import CoursesTabs from "../components/Home/CoursesTabs";
 // import TestimonialsSection from "@/app/components/TestimonialsSection";
 // import Footer from "@/app/components/Footer";
 // import Footer2 from "@/app/components/Footer2";
@@ -55,7 +56,10 @@ export default function Home() {
                 courses={Courses}
                 title="الدورات المهنية الدولية"
               ></CourseSlider>
-              <CoursesTabs />
+              
+              <AdvertisingSection/>
+              
+              {/* <CoursesTabs /> */}
               {/* <TestimonialsSection></TestimonialsSection> */}
               {/* <Join /> */}
               {/* <NewsLetter /> */}
