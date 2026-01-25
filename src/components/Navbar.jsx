@@ -500,11 +500,11 @@ export default function Navbar() {
                 ) : ( */}
                   <div className="flex items-center gap-[12px]">
                     <a
-                      href="#"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        navigate.push("/Login");
-                      }}
+                      href="https://www.astalearn.org/"
+                      // onClick={(e) => {
+                      //   e.preventDefault();
+                      //   navigate.push("https://www.astalearn.org/");
+                      // }}
                       className="py-1 md:py-2 lg:py-2 text-sm md:text-sm lg:text-base text-[#202C5B] hover:text-gradient-to-r from-cyan-500 to-emerald-400 hover:bg-[#1A2555] rounded-full hover:text-white font-bold px-3 transition duration-300"
                     >
                      {t("header.actions.signin")}
