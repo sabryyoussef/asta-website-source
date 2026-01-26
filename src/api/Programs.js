@@ -107,15 +107,16 @@ const normalizeProgram = (program, lang = 'ar') => {
     price: p.price,
     rating: p.rating,
     reviews: p.reviews,
-    instructor: p.instructor
-      ? {
-          name: localizeValueDeep(p.instructor.name, lang) || '',
-          title: localizeValueDeep(p.instructor.title, lang) || '',
-          experience: localizeValueDeep(p.instructor.experience, lang) || '',
-          image: p.instructor.image,
-          bio: localizeValueDeep(p.instructor.bio, lang) || '',
-        }
-      : null,
+    // TODO: Uncomment when instructor data is needed
+    // instructor: p.instructor
+    //   ? {
+    //       name: localizeValueDeep(p.instructor.name, lang) || '',
+    //       title: localizeValueDeep(p.instructor.title, lang) || '',
+    //       experience: localizeValueDeep(p.instructor.experience, lang) || '',
+    //       image: p.instructor.image,
+    //       bio: localizeValueDeep(p.instructor.bio, lang) || '',
+    //     }
+    //   : null,
     benefits: localizeValueDeep(p.benefits, lang),
     faqs: localizeValueDeep(p.faqs, lang),
     // admission_requirements: localizeValueDeep(p.admission_requirements, lang),

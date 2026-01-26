@@ -5,7 +5,8 @@ import { useTranslation } from "react-i18next";
 import ProgramHeader from "../components/Diplomas/ProgramHeader";
 import OverviewSection from "../components/Diplomas/ProgramOverviewSection";
 import CurriculumSection from "../components/Diplomas/ProgramCurriculumSection";
-import InstructorSection from "../components/Diplomas/ProgramInstructorSection";
+// TODO: Uncomment when instructor data is needed
+// import InstructorSection from "../components/Diplomas/ProgramInstructorSection";
 import RequirementsSection from "../components/Diplomas/ProgramRequirementsSection";
 import ProgramFAQSection from "../components/Diplomas/ProgramFAQSection";
 import RelatedProgramsSection from "../components/Diplomas/RelatedProgramsSection";
@@ -37,7 +38,8 @@ const ProgramDetails = () => {
       <CurriculumSection program={program} lang={lang} />
       <TargetJobsSection program={program} lang={lang} />
       <CertificationsSection program={program} lang={lang} />
-      <InstructorSection program={program} lang={lang} />
+      {/* TODO: Uncomment when instructor data is needed */}
+      {/* <InstructorSection program={program} lang={lang} /> */}
       <RequirementsSection program={program} lang={lang} />
       <ProgramFAQSection program={program} lang={lang} />
       <RelatedProgramsSection currentProgramId={id} lang={lang} />
