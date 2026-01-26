@@ -915,28 +915,30 @@ export default function Navbar() {
                     <div className="py-1">
                       <a
                         href={`/${lang}/about-us`}
+                        onClick={() => setAboutDropdown(false)}
                         className="block px-4 py-2 md:text-sm lg:text-lg hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff] transition-colors"
                       >
                         {t("header.nav.aboutAcademy")}
                       </a>
                       <a
-                        href={`/${lang}/Vission&Mission`}
+                        href={`/${lang}/vision&mission`}
+                        onClick={() => setAboutDropdown(false)}
+                        className="block px-4 py-2 md:text-sm lg:text-lg hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff] transition-colors"
+                      >
+                        {t("header.nav.vision&Mission")}
+                      </a>
+                      <a
+                        href={`/${lang}/academic-integrity`}
                         className="block px-4 py-2 md:text-sm lg:text-lg hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff] transition-colors"
                       >
                         {t("header.nav.standarts")}
                       </a>
-                      <a
-                        href={`/${lang}/team`}
-                        className="block px-4 py-2 md:text-sm lg:text-lg hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff] transition-colors"
-                      >
-                        {t("header.nav.team")}
-                      </a>
-                      <a
+                      {/* <a
                         href="#"
                         className="block px-4 py-2 md:text-sm lg:text-lg hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff] transition-colors"
                       >
                         {t("header.nav.contact")}
-                      </a>
+                      </a> */}
                     </div>
                   </div>
                 )}
@@ -1069,6 +1071,17 @@ export default function Navbar() {
                 <div className="flex! items-center! gap-3!">
                   <InformationCircleIcon className="w-5 h-5 text-[#202C5B]" />
                   <span className="text-black! font-medium! text-lg!">{t("header.nav.about")}</span>
+                </div>
+              </a>
+
+              <a
+                href={`/${lang}/vision&mission`}
+                onClick={() => setOpen(false)}
+                className="px-3! py-[12px]! flex! items-center! justify-between! border-b border-[#2FAFC2]!"
+              >
+                <div className="flex! items-center! gap-3!">
+                  <InformationCircleIcon className="w-5 h-5 text-[#202C5B]" />
+                  <span className="text-black! font-medium! text-lg!">{t("header.nav.vision&Mission")}</span>
                 </div>
               </a>
 
