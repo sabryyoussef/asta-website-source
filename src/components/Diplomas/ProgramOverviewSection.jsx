@@ -81,10 +81,10 @@ function OverviewSection({ program, lang }) {
                   <span className="font-bold text-gray-800">{localizedProgram.schedule?.mode || (isRTL ? 'غير محدد' : 'Not specified')}</span>
                 </div>
               </div>
-              
+{/*               
               <button className="w-full mt-6 bg-[#202C5B] text-white py-3 rounded-xl font-bold hover:bg-[#1a2448] transition-colors">
                 {isRTL ? 'تحميل المنهج الكامل' : 'Download Full Curriculum'}
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

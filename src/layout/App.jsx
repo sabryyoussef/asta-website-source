@@ -5,6 +5,7 @@ import SharedLayout from '../shared/SharedLayout';
 // Pages
 import Home from '../pages/Home';
 import AboutUs from '../pages/AboutUs';
+import VissionAndMission from '../pages/Vission&Mission';
 import TrainingPrograms from '../pages/TrainingPrograms';
 import ProgramDetails from '../pages/ProgramDetails';
 import Courses from '../pages/Courses';
@@ -30,7 +31,7 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="academic-integrity" element={<AcademicIntegrityPage />} />
           <Route path="about-us" element={<AboutUs />} />
-          {/* vissionand mession */}
+          <Route path="vision&mission" element={<VissionAndMission />} />
           {/* Team */}
           <Route path="programs" element={<TrainingPrograms />} />
           <Route path="programs/:id" element={<ProgramDetails />} />

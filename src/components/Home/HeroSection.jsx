@@ -6,34 +6,75 @@ import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { useTranslation } from "react-i18next";
+import { useParams } from "react-router-dom";
 // import Image from "next/image";
 
 const slides = [
   {
     img: "/images/Student.png",
-    title: "بدعم من صندوق تنمية الموارد البشرية - هدف",
-    desc: "بعد الحصول على الشهادة المهنية الاحترافية يتم التعويض عن التكاليف المدفوعة وفق اشتراطات وضوابط صندوق تنمية الموارد البشرية بترخيص من المؤسسه العامه لتعليم الفني والتدريب."
+    buttonLink: "courses",
+    ar: {
+      title: "دورات احترافية لتطوير مهاراتك",
+      desc: "اكتشف مجموعة واسعة من الدورات الاحترافية المصممة لتطوير مهاراتك وزيادة فرصك الوظيفية. دورات متنوعة في مختلف المجالات التقنية والمهنية.",
+      buttonText: "تصفح الدورات"
+    },
+    en: {
+      title: "Professional Courses to Develop Your Skills",
+      desc: "Discover a wide range of professional courses designed to develop your skills and increase your career opportunities. Diverse courses in various technical and professional fields.",
+      buttonText: "Browse Courses"
+    }
   },
   {
     img: "/images/Student2.png",
-    title: "أفضل الكورسات لتطوير مهاراتك",
-    desc: "أفضل الكورسات المجانية لتطوير مهاراتك لبداية طريق جديد او استكمال رحلتك للوصول لحلمك و تحقيق اهدافك."
-  },
-  {
-    img: "/images/Student2.png",
-    title: "أفضل الكورسات لتطوير مهاراتك",
-    desc: "أفضل الكورسات المجانية لتطوير مهاراتك لبداية طريق جديد او استكمال رحلتك للوصول لحلمك و تحقيق اهدافك."
+    buttonLink: "programs",
+    ar: {
+      title: "برامج تدريبية احترافية",
+      desc: "انضم إلى برامجنا التدريبية الاحترافية والدبلومات المهنية التي تمنحك المهارات والمعرفة اللازمة للنجاح في سوق العمل. برامج معتمدة ومصممة وفق أحدث المعايير الدولية.",
+      buttonText: "استكشف البرامج"
+    },
+    en: {
+      title: "Professional Training Programs",
+      desc: "Join our professional training programs and diplomas that give you the skills and knowledge needed to succeed in the job market. Accredited programs designed according to the latest international standards.",
+      buttonText: "Explore Programs"
+    }
   },
   {
     img: "/images/Student.png",
-    title: "بدعم من صندوق تنمية الموارد البشرية - هدف",
-    desc: "بعد الحصول على الشهادة المهنية الاحترافية يتم التعويض عن التكاليف المدفوعة وفق اشتراطات وضوابط صندوق تنمية الموارد البشرية بترخيص من المؤسسه العامه لتعليم الفني والتدريب."
+    buttonLink: "about-us",
+    ar: {
+      title: "عن أكاديمية المهارات التطبيقية",
+      desc: "أكاديمية رائدة في مجال التدريب والاستشارات المتنوعة ومتخصصة في تقديم البرامج التدريبية للشهادات الاحترافية المهنية الدولية. نؤمن بالجودة والاحترافية والابتكار.",
+      buttonText: "تعرف علينا"
+    },
+    en: {
+      title: "About Applied Skills Academy",
+      desc: "A leading academy in the field of training and diverse consulting, specialized in providing training programs for international professional certifications. We believe in quality, professionalism and innovation.",
+      buttonText: "Learn About Us"
+    }
+  },
+  {
+    img: "/images/Student2.png",
+    buttonLink: "registration",
+    ar: {
+      title: "سجل الآن وابدأ رحلتك التعليمية",
+      desc: "انضم إلى آلاف الطلاب الذين يطورون مهاراتهم معنا. التسجيل سهل وسريع. ابدأ رحلتك التعليمية اليوم واحصل على شهادات معتمدة معترف بها دولياً.",
+      buttonText: "سجل الآن"
+    },
+    en: {
+      title: "Register Now and Start Your Learning Journey",
+      desc: "Join thousands of students developing their skills with us. Registration is easy and fast. Start your learning journey today and get internationally recognized accredited certificates.",
+      buttonText: "Register Now"
+    }
   }
 ];
 
 export default function Hero() {
   const swiperRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const { lang = 'ar' } = useParams();
+  const { t } = useTranslation();
+  const isRTL = lang === 'ar';
 
   // Track mouse position
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -95,12 +136,12 @@ export default function Hero() {
           >
             <div className="container relative z-10 flex flex-col md:flex-row items-center justify-between">
               {/* Text Content */}
-              <div className="flex flex-col items-center md:items-start text-center md:text-right w-full md:w-1/2">
+              <div className="flex flex-col items-center text-center w-full md:w-1/2">
                 <h1 className="lg:text-[32px] md:text-[32px] sm:text-[32px] text:[32px] font-medium md:mb-2">
-                  {slide.title}
+                  {slide[lang] ? slide[lang].title : (slide.ar ? slide.ar.title : 'No title')}
                 </h1>
                 <p className="md:text-[22px] sm:text-[16px] text-[12px] font-medium md:mt-[10px] md:mb-[32px] max-md:mt-[8px] my-[16px] max-w-xl text-justify leading-relaxed">
-                  {slide.desc}
+                  {slide[lang] ? slide[lang].desc : (slide.ar ? slide.ar.desc : 'No description')}
                 </p>
 
                 <div className="max-md:hidden flex justify-center w-full mb-6">
@@ -111,18 +152,12 @@ export default function Hero() {
                   />
                 </div>
 
-                <div className="max-md:hidden flex flex-row sm:flex-row gap-4 w-full justify-center md:justify-center items-center">
+                <div className="max-md:hidden flex flex-row sm:flex-row gap-4 w-full justify-center items-center">
                   <a
-                    href="/Register"
-                    className="w-[96px] sm:w-[138px] lg:px[12px] px-[6px] md:px-[6px] sm:px-[6px] md:w-[152px] lg:w-[209px] md:py-[15px] py-[8px] text-white md:text-base sm:text-[10px] text-[10px] font-medium focus:outline-none shadow-md bg-[#1A2555] transition hover:opacity-90 cursor-pointer text-center"
-                  >
-                    اشترك الآن مجانا
-                  </a>
-                  <a
-                    href="/Courses"
+                    href={`/${lang}/${slide.buttonLink}`}
                     className="lg:px-8 md:px-6 sm:px-[12px] px-[6px] w-[96px] sm:w-[138px] md:w-[152px] lg:w-[209px] md:py-[15px] py-[8px] text-white md:text-base sm:text-[10px] text-[10px] bg-gradient-to-r from-[#23A0D0] to-68% to-[#3CBEB3] font-medium focus:outline-none shadow-md transition hover:opacity-90 cursor-pointer text-center"
                   >
-                    تصفح الدورات
+                    {slide[lang] ? slide[lang].buttonText : (slide.ar ? slide.ar.buttonText : 'Button')}
                   </a>
                 </div>
               </div>
@@ -180,18 +215,12 @@ export default function Hero() {
                 />
               </div>
 
-              <div className="md:hidden flex flex-row sm:flex-row gap-4 w-full justify-center md:justify-center items-center">
+              <div className="md:hidden flex flex-row sm:flex-row gap-4 w-full justify-center items-center">
                 <a
-                  href="/Register"
-                  className="w-[96px] sm:w-[138px] lg:px[12px] px-[6px] md:px-[6px] sm:px-[6px] md:w-[152px] lg:w-[209px] md:py-[15px] py-[8px] text-white md:text-base sm:text-[10px] text-[10px] font-medium focus:outline-none shadow-md bg-[#1A2555] transition hover:opacity-90 cursor-pointer text-center"
-                >
-                  اشترك الآن مجانا
-                </a>
-                <a
-                  href="/Courses"
+                  href={`/${lang}/${slide.buttonLink}`}
                   className="lg:px-8 md:px-6 sm:px-[12px] px-[6px] w-[96px] sm:w-[138px] md:w-[152px] lg:w-[209px] md:py-[15px] py-[8px] text-white md:text-base sm:text-[10px] text-[10px] bg-gradient-to-r from-[#23A0D0] to-68% to-[#3CBEB3] font-medium focus:outline-none shadow-md transition hover:opacity-90 cursor-pointer text-center"
                 >
-                  تصفح الدورات
+                  {slide[lang] ? slide[lang].buttonText : (slide.ar ? slide.ar.buttonText : 'Button')}
                 </a>
               </div>
             </div>
