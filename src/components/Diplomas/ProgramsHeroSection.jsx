@@ -42,7 +42,7 @@ const ProgramsHeroSection = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* النص الرئيسي */}
-          <div className="text-left">
+          <div className={isRTL ? "text-right" : "text-left"}>
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
               <span className="text-sm font-medium">{isRTL ? 'برامج معتمدة دولياً' : 'Programs Approved Internationally'}</span>
             </div>
@@ -54,7 +54,7 @@ const ProgramsHeroSection = () => {
               </span>
             </h1>
             
-            <p className="text-lg md:text-xl text-blue-100 mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">
+            <p className={`text-lg md:text-xl text-blue-100 mb-8 leading-relaxed max-w-lg ${isRTL ? 'mx-auto lg:mx-0' : 'mx-auto lg:mx-0'}`}>
               {isRTL ? 'انطلق في رحلة التعلم والتطوير مع برامجنا التدريبية المصممة خصيصاً لتواكب متطلبات سوق العمل الحديث وتساعدك على تحقيق أهدافك المهنية.' : 'Launch your journey of learning and development with our training programs designed specifically to keep up with the latest job market requirements and help you achieve your professional goals.'}
             </p>
 
@@ -62,8 +62,8 @@ const ProgramsHeroSection = () => {
             <div className="mb-10">
               <div className="grid grid-cols-2 gap-4">
                 {features[lang].map((feature, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[#23A0D0] to-[#30AFC1] flex items-center justify-center">
+                  <div key={index} className={`flex items-center gap-3 ${isRTL ? 'flex-row' : 'flex-row'}`}>
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[#23A0D0] to-[#30AFC1] flex items-center justify-center flex-shrink-0">
                       <CheckCircleIcon className="h-4 w-4 text-white" />
                     </div>
                     <span className="text-sm md:text-base">{feature}</span>
@@ -73,13 +73,13 @@ const ProgramsHeroSection = () => {
             </div>
 
             {/* أزرار التحكم */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button className="px-8 py-4 bg-gradient-to-r from-[#23A0D0] to-[#30AFC1] text-gray-900 rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-3">
+            <div className={`flex flex-col sm:flex-row gap-4 ${isRTL ? 'sm:justify-start' : 'sm:justify-start'}`}>
+              <button className={`px-8 py-4 bg-gradient-to-r from-[#23A0D0] to-[#30AFC1] text-gray-900 rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
                 <span>{isRTL ? 'استكشاف البرامج' : 'Explore Programs'}</span>
                 <ArrowDownIcon className="h-5 w-5" />
               </button>
               
-              <button className="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl font-bold text-lg hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-3">
+              <button className={`px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl font-bold text-lg hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
                 <PlayCircleIcon className="h-6 w-6" />
                 <span>{isRTL ? 'شاهد فيديو التعريف' : 'Watch Introduction Video'}</span>
               </button>
@@ -120,7 +120,7 @@ const ProgramsHeroSection = () => {
         </div>
 
         {/* شريط التمرير */}
-        <div className="mt-35 text-center">
+        <div className="mt-35 text-center" dir={isRTL ? 'rtl' : 'ltr'}>
           <div className="animate-bounce">
             <ArrowDownIcon className="h-8 w-8 mx-auto text-white/60" />
           </div>

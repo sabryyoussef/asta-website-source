@@ -44,7 +44,7 @@ function CurriculumSection({ program, lang }) {
                 ))}
               </div>
               
-              <div className="mt-6 pt-6 border-t border-gray-100 flex justify-between items-center">
+              {/* <div className="mt-6 pt-6 border-t border-gray-100 flex justify-between items-center">
                 <div className="flex gap-2">
                   <span className="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">{isRTL ? 'فيديو' : 'Video'}</span>
                   <span className="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full">{isRTL ? 'تمارين' : 'Exercises'}</span>
@@ -52,12 +52,12 @@ function CurriculumSection({ program, lang }) {
                 <button className="text-[#226796] font-medium hover:text-[#1a4d7a] transition-colors">
                   {isRTL ? 'عرض التفاصيل' : 'View Details'}
                 </button>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>
         
-        <div className="mt-12 bg-white rounded-2xl p-8 border border-gray-200">
+        {/* <div className="mt-12 bg-white rounded-2xl p-8 border border-gray-200">
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-blue-100 to-cyan-100 flex items-center justify-center">
@@ -83,7 +83,7 @@ function CurriculumSection({ program, lang }) {
               <p className="text-gray-600 text-sm">{isRTL ? 'مشروع متكامل تحت الإشراف' : 'Complete project under supervision'}</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

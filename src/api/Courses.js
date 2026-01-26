@@ -110,15 +110,16 @@ const normalizeCourse = (course, lang = 'ar') => {
     rating: c.rating,
     reviews: c.reviews,
     level: localizeValueDeep(c.level, lang) || '',
-    instructor: c.instructor
-      ? {
-          name: c.instructor.name,
-          title: localizeValueDeep(c.instructor.title, lang) || '',
-          experience: localizeValueDeep(c.instructor.experience, lang) || '',
-          image: c.instructor.image,
-          bio: localizeValueDeep(c.instructor.bio, lang) || '',
-        }
-      : null,
+    // TODO: Uncomment when instructor data is needed
+    // instructor: c.instructor
+    //   ? {
+    //       name: c.instructor.name,
+    //       title: localizeValueDeep(c.instructor.title, lang) || '',
+    //       experience: localizeValueDeep(c.instructor.experience, lang) || '',
+    //       image: c.instructor.image,
+    //       bio: localizeValueDeep(c.instructor.bio, lang) || '',
+    //     }
+    //   : null,
     skills: localizeValueDeep(c.skills, lang),
     targetJobs: localizeValueDeep(c.targetJobs, lang),
     objectives: localizeValueDeep(c.objectives, lang),

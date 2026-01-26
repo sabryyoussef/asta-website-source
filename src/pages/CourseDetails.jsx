@@ -4,7 +4,8 @@ import { useTranslation } from "react-i18next";
 // Components
 import CourseHeader from "../components/Courses/CourseHeader";
 import CourseOverviewSection from "../components/Courses/CourseOverviewSection";
-import CourseInstructorSection from "../components/Courses/CourseInstructorSection";
+// TODO: Uncomment when instructor data is needed
+// import CourseInstructorSection from "../components/Courses/CourseInstructorSection";
 import CourseRequirementsSection from "../components/Courses/CourseRequirementsSection";
 import CourseFAQSection from "../components/Courses/CourseFAQSection";
 import RelatedCoursesSection from "../components/Courses/RelatedCoursesSection";
@@ -29,7 +30,8 @@ const CourseDetails = () => {
     <div dir={isRTL ? 'rtl' : 'ltr'}>
       <CourseHeader course={course} />
       <CourseOverviewSection course={course} />
-      <CourseInstructorSection course={course} />
+      {/* TODO: Uncomment when instructor data is needed */}
+      {/* <CourseInstructorSection course={course} /> */}
       <CourseRequirementsSection course={course} />
       <CourseFAQSection course={course} />
       <RelatedCoursesSection currentCourseId={id} />
