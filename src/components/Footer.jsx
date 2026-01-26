@@ -232,6 +232,32 @@ export default function Footer() {
               </div> */}
             </div>
             
+            {/* Payment Methods */}
+            <div className="mb-8">
+              <h4 className="font-semibold mb-4 text-lg">{isRTL ? 'طرق الدفع:' : 'Payment Methods:'}</h4>
+              <div className="flex gap-2">
+                {[
+                  { name: 'visa', img: '/images/visa.png' },
+                  { name: 'mastercard', img: '/svgs/icons/master_card.svg' },
+                  { name: 'mada', img: '/svgs/icons/mada.svg' },
+                  { name: 'apple-pay', img: '/images/apple.png' },
+                  { name: 'tabby', img: '/images/tabby-logo-1.png' },
+                  { name: 'tamara', img: isRTL ? '/images/tamaralogo_ar.png' : '/images/tamara-en.png' }
+                ].map((method) => (
+                  <div
+                    key={method.name}
+                    className="w-10 h-6 bg-white/10 rounded flex items-center justify-center"
+                  >
+                    <img
+                      src={method.img}
+                      alt={method.name}
+                      className="w-full h-full object-contain p-1"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+            
             {/* Partners
             <div>
               <h4 className="font-semibold mb-4 text-lg">شركاؤنا</h4>
@@ -271,27 +297,6 @@ export default function Footer() {
               <a href="#" className="hover:text-white transition-colors duration-200">
                 {isRTL ? 'الأسئلة الشائعة' : 'FAQ'}
               </a>
-            </div>
-            
-            {/* Payment Methods */}
-            <div className="flex items-center gap-3">
-              <div className="text-gray-400 text-sm ml-2">{isRTL ? 'طرق الدفع:' : 'Payment Methods:'}</div>
-              <div className="flex gap-2">
-                {['visa', 'mastercard', 'mada', 'apple-pay', 'tabby', 'tamara'].map((method) => (
-                  <div
-                    key={method}
-                    className="w-10 h-6 bg-white/10 rounded flex items-center justify-center text-xs text-gray-300"
-                  >
-                    {method === 'visa' && 'VISA'}
-                    {method === 'mastercard' && 'MC'}
-                    {method === 'mada' && 'مدى'}
-                    {method === 'apple-pay' && 'Apple'}
-                    {method === 'tabby' && 'Tabby'}
-                    {method === 'tamara' && 'Tamara'}
-
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </div>
