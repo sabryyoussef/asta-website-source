@@ -190,13 +190,18 @@ export default function Navbar() {
       if (coursesRef.current && !coursesRef.current.contains(event.target)) {
         setCourses(false);
       }
+      // Close mobile search when clicking outside
+      if (search && !event.target.closest('.mobile-search-container')) {
+        setSearch(false);
+        setShowSuggestions(false);
+      }
     }
 
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [search]);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -579,7 +584,7 @@ export default function Navbar() {
                 </div>
 
                 {/* Mobile menu button and search - Left side */}
-                <div className="flex items-center gap-3 relative">
+                <div className="flex items-center gap-3 relative mobile-search-container overflow-visible">
                   {/* Mobile search icon */}
                   <svg
                     className="w-6 h-6 font-medium text-[#23A0D0]"
@@ -600,15 +605,20 @@ export default function Navbar() {
                   <form
                     onSubmit={(e) => {
                       e.preventDefault();
-                      navigate.replace(
-                        `/Courses?search=${e.currentTarget.elements[1].value}`
-                      );
+                      const formData = new FormData(e.currentTarget);
+                      const searchValue = formData.get('mobileSearch') || searchQuery;
+                      if (searchValue.trim()) {
+                        navigate(`/${lang}/search?q=${encodeURIComponent(searchValue)}`);
+                        setSearch(false);
+                        setShowSuggestions(false);
+                      }
                     }}
                   >
                     <div
                       className={
-                        "absolute top-[calc(100%+12px)] w-[280px] lg:hidden flex py-1 px-[12px] items-center gap-[12px] after:w-[calc(100%-2PX)] after:h-[calc(100%-2PX)] bg-red after:absolute after:left-[1px] after:top-[1px] rounded-3xl after:rounded-3xl after:bg-white after:z-[-1] z-[10] bg-gradient-to-r from-[#202C5B] via-[#23A0D0] to-[#3CBEB3] duration-300 left-0 " +
-                        (search ? "" : "invisible opacity-0")
+                        "absolute top-[calc(100%+12px)] w-[240px] max-w-[calc(100vw-40px)] lg:hidden flex py-1 px-[12px] items-center gap-[12px] after:w-[calc(100%-2PX)] after:h-[calc(100%-2PX)] after:absolute after:left-[1px] after:top-[1px] rounded-3xl after:rounded-3xl after:bg-white after:z-[-1] z-[40] bg-gradient-to-r from-[#202C5B] via-[#23A0D0] to-[#3CBEB3] duration-300 " +
+                        (search ? "" : "invisible opacity-0") + " " +
+                        "left-0"
                       }
                     >
                       <button type="submit" className="w-[22px] h-[22px]">
@@ -616,11 +626,41 @@ export default function Navbar() {
                       </button>
                       <input
                         type="text"
-                        placeholder="عن ماذا تبحث؟"
+                        name="mobileSearch"
+                        value={searchQuery}
+                        onChange={handleSearchInputChange}
+                        placeholder={isRTL ? "عن ماذا تبحث؟" : "Search"}
                         className="text-[16px] font-medium placeholder:text-[#878787] text-[#202C5B] h-[36px] w-full"
                       />
                     </div>
                   </form>
+
+                  {/* Mobile Search Suggestions */}
+                  {showSuggestions && searchSuggestions.length > 0 && (
+                    <div className={`absolute top-[calc(100%+64px)] w-[240px] max-w-[calc(100vw-40px)] lg:hidden bg-white rounded-lg shadow-[0px_2px_6px_2px_rgba(0,0,0,0.1)] z-[50] max-h-[300px] overflow-y-auto left-0`}>
+                      {searchSuggestions.map((suggestion, index) => (
+                        <div
+                          key={index}
+                          onClick={() => {
+                            handleSuggestionClick(suggestion);
+                            setSearch(false);
+                          }}
+                          className="px-4 py-3 hover:bg-gray-100 cursor-pointer border-b border-gray-100 last:border-b-0"
+                        >
+                          <div className="flex items-center gap-2">
+                            <span className="text-xs text-gray-500 uppercase tracking-wide flex-shrink-0">
+                              {suggestion.type === 'category' ? (isRTL ? 'فئة' : 'Category') :
+                               suggestion.type === 'course' ? (isRTL ? 'دورة' : 'Course') :
+                               (isRTL ? 'دبلومة' : 'Diploma')}
+                            </span>
+                            <span className="text-sm text-gray-700 font-medium truncate">
+                              {suggestion.title}
+                            </span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
 
                   {/* Mobile menu button */}
                   <svg
@@ -1135,7 +1175,7 @@ export default function Navbar() {
       
       {/* Global Search Suggestions Dropdown */}
       {showSuggestions && searchSuggestions.length > 0 && (
-        <div className="fixed top-30 left-1/2 transform -translate-x-1/2 w-[400px] bg-white rounded-lg shadow-[0px_4px_12px_4px_rgba(0,0,0,0.15)] z-[9999] max-h-60 overflow-y-auto">
+        <div className="fixed top-30 left-1/2 transform -translate-x-1/2 w-[400px] bg-white rounded-lg shadow-[0px_4px_12px_4px_rgba(0,0,0,0.15)] z-[9999] max-h-60 overflow-y-auto max-lg:hidden">
           {searchSuggestions.map((suggestion, index) => (
             <div
               key={index}
