@@ -6,34 +6,63 @@ import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { useTranslation } from "react-i18next";
+import { useParams } from "react-router-dom";
 // import Image from "next/image";
 
 const slides = [
   {
     img: "/images/Student.png",
-    title: "بدعم من صندوق تنمية الموارد البشرية - هدف",
-    desc: "بعد الحصول على الشهادة المهنية الاحترافية يتم التعويض عن التكاليف المدفوعة وفق اشتراطات وضوابط صندوق تنمية الموارد البشرية بترخيص من المؤسسه العامه لتعليم الفني والتدريب."
+    ar: {
+      title: "بدعم من صندوق تنمية الموارد البشرية - هدف",
+      desc: "بعد الحصول على الشهادة المهنية الاحترافية يتم التعويض عن التكاليف المدفوعة وفق اشتراطات وضوابط صندوق تنمية الموارد البشرية بترخيص من المؤسسه العامه لتعليم الفني والتدريب."
+    },
+    en: {
+      title: "Supported by Human Resources Development Fund - Hadaf",
+      desc: "After obtaining the professional certification, costs will be reimbursed according to the terms and conditions of the Human Resources Development Fund under the license of the General Organization for Technical and Vocational Training."
+    }
   },
   {
     img: "/images/Student2.png",
-    title: "أفضل الكورسات لتطوير مهاراتك",
-    desc: "أفضل الكورسات المجانية لتطوير مهاراتك لبداية طريق جديد او استكمال رحلتك للوصول لحلمك و تحقيق اهدافك."
+    ar: {
+      title: "أفضل الكورسات لتطوير مهاراتك",
+      desc: "أفضل الكورسات المجانية لتطوير مهاراتك لبداية طريق جديد او استكمال رحلتك للوصول لحلمك و تحقيق اهدافك."
+    },
+    en: {
+      title: "Best Courses to Develop Your Skills",
+      desc: "The best free courses to develop your skills for starting a new path or continuing your journey to reach your dream and achieve your goals."
+    }
   },
   {
     img: "/images/Student2.png",
-    title: "أفضل الكورسات لتطوير مهاراتك",
-    desc: "أفضل الكورسات المجانية لتطوير مهاراتك لبداية طريق جديد او استكمال رحلتك للوصول لحلمك و تحقيق اهدافك."
+    ar: {
+      title: "أفضل الكورسات لتطوير مهاراتك",
+      desc: "أفضل الكورسات المجانية لتطوير مهاراتك لبداية طريق جديد او استكمال رحلتك للوصول لحلمك و تحقيق اهدافك."
+    },
+    en: {
+      title: "Best Courses to Develop Your Skills",
+      desc: "The best free courses to develop your skills for starting a new path or continuing your journey to reach your dream and achieve your goals."
+    }
   },
   {
     img: "/images/Student.png",
-    title: "بدعم من صندوق تنمية الموارد البشرية - هدف",
-    desc: "بعد الحصول على الشهادة المهنية الاحترافية يتم التعويض عن التكاليف المدفوعة وفق اشتراطات وضوابط صندوق تنمية الموارد البشرية بترخيص من المؤسسه العامه لتعليم الفني والتدريب."
+    ar: {
+      title: "بدعم من صندوق تنمية الموارد البشرية - هدف",
+      desc: "بعد الحصول على الشهادة المهنية الاحترافية يتم التعويض عن التكاليف المدفوعة وفق اشتراطات وضوابط صندوق تنمية الموارد البشرية بترخيص من المؤسسه العامه لتعليم الفني والتدريب."
+    },
+    en: {
+      title: "Supported by Human Resources Development Fund - Hadaf",
+      desc: "After obtaining the professional certification, costs will be reimbursed according to the terms and conditions of the Human Resources Development Fund under the license of the General Organization for Technical and Vocational Training."
+    }
   }
 ];
 
 export default function Hero() {
   const swiperRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const { lang = 'ar' } = useParams();
+  const { t } = useTranslation();
+  const isRTL = lang === 'ar';
 
   // Track mouse position
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -95,12 +124,12 @@ export default function Hero() {
           >
             <div className="container relative z-10 flex flex-col md:flex-row items-center justify-between">
               {/* Text Content */}
-              <div className="flex flex-col items-center md:items-start text-center md:text-right w-full md:w-1/2">
+              <div className="flex flex-col items-center text-center w-full md:w-1/2">
                 <h1 className="lg:text-[32px] md:text-[32px] sm:text-[32px] text:[32px] font-medium md:mb-2">
-                  {slide.title}
+                  {slide[lang] ? slide[lang].title : (slide.ar ? slide.ar.title : 'No title')}
                 </h1>
                 <p className="md:text-[22px] sm:text-[16px] text-[12px] font-medium md:mt-[10px] md:mb-[32px] max-md:mt-[8px] my-[16px] max-w-xl text-justify leading-relaxed">
-                  {slide.desc}
+                  {slide[lang] ? slide[lang].desc : (slide.ar ? slide.ar.desc : 'No description')}
                 </p>
 
                 <div className="max-md:hidden flex justify-center w-full mb-6">
@@ -111,18 +140,18 @@ export default function Hero() {
                   />
                 </div>
 
-                <div className="max-md:hidden flex flex-row sm:flex-row gap-4 w-full justify-center md:justify-center items-center">
+                <div className="max-md:hidden flex flex-row sm:flex-row gap-4 w-full justify-center items-center">
                   <a
                     href="/Register"
                     className="w-[96px] sm:w-[138px] lg:px[12px] px-[6px] md:px-[6px] sm:px-[6px] md:w-[152px] lg:w-[209px] md:py-[15px] py-[8px] text-white md:text-base sm:text-[10px] text-[10px] font-medium focus:outline-none shadow-md bg-[#1A2555] transition hover:opacity-90 cursor-pointer text-center"
                   >
-                    اشترك الآن مجانا
+                    {isRTL ? "اشترك الآن مجانا" : "Subscribe for Free"}
                   </a>
                   <a
                     href="/Courses"
                     className="lg:px-8 md:px-6 sm:px-[12px] px-[6px] w-[96px] sm:w-[138px] md:w-[152px] lg:w-[209px] md:py-[15px] py-[8px] text-white md:text-base sm:text-[10px] text-[10px] bg-gradient-to-r from-[#23A0D0] to-68% to-[#3CBEB3] font-medium focus:outline-none shadow-md transition hover:opacity-90 cursor-pointer text-center"
                   >
-                    تصفح الدورات
+                    {isRTL ? "تصفح الدورات" : "Browse Courses"}
                   </a>
                 </div>
               </div>
@@ -180,18 +209,18 @@ export default function Hero() {
                 />
               </div>
 
-              <div className="md:hidden flex flex-row sm:flex-row gap-4 w-full justify-center md:justify-center items-center">
+              <div className="md:hidden flex flex-row sm:flex-row gap-4 w-full justify-center items-center">
                 <a
                   href="/Register"
                   className="w-[96px] sm:w-[138px] lg:px[12px] px-[6px] md:px-[6px] sm:px-[6px] md:w-[152px] lg:w-[209px] md:py-[15px] py-[8px] text-white md:text-base sm:text-[10px] text-[10px] font-medium focus:outline-none shadow-md bg-[#1A2555] transition hover:opacity-90 cursor-pointer text-center"
                 >
-                  اشترك الآن مجانا
+                  {isRTL ? "اشترك الآن مجانا" : "Subscribe for Free"}
                 </a>
                 <a
                   href="/Courses"
                   className="lg:px-8 md:px-6 sm:px-[12px] px-[6px] w-[96px] sm:w-[138px] md:w-[152px] lg:w-[209px] md:py-[15px] py-[8px] text-white md:text-base sm:text-[10px] text-[10px] bg-gradient-to-r from-[#23A0D0] to-68% to-[#3CBEB3] font-medium focus:outline-none shadow-md transition hover:opacity-90 cursor-pointer text-center"
                 >
-                  تصفح الدورات
+                  {isRTL ? "تصفح الدورات" : "Browse Courses"}
                 </a>
               </div>
             </div>

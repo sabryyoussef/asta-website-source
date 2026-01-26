@@ -618,7 +618,7 @@ export default function Navbar() {
                       className={
                         "absolute top-[calc(100%+12px)] w-[240px] max-w-[calc(100vw-40px)] lg:hidden flex py-1 px-[12px] items-center gap-[12px] after:w-[calc(100%-2PX)] after:h-[calc(100%-2PX)] after:absolute after:left-[1px] after:top-[1px] rounded-3xl after:rounded-3xl after:bg-white after:z-[-1] z-[40] bg-gradient-to-r from-[#202C5B] via-[#23A0D0] to-[#3CBEB3] duration-300 " +
                         (search ? "" : "invisible opacity-0") + " " +
-                        "left-0"
+                        (isRTL ? "left-0" : "right-0")
                       }
                     >
                       <button type="submit" className="w-[22px] h-[22px]">
@@ -637,7 +637,7 @@ export default function Navbar() {
 
                   {/* Mobile Search Suggestions */}
                   {showSuggestions && searchSuggestions.length > 0 && (
-                    <div className={`absolute top-[calc(100%+64px)] w-[240px] max-w-[calc(100vw-40px)] lg:hidden bg-white rounded-lg shadow-[0px_2px_6px_2px_rgba(0,0,0,0.1)] z-[50] max-h-[300px] overflow-y-auto left-0`}>
+                    <div className={`absolute top-[calc(100%+64px)] w-[240px] max-w-[calc(100vw-40px)] lg:hidden bg-white rounded-lg shadow-[0px_2px_6px_2px_rgba(0,0,0,0.1)] z-[50] max-h-[300px] overflow-y-auto ${isRTL ? 'left-0' : 'right-0'}`}>
                       {searchSuggestions.map((suggestion, index) => (
                         <div
                           key={index}
