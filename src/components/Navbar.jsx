@@ -401,9 +401,12 @@ export default function Navbar() {
               }
             >
               {url && (
-                <button onClick={() => navigate.push("/Check")} className="py-[12px] px-[12px] rounded-full! cursor-pointer hover:text-[#1a2555] text-white lg:text-[16px] sm:text-[14px] font-bold bg-gradient-to-r! from-[#23A0D0]! to-68% to-[#3CBEB3]! focus:outline-none! shadow-md! transition! hover:opacity-80! !leading-[1.25] duration-300">
-               {t("header.actions.verifyCertificate")}
-                </button>
+                <a 
+                  href={`/${lang}/certificate-checker`}
+                  className="py-[12px] px-[12px] rounded-full! cursor-pointer hover:text-[#1a2555] text-white lg:text-[16px] sm:text-[14px] font-bold bg-gradient-to-r! from-[#23A0D0]! to-68% to-[#3CBEB3]! focus:outline-none! shadow-md! transition! hover:opacity-80! !leading-[1.25] duration-300"
+                >
+                  {t("header.actions.verifyCertificate")}
+                </a>
               )}
               <div
                 className={
@@ -1093,6 +1096,17 @@ export default function Navbar() {
                 <div className="flex! items-center! gap-3!">
                   <ClipboardDocumentCheckIcon className="w-5 h-5 text-[#202C5B]" />
                   <span className="text-black! font-medium! text-lg!">{t("header.nav.registration")}</span>
+                </div>
+              </a>
+
+              <a
+                href={`/${lang}/certificate-checker`}
+                onClick={() => setOpen(false)}
+                className="px-3! py-[12px]! flex! items-center! justify-between! border-b border-[#2FAFC2]!"
+              >
+                <div className="flex! items-center! gap-3!">
+                  <ClipboardDocumentCheckIcon className="w-5 h-5 text-[#202C5B]" />
+                  <span className="text-black! font-medium! text-lg!">{t("header.actions.verifyCertificate")}</span>
                 </div>
               </a>
 
