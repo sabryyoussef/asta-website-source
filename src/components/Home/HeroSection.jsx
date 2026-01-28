@@ -103,6 +103,10 @@ export default function Hero() {
     setActiveIndex(swiper.realIndex);
   };
 
+  const handleSwiperInit = (swiper) => {
+    swiperRef.current = swiper;
+  };
+
   return (
     <div className="relative pb-[64px] pt-[48px] overflow-hidden">
       <div className="absolute left-0 top-0 z-0 w-full h-full">
@@ -114,10 +118,12 @@ export default function Hero() {
       </div>
 
       <Swiper
-        ref={swiperRef}
+        key={`swiper-${lang}`}
+        onSwiper={handleSwiperInit}
         modules={[Autoplay, Pagination]}
         autoplay={{
           delay: 5000,
+          disableOnInteraction: false,
         }}
         pagination={{
           clickable: true,
@@ -128,10 +134,11 @@ export default function Hero() {
         speed={1000}
         className="ease-in-out"
         onSlideChangeTransitionStart={handleSlideChange}
+        dir={isRTL ? 'rtl' : 'ltr'}
       >
         {slides.map((slide, index) => (
           <SwiperSlide
-            key={index}
+            key={`slide-${index}`}
             className="!flex flex-col md:flex-row items-center justify-between"
           >
             <div className="container relative z-10 flex flex-col md:flex-row items-center justify-between">
