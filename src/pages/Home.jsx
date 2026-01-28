@@ -17,6 +17,7 @@ import AdvertisingSection from "../components/Home/AdvertisingSection";
 import Courses from "../api/Courses.js";
 // import { useAuth } from "../context/AuthContext";
 import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 // import { getSuggestions } from "@/store/slices/userDataSlice";
 // import { getCoursesByFilter } from "@/store/slices/courseSlice.js";
 // import { useSelector, useDispatch } from "react-redux";
@@ -31,7 +32,8 @@ export default function Home() {
   const mockFilteredCourses = {
     data: []
   };
-
+  const { lang } = useParams();
+  const isRTL = lang === 'ar';
   // useEffect(() => {
   //   dispatch(getCoursesByFilter());
   // }, [dispatch]);
@@ -54,7 +56,7 @@ export default function Home() {
               <CourseSlider
                 bg="bg-gradient-to-r from-[#23a0d01a] to-[#3CBEB31A]"
                 courses={Courses}
-                title="الدورات المهنية الدولية"
+                title={isRTL ? 'الدورات المهنية الدولية' : 'International Professional Courses'}
               ></CourseSlider>
               
               <AdvertisingSection/>
