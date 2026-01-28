@@ -254,13 +254,13 @@ export default function Navbar() {
       }
     });
     
-    // Then add individual courses from all categories
+    // Then add individual subcategories from all categories
     categories.forEach(category => {
       category.sup_categories?.forEach(subCategory => {
-        // Add the subcategory as a course suggestion
+        // Add the subcategory as its own suggestion
         if (subCategory.name.toLowerCase().includes(lowercaseQuery)) {
           suggestions.push({
-            type: 'course',
+            type: 'subcategory',
             title: subCategory.name,
             url: `/${lang}/categories/${category.id}?sup_category=${encodeURIComponent(subCategory.id)}`
           });
@@ -653,6 +653,7 @@ export default function Navbar() {
                           <div className="flex items-center gap-2">
                             <span className="text-xs text-gray-500 uppercase tracking-wide flex-shrink-0">
                               {suggestion.type === 'category' ? (isRTL ? 'فئة' : 'Category') :
+                               suggestion.type === 'subcategory' ? (isRTL ? 'قسم فرعي' : 'Subcategory') :
                                suggestion.type === 'course' ? (isRTL ? 'دورة' : 'Course') :
                                (isRTL ? 'دبلومة' : 'Diploma')}
                             </span>
@@ -1211,7 +1212,7 @@ export default function Navbar() {
             >
               <span className="text-xs text-gray-500 bg-gray-200 px-2 py-1 rounded font-medium">
                 {suggestion.type === 'category' && t('header.nav.category')}
-                {suggestion.type === 'subcategory' && t('header.nav.subCategory')}
+                {suggestion.type === 'subcategory' && t('header.nav.supCategory')}
                 {suggestion.type === 'diploma' && t('header.nav.diploma')}
                 {suggestion.type === 'course' && t('header.nav.course')}
               </span>
