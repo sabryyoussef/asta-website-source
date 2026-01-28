@@ -1211,7 +1211,7 @@ export default function Navbar() {
             >
               <span className="text-xs text-gray-500 bg-gray-200 px-2 py-1 rounded font-medium">
                 {suggestion.type === 'category' && t('header.nav.category')}
-                {suggestion.type === 'subcategory' && t('header.nav.subCategory')}
+                {suggestion.type === 'subcategory' && t('header.nav.supCategory')}
                 {suggestion.type === 'diploma' && t('header.nav.diploma')}
                 {suggestion.type === 'course' && t('header.nav.course')}
               </span>
