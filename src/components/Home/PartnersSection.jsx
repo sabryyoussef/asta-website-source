@@ -6,12 +6,15 @@ import "swiper/css";
 import "swiper/css/navigation";
 // import Loading from "@/components/Loading";
 import PartnersData from "../../api/Partners.json";
+import { useParams } from "react-router-dom";
 
 export default function PartnersSection() {
   const swiperRef = useRef(null)
   const [partners, setPartners] = useState([]);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
+  const { lang } = useParams();
+  const isRTL = lang === 'ar';
 //   const [loading, setLoading] = useState(true);
 //   const [error, setError] = useState(null);
 
@@ -59,14 +62,15 @@ export default function PartnersSection() {
             display: "block",
           }}
         >
-          شركاؤنا
+          {isRTL ? "شركاؤنا" : "Our Partners"}
         </h2>
       </div>
 
       <div className="container">
-        <div className="relative mx-auto!"
-          onMouseEnter={() => swiperRef.current.swiper.autoplay.stop()}
-          onMouseLeave={() => swiperRef.current.swiper.autoplay.start()}
+        <div
+          className="relative mx-auto!"
+          onMouseEnter={() => swiperRef.current?.swiper?.autoplay?.stop()}
+          onMouseLeave={() => swiperRef.current?.swiper?.autoplay?.start()}
         >
           <Swiper
             ref={swiperRef}
@@ -76,6 +80,7 @@ export default function PartnersSection() {
             observer={true}
             observeParents={true}
             loop={true}
+            dir={isRTL ? "rtl" : "ltr"}
             autoplay={{
               delay: 0,
             }}
