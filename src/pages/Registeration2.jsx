@@ -171,8 +171,14 @@ const RegistrationPage2 = () => {
 
     if (!formData.phone) {
       newErrors.phone = lang === 'ar' ? 'رقم الهاتف مطلوب' : 'Phone number is required';
-    } else if (!/^(05\d{8}|9665\d{8})$/.test(formData.phone.replace(/[^0-9]/g, ''))) {
-      newErrors.phone = lang === 'ar' ? 'رقم الهاتف يجب أن يبدأ بـ 05 أو 9665 ويتكون من 10 أرقام' : 'Phone number must start with 05 or 9665 and be 10 digits';
+    } else {
+      const cleanedPhone = formData.phone.replace(/[^0-9]/g, '');
+      const phonePattern = /^\+?\d{0,12}$/;
+      if (!phonePattern.test(formData.phone) || cleanedPhone.length !== 12) {
+        newErrors.phone = lang === 'ar'
+          ? 'رقم الهاتف يجب أن يتكون من 12 رقمًا ويمكن أن يبدأ بـ +'
+          : 'Phone number must be 12 digits and may start with +';
+      }
     }
     // select Program is optional
     // if (!formData.selectedProgram) {
