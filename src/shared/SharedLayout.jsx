@@ -8,14 +8,18 @@ import WhatsAppButton from "../components/WhatsupButton";
 import CallButton from "../components/CallButton";
 import AIBotButton from "../components/AIBotButton";
 import ScrollToTopButton from "../components/ScrollToTopButton";
+import NotFound from "../pages/NotFound";
 
 export default function SharedLayout() {
     const { lang } = useParams();
     const { i18n } = useTranslation();
 
-    useEffect(() => {
-        if (lang !== "en" && lang !== "ar") return;
+    // Show 404 for invalid language parameters
+    if (lang !== "en" && lang !== "ar") {
+        return <NotFound lang={lang} />;
+    }
 
+    useEffect(() => {
      i18n.changeLanguage(lang);
         document.documentElement.lang = lang;
         document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";

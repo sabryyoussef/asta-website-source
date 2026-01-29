@@ -155,7 +155,6 @@ export default function Navbar() {
   //       }
   //     } catch (err) {
   //       if (err.status == 401) {
-  //         navigate.push("/Login");
   //         Cookies.remove("token");
   //         Cookies.remove("user");
   //       }
@@ -555,11 +554,11 @@ export default function Navbar() {
                     </a>
 
                     <a
-                      href="#"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        navigate.push("/Register");
-                      }}
+                      href="https://www.astalearn.org/"
+                      // onClick={(e) => {
+                      //   e.preventDefault();
+                      //   navigate.push("/Register");
+                      // }}
                       className="px-3 py-[12px] text-sm md:px-3 md:py-[12px] md:text-sm lg:px-3 lg:py-[12px] lg:text-[16px] hover:text-[#1a2555] text-white font-bold rounded-full bg-gradient-to-r! from-[#23A0D0]! to-68% to-[#3CBEB3]! focus:outline-none! shadow-md! transition! hover:opacity-80! !leading-[1.25] duration-300"
                     >
                      {t("header.actions.signUp")}
@@ -709,10 +708,10 @@ export default function Navbar() {
               {/* {user && token && (
                 <>
                   <a
-                    href={"/MyCourses"}
+                    href={"/Abdo-UwU"}
                     className={
                       "md:text-[18px] lg:text-[20px] px-[12px] py-[6px] font-medium hover:text-[#ffffff] hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] duration-300 transition-colors !leading-[1.25] " +
-                      (location.pathname === "/MyCourses"
+                      (location.pathname === "/Abdo-UwU"
                         ? "text-[#ffffff] active-nav-link relative bg-gradient-to-r from-[#23A0D0] to-68% to-[#3CBEB3]"
                         : "text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff]")
                     }
@@ -996,26 +995,24 @@ export default function Navbar() {
           ) : ( */}
             <div className="bg-[#EEEEEE]! p-3! flex! justify-between! items-center! border-b! border-[#2FAFC2]!">
               <div className="flex! gap-3!">
-                <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    navigate.push("/Login");
-                    setOpen(false);
-                  }}
+                <a
+                  href="https://www.astalearn.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
                   className="text-black! text-lg! font-medium!  rounded-lg! px-3! py-2!"
                 >
                  {t("header.actions.signin")}
-                </button>
-                <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    navigate.push("/Register");
-                    setOpen(false);
-                  }}
+                </a>
+                <a
+                  href="https://www.astalearn.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
                   className="text-black! bg-white! text-lg! font-medium! rounded-lg! px-3! py-2!"
                 >
                  {t("header.actions.signUp")}
-                </button>
+                </a>
               </div>
             </div>
           {/* )} */}
@@ -1144,7 +1141,7 @@ export default function Navbar() {
                       className="w-4! h-4!"
                     />
                     <a
-                      href={"MyCourses"}
+                      href={"Abdo-UwU"}
                       className="text-black! font-medium! text-lg!"
                     >
                       {"دوراتي"}

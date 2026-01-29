@@ -17,6 +17,7 @@ import TermsAndConditions from '../pages/Terms&Conditions';
 import AcademicIntegrityPage from '../pages/AcademicIntegrityPage';
 import AdmissionAndRegistration from '../pages/AdmissionAndRegistration';
 import CertificateChecker from '../pages/CertificateChecker';
+import NotFound from '../pages/NotFound';
 import SuccessConfirmation from '../pages/SuccessConfirmation';
 
 // Styles
@@ -43,8 +44,12 @@ export default function App() {
           <Route path="terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="admission&registration" element={<AdmissionAndRegistration />} />
           <Route path="certificate-checker" element={<CertificateChecker />} />
+          <Route path="*" element={<NotFound />} />
           <Route path="registration-success" element={<SuccessConfirmation />} />
         </Route>
+        
+        {/* Catch-all for routes that don't match /:lang pattern */}
+        <Route path="*" element={<Navigate to="/ar" replace />} />
       </Routes>
   );
 }
