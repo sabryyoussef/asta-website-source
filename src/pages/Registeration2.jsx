@@ -185,11 +185,11 @@ const RegistrationPage2 = () => {
     //   newErrors.selectedProgram = lang === 'ar' ? 'يجب اختيار برنامج' : 'Please select a program';
     // }
 
-    // Email is optional - only validate if provided
-    if (formData.email && formData.email.trim()) {
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-        newErrors.email = lang === 'ar' ? 'البريد الإلكتروني غير صحيح' : 'Invalid email format';
-      }
+    // Email is mandatory
+    if (!formData.email) {
+      newErrors.email = lang === 'ar' ? 'البريد الإلكتروني مطلوب' : 'Email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = lang === 'ar' ? 'البريد الإلكتروني غير صحيح' : 'Invalid email format';
     }
 
     return newErrors;

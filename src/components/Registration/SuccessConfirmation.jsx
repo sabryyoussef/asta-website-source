@@ -4,43 +4,61 @@ import { getProgramData } from '../../api/Programs';
 import { useEffect } from 'react';
 
 function SuccessConfirmation ({ formData, selectedProgram, calculateTotal, lang }) {
-    // Get localized program data
+    // Get localized program data (kept for potential UI use/debugging)
     const localizedProgram = selectedProgram ? (
         formData.programType === 'course'
             ? getCourseData(selectedProgram, lang)
             : getProgramData(selectedProgram, lang)
     ) : null;
 
-    // Push enhanced conversions data to Google Tag Manager
+    // Send enhanced conversions data to Google Ads / GA via gtag user_data
     useEffect(() => {
-        // Only push if we have user data
-        if (formData.email || formData.phone) {
-            const enhancedData = {
-                email: formData.email || '',
-                phone_number: formData.phone || ''
+        // Only send if we have the key identifiers
+        if (formData.fullName && formData.phone && formData.email) {
+            const value = typeof calculateTotal === 'function' ? calculateTotal() : undefined;
+
+            const userData = {
+                email: formData.email,
+                phone_number: formData.phone
             };
 
-            // Push conversion event with enhanced data
+            // Ensure dataLayer and gtag are available
             window.dataLayer = window.dataLayer || [];
+            window.gtag =
+                window.gtag ||
+                function () {
+                    (window.dataLayer = window.dataLayer || []).push(arguments);
+                };
+
+            // Optional: push a GTM-friendly event with user_data for debugging / tags
             window.dataLayer.push({
                 event: 'registration_conversion',
-                enhanced_conversions: {
-                    email: enhancedData.email,
-                    phone_number: enhancedData.phone_number
-                }
-            });
-
-            // Also push standard conversion tracking
-            window.dataLayer.push({
-                event: 'conversion',
-                send_to: 'AW-17874906768/conversion_label',
-                value: calculateTotal(),
+                user_data: userData,
+                value,
                 currency: 'SAR'
             });
 
-            console.log('Enhanced conversions data sent:', enhancedData);
+            // Google Ads conversion with enhanced conversions (API method via user_data)
+            // NOTE: replace `CONVERSION_LABEL` with your exact label from Google Ads
+            window.gtag('event', 'conversion', {
+                send_to: 'AW-17874906768/CONVERSION_LABEL',
+                value,
+                currency: 'SAR',
+                user_data: userData
+            });
+
+            // Optional GA4 event for analytics reporting
+            window.gtag('event', 'registration_complete', {
+                event_category: 'registration',
+                event_label: 'form_submission',
+                value,
+                currency: 'SAR',
+                user_data: userData
+            });
+
+            console.log('Enhanced conversions user_data sent:', userData);
         }
-    }, [formData.email, formData.phone, calculateTotal]);
+    }, [formData.fullName, formData.phone, formData.email, calculateTotal]);
 
     return (
     <div className="max-w-3xl mx-auto px-4 py-12">

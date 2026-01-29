@@ -12,13 +12,23 @@ import {
 
 const CoursesHeroSection = ({ lang = 'ar' }) => {
   const { t } = useTranslation();
-  const features = [
-    t("courses.features.1"),
-    t("courses.features.2"),
-    t("courses.features.3"),
-    t("courses.features.4")
-  ];
   const isRTL = lang === 'ar';
+  
+  // Features for courses
+  const features = {
+    ar: [
+      "تعلم مرن في أي وقت",
+      "محتوى تفاعلي وعملي",
+      "شهادات إتمام معتمدة",
+      "دعم مستمر من المدربين"
+    ],
+    en: [
+      "Flexible Learning Anytime",
+      "Interactive and Practical Content",
+      "Certified Completion Certificates",
+      "Continuous Support from Trainers"
+    ]
+  };
   return (
     <div className="relative overflow-hidden bg-gradient-to-r from-[#202C5B] to-[#226796] text-white" dir={isRTL ? 'rtl' : 'ltr'}>
       {/* خلفية مع مثلثات هندسية */}
@@ -52,9 +62,9 @@ const CoursesHeroSection = ({ lang = 'ar' }) => {
             {/* الميزات */}
             <div className="mb-10">
               <div className="grid grid-cols-2 gap-4">
-                {features.map((feature, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[#23A0D0] to-[#30AFC1] flex items-center justify-center">
+                {features[lang].map((feature, index) => (
+                  <div key={index} className={`flex items-center gap-3 ${isRTL ? 'flex-row' : 'flex-row'}`}>
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[#23A0D0] to-[#30AFC1] flex items-center justify-center flex-shrink-0">
                       <CheckCircleIcon className="h-4 w-4 text-white" />
                     </div>
                     <span className="text-sm md:text-base">{feature}</span>
@@ -64,13 +74,13 @@ const CoursesHeroSection = ({ lang = 'ar' }) => {
             </div>
 
             {/* أزرار التحكم */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button className="px-8 py-4 bg-gradient-to-r from-[#23A0D0] to-[#30AFC1] text-gray-900 rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-3">
-                <span>{lang === 'ar' ? 'استكشاف البرامج' : 'Explore Programs'}</span>
+            <div className={`flex flex-col sm:flex-row gap-4 ${isRTL ? 'sm:justify-start' : 'sm:justify-start'}`}>
+              <button className={`px-8 py-4 bg-gradient-to-r from-[#23A0D0] to-[#30AFC1] text-gray-900 rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                <span>{lang === 'ar' ? 'استكشاف الدورات' : 'Explore Courses'}</span>
                 <ArrowDownIcon className="h-5 w-5" />
               </button>
               
-              <button className="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl font-bold text-lg hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-3">
+              <button className={`px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl font-bold text-lg hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
                 <PlayCircleIcon className="h-6 w-6" />
                 <span>{lang === 'ar' ? 'شاهد فيديو التعريف' : 'Watch Introduction Video'}</span>
               </button>
@@ -85,14 +95,14 @@ const CoursesHeroSection = ({ lang = 'ar' }) => {
             <div className={`absolute -top-10 md:-top-6 ${isRTL ? '-left-6' : '-right-6'} md:w-64 w-48 bg-gradient-to-r from-[#23A0D0] to-[#30AFC1] rounded-2xl p-6 shadow-2xl transform rotate-3`}>
               <div className={`flex items-center gap-3 mb-4 ${isRTL ? '' : 'flex-row-reverse'}`}>
                 <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
-                  <AcademicCapIcon className="h-6 w-6 text-white" />
+                  <BookOpenIcon className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <div className="font-bold text-lg"> {lang === 'ar' ? 'برامج مكثفة' : 'Intensive Programs'}</div>
-                  <div className="text-sm text-blue-100">{lang === 'ar' ? '6-12 أسبوع' : '6-12 Weeks'}</div>
+                  <div className="font-bold text-lg"> {lang === 'ar' ? 'دورات متنوعة' : 'Diverse Courses'}</div>
+                  <div className="text-sm text-blue-100">{lang === 'ar' ? 'مرنة وسريعة' : 'Flexible & Fast'}</div>
                 </div>
               </div>
-              <div className="text-sm">{lang === 'ar' ? 'تعلم المهارات المطلوبة في سوق العمل' : 'Learn the skills required in the job market'}</div>
+              <div className="text-sm">{lang === 'ar' ? 'تعلم في وقتك الخاص وبوتيرة تناسبك' : 'Learn at your own pace and time'}</div>
             </div>
 
             <div className={`absolute -bottom-30 md:-bottom-6 ${isRTL ? '-right-6' : '-left-6'} w-56 bg-gradient-to-r from-[#3CBEB3] to-[#23A0D0] rounded-2xl p-6 shadow-2xl transform -rotate-3 z-20`}>
@@ -101,11 +111,11 @@ const CoursesHeroSection = ({ lang = 'ar' }) => {
                   <ChartBarIcon className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <div className="font-bold text-lg"> {lang === 'ar' ? 'ضمان التوظيف' : 'Employment Guarantee'}</div>
-                  <div className="text-sm text-blue-100">{lang === 'ar' ? '90% توظيف' : '90% Employment'}</div>
+                  <div className="font-bold text-lg"> {lang === 'ar' ? 'شهادات معتمدة' : 'Certified Certificates'}</div>
+                  <div className="text-sm text-blue-100">{lang === 'ar' ? '100% معتمدة' : '100% Certified'}</div>
                 </div>
               </div>
-              <div className="text-sm">{lang === 'ar' ? 'دعم كامل للحصول على وظيفة' : 'Full support for job placement'}</div>
+              <div className="text-sm">{lang === 'ar' ? 'احصل على شهادة معتمدة بعد إتمام الدورة' : 'Get a certified certificate after course completion'}</div>
             </div>
           </div>
         </div>
@@ -115,7 +125,7 @@ const CoursesHeroSection = ({ lang = 'ar' }) => {
           <div className="animate-bounce">
             <ArrowDownIcon className="h-8 w-8 mx-auto text-white/60" />
           </div>
-          <p className="text-blue-100 mt-2">{lang === 'ar' ? 'قم بالتمرير لاكتشاف البرامج' : 'Scroll to explore programs'}</p>
+          <p className="text-blue-100 mt-2">{lang === 'ar' ? 'قم بالتمرير لاكتشاف الدورات' : 'Scroll to explore courses'}</p>
         </div>
       </div>
     </div>

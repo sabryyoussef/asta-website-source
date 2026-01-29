@@ -130,12 +130,13 @@ function CourseCard({ course }) {
               {asText(courseForRender.startDate)}
             </span>
           </div>
-          <div className="flex items-center gap-2 bg-gray-50 p-2 rounded-lg">
+          {/* TODO: Uncomment when instructor data is needed */}
+          {/* <div className="flex items-center gap-2 bg-gray-50 p-2 rounded-lg">
             <UserIcon className="h-4 w-4 text-gray-500" />
             <span className="text-gray-700 text-xs font-medium">
               {(courseForRender.instructor.name ?? '')}
             </span>
-          </div>
+          </div> */}
         </div>
 
         {/* المهارات */}

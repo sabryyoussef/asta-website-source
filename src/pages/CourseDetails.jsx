@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 // Components
 import CourseHeader from "../components/Courses/CourseHeader";
 import CourseOverviewSection from "../components/Courses/CourseOverviewSection";
-import CourseInstructorSection from "../components/Courses/CourseInstructorSection";
+// TODO: Uncomment when instructor data is needed
+// import CourseInstructorSection from "../components/Courses/CourseInstructorSection";
 import CourseRequirementsSection from "../components/Courses/CourseRequirementsSection";
 import CourseFAQSection from "../components/Courses/CourseFAQSection";
 import RelatedCoursesSection from "../components/Courses/RelatedCoursesSection";
@@ -12,6 +13,7 @@ import RelatedCoursesSection from "../components/Courses/RelatedCoursesSection";
 import Courses, { getCourseData } from "../api/Courses";
 const CourseDetails = () => {
   const { id, lang = 'ar' } = useParams();
+  const navigate = useNavigate();
   const isRTL = lang === 'ar';
   const { t } = useTranslation();
   // Scroll to top when component mounts
@@ -29,7 +31,8 @@ const CourseDetails = () => {
     <div dir={isRTL ? 'rtl' : 'ltr'}>
       <CourseHeader course={course} />
       <CourseOverviewSection course={course} />
-      <CourseInstructorSection course={course} />
+      {/* TODO: Uncomment when instructor data is needed */}
+      {/* <CourseInstructorSection course={course} /> */}
       <CourseRequirementsSection course={course} />
       <CourseFAQSection course={course} />
       <RelatedCoursesSection currentCourseId={id} />
@@ -42,7 +45,10 @@ const CourseDetails = () => {
             {isRTL ? 'سجل الآن واحجز مقعدك في أفضل دورة تدريبية في ' : 'Register now and book your seat in the best training course in'} {localizedCourse.title}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 bg-gradient-to-r from-[#226796] to-[#23A0D0] text-white rounded-xl font-bold text-lg hover:shadow-2xl transition-all duration-300">
+            <button
+              className="px-8 py-4 bg-gradient-to-r from-[#226796] to-[#23A0D0] text-white rounded-xl font-bold text-lg hover:shadow-2xl transition-all duration-300"
+              onClick={() => navigate(`/${lang}/registration`)}
+            >
               {isRTL ? 'سجل الآن واحجز مقعدك' : 'Register now and book your seat'}
             </button>
           </div>

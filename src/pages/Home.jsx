@@ -5,7 +5,8 @@ import PartnersSection from "../components/Home/PartnersSection";
 import Slider from "../components/Home/Slider";
 // import PopularCoursesSection from "@/app/components/PopularCoursesSection";
 import CourseSlider from "../components/Home/CourseSlider";
-import CoursesTabs from "../components/Home/CoursesTabs";
+import AdvertisingSection from "../components/Home/AdvertisingSection";
+// import CoursesTabs from "../components/Home/CoursesTabs";
 // import TestimonialsSection from "@/app/components/TestimonialsSection";
 // import Footer from "@/app/components/Footer";
 // import Footer2 from "@/app/components/Footer2";
@@ -16,6 +17,7 @@ import CoursesTabs from "../components/Home/CoursesTabs";
 import Courses from "../api/Courses.js";
 // import { useAuth } from "../context/AuthContext";
 import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 // import { getSuggestions } from "@/store/slices/userDataSlice";
 // import { getCoursesByFilter } from "@/store/slices/courseSlice.js";
 // import { useSelector, useDispatch } from "react-redux";
@@ -30,7 +32,8 @@ export default function Home() {
   const mockFilteredCourses = {
     data: []
   };
-
+  const { lang } = useParams();
+  const isRTL = lang === 'ar';
   // useEffect(() => {
   //   dispatch(getCoursesByFilter());
   // }, [dispatch]);
@@ -46,16 +49,19 @@ export default function Home() {
 
   return (
     <div className="font-[family-name:var(--font-geist-sans)]">
-      <main className="">
+      <main className="w-full">
               <Hero></Hero>
               <PartnersSection />
               <Slider />
               <CourseSlider
                 bg="bg-gradient-to-r from-[#23a0d01a] to-[#3CBEB31A]"
                 courses={Courses}
-                title="الدورات المهنية الدولية"
+                title={isRTL ? 'الدورات المهنية الدولية' : 'International Professional Courses'}
               ></CourseSlider>
-              <CoursesTabs />
+              
+              <AdvertisingSection/>
+              
+              {/* <CoursesTabs /> */}
               {/* <TestimonialsSection></TestimonialsSection> */}
               {/* <Join /> */}
               {/* <NewsLetter /> */}

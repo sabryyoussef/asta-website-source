@@ -33,6 +33,8 @@ export default function Navbar() {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchSuggestions, setSearchSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const [hoveredDropdown, setHoveredDropdown] = useState(null);
+  const timeoutRef = useRef(null);
   const trainersRef = useRef(null);
   const coursesRef = useRef(null);
   const aboutRef = useRef(null);
@@ -41,6 +43,40 @@ export default function Navbar() {
   const { lang = 'ar' } = useParams();
   const { t } = useTranslation();
   const isRTL = lang === 'ar';
+
+  const handleDropdownHover = (dropdownName) => {
+    // Clear any existing timeout
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setHoveredDropdown(dropdownName);
+    if (dropdownName === 'courses') {
+      setCourses(true);
+      setDiplomasDropdown(false);
+      setAboutDropdown(false);
+      setTrainersDropdown(false);
+    } else if (dropdownName === 'diplomas') {
+      setDiplomasDropdown(true);
+      setCourses(false);
+      setAboutDropdown(false);
+      setTrainersDropdown(false);
+    } else if (dropdownName === 'about') {
+      setAboutDropdown(true);
+      setCourses(false);
+      setDiplomasDropdown(false);
+      setTrainersDropdown(false);
+    }
+  };
+
+  const handleDropdownLeave = () => {
+    setHoveredDropdown(null);
+    timeoutRef.current = setTimeout(() => {
+      setCourses(false);
+      setDiplomasDropdown(false);
+      setAboutDropdown(false);
+      setTrainersDropdown(false);
+    }, 200);
+  };
   // const { categories, status, error } = useSelector(
   //   (state) => state.courses // Accessing filteredCourses directly
   // );
@@ -154,13 +190,18 @@ export default function Navbar() {
       if (coursesRef.current && !coursesRef.current.contains(event.target)) {
         setCourses(false);
       }
+      // Close mobile search when clicking outside
+      if (search && !event.target.closest('.mobile-search-container')) {
+        setSearch(false);
+        setShowSuggestions(false);
+      }
     }
 
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [search]);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -213,13 +254,13 @@ export default function Navbar() {
       }
     });
     
-    // Then add individual courses from all categories
+    // Then add individual subcategories from all categories
     categories.forEach(category => {
       category.sup_categories?.forEach(subCategory => {
-        // Add the subcategory as a course suggestion
+        // Add the subcategory as its own suggestion
         if (subCategory.name.toLowerCase().includes(lowercaseQuery)) {
           suggestions.push({
-            type: 'course',
+            type: 'subcategory',
             title: subCategory.name,
             url: `/${lang}/categories/${category.id}?sup_category=${encodeURIComponent(subCategory.id)}`
           });
@@ -360,9 +401,12 @@ export default function Navbar() {
               }
             >
               {url && (
-                <button onClick={() => navigate.push("/Check")} className="py-[12px] px-[12px] rounded-full! cursor-pointer hover:text-[#1a2555] text-white lg:text-[16px] sm:text-[14px] font-bold bg-gradient-to-r! from-[#23A0D0]! to-68% to-[#3CBEB3]! focus:outline-none! shadow-md! transition! hover:opacity-80! !leading-[1.25] duration-300">
-               {t("header.actions.verifyCertificate")}
-                </button>
+                <a 
+                  href={`/${lang}/certificate-checker`}
+                  className="py-[12px] px-[12px] rounded-full! cursor-pointer hover:text-[#1a2555] text-white lg:text-[16px] sm:text-[14px] font-bold bg-gradient-to-r! from-[#23A0D0]! to-68% to-[#3CBEB3]! focus:outline-none! shadow-md! transition! hover:opacity-80! !leading-[1.25] duration-300"
+                >
+                  {t("header.actions.verifyCertificate")}
+                </a>
               )}
               <div
                 className={
@@ -500,11 +544,11 @@ export default function Navbar() {
                 ) : ( */}
                   <div className="flex items-center gap-[12px]">
                     <a
-                      href="#"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        navigate.push("/Login");
-                      }}
+                      href="https://www.astalearn.org/"
+                      // onClick={(e) => {
+                      //   e.preventDefault();
+                      //   navigate.push("https://www.astalearn.org/");
+                      // }}
                       className="py-1 md:py-2 lg:py-2 text-sm md:text-sm lg:text-base text-[#202C5B] hover:text-gradient-to-r from-cyan-500 to-emerald-400 hover:bg-[#1A2555] rounded-full hover:text-white font-bold px-3 transition duration-300"
                     >
                      {t("header.actions.signin")}
@@ -543,7 +587,7 @@ export default function Navbar() {
                 </div>
 
                 {/* Mobile menu button and search - Left side */}
-                <div className="flex items-center gap-3 relative">
+                <div className="flex items-center gap-3 relative mobile-search-container overflow-visible">
                   {/* Mobile search icon */}
                   <svg
                     className="w-6 h-6 font-medium text-[#23A0D0]"
@@ -564,15 +608,20 @@ export default function Navbar() {
                   <form
                     onSubmit={(e) => {
                       e.preventDefault();
-                      navigate.replace(
-                        `/Courses?search=${e.currentTarget.elements[1].value}`
-                      );
+                      const formData = new FormData(e.currentTarget);
+                      const searchValue = formData.get('mobileSearch') || searchQuery;
+                      if (searchValue.trim()) {
+                        navigate(`/${lang}/search?q=${encodeURIComponent(searchValue)}`);
+                        setSearch(false);
+                        setShowSuggestions(false);
+                      }
                     }}
                   >
                     <div
                       className={
-                        "absolute top-[calc(100%+12px)] w-[280px] lg:hidden flex py-1 px-[12px] items-center gap-[12px] after:w-[calc(100%-2PX)] after:h-[calc(100%-2PX)] bg-red after:absolute after:left-[1px] after:top-[1px] rounded-3xl after:rounded-3xl after:bg-white after:z-[-1] z-[10] bg-gradient-to-r from-[#202C5B] via-[#23A0D0] to-[#3CBEB3] duration-300 left-0 " +
-                        (search ? "" : "invisible opacity-0")
+                        "absolute top-[calc(100%+12px)] w-[240px] max-w-[calc(100vw-40px)] lg:hidden flex py-1 px-[12px] items-center gap-[12px] after:w-[calc(100%-2PX)] after:h-[calc(100%-2PX)] after:absolute after:left-[1px] after:top-[1px] rounded-3xl after:rounded-3xl after:bg-white after:z-[-1] z-[40] bg-gradient-to-r from-[#202C5B] via-[#23A0D0] to-[#3CBEB3] duration-300 " +
+                        (search ? "" : "invisible opacity-0") + " " +
+                        (isRTL ? "left-0" : "right-0")
                       }
                     >
                       <button type="submit" className="w-[22px] h-[22px]">
@@ -580,11 +629,42 @@ export default function Navbar() {
                       </button>
                       <input
                         type="text"
-                        placeholder="عن ماذا تبحث؟"
+                        name="mobileSearch"
+                        value={searchQuery}
+                        onChange={handleSearchInputChange}
+                        placeholder={isRTL ? "عن ماذا تبحث؟" : "Search"}
                         className="text-[16px] font-medium placeholder:text-[#878787] text-[#202C5B] h-[36px] w-full"
                       />
                     </div>
                   </form>
+
+                  {/* Mobile Search Suggestions */}
+                  {showSuggestions && searchSuggestions.length > 0 && (
+                    <div className={`absolute top-[calc(100%+64px)] w-[240px] max-w-[calc(100vw-40px)] lg:hidden bg-white rounded-lg shadow-[0px_2px_6px_2px_rgba(0,0,0,0.1)] z-[50] max-h-[300px] overflow-y-auto ${isRTL ? 'left-0' : 'right-0'}`}>
+                      {searchSuggestions.map((suggestion, index) => (
+                        <div
+                          key={index}
+                          onClick={() => {
+                            handleSuggestionClick(suggestion);
+                            setSearch(false);
+                          }}
+                          className="px-4 py-3 hover:bg-gray-100 cursor-pointer border-b border-gray-100 last:border-b-0"
+                        >
+                          <div className="flex items-center gap-2">
+                            <span className="text-xs text-gray-500 uppercase tracking-wide flex-shrink-0">
+                              {suggestion.type === 'category' ? (isRTL ? 'فئة' : 'Category') :
+                               suggestion.type === 'subcategory' ? (isRTL ? 'قسم فرعي' : 'Subcategory') :
+                               suggestion.type === 'course' ? (isRTL ? 'دورة' : 'Course') :
+                               (isRTL ? 'دبلومة' : 'Diploma')}
+                            </span>
+                            <span className="text-sm text-gray-700 font-medium truncate">
+                              {suggestion.title}
+                            </span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
 
                   {/* Mobile menu button */}
                   <svg
@@ -617,10 +697,10 @@ export default function Navbar() {
               <Link
                 to={`/${lang}`}
                 className={
-                  "md:text-[18px] lg:text-[20px] px-[12px] py-[6px] font-medium hover:text-[#ffffff] hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] duration-300 transition-colors !leading-[1.25] " +
+                  "md:text-[18px] lg:text-[20px] px-[16px] py-[8px] font-medium hover:text-[#ffffff] hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] duration-300 transition-colors !leading-[1.25] rounded-lg " +
                   (location.pathname === `/${lang}` || location.pathname === "/"
                     ? "text-[#ffffff] active-nav-link relative bg-gradient-to-r from-[#23A0D0] to-68% to-[#3CBEB3]"
-                    : "text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff]")
+                    : "text-[#202C5B] bg-white")
                 }
               >
                 {t("header.nav.home")}
@@ -644,7 +724,7 @@ export default function Navbar() {
               )} */}
 
               {/* Courses dropdown */}
-              <div className="relative" ref={coursesRef}>
+              <div className="relative" ref={coursesRef} onMouseEnter={() => handleDropdownHover('courses')} onMouseLeave={handleDropdownLeave}>
                 <button
                   onClick={() => {
                     setCourses(!courses);
@@ -652,10 +732,10 @@ export default function Navbar() {
                     setTrainersDropdown(false);
                   }}
                   className={
-                    "flex items-center cursor-pointer gap-1 md:text-[18px] lg:text-[20px] px-[12px] font-medium hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 transition-colors !leading-[1.25] min-h-[44px] " +
+                    "flex items-center cursor-pointer gap-1 md:text-[18px] lg:text-[20px] px-[16px] py-[8px] font-medium hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 transition-colors !leading-[1.25] min-h-[44px] rounded-lg " +
                     (location.pathname.includes("/Courses/") || location.pathname === "/Courses"
                       ? "text-[#ffffff] bg-gradient-to-r from-[#23A0D0] to-68% to-[#3CBEB3] active-nav-link relative"
-                      : "text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff]")
+                      : "text-[#202C5B] bg-white")
                   }
                 >
                   {t("header.nav.courses")}
@@ -676,7 +756,7 @@ export default function Navbar() {
                   </svg>
                 </button>
                 {courses && (
-                  <div className="absolute top-full right-0 mt-1 w-max bg-white rounded-lg shadow-[0px_2px_6px_2px_rgba(0,0,0,0.1)] z-20">
+                  <div className="absolute top-full right-0 mt-1 w-max bg-white rounded-lg shadow-[0px_2px_6px_2px_rgba(0,0,0,0.1)] z-20" onMouseEnter={() => setHoveredDropdown('courses')} onMouseLeave={handleDropdownLeave}>
                     <div className="py-1">
                       <a
                         href={`/${lang}/courses`}
@@ -746,7 +826,7 @@ export default function Navbar() {
               <div className="min-h-[37px] w-[1px] mx-[2px] bg-[#1a2555]"></div>
 
               {/* Diplomas dropdown */}
-              <div className="relative" ref={diplomasRef}>
+              <div className="relative" ref={diplomasRef} onMouseEnter={() => handleDropdownHover('diplomas')} onMouseLeave={handleDropdownLeave}>
                 <button
                   onClick={() => {
                     setDiplomasDropdown(!diplomasDropdown);
@@ -755,10 +835,10 @@ export default function Navbar() {
                     setTrainersDropdown(false);
                   }}
                   className={
-                    "flex items-center cursor-pointer gap-1 md:text-[18px] lg:text-[20px] px-[12px] font-medium hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 transition-colors !leading-[1.25] min-h-[44px] " +
+                    "flex items-center cursor-pointer gap-1 md:text-[18px] lg:text-[20px] px-[16px] py-[8px] font-medium hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 transition-colors !leading-[1.25] min-h-[44px] rounded-lg " +
                     (location.pathname.includes("/programs/")
                       ? "text-[#ffffff] bg-gradient-to-r from-[#23A0D0] to-68% to-[#3CBEB3] active-nav-link relative"
-                      : "text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff]")
+                      : "text-[#202C5B] bg-white")
                   }
                 >
                   {t("header.nav.diplomas")}
@@ -779,7 +859,7 @@ export default function Navbar() {
                   </svg>
                 </button>
                 {diplomasDropdown && (
-                  <div className="absolute top-full right-0 mt-1 pt-4 w-56 bg-white rounded-lg shadow-[0px_2px_6px_2px_rgba(0,0,0,0.1)] z-20">
+                  <div className="absolute top-full right-0 mt-1 pt-4 w-56 bg-white rounded-lg shadow-[0px_2px_6px_2px_rgba(0,0,0,0.1)] z-20" onMouseEnter={() => setHoveredDropdown('diplomas')} onMouseLeave={handleDropdownLeave}>
                     <div className="py-1">
                       <a
                         href={`/${lang}/programs`}
@@ -804,17 +884,17 @@ export default function Navbar() {
               <div className="min-h-[37px] w-[1px] mx-[2px] bg-[#1a2555]"></div>
 
               {/* About dropdown */}
-              <div className="relative" ref={aboutRef}>
+              <div className="relative" ref={aboutRef} onMouseEnter={() => handleDropdownHover('about')} onMouseLeave={handleDropdownLeave}>
                 <button
                   onClick={() => {
                     setAboutDropdown(!aboutDropdown);
                     setTrainersDropdown(false);
                   }}
                   className={
-                    "flex items-center cursor-pointer gap-1 md:text-[18px] lg:text-[20px] px-[12px] font-medium transition-colors !leading-[1.25] hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 min-h-[44px] " +
+                    "flex items-center cursor-pointer gap-1 md:text-[18px] lg:text-[20px] px-[16px] py-[8px] font-medium transition-colors !leading-[1.25] hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 min-h-[44px] rounded-lg " +
                     (false
                       ? "text-[#ffffff] bg-gradient-to-r from-[#23A0D0] to-68% to-[#3CBEB3] active-nav-link relative"
-                      : "text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff]")
+                      : "text-[#202C5B] bg-white")
                   }
                 >
                   {t("header.nav.about")}
@@ -835,32 +915,34 @@ export default function Navbar() {
                   </svg>
                 </button>
                 {aboutDropdown && (
-                  <div className="absolute top-full right-0 mt-1 w-44 bg-white rounded-lg shadow-[0px_2px_6px_2px_rgba(0,0,0,0.1)] z-20">
+                  <div className="absolute top-full right-0 mt-1 w-44 bg-white rounded-lg shadow-[0px_2px_6px_2px_rgba(0,0,0,0.1)] z-20" onMouseEnter={() => setHoveredDropdown('about')} onMouseLeave={handleDropdownLeave}>
                     <div className="py-1">
                       <a
                         href={`/${lang}/about-us`}
+                        onClick={() => setAboutDropdown(false)}
                         className="block px-4 py-2 md:text-sm lg:text-lg hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff] transition-colors"
                       >
                         {t("header.nav.aboutAcademy")}
                       </a>
                       <a
-                        href={`/${lang}/Vission&Mission`}
+                        href={`/${lang}/vision&mission`}
+                        onClick={() => setAboutDropdown(false)}
+                        className="block px-4 py-2 md:text-sm lg:text-lg hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff] transition-colors"
+                      >
+                        {t("header.nav.vision&Mission")}
+                      </a>
+                      <a
+                        href={`/${lang}/academic-integrity`}
                         className="block px-4 py-2 md:text-sm lg:text-lg hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff] transition-colors"
                       >
                         {t("header.nav.standarts")}
                       </a>
-                      <a
-                        href={`/${lang}/team`}
-                        className="block px-4 py-2 md:text-sm lg:text-lg hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff] transition-colors"
-                      >
-                        {t("header.nav.team")}
-                      </a>
-                      <a
+                      {/* <a
                         href="#"
                         className="block px-4 py-2 md:text-sm lg:text-lg hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff] transition-colors"
                       >
                         {t("header.nav.contact")}
-                      </a>
+                      </a> */}
                     </div>
                   </div>
                 )}
@@ -871,10 +953,10 @@ export default function Navbar() {
               <a
                 href={`/${lang}/registration`}
                 className={
-                  "md:text-[18px] lg:text-[20px] px-[12px] py-[6px] font-medium hover:text-[#4fd1c5] duration-300 transition-colors !leading-[1.25] " +
+                  "md:text-[18px] lg:text-[20px] px-[16px] py-[8px] font-medium hover:text-[#ffffff] hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] duration-300 transition-colors !leading-[1.25] rounded-lg " +
                   (location.pathname === `/${lang}/registration` 
-                    ? "text-[#4fd1c5]"
-                    : "text-[#202C5B]")
+                    ? "text-[#ffffff] bg-gradient-to-r from-[#23A0D0] to-68% to-[#3CBEB3]"
+                    : "text-[#202C5B] bg-white")
                 }
               >
                 {t("header.nav.registration")}
@@ -997,6 +1079,17 @@ export default function Navbar() {
               </a>
 
               <a
+                href={`/${lang}/vision&mission`}
+                onClick={() => setOpen(false)}
+                className="px-3! py-[12px]! flex! items-center! justify-between! border-b border-[#2FAFC2]!"
+              >
+                <div className="flex! items-center! gap-3!">
+                  <InformationCircleIcon className="w-5 h-5 text-[#202C5B]" />
+                  <span className="text-black! font-medium! text-lg!">{t("header.nav.vision&Mission")}</span>
+                </div>
+              </a>
+
+              <a
                 href={`/${lang}/registration`}
                 onClick={() => setOpen(false)}
                 className="px-3! py-[12px]! flex! items-center! justify-between! border-b border-[#2FAFC2]!"
@@ -1004,6 +1097,17 @@ export default function Navbar() {
                 <div className="flex! items-center! gap-3!">
                   <ClipboardDocumentCheckIcon className="w-5 h-5 text-[#202C5B]" />
                   <span className="text-black! font-medium! text-lg!">{t("header.nav.registration")}</span>
+                </div>
+              </a>
+
+              <a
+                href={`/${lang}/certificate-checker`}
+                onClick={() => setOpen(false)}
+                className="px-3! py-[12px]! flex! items-center! justify-between! border-b border-[#2FAFC2]!"
+              >
+                <div className="flex! items-center! gap-3!">
+                  <ClipboardDocumentCheckIcon className="w-5 h-5 text-[#202C5B]" />
+                  <span className="text-black! font-medium! text-lg!">{t("header.actions.verifyCertificate")}</span>
                 </div>
               </a>
 
@@ -1099,7 +1203,7 @@ export default function Navbar() {
       
       {/* Global Search Suggestions Dropdown */}
       {showSuggestions && searchSuggestions.length > 0 && (
-        <div className="fixed top-30 left-1/2 transform -translate-x-1/2 w-[400px] bg-white rounded-lg shadow-[0px_4px_12px_4px_rgba(0,0,0,0.15)] z-[9999] max-h-60 overflow-y-auto">
+        <div className="fixed top-30 left-1/2 transform -translate-x-1/2 w-[400px] bg-white rounded-lg shadow-[0px_4px_12px_4px_rgba(0,0,0,0.15)] z-[9999] max-h-60 overflow-y-auto max-lg:hidden">
           {searchSuggestions.map((suggestion, index) => (
             <div
               key={index}
@@ -1108,7 +1212,7 @@ export default function Navbar() {
             >
               <span className="text-xs text-gray-500 bg-gray-200 px-2 py-1 rounded font-medium">
                 {suggestion.type === 'category' && t('header.nav.category')}
-                {suggestion.type === 'subcategory' && t('header.nav.subCategory')}
+                {suggestion.type === 'subcategory' && t('header.nav.supCategory')}
                 {suggestion.type === 'diploma' && t('header.nav.diploma')}
                 {suggestion.type === 'course' && t('header.nav.course')}
               </span>

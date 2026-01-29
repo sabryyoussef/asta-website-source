@@ -18,6 +18,7 @@ import ProgramsData from "../../api/Programs.json";
 
 export default function ResponsiveDataPathSlider({mainTitle}) {
     const {lang} = useParams();
+    const isRTL = lang === 'ar';
     // const dispatch = useDispatch();
     const initialProgramIndex = 0;
     // const {routes, categories, status} = useSelector(
@@ -25,7 +26,9 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
     // );
     const [currentIndex, setCurrentIndex] = useState(initialProgramIndex);
     const [currentContent, setCurrentContent] = useState(null);
+    const [isVisible, setIsVisible] = useState(false);
     const swiperRef = useRef(null);
+    const sectionRef = useRef(null);
     
     // Extract programs from ProgramsData using useMemo to prevent re-renders
     const categories = useMemo(() => 
@@ -34,7 +37,7 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
             name: program.title[lang],
             description: program.subtitle[lang],
             image_url: program.image
-        })), []
+        })), [lang]
     );
 
 
@@ -61,11 +64,11 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
         setCurrentContent(categories[nextIndex]);
     };
 
-    // useEffect(() => {
-    //     if (categories.length > 0) {
-    //         setCurrentContent(categories[initialProgramIndex]);
-    //     }
-    // }, [categories]);
+    useEffect(() => {
+        if (categories.length > 0) {
+            setCurrentContent(categories[currentIndex]);
+        }
+    }, [categories, currentIndex]);
 
 
     useEffect(() => {
@@ -77,6 +80,27 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
         return () => clearTimeout(timer);
     }, [currentIndex, categories]);
 
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => {
+            if (sectionRef.current) {
+                observer.unobserve(sectionRef.current);
+            }
+        };
+    }, []);
+
 
     // TODO: Replace with loading state when API is ready
     // if (status.getCategories == "loading" || status.getCategories == "idle") {
@@ -85,7 +109,8 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
 
     return (
         <section
-            className="bg-gradient-to-r from-[#23a0d01a] to-[#3CBEB31A] relative! overflow-hidden! flex! items-center! justify-center! ">
+            ref={sectionRef}
+            className={`bg-gradient-to-r from-[#23a0d01a] to-[#3CBEB31A] relative! overflow-hidden! flex! items-center! justify-center! transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <div className="absolute! inset-0! opacity-5!">
                 <div className="absolute! top-20! left-20! w-32! h-32! bg-blue-500! rounded-full! blur-3xl!"></div>
                 <div className="absolute! bottom-20! right-20! w-40! h-40! bg-teal-500! rounded-full! blur-3xl!"></div>
@@ -95,7 +120,7 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
                 <div className="flex! flex-col! items-center! justify-center! py-4! sm:py-6!">
                     <div className="flex-shrink-0! w-full! sm:mt-8! mt-6! mb-6! sm:mb-8! ">
                         {mainTitle && (
-                            <div className="container mx-auto text-right mb-8">
+                            <div className={`container mx-auto mb-8 ${isRTL ? 'text-right' : 'text-left'}`}>
                                 <h2 className="text-[24px] font-bold text-black">
                                     {mainTitle}
                                 </h2>
@@ -113,21 +138,24 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
                                         );
                                     }}
                                 ></button>
-                                <Swiper
-                                    ref={swiperRef}
-                                    modules={[Navigation, A11y]}
-                                    slidesPerView="auto"
-                                    spaceBetween={16}
-                                    centeredSlides={false}
-                                    centerInsufficientSlides={true}
-                                    watchOverflow={true}
-                                    onSwiper={(swiper) => (swiperRef.current = { swiper })}
-                                    navigation={{
-                                        prevEl: ".category-swiper-prev",
-                                        nextEl: ".category-swiper-next",
-                                    }}
-                                    className="!overflow-hidden max-w-full px-12 sm:px-16 md:px-20 w-[calc(100%-88px)]"
-                                    >
+                                <div className="w-full overflow-hidden px-12 sm:px-16 md:px-20">
+                                    <Swiper
+                                        key={`slider-${lang}`}
+                                        ref={swiperRef}
+                                        modules={[Navigation, A11y]}
+                                        slidesPerView="auto"
+                                        spaceBetween={16}
+                                        centeredSlides={false}
+                                        centerInsufficientSlides={true}
+                                        watchOverflow={true}
+                                        dir={isRTL ? 'rtl' : 'ltr'}
+                                        onSwiper={(swiper) => (swiperRef.current = { swiper })}
+                                        navigation={{
+                                            prevEl: ".category-swiper-prev",
+                                            nextEl: ".category-swiper-next",
+                                        }}
+                                        className="w-full"
+                                        >
                                     {categories.map((category, index) => (
                                         <SwiperSlide key={index} className="!w-fit py-2!">
                                             <button
@@ -147,7 +175,8 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
                                             </button>
                                         </SwiperSlide>
                                     ))}
-                                </Swiper>
+                                    </Swiper>
+                                </div>
                                 <button
                                     className="category-swiper-next! absolute! cursor-pointer right-0! top-1/2! -translate-y-1/2! z-10! w-0! h-0! border-t-[15px]! border-b-[15px]! border-l-[20px]! border-t-transparent! border-b-transparent! border-l-blue-900! hover:border-l-blue-700! transition-colors! duration-300! max-md:hidden"
                                     onClick={() => {
@@ -167,7 +196,7 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
                                 <div className="max-w-7xl! w-full! mx-auto! h-full! rounded-2xl! overflow-hidden!">
                                     <div
                                         className="bg-transparent backdrop-blur-xl! rounded-2xl! shadow-2xl! overflow-hidden! flex! flex-col! lg:flex-row!"
-                                        dir="ltr"
+                                        dir={isRTL ? 'rtl' : 'ltr'}
                                     >
                                         <div
                                             className="order-1! lg:order-1! flex! flex-col! items-center! justify-center! w-full lg:w-[320px] h-full">
@@ -184,11 +213,11 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
                                             </div>
                                         </div>
 
-                                        <div className="order-2 flex flex-col justify-start lg:justify-center items-end text-right w-full lg:w-auto grow p-4 lg:p-12 !pt-0">
+                                        <div className={`order-2 flex flex-col justify-start lg:justify-center w-full lg:w-auto grow p-4 lg:p-12 !pt-0 ${isRTL ? 'items-end text-right' : 'items-start text-left'}`}>
                                             <h1 className="text-[24px] font-bold text-[#202C5B] leading-relaxed mb-4">
                                                 {currentContent?.name}
                                             </h1>
-                                            <p dir="rtl" className="text-[16px] text-justify leading-relaxed md:text-[18px] font-medium text-[#10193d] mb-4 max-w-xl">
+                                            <p dir={isRTL ? 'rtl' : 'ltr'} className="text-[16px] text-justify leading-relaxed md:text-[18px] font-medium text-[#10193d] mb-4 max-w-xl">
                                                 {currentContent?.description}
                                             </p>
                                             
@@ -196,7 +225,7 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
                                                 to={`/${lang}/programs/${currentContent?.id}`}
                                                 className="mt-auto md:py-4 py-[8px] px-[12px] cursor-pointer text-white font-semibold bg-gradient-to-r from-[#23A0D0] to-[#3CBEB3] hover:opacity-90 md:w-[240px] w-[150px] text-center"
                                             >
-                                                عرض تفاصيل الدوبلوم
+                                                {isRTL ? 'عرض تفاصيل الدوبلوم' : 'View Diploma Details'}
                                             </Link>
                                         </div>
                                     </div>

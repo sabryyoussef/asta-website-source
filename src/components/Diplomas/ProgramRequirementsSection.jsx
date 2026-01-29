@@ -12,6 +12,7 @@ function RequirementsSection({ program, lang }) {
   const benefits = Array.isArray(localizedProgram?.benefits)
     ? localizedProgram.benefits
     : [];
+  const mandatoryRequirements = localizedProgram?.Mandatoryrequirements;
 
   return (
     <section className="py-12 bg-gray-50">
@@ -33,6 +34,15 @@ function RequirementsSection({ program, lang }) {
               ))}
               {requirements.length === 0 && <p className="text-gray-500"> {isRTL ? '- لا توجد متطلبات' : '- No requirements'}</p>}
             </div>
+
+            {mandatoryRequirements && (
+              <div className="mt-8">
+                <h3 className="text-xl font-bold text-gray-800 mb-4">{isRTL ? 'المتطلبات الإلزامية' : 'Mandatory Requirements'}</h3>
+                <div className="bg-gradient-to-r from-orange-50 to-red-50 p-4 rounded-xl border border-orange-200">
+                  <p className="text-gray-700">{mandatoryRequirements}</p>
+                </div>
+              </div>
+            )}
           </div>
           
           <div>

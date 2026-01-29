@@ -15,17 +15,21 @@
     "nav": {
       "home": "Home",
       "courses": "Courses",
+      "course": "Course",
+      "category": "Category",
+      "supCategory": "Subcategory",
       "allCourses": "All Courses",
       "student-services": "Student Services",
       "allServices": "All Services",
       "diplomas": "Diplomas",
+      "diploma": "Diploma",
       "allPrograms": "All Programs",
       "registration": "Registration",
       "about": "About Us",
       "aboutAcademy": "About Academy",
       "standarts": "Our Standards",
       "contact": "Contact us",
-      "team": "Our Team"
+      "vision&Mission": "Vision & Mission"
     },
     "mobile": {
       "courses": "Courses",
