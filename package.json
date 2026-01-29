@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node sitemap-generator.js",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "vite preview --host"
+    "start": "vite preview --host",
+    "sitemap": "node sitemap-generator.js"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -19,6 +20,7 @@
     "react-dom": "^19.2.0",
     "react-i18next": "^16.5.0",
     "react-router-dom": "^6.30.2",
+    "sitemap": "^9.0.0",
     "swiper": "^12.0.3"
   },
   "devDependencies": {
