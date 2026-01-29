@@ -46,7 +46,7 @@ function BasicPersonalInfo({ formData, handleInputChange, errors, t, lang }) {
           </label>
           <div className="relative">
             <input
-              type="tel"
+              type="text"
               name="phone"
               value={formData.phone}
               onChange={handleInputChange}
