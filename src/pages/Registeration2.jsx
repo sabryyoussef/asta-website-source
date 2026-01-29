@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react';
 import { CheckCircleIcon } from '@heroicons/react/24/solid';
 import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/react/24/outline';
 import emailjs from '@emailjs/browser';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 // api
 import Programs, { getProgramData } from '../api/Programs';
@@ -12,13 +12,13 @@ import RegistrationHeader from '../components/Registration/RegistrationHeader';
 import BasicPersonalInfo from '../components/Registration/BasicPersonalInfo';
 import ProgramTypeSelector from '../components/Registration/ProgramTypeSelector';
 import ProgramSelectionSection from '../components/Registration/ProgramSelectionSection';
-import SuccessConfirmation from '../components/Registration/SuccessConfirmation';
 
 // prepare EmailJS
 emailjs.init("k62cRdPnAvAsP_96b");
 
 const RegistrationPage2 = () => {
   const { programId, lang } = useParams();
+  const navigate = useNavigate();
   const { t } = useTranslation();
   const programs = Programs;
   const courses = Courses;
@@ -349,8 +349,18 @@ ${data.notes || 'لا توجد ملاحظات'}
 
       await sendRegistrationEmail(submissionData);
 
-      setSubmitSuccess(true);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Store registration data in sessionStorage for the success page
+      const registrationDataForStorage = {
+        formData: formData,
+        selectedProgram: selectedProgram,
+        totalAmount: totalAmount.toLocaleString(),
+        submissionDate: new Date().toLocaleString('ar-SA'),
+        referenceNumber: `REG-${Date.now()}`
+      };
+      sessionStorage.setItem('registrationData', JSON.stringify(registrationDataForStorage));
+
+      // Redirect to success page
+      navigate(`/${lang || 'ar'}/registration-success`);
 
       try {
         await emailjs.send(
@@ -413,89 +423,59 @@ ${data.notes || 'لا توجد ملاحظات'}
 return (
   <div className="bg-gray-50 min-h-screen pb-12" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
     <RegistrationHeader selectedProgram={selectedProgram} lang={lang} t={t} />
+    
+    <div className="max-w-4xl mx-auto px-4 py-8">
+      <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Basic Personal Info */}
+        <div className="space-y-6">
+          <BasicPersonalInfo formData={formData} handleInputChange={handleInputChange} errors={errors} lang={lang} t={t} />
+        </div>
 
-    {submitSuccess ? (
-      <SuccessConfirmation formData={formData} selectedProgram={selectedProgram} calculateTotal={calculateTotal} lang={lang} />
-    ) : (
-      <div className="max-w-4xl mx-auto px-4 py-8">
-        <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Basic Personal Info */}
-          <div className="space-y-6">
-            <BasicPersonalInfo formData={formData} handleInputChange={handleInputChange} errors={errors} lang={lang} t={t} />
+        {/* Program Selection */}
+        <div className="space-y-6">
+          <ProgramTypeSelector programType={formData.programType} handleProgramTypeChange={handleProgramTypeChange} lang={lang} t={t} />
+          <ProgramSelectionSection
+            programs={localizedProgramList}
+            formData={formData}
+            handleInputChange={handleInputChange}
+            handleServiceToggle={handleServiceToggle}
+            additionalServices={additionalServices}
+            errors={errors}
+            programType={formData.programType}
+            lang={lang}
+          />
+        </div>
+
+        {/* Submit Button */}
+        <div className="flex justify-center">
+          <button
+            disabled={isSubmitting}
+            className="px-8 py-3 bg-[#202C5B] text-white rounded-xl font-semibold hover:bg-[#1a234a] transition-colors flex items-center gap-2"
+          >
+            {isSubmitting ? (
+              <>
+                <svg className="animate-spin h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 8 0 0-8 8H4a8 8 8 0 0 8-8z"></path>
+                </svg>
+                {lang === 'ar' ? 'جاري الإرسال...' : 'Submitting...'}
+              </>
+            ) : (
+              <>
+                {lang === 'ar' ? 'ارسال البيانات' : 'Send Data'}
+                <ChevronRightIcon className="w-5 h-5" />
+              </>
+            )}
+          </button>
+        </div>
+
+        {submitError && (
+          <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mt-6">
+            <p className="font-medium">{submitError}</p>
           </div>
-
-          {/* Program Selection */}
-          <div className="space-y-6">
-            <ProgramTypeSelector programType={formData.programType} handleProgramTypeChange={handleProgramTypeChange} lang={lang} t={t} />
-            <ProgramSelectionSection
-              programs={localizedProgramList}
-              formData={formData}
-              handleInputChange={handleInputChange}
-              handleServiceToggle={handleServiceToggle}
-              additionalServices={additionalServices}
-              errors={errors}
-              programType={formData.programType}
-              lang={lang}
-            />
-          </div>
-
-          {/* Email and Comments */}
-          {/* <div className="space-y-6">
-            <div className="bg-white rounded-2xl shadow-lg p-6">
-              <h3 className="text-xl font-bold text-gray-800 mb-6">{lang === 'ar' ? 'ملاحظات' : 'Comments'}</h3>
-              
-              <div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    {lang === 'ar' ? 'ملاحظات (اختياري)' : 'Comments (Optional)'}
-                  </label>
-                  <textarea
-                    name="notes"
-                    value={formData.notes}
-                    onChange={handleInputChange}
-                    rows={4}
-                    className={`w-full px-4 py-3 rounded-lg border ${errors.notes ? 'border-red-500' : 'border-gray-300'} focus:ring-2 focus:ring-blue-500 focus:border-transparent`}
-                    placeholder={lang === 'ar' ? 'أضف أي ملاحظات' : 'Add any comments'}
-                  />
-                  {errors.notes && (
-                    <p className="text-red-500 text-sm mt-1">{errors.notes}</p>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div> */}
-
-          {/* Submit Button */}
-          <div className="flex justify-center">
-            <button
-              disabled={isSubmitting}
-              className="px-8 py-3 bg-[#202C5B] text-white rounded-xl font-semibold hover:bg-[#1a234a] transition-colors flex items-center gap-2"
-            >
-              {isSubmitting ? (
-                <>
-                  <svg className="animate-spin h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 8 0 0-8 8H4a8 8 8 0 0 8-8z"></path>
-                  </svg>
-                  {lang === 'ar' ? 'جاري الإرسال...' : 'Submitting...'}
-                </>
-              ) : (
-                <>
-                  {lang === 'ar' ? 'ارسال البيانات' : 'Send Data'}
-                  <ChevronRightIcon className="w-5 h-5" />
-                </>
-              )}
-            </button>
-          </div>
-
-          {submitError && (
-            <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mt-6">
-              <p className="font-medium">{submitError}</p>
-            </div>
-          )}
-        </form>
-      </div>
-    )}
+        )}
+      </form>
+    </div>
   </div>
   );
 };
