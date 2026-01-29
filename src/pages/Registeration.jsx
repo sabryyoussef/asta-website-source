@@ -16,7 +16,6 @@ import ProgramSelectionSection from '../components/Registration/ProgramSelection
 import DiplomaSpecificSection from '../components/Registration/DiplomaSpecificSection';
 import PaymentSection from '../components/Registration/PaymentSection';
 import SummarySection from '../components/Registration/SummarySection';
-import SuccessConfirmation from '../components/Registration/SuccessConfirmation';
 
 // prepare EmailJS
 emailjs.init("k62cRdPnAvAsP_96b");
