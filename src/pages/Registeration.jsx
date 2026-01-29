@@ -209,14 +209,6 @@ const RegistrationPage = () => {
 
     if (!formData.phone) {
       newErrors.phone = lang === 'ar' ? 'رقم الهاتف مطلوب' : 'Phone number is required';
-    } else {
-      const cleanedPhone = formData.phone.replace(/[^0-9]/g, '');
-      const phonePattern = /^\+?\d{0,12}$/;
-      if (!phonePattern.test(formData.phone) || cleanedPhone.length !== 12) {
-        newErrors.phone = lang === 'ar'
-          ? 'رقم الهاتف يجب أن يتكون من 12 رقمًا ويمكن أن يبدأ بـ +'
-          : 'Phone number must be 12 digits and may start with +';
-      }
     }
 
     if (!formData.nationalId) {
