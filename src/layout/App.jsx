@@ -49,7 +49,7 @@ export default function App() {
         </Route>
         
         {/* Catch-all for routes that don't match /:lang pattern */}
-        <Route path="*" element={<Navigate to="/ar" replace />} />
+        {/* <Route path="*" element={<Navigate to="/ar" replace />} /> */}
       </Routes>
   );
 }
