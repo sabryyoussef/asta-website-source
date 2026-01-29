@@ -14,16 +14,20 @@ export default function SharedLayout() {
     const { lang } = useParams();
     const { i18n } = useTranslation();
 
-    // Show 404 for invalid language parameters
+    // Call all hooks first (Rules of Hooks)
+    useEffect(() => {
+        // Only change language if it's valid
+        if (lang === "en" || lang === "ar") {
+            i18n.changeLanguage(lang);
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+        }
+    }, [lang, i18n]);
+
+    // Show 404 for invalid language parameters (after all hooks)
     if (lang !== "en" && lang !== "ar") {
         return <NotFound lang={lang} />;
     }
-
-    useEffect(() => {
-     i18n.changeLanguage(lang);
-        document.documentElement.lang = lang;
-        document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-  }, [lang, i18n]);
 
     return (
         <div>
