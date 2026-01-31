@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://asta.com.sa/sitemap.xml
+Sitemap: https://asta.edu.sa/sitemap.xml

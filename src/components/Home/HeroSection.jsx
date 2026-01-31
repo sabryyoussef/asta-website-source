@@ -195,7 +195,7 @@ export default function Hero() {
                   }}
                 />
                 <img
-                  src="/images/4@4x.png"
+                  src="/images/4@4x.webp"
                   alt="floating-3"
                   className="absolute top-[15%] left-[20%] w-[72px] z-0 transition-transform duration-150 ease-out"
                   style={{
