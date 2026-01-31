@@ -237,12 +237,12 @@ export default function Footer() {
               <h4 className="font-semibold mb-4 text-lg">{isRTL ? 'طرق الدفع:' : 'Payment Methods:'}</h4>
               <div className="flex gap-2">
                 {[
-                  { name: 'visa', img: '/images/visa.png' },
+                  { name: 'visa', img: '/images/visa.webp' },
                   { name: 'mastercard', img: '/svgs/icons/master_card.svg' },
                   { name: 'mada', img: '/svgs/icons/mada.svg' },
-                  { name: 'apple-pay', img: '/images/apple.png' },
-                  { name: 'tabby', img: '/images/tabby-logo-1.png' },
-                  { name: 'tamara', img: isRTL ? '/images/tamaralogo_ar.png' : '/images/tamara-en.png' }
+                  { name: 'apple-pay', img: '/images/apple.webp' },
+                  { name: 'tabby', img: '/images/tabby-logo-1.webp' },
+                  { name: 'tamara', img: isRTL ? '/images/tamaralogo_ar.webp' : '/images/tamara-en.webp' }
                 ].map((method) => (
                   <div
                     key={method.name}

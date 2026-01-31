@@ -97,42 +97,42 @@ export default function VissionAndMission() {
       ];
       let ourValues = [
         {
-            icon: "/images/innovation.png",
+            icon: "/images/innovation.webp",
             title: {
                 ar: "الابتكار",
                 en: "Innovation"
             },
         },
         {
-            icon: "/images/trustworthiness.png",
+            icon: "/images/trustworthiness.webp",
             title: {
                 ar: "الجودة والاحترافية",
                 en: "Quality and Professionalism"
             },
         },
         {
-            icon: "/images/secureshield.png",
+            icon: "/images/secureshield.webp",
             title: {
                 ar: "المصداقية",
                 en: "Credibility"
             },
         },
         {
-            icon: "/images/excellence.png",
+            icon: "/images/excellence.webp",
             title: {
                 ar: "التنوع والتميز في تقديم البرامج التدريبية",
                 en: "Diversity and Excellence in Training Programs"
             },
         },
         {
-            icon: "/images/international.png",
+            icon: "/images/international.webp",
             title: {
                 ar: "الالتزام بالمعايير الدولية",
                 en: "Commitment to International Standards"
             },
         },
         {
-            icon: "/images/creativity.png",
+            icon: "/images/creativity.webp",
             title: {
                 ar: "الحلول الإبداعية",
                 en: "Creative Solutions"

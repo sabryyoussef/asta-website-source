@@ -81,8 +81,8 @@ function ProgramHeader({ program, lang }) {
                   <span>{localizedProgram.instructor.name}</span>
                 </div> */}
                 <div className="flex items-center gap-3">
-                  <img src="/images/tabby-logo-1.png" className='w-15' alt="" />
-                  <img src="/images/tamaralogo_ar.png" className='w-15' alt="" />
+                  <img src="/images/tabby-logo-1.webp" className='w-15' alt="" />
+                  <img src="/images/tamaralogo_ar.webp" className='w-15' alt="" />
                 </div>
               </div>
               
