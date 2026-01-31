@@ -6,6 +6,16 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(),tailwindcss()],
+  build: {
+    cssCodeSplit: true,
+    cssMinify: true,
+    rollupOptions: {
+      output: {
+        // Optimize CSS chunking
+        manualChunks: undefined,
+      },
+    },
+  },
   server: {
     port: 5173,
     host: true,
