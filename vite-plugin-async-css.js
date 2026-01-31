@@ -4,6 +4,25 @@
 import { readFileSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
 
+// Helper function to transform CSS links
+function transformCssLinks(html) {
+  // Replace blocking CSS links with async loading
+  // Pattern: <link rel="stylesheet" href="/assets/index-xxx.css">
+  return html.replace(
+    /<link\s+rel="stylesheet"\s+href="([^"]+\.css)"[^>]*>/g,
+    (match, href) => {
+      // Skip if already has async/preload attributes
+      if (match.includes('preload') || match.includes('onload')) {
+        return match;
+      }
+      
+      // Convert to async loading with preload
+      return `<link rel="preload" href="${href}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="${href}"></noscript>`;
+    }
+  );
+}
+
 export function asyncCss() {
   return {
     name: 'async-css',
@@ -19,7 +38,7 @@ export function asyncCss() {
         
         try {
           let html = readFileSync(htmlPath, 'utf-8');
-          html = this.transformCssLinks(html);
+          html = transformCssLinks(html);
           writeFileSync(htmlPath, html, 'utf-8');
         } catch (err) {
           console.warn('Could not modify HTML file:', err.message);
@@ -29,27 +48,10 @@ export function asyncCss() {
         htmlFiles.forEach(htmlKey => {
           const htmlChunk = bundle[htmlKey];
           if (htmlChunk.type === 'asset' && htmlChunk.source) {
-            htmlChunk.source = this.transformCssLinks(htmlChunk.source.toString());
+            htmlChunk.source = transformCssLinks(htmlChunk.source.toString());
           }
         });
       }
-    },
-    transformCssLinks(html) {
-      // Replace blocking CSS links with async loading
-      // Pattern: <link rel="stylesheet" href="/assets/index-xxx.css">
-      return html.replace(
-        /<link\s+rel="stylesheet"\s+href="([^"]+\.css)"[^>]*>/g,
-        (match, href) => {
-          // Skip if already has async/preload attributes
-          if (match.includes('preload') || match.includes('onload')) {
-            return match;
-          }
-          
-          // Convert to async loading with preload
-          return `<link rel="preload" href="${href}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="${href}"></noscript>`;
-        }
-      );
     },
   };
 }
