@@ -40,11 +40,15 @@
     <!-- Fallback for browsers that don't support onload on link elements -->
     <script>
       (function() {
+        // Polyfill for browsers that don't support onload on link elements
         var links = document.querySelectorAll('link[rel="preload"][as="style"]');
         links.forEach(function(link) {
-          if (link.onload === null || !link.onload) {
-            link.rel = 'stylesheet';
-          }
+          // If onload didn't fire, convert to stylesheet after a short delay
+          setTimeout(function() {
+            if (link.rel === 'preload') {
+              link.rel = 'stylesheet';
+            }
+          }, 100);
         });
       })();
     </script>
