@@ -464,7 +464,7 @@ export default function Navbar() {
                       <div className="rounded-full cursor-pointer">
                         <img
                           className="w-[44px] aspect-square"
-                          src={user.img || "/images/prof.png"}
+                          src={user.img || "/images/prof.webp"}
                           alt=""
                         />
                       </div>
@@ -479,7 +479,7 @@ export default function Navbar() {
                           <div className="bg-white! rounded-full! p-1 flex! items-center! gap-[6px] pe-[48px] mb-[12px] cursor-pointer">
                             <div className="rounded-full! flex! items-center! justify-center!">
                               <img
-                                src={user.image || "/images/prof.png"}
+                                src={user.image || "/images/prof.webp"}
                                 alt="courses"
                                 className="w-[24px] aspect-square"
                               />

@@ -168,7 +168,7 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
                                                             : "border-transparent! hover:border-[#1A2555]!"
                                                             } text-white!`}
                                                 style={{
-                                                backgroundImage: "url('/images/Testmonials.png')",
+                                                backgroundImage: "url('/images/Testmonials.webp')",
                                                 }}
                                             >
                                                 {category.name}

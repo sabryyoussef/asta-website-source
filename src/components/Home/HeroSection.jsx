@@ -12,7 +12,7 @@ import { useParams } from "react-router-dom";
 
 const slides = [
   {
-    img: "/images/Student.png",
+    img: "/images/Student.webp",
     buttonLink: "courses",
     ar: {
       title: "دورات احترافية لتطوير مهاراتك",
@@ -26,7 +26,7 @@ const slides = [
     }
   },
   {
-    img: "/images/Student2.png",
+    img: "/images/Student2.webp",
     buttonLink: "programs",
     ar: {
       title: "برامج تدريبية احترافية",
@@ -40,7 +40,7 @@ const slides = [
     }
   },
   {
-    img: "/images/Student.png",
+    img: "/images/Student.webp",
     buttonLink: "about-us",
     ar: {
       title: "عن أكاديمية المهارات التطبيقية",
@@ -54,7 +54,7 @@ const slides = [
     }
   },
   {
-    img: "/images/Student2.png",
+    img: "/images/Student2.webp",
     buttonLink: "registration",
     ar: {
       title: "سجل الآن وابدأ رحلتك التعليمية",
@@ -112,7 +112,7 @@ export default function Hero() {
       <div className="absolute left-0 top-0 z-0 w-full h-full">
         <img
           className="w-full h-full"
-          src="/images/Rectangle 58.png"
+          src="/images/Rectangle 58.webp"
           alt=""
         />
       </div>
@@ -172,14 +172,14 @@ export default function Hero() {
               {/* Animated Image with Parallax Floating Elements */}
               <div className="flex flex-[80%] max-w-[50%] justify-center md:mt-0 relative">
                 <img
-                  src="/images/triangle.png"
+                  src="/images/triangle.webp"
                   className="absolute bottom-0 left-0 w-full z-0"
                   alt="base"
                 />
 
                 {/* Floating images with parallax effect */}
                 <img
-                  src="/images/2@4x.png"
+                  src="/images/2@4x.webp"
                   alt="floating-1"
                   className="absolute top-[80%] right-[-1%] w-[32px] z-0 transition-transform duration-150 ease-out"
                   style={{
@@ -187,7 +187,7 @@ export default function Hero() {
                   }}
                 />
                 <img
-                  src="/images/3@4x.png"
+                  src="/images/3@4x.webp"
                   alt="floating-2"
                   className="absolute top-[55%] left-[1%] w-[48px] z-0 transition-transform duration-150 ease-out"
                   style={{
