@@ -3,7 +3,7 @@ import { createWriteStream } from 'fs';
 import { resolve } from 'path';
 
 // Your base URL
-const BASE_URL = 'https://asta.com.sa';
+const BASE_URL = 'https://asta.edu.sa';
 
 // Define your static routes for both languages
 const staticRoutes = [
