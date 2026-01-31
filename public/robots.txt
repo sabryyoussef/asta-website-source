@@ -3,3 +3,7 @@ Allow: /
 
 # Sitemap location
 Sitemap: https://asta.edu.sa/sitemap.xml
+
+User-agent: *
+Content-Signal: search=yes,ai-train=yes
+Allow: /
