@@ -33,7 +33,14 @@ const ProgramDetails = () => {
   
   return (
     <div dir={isRTL ? 'rtl' : 'ltr'}>
-      <SEO title={isRTL ? `${localizedProgram.title} | اكاديمية المهارات التطبيقية` : `${localizedProgram.title} | Applied Skills Training Academy`} />
+      <SEO 
+        titleAr={`${localizedProgram.title} | اكاديمية المهارات التطبيقية`}
+        titleEn={`${localizedProgram.title} | Applied Skills Training Academy`}
+        descriptionAr={localizedProgram.overview || "برنامج تدريبي معتمد في اكاديمية المهارات التطبيقية"}
+        descriptionEn={localizedProgram.overview || "Accredited training program at Applied Skills Training Academy"}
+        url={`https://asta.edu.sa/${lang}/programs/${id}`}
+        isRTL={isRTL}
+      />
       <ProgramHeader program={program} lang={lang} />
       <OverviewSection program={program} lang={lang} />
       <LearningOutcomesSection program={program} lang={lang} />

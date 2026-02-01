@@ -134,7 +134,14 @@ const CategoryPage = () => {
 
   return (
     <>
-      <SEO title={isRTL ? `${categoryName} | اكاديمية المهارات التطبيقية` : `${categoryName} | Applied Skills Training Academy`} />
+      <SEO 
+        titleAr={`${categoryName} | اكاديمية المهارات التطبيقية`}
+        titleEn={`${categoryName} | Applied Skills Training Academy`}
+        descriptionAr={`تصفح الدورات في فئة ${categoryName} في اكاديمية المهارات التطبيقية`}
+        descriptionEn={`Browse courses in ${categoryName} category at Applied Skills Training Academy`}
+        url={`https://asta.edu.sa/${lang}/categories/${categoryId}`}
+        isRTL={isRTL}
+      />
       <CategoryHeroSection 
         categoryName={categoryName} 
         categoryImage={categoryData.image}

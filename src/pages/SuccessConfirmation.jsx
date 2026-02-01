@@ -49,7 +49,14 @@ function SuccessConfirmation() {
     if (!registrationData) {
     return (
         <div className="max-w-3xl mx-auto px-4 py-12">
-            <SEO title={isRTL ? "تأكيد التسجيل | اكاديمية المهارات التطبيقية" : "Registration Confirmation | Applied Skills Training Academy"} />
+            <SEO 
+              titleAr="تأكيد التسجيل | اكاديمية المهارات التطبيقية"
+              titleEn="Registration Confirmation | Applied Skills Training Academy"
+              descriptionAr="تم استلام طلبك بنجاح"
+              descriptionEn="Your request has been successfully received"
+              url={`https://asta.edu.sa/${lang}/registration-success`}
+              isRTL={isRTL}
+            />
             <div className="bg-white rounded-2xl p-8 shadow-lg text-center">
                     <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#202C5B] mx-auto"></div>
                     <p className="mt-4 text-gray-600">
@@ -62,7 +69,14 @@ function SuccessConfirmation() {
 
         return (
             <div className="max-w-3xl mx-auto px-4 py-12">
-                <SEO title={isRTL ? "تأكيد التسجيل | اكاديمية المهارات التطبيقية" : "Registration Confirmation | Applied Skills Training Academy"} />
+                <SEO 
+                  titleAr="تأكيد التسجيل | اكاديمية المهارات التطبيقية"
+                  titleEn="Registration Confirmation | Applied Skills Training Academy"
+                  descriptionAr="تم استلام طلبك بنجاح"
+                  descriptionEn="Your request has been successfully received"
+                  url={`https://asta.edu.sa/${lang}/registration-success`}
+                  isRTL={isRTL}
+                />
             <div className="bg-white rounded-2xl p-8 shadow-lg text-center">
                 <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-r from-green-100 to-emerald-100 flex items-center justify-center">
                     <CheckCircleIcon className="h-12 w-12 text-green-500" />

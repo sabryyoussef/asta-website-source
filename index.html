@@ -20,17 +20,10 @@
     
     <!-- Google Fonts - Preload and load asynchronously -->
     <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap"
-        rel="stylesheet"
-      />
-    </noscript>
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+    
     
     <!-- Font Awesome - Preload and load asynchronously -->
     <link
@@ -46,28 +39,17 @@
       />
     </noscript>
     
-    <!-- Fallback for browsers that don't support onload on link elements -->
-    <script>
-      (function() {
-        // Polyfill for browsers that don't support onload on link elements
-        var links = document.querySelectorAll('link[rel="preload"][as="style"]');
-        links.forEach(function(link) {
-          // If onload didn't fire, convert to stylesheet after a short delay
-          setTimeout(function() {
-            if (link.rel === 'preload') {
-              link.rel = 'stylesheet';
-            }
-          }, 100);
-        });
-      })();
-    </script>
-    
     <!-- Tailwind CSS is already included via Vite build, no need for browser script -->
     <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=AW-17874906768"
-    ></script>
+    <script>
+      window.addEventListener("load", function () {
+        var s = document.createElement("script");
+        s.src = "https://www.googletagmanager.com/gtag/js?id=AW-17874906768";
+        s.async = true;
+        document.head.appendChild(s);
+      });
+    </script>
+    
     <!-- Microsoft Clarity -->
     <script type="text/javascript">
       (function(c,l,a,r,i,t,y){

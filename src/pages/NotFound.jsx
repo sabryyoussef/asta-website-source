@@ -15,7 +15,14 @@ export default function NotFound({ lang: langProp }) {
       dir={isRTL ? 'rtl' : 'ltr'} 
       className="min-h-screen flex items-center justify-center bg-gray-50 px-4"
     >
-      <SEO title={isRTL ? "الصفحة غير موجودة | اكاديمية المهارات التطبيقية" : "Page Not Found | Applied Skills Training Academy"} />
+      <SEO 
+        titleAr="الصفحة غير موجودة | اكاديمية المهارات التطبيقية"
+        titleEn="Page Not Found | Applied Skills Training Academy"
+        descriptionAr="الصفحة التي تبحث عنها غير موجودة"
+        descriptionEn="The page you are looking for does not exist"
+        url={`https://asta.edu.sa/${lang}/404`}
+        isRTL={isRTL}
+      />
       <div className="text-center">
         <h1 className="text-9xl font-bold text-[#202C5B] mb-4">404</h1>
         <h2 className="text-3xl font-semibold text-gray-800 mb-4">

@@ -201,7 +201,14 @@ export default function AboutUs() {
 
   return (
     <>
-      <SEO title={isRTL ? "عن الأكاديمية | اكاديمية المهارات التطبيقية" : "About the Academy | Applied Skills Training Academy"} />
+      <SEO 
+        titleAr="عن الأكاديمية | اكاديمية المهارات التطبيقية"
+        titleEn="About the Academy | Applied Skills Training Academy"
+        descriptionAr="تعرف على اكاديمية المهارات التطبيقية ورؤيتنا ورسالتنا"
+        descriptionEn="Learn about Applied Skills Training Academy, our vision and mission"
+        url={`https://asta.edu.sa/${lang}/about-us`}
+        isRTL={isRTL}
+      />
       {/* WHo Are We Section */}
       <div className={`container max-w-[1300px] mx-auto flex flex-col items-center justify-center px-2 bg-white overflow-x-hidden`} dir={isRTL ? 'rtl' : 'ltr'}>
         <h1 className={`text-[24px] font-bold mt-10 mb-5 ${isRTL ? 'text-right' : 'text-left'}`}>{content.whoAreWe}</h1>

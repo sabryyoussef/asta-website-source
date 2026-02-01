@@ -45,7 +45,14 @@ const TrainingProgramsPage = () => {
 
   return (
     <>
-    <SEO title={isRTL ? "البرامج | اكاديمية المهارات التطبيقية" : "Programs | Applied Skills Training Academy"} />
+    <SEO 
+      titleAr="البرامج | اكاديمية المهارات التطبيقية"
+      titleEn="Programs | Applied Skills Training Academy"
+      descriptionAr="استكشف البرامج التدريبية المعتمدة في اكاديمية المهارات التطبيقية"
+      descriptionEn="Explore accredited training programs at Applied Skills Training Academy"
+      url={`https://asta.edu.sa/${lang}/programs`}
+      isRTL={isRTL}
+    />
     <ProgramsHeroSection />
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-8 px-4" dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="max-w-7xl mx-auto">

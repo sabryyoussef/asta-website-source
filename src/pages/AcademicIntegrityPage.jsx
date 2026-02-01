@@ -174,7 +174,14 @@ const StandardsPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white" dir={isRTL ? 'rtl' : 'ltr'}>
-      <SEO title={isRTL ? "معايير الأكاديمية | اكاديمية المهارات التطبيقية" : "Academic Standards | Applied Skills Training Academy"} />
+      <SEO 
+        titleAr="معايير الأكاديمية | اكاديمية المهارات التطبيقية"
+        titleEn="Academic Standards | Applied Skills Training Academy"
+        descriptionAr="معايير الأكاديمية والجودة في اكاديمية المهارات التطبيقية"
+        descriptionEn="Academic standards and quality at Applied Skills Training Academy"
+        url={`https://asta.edu.sa/${lang}/academic-integrity`}
+        isRTL={isRTL}
+      />
       {/* Header */}
       {activeData && activeData.color && (
         <header className="bg-white shadow-lg">

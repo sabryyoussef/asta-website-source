@@ -455,7 +455,14 @@ ${data.notes || 'لا توجد ملاحظات'}
 
   return (
     <div className="bg-gray-50 min-h-screen pb-12" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
-      <SEO title={isRTL ? "التسجيل | اكاديمية المهارات التطبيقية" : "Registration | Applied Skills Training Academy"} />
+      <SEO 
+        titleAr="التسجيل | اكاديمية المهارات التطبيقية"
+        titleEn="Registration | Applied Skills Training Academy"
+        descriptionAr="سجل في برامجنا التدريبية الاحترافية الآن"
+        descriptionEn="Register in our professional training programs now"
+        url={`https://asta.edu.sa/${lang}/registration`}
+        isRTL={isRTL}
+      />
       <RegistrationHeader selectedProgram={selectedProgram} lang={lang} t={t} />
 
       {submitSuccess ? (
