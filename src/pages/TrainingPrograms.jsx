@@ -5,6 +5,7 @@ import {
   BookOpenIcon,
 } from '@heroicons/react/24/outline';
 // Components
+import SEO from '../components/SEO';
 import ProgramCard from '../components/Diplomas/ProgramCard.jsx';
 import ProgramsHeroSection from '../components/Diplomas/ProgramsHeroSection';
 // data
@@ -44,6 +45,7 @@ const TrainingProgramsPage = () => {
 
   return (
     <>
+    <SEO title={isRTL ? "البرامج | اكاديمية المهارات التطبيقية" : "Programs | Applied Skills Training Academy"} />
     <ProgramsHeroSection />
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-8 px-4" dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="max-w-7xl mx-auto">

@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 import Programs, { getProgramData } from '../api/Programs';
 import Courses, { getCourseData } from '../api/Courses';
 // components
+import SEO from '../components/SEO';
 import RegistrationHeader from '../components/Registration/RegistrationHeader';
 import BasicPersonalInfo from '../components/Registration/BasicPersonalInfo';
 import ProgramTypeSelector from '../components/Registration/ProgramTypeSelector';
@@ -20,6 +21,7 @@ const RegistrationPage2 = () => {
   const { programId, lang } = useParams();
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const isRTL = lang === 'ar';
   const programs = Programs;
   const courses = Courses;
   // بيانات الشهادات المتاحة
@@ -414,6 +416,7 @@ ${data.notes || 'لا توجد ملاحظات'}
 
 return (
   <div className="bg-gray-50 min-h-screen pb-12" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+    <SEO title={isRTL ? "التسجيل | اكاديمية المهارات التطبيقية" : "Registration | Applied Skills Training Academy"} />
     <RegistrationHeader selectedProgram={selectedProgram} lang={lang} t={t} />
     
     <div className="max-w-4xl mx-auto px-4 py-8">

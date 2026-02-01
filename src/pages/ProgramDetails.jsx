@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 // Components
+import SEO from "../components/SEO";
 import ProgramHeader from "../components/Diplomas/ProgramHeader";
 import OverviewSection from "../components/Diplomas/ProgramOverviewSection";
 import CurriculumSection from "../components/Diplomas/ProgramCurriculumSection";
@@ -32,6 +33,7 @@ const ProgramDetails = () => {
   
   return (
     <div dir={isRTL ? 'rtl' : 'ltr'}>
+      <SEO title={isRTL ? `${localizedProgram.title} | اكاديمية المهارات التطبيقية` : `${localizedProgram.title} | Applied Skills Training Academy`} />
       <ProgramHeader program={program} lang={lang} />
       <OverviewSection program={program} lang={lang} />
       <LearningOutcomesSection program={program} lang={lang} />

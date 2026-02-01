@@ -302,6 +302,17 @@
   },
 
   "seo": {
+    "default": {
+      "title": "اكاديمية المهارات التطبيقية | Applied Skills Training Academy",
+      "description": "اكاديمية المهارات التطبيقية هي أكاديمية تدريب احترافية تقدم برامج تدريبية احترافية ودبلومات في المملكة العربية السعودية.",
+      "keywords": "اكاديمية المهارات التطبيقية، برامج تدريبية احترافية، دبلومات، المملكة العربية السعودية، Applied Skills Training Academy, professional training programs, diplomas, Saudi Arabia",
+      "author": "اكاديمية المهارات التطبيقية",
+      "robots": "index, follow",
+      "country": "SA",
+      "geoRegion": "SA",
+      "geoPlacename": "الدمام",
+      "canonical": "https://asta.edu.sa"
+    },
     "home": {
       "title": "الرئيسية | اكاديمية المهارات التطبيقية",
       "description": "انضم إلى اكاديمية المهارات التطبيقية وابنِ مستقبلك مع برامج معتمدة"

@@ -303,6 +303,17 @@
   },
 
   "seo": {
+    "default": {
+      "title": "Applied Skills Training Academy | أكاديمة المهارات التطبيقية",
+      "description": "Applied Skills Training Academy is a professional training academy that provides professional training programs and diplomas in Saudi Arabia.",
+      "keywords": "Applied Skills Training Academy, professional training programs, diplomas, Saudi Arabia, دورات ودبلومات مهنية معتمدة في المملكة العربية السعودية",
+      "author": "Applied Skills Training Academy",
+      "robots": "index, follow",
+      "country": "SA",
+      "geoRegion": "SA",
+      "geoPlacename": "Dammam",
+      "canonical": "https://asta.edu.sa"
+    },
     "home": {
       "title": "Home | Applied Skills Training Academy",
       "description": "Join Applied Skills Training Academy and build your future with accredited programs"

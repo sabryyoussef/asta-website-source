@@ -1,5 +1,5 @@
 // "use client";
-
+import SEO from "../components/SEO";
 import Hero from "../components/Home/HeroSection";
 import PartnersSection from "../components/Home/PartnersSection";
 import Slider from "../components/Home/Slider";
@@ -49,6 +49,7 @@ export default function Home() {
 
   return (
     <div className="font-[family-name:var(--font-geist-sans)]">
+      <SEO title={isRTL ? "الرئيسية | اكاديمية المهارات التطبيقية" : "Home | Applied Skills Training Academy"} />
       <main className="w-full">
               <Hero></Hero>
               <PartnersSection />

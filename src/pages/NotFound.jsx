@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import SEO from '../components/SEO';
 
 export default function NotFound({ lang: langProp }) {
   const { lang: langParam = 'ar' } = useParams();
@@ -14,6 +15,7 @@ export default function NotFound({ lang: langProp }) {
       dir={isRTL ? 'rtl' : 'ltr'} 
       className="min-h-screen flex items-center justify-center bg-gray-50 px-4"
     >
+      <SEO title={isRTL ? "الصفحة غير موجودة | اكاديمية المهارات التطبيقية" : "Page Not Found | Applied Skills Training Academy"} />
       <div className="text-center">
         <h1 className="text-9xl font-bold text-[#202C5B] mb-4">404</h1>
         <h2 className="text-3xl font-semibold text-gray-800 mb-4">
