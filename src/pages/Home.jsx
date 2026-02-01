@@ -49,7 +49,14 @@ export default function Home() {
 
   return (
     <div className="font-[family-name:var(--font-geist-sans)]">
-      <SEO title={isRTL ? "الرئيسية | اكاديمية المهارات التطبيقية" : "Home | Applied Skills Training Academy"} />
+      <SEO 
+        titleAr="الرئيسية | اكاديمية المهارات التطبيقية"
+        titleEn="Home | Applied Skills Training Academy"
+        descriptionAr="انضم إلى اكاديمية المهارات التطبيقية وابنِ مستقبلك مع برامج معتمدة"
+        descriptionEn="Join Applied Skills Training Academy and build your future with accredited programs"
+        url={`https://asta.edu.sa/${lang}`}
+        isRTL={isRTL}
+      />
       <main className="w-full">
               <Hero></Hero>
               <PartnersSection />

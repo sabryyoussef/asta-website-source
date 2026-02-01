@@ -142,7 +142,14 @@ export default function VissionAndMission() {
     ]
   return (
     <>
-      <SEO title={isRTL ? "الرؤية والرسالة | اكاديمية المهارات التطبيقية" : "Vision & Mission | Applied Skills Training Academy"} />
+      <SEO 
+        titleAr="الرؤية والرسالة | اكاديمية المهارات التطبيقية"
+        titleEn="Vision & Mission | Applied Skills Training Academy"
+        descriptionAr="تعرف على رؤية ورسالة اكاديمية المهارات التطبيقية"
+        descriptionEn="Learn about the vision and mission of Applied Skills Training Academy"
+        url={`https://asta.edu.sa/${lang}/vision&mission`}
+        isRTL={isRTL}
+      />
       <div className={`container flex flex-col items-center justify-center align-middle py-8 px-2 bg-white`} dir={isRTL ? 'rtl' : 'ltr'}>
         <h1 className={`text-[24px] font-bold my-10 ${isRTL ? 'text-right' : 'text-left'}`}>{pageContent.academyName}</h1>
         <div className="w-[2px] h-[70px] bg-[#3CBEB3] my-9"></div>

@@ -30,7 +30,14 @@ const CourseDetails = () => {
   
   return (
     <div dir={isRTL ? 'rtl' : 'ltr'}>
-      <SEO title={isRTL ? `${localizedCourse.title} | اكاديمية المهارات التطبيقية` : `${localizedCourse.title} | Applied Skills Training Academy`} />
+      <SEO 
+        titleAr={`${localizedCourse.title} | اكاديمية المهارات التطبيقية`}
+        titleEn={`${localizedCourse.title} | Applied Skills Training Academy`}
+        descriptionAr={localizedCourse.description || "دورة احترافية في اكاديمية المهارات التطبيقية"}
+        descriptionEn={localizedCourse.description || "Professional course at Applied Skills Training Academy"}
+        url={`https://asta.edu.sa/${lang}/courses/${id}`}
+        isRTL={isRTL}
+      />
       <CourseHeader course={course} />
       <CourseOverviewSection course={course} />
       {/* TODO: Uncomment when instructor data is needed */}

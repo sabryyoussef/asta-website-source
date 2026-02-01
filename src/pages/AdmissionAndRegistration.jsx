@@ -300,7 +300,14 @@ const AdmissionAndRegistration = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white" dir="rtl">
-      <SEO title={isRTL ? "القبول والتسجيل | اكاديمية المهارات التطبيقية" : "Admission & Registration | Applied Skills Training Academy"} />
+      <SEO 
+        titleAr="القبول والتسجيل | اكاديمية المهارات التطبيقية"
+        titleEn="Admission & Registration | Applied Skills Training Academy"
+        descriptionAr="معلومات القبول والتسجيل في اكاديمية المهارات التطبيقية"
+        descriptionEn="Admission and registration information at Applied Skills Training Academy"
+        url={`https://asta.edu.sa/${lang}/admission&registration`}
+        isRTL={isRTL}
+      />
       {/* Header */}
       <header className="bg-white shadow-lg">
         <div className="mx-10 px-4 py-6">
