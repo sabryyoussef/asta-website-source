@@ -6,6 +6,7 @@ import {
   ArrowDownTrayIcon,
   ShareIcon,
 } from '@heroicons/react/24/outline';
+import SEO from '../components/SEO';
 import standardsData from '../api/Standarts';
 
 const StandardsPage = () => {
@@ -173,6 +174,7 @@ const StandardsPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white" dir={isRTL ? 'rtl' : 'ltr'}>
+      <SEO title={isRTL ? "معايير الأكاديمية | اكاديمية المهارات التطبيقية" : "Academic Standards | Applied Skills Training Academy"} />
       {/* Header */}
       {activeData && activeData.color && (
         <header className="bg-white shadow-lg">

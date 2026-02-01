@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 // Components
+import SEO from "../components/SEO";
 import CourseHeader from "../components/Courses/CourseHeader";
 import CourseOverviewSection from "../components/Courses/CourseOverviewSection";
 // TODO: Uncomment when instructor data is needed
@@ -29,6 +30,7 @@ const CourseDetails = () => {
   
   return (
     <div dir={isRTL ? 'rtl' : 'ltr'}>
+      <SEO title={isRTL ? `${localizedCourse.title} | اكاديمية المهارات التطبيقية` : `${localizedCourse.title} | Applied Skills Training Academy`} />
       <CourseHeader course={course} />
       <CourseOverviewSection course={course} />
       {/* TODO: Uncomment when instructor data is needed */}

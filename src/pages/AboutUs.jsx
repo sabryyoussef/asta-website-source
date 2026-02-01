@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import SEO from "../components/SEO";
 import AboutUsCard from "../components/AboutUs/AboutUsCard";
 import WhyUsCard from "../components/AboutUs/WhyUsCard";
 
@@ -200,6 +201,7 @@ export default function AboutUs() {
 
   return (
     <>
+      <SEO title={isRTL ? "عن الأكاديمية | اكاديمية المهارات التطبيقية" : "About the Academy | Applied Skills Training Academy"} />
       {/* WHo Are We Section */}
       <div className={`container max-w-[1300px] mx-auto flex flex-col items-center justify-center px-2 bg-white overflow-x-hidden`} dir={isRTL ? 'rtl' : 'ltr'}>
         <h1 className={`text-[24px] font-bold mt-10 mb-5 ${isRTL ? 'text-right' : 'text-left'}`}>{content.whoAreWe}</h1>

@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import SEO from "../components/SEO";
 
 export default function VissionAndMission() {
     const { lang } = useParams();
@@ -141,6 +142,7 @@ export default function VissionAndMission() {
     ]
   return (
     <>
+      <SEO title={isRTL ? "الرؤية والرسالة | اكاديمية المهارات التطبيقية" : "Vision & Mission | Applied Skills Training Academy"} />
       <div className={`container flex flex-col items-center justify-center align-middle py-8 px-2 bg-white`} dir={isRTL ? 'rtl' : 'ltr'}>
         <h1 className={`text-[24px] font-bold my-10 ${isRTL ? 'text-right' : 'text-left'}`}>{pageContent.academyName}</h1>
         <div className="w-[2px] h-[70px] bg-[#3CBEB3] my-9"></div>

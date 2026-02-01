@@ -1,6 +1,10 @@
 import { SitemapStream, streamToPromise } from 'sitemap';
-import { createWriteStream } from 'fs';
-import { resolve } from 'path';
+import { createWriteStream, readFileSync } from 'fs';
+import { resolve, dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // Your base URL
 const BASE_URL = 'https://asta.edu.sa';
@@ -39,20 +43,24 @@ const staticRoutes = [
 // Dynamic routes (you'll need to fetch these from your API)
 const dynamicRoutes = [];
 
-// Function to fetch dynamic routes from your API
+// Function to fetch dynamic routes from data files
 async function fetchDynamicRoutes() {
   try {
-    // Fetch programs
-    const programsResponse = await fetch('http://localhost:5173/api/Programs');
-    const programs = await programsResponse.json();
+    // Read programs from JSON file
+    const programs = JSON.parse(
+      readFileSync(resolve(__dirname, './src/api/Programs.json'), 'utf-8')
+    );
     
-    // Fetch courses
-    const coursesResponse = await fetch('http://localhost:5173/api/Courses');
-    const courses = await coursesResponse.json();
+    // Read courses from JSON file
+    const courses = JSON.parse(
+      readFileSync(resolve(__dirname, './src/api/Courses.json'), 'utf-8')
+    );
     
-    // Fetch categories
-    const categoriesResponse = await fetch('http://localhost:5173/api/Categories');
-    const categories = await categoriesResponse.json();
+    // Read categories from JSON file
+    const categoriesData = JSON.parse(
+      readFileSync(resolve(__dirname, './src/api/Categories.json'), 'utf-8')
+    );
+    const categories = Object.keys(categoriesData.categories || {});
     
     const routes = [];
     
@@ -67,8 +75,8 @@ async function fetchDynamicRoutes() {
     });
     
     // Add category routes for both languages
-    categories.forEach(category => {
-      routes.push(`/ar/categories/${category.id}`, `/en/categories/${category.id}`);
+    categories.forEach(categoryId => {
+      routes.push(`/ar/categories/${categoryId}`, `/en/categories/${categoryId}`);
     });
     
     return routes;

@@ -7,6 +7,7 @@ import {
   BookOpenIcon,
 } from '@heroicons/react/24/outline';
 // Components
+import SEO from '../components/SEO';
 import CoursesHeroSection from '../components/Courses/CoursesHeroSection';
 import CourseCard from '../components/Courses/CourseCard';
 // data
@@ -16,6 +17,7 @@ import CategoriesData from '../api/Categories.json';
 const CoursesPage = () => {
   const location = useLocation();
   const { lang } = useParams();
+  const isRTL = lang === 'ar';
   // filter holds main category ID or 'all'
   const [filter, setFilter] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
@@ -88,6 +90,7 @@ const CoursesPage = () => {
 
   return (
     <>
+    <SEO title={isRTL ? "الدورات | اكاديمية المهارات التطبيقية" : "Courses | Applied Skills Training Academy"} />
     <CoursesHeroSection lang={lang}/>
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-8 px-4" dir="rtl">
       <div className="max-w-7xl mx-auto">

@@ -7,6 +7,7 @@ import {
   BookOpenIcon,
 } from '@heroicons/react/24/outline';
 // Components
+import SEO from '../components/SEO';
 import CategoryHeroSection from '../components/Courses/CategoryHeroSection';
 import CourseCard from '../components/Courses/CourseCard';
 // data
@@ -133,6 +134,7 @@ const CategoryPage = () => {
 
   return (
     <>
+      <SEO title={isRTL ? `${categoryName} | اكاديمية المهارات التطبيقية` : `${categoryName} | Applied Skills Training Academy`} />
       <CategoryHeroSection 
         categoryName={categoryName} 
         categoryImage={categoryData.image}

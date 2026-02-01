@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import {
   AcademicCapIcon,
   UserGroupIcon,
@@ -28,6 +29,7 @@ import {
   ChevronUpIcon
 } from '@heroicons/react/24/outline';
 // components
+import SEO from '../components/SEO';
 import RenderOverview from '../components/Addmission&Registration/RenderOverview';
 import RenderSubjects from '../components/Addmission&Registration/RenderSubjects';
 import RenderSchedule from '../components/Addmission&Registration/RenderSchedule';
@@ -37,6 +39,8 @@ const AdmissionAndRegistration = () => {
   const [activeTab, setActiveTab] = useState('overview');
   const [expandedDiploma, setExpandedDiploma] = useState(null);
   const [expandedSubject, setExpandedSubject] = useState(null);
+  const { lang } = useParams();
+  const isRTL = lang === 'ar';
 
 
   const handleDownload = () => {
@@ -296,6 +300,7 @@ const AdmissionAndRegistration = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white" dir="rtl">
+      <SEO title={isRTL ? "القبول والتسجيل | اكاديمية المهارات التطبيقية" : "Admission & Registration | Applied Skills Training Academy"} />
       {/* Header */}
       <header className="bg-white shadow-lg">
         <div className="mx-10 px-4 py-6">
