@@ -12,7 +12,7 @@ import { useParams } from "react-router-dom";
 
 const slides = [
   {
-    img: "/images/Student.webp",
+    img: "/images/Student-666.webp",
     buttonLink: "courses",
     ar: {
       title: "دورات احترافية لتطوير مهاراتك",
@@ -26,7 +26,7 @@ const slides = [
     }
   },
   {
-    img: "/images/Student2.webp",
+    img: "/images/Student2-666.webp",
     buttonLink: "programs",
     ar: {
       title: "برامج تدريبية احترافية",
@@ -40,7 +40,7 @@ const slides = [
     }
   },
   {
-    img: "/images/Student.webp",
+    img: "/images/Student-666.webp",
     buttonLink: "about-us",
     ar: {
       title: "عن أكاديمية المهارات التطبيقية",
@@ -54,7 +54,7 @@ const slides = [
     }
   },
   {
-    img: "/images/Student2.webp",
+    img: "/images/Student2-666.webp",
     buttonLink: "registration",
     ar: {
       title: "سجل الآن وابدأ رحلتك التعليمية",
