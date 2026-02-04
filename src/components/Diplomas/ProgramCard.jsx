@@ -65,7 +65,7 @@ function ProgramCard({ program }) {
       <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tr from-cyan-50 to-cyan-100 opacity-50 rounded-full group-hover:opacity-70 transition-opacity duration-300"></div>
 
       {/* الهيدر مع التدرج اللوني */}
-      <div className="relative h-48 bg-no-repeat bg-cover" style={{ backgroundImage: programForRender.image ? `url(${programForRender.image})` : 'url(/images/Diploma.jpg)' }}>
+      <div className="relative h-48 bg-no-repeat bg-cover" style={{ backgroundImage: programForRender.image ? `url(${programForRender.image})` : 'url(/images/Diploma.webp)' }}>
         <div className="absolute bottom-0 left-0 w-32 h-32 border-b-[80px] border-l-[80px] border-b-cyan-300/20 border-l-transparent"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#202C5B]/50 to-[#226796]/50"></div>
 
