@@ -48,37 +48,37 @@ function OverviewSection({ program, lang }) {
               <h3 className="text-xl font-bold text-gray-800 mb-6">{isRTL ? 'معلومات البرنامج' : 'Program Information'}</h3>
               
               <div className="space-y-4">
-                <div className="flex items-center justify-between py-3 border-b border-gray-200">
-                  <span className="text-gray-600">{isRTL ? 'المدة' : 'Duration'}</span>
-                  <span className="font-bold text-gray-800">{localizedProgram.duration}</span>
+                <div className="flex items-center justify-between py-3 border-b border-gray-200 gap-8">
+                  <span className="text-sm font-semibold text-[#23A0D0]">{isRTL ? 'المدة' : 'Duration'}</span>
+                  <span className="font-bold text-gray-900">{localizedProgram.duration}</span>
                 </div>
-                <div className="flex items-center justify-between py-3 border-b border-gray-200">
-                  <span className="text-gray-600">{isRTL ? 'المستوى' : 'Level'}</span>
-                  <span className="font-bold text-gray-800">{localizedProgram.level}</span>
+                <div className="flex items-center justify-between py-3 border-b border-gray-200 gap-8">
+                  <span className="text-sm font-semibold text-[#23A0D0]">{isRTL ? 'المستوى' : 'Level'}</span>
+                  <span className="font-bold text-gray-900">{localizedProgram.level}</span>
                 </div>
-                <div className="flex items-center justify-between py-3 border-b border-gray-200">
-                  <span className="text-gray-600">{isRTL ? 'الساعات المعتمدة' : 'Credit Hours'}</span>
-                  <span className="font-bold text-gray-800">{localizedProgram.creditHours || (isRTL ? 'غير محدد' : 'Not specified')}</span>
+                <div className="flex items-center justify-between py-3 border-b border-gray-200 gap-8">
+                  <span className="text-sm font-semibold text-[#23A0D0]">{isRTL ? 'الساعات المعتمدة' : 'Credit Hours'}</span>
+                  <span className="font-bold text-gray-900">{localizedProgram.creditHours || (isRTL ? 'غير محدد' : 'Not specified')}</span>
                 </div>
-                <div className="flex items-center justify-between py-3 border-b border-gray-200">
-                  <span className="text-gray-600">{isRTL ? 'لغة التدريس' : 'Language'}</span>
-                  <span className="font-bold text-gray-800">{localizedProgram.language || (isRTL ? 'غير محدد' : 'Not specified')}</span>
+                <div className="flex items-center justify-between py-3 border-b border-gray-200 gap-8">
+                  <span className="text-sm font-semibold text-[#23A0D0]">{isRTL ? 'لغة التدريس' : 'Language'}</span>
+                  <span className="font-bold text-gray-900">{localizedProgram.language || (isRTL ? 'غير محدد' : 'Not specified')}</span>
                 </div>
-                <div className="flex items-center justify-between py-3 border-b border-gray-200">
-                  <span className="text-gray-600">{isRTL ? 'أيام الدراسة' : 'Study Days'}</span>
-                  <span className="font-bold text-gray-800">
+                <div className="flex items-center justify-between py-3 border-b border-gray-200 gap-8">
+                  <span className="text-sm font-semibold text-[#23A0D0]">{isRTL ? 'أيام الدراسة' : 'Study Days'}</span>
+                  <span className="font-bold text-gray-900">
                     {localizedProgram.schedule?.days ? 
                       (Array.isArray(localizedProgram.schedule.days) ? localizedProgram.schedule.days.join('، ') : localizedProgram.schedule.days) 
                       : (isRTL ? 'غير محدد' : 'Not specified')}
                   </span>
                 </div>
-                <div className="flex items-center justify-between py-3 border-b border-gray-200">
-                  <span className="text-gray-600">{isRTL ? 'التوقيت' : 'Time'}</span>
-                  <span className="font-bold text-gray-800">{localizedProgram.schedule?.time || (isRTL ? 'غير محدد' : 'Not specified')}</span>
+                <div className="flex items-center justify-between py-3 border-b border-gray-200 gap-8">
+                  <span className="text-sm font-semibold text-[#23A0D0]">{isRTL ? 'التوقيت' : 'Time'}</span>
+                  <span className="font-bold text-gray-900">{localizedProgram.schedule?.time || (isRTL ? 'غير محدد' : 'Not specified')}</span>
                 </div>
-                <div className="flex items-center justify-between py-3">
-                  <span className="text-gray-600">{isRTL ? 'نمط التدريب' : 'Training Style'}</span>
-                  <span className="font-bold text-gray-800">{localizedProgram.schedule?.mode || (isRTL ? 'غير محدد' : 'Not specified')}</span>
+                <div className="flex items-center justify-between py-3 gap-8">
+                  <span className="text-sm font-semibold text-[#23A0D0]">{isRTL ? 'نمط التدريب' : 'Training Style'}</span>
+                  <span className="font-bold text-gray-900">{localizedProgram.schedule?.mode || (isRTL ? 'غير محدد' : 'Not specified')}</span>
                 </div>
               </div>
 {/*               
