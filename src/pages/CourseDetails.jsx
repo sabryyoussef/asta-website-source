@@ -56,7 +56,14 @@ const CourseDetails = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               className="px-8 py-4 bg-gradient-to-r from-[#226796] to-[#23A0D0] text-white rounded-xl font-bold text-lg hover:shadow-2xl transition-all duration-300"
-              onClick={() => navigate(`/${lang}/registration`)}
+              onClick={() =>
+                navigate(`/${lang}/registration`, {
+                  state: {
+                    programType: 'course',
+                    programId: parsedId,
+                  },
+                })
+              }
             >
               {isRTL ? 'سجل الآن واحجز مقعدك' : 'Register now and book your seat'}
             </button>
