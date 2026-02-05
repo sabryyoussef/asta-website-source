@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsupButton";
 import CallButton from "../components/CallButton";
-import AIBotButton from "../components/AIBotButton";
+// import AIBotButton from "../components/AIBotButton";
 import ScrollToTopButton from "../components/ScrollToTopButton";
 import NotFound from "../pages/NotFound";
 
@@ -37,7 +37,7 @@ export default function SharedLayout() {
             <Footer />
             <WhatsAppButton />
             <CallButton />
-            <AIBotButton />
+            {/* <AIBotButton /> */}
             <ScrollToTopButton />
         </div>
     );

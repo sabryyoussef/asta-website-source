@@ -14,10 +14,6 @@
   --aqua: #3cbeb3;
 }
 
-body {
-  font-family: "Cairo", sans-serif;
-}
-
 .gradient-bg {
   background: var(--gradient);
 }
@@ -86,7 +82,8 @@ input:focus-within {
 }
 
 body {
-  font-family: "optima", sans-serif !important;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+  "Segoe UI", Arial, sans-serif;
 }
 
 html[lang="ar"] body {

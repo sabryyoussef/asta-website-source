@@ -110,11 +110,21 @@ export default function Hero() {
   return (
     <div className="relative pb-[64px] pt-[48px] overflow-hidden">
       <div className="absolute left-0 top-0 z-0 w-full h-full">
-        <img
-          className="w-full h-full"
-          src="/images/Rectangle 58.webp"
-          alt=""
-        />
+      <img
+        src="/images/Rectangle-1024.webp"
+        srcset="
+          /images/Rectangle-640.webp 640w,
+          /images/Rectangle-1024.webp 1024w,
+          /images/Rectangle-1600.webp 1600w
+        "
+        sizes="100vw"
+        width="1335"
+        height="606"
+        fetchpriority="high"
+        decoding="async"
+        class="w-full h-full"
+        alt=""
+      />
       </div>
 
       <Swiper
