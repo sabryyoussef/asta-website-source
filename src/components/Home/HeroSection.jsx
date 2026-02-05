@@ -110,21 +110,14 @@ export default function Hero() {
   return (
     <div className="relative pb-[64px] pt-[48px] overflow-hidden">
       <div className="absolute left-0 top-0 z-0 w-full h-full">
-      <img
-        src="/images/Rectangle-1024.webp"
-        srcSet="
-          /images/Rectangle-640.webp 640w,
-          /images/Rectangle-1024.webp 1024w,
-          /images/Rectangle-1600.webp 1600w
-        "
-        sizes="100vw"
-        width="1335"
-        height="606"
-        fetchpriority="high"
-        decoding="async"
-        className="w-full h-full"
-        alt=""
-      />
+        <img src="/images/Rectangle-1024.webp"         // mobile / smaller version
+          srcSet="/images/Rectangle-640.webp 640w, /images/Rectangle-1024.webp 1024w, /images/Rectangle-1600.webp 1600w"
+          sizes="(max-width: 768px) 100vw, 1024px"
+          fetchpriority="high"
+          decoding="async"
+          className="w-full h-full object-cover"
+          alt="Hero Background"
+        />
       </div>
 
       <Swiper
@@ -182,10 +175,14 @@ export default function Hero() {
               {/* Animated Image with Parallax Floating Elements */}
               <div className="flex flex-[80%] max-w-[50%] justify-center md:mt-0 relative">
                 <img
-                  src="/images/triangle.webp"
-                  className="absolute bottom-0 left-0 w-full z-0"
-                  alt="base"
+                  src="/images/triangle-500.webp"
+                  srcSet="/images/triangle-250.webp 250w, /images/triangle-500.webp 500w"
+                  sizes="(max-width: 768px) 100vw, 500px"
+                  decoding="async"
+                  className="absolute bottom-0 left-0 w-full"
+                  alt="Base"
                 />
+
 
                 {/* Floating images with parallax effect */}
                 <img

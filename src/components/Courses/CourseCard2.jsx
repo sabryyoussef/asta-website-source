@@ -61,11 +61,26 @@ function CourseCard2({ course }) {
       <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tr from-cyan-50 to-cyan-100 opacity-50 rounded-full group-hover:opacity-70 transition-opacity duration-300"></div>
 
       {/* الهيدر مع التدرج اللوني */}
-      <div className="relative h-48 bg-no-repeat bg-cover" style={{ backgroundImage: courseForRender.image ? `url(${courseForRender.image})` : 'url(/images/Diploma.webp)' }}>
-        <div className="absolute bottom-0 left-0 w-32 h-32 border-b-[80px] border-l-[80px] border-b-cyan-300/20 border-l-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#202C5B]/50 to-[#226796]/50"></div>
+      <div className="relative h-48">
+        {/* LCP Image */}
+        <img
+          src="/images/Diploma-1024.webp"         // mobile version
+          srcSet="/images/Diploma-640.webp 640w, /images/Diploma-1024.webp 1024w"
+          sizes="(max-width: 768px) 100vw, 1024px"
+          fetchpriority="high"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          alt={asText(courseForRender.title)}
+        />
 
-        <div className="relative z-10 h-full flex flex-col items-center justify-center p-6 text-white">
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#202C5B]/50 to-[#226796]/50 z-10"></div>
+
+        {/* Bottom triangle */}
+        <div className="absolute bottom-0 left-0 w-32 h-32 border-b-[80px] border-l-[80px] border-b-cyan-300/20 border-l-transparent z-20"></div>
+
+        {/* Content */}
+        <div className="relative z-30 h-full flex flex-col items-center justify-center p-6 text-white">
           <div className="w-16 h-16 flex items-center justify-center bg-white/20 backdrop-blur-sm rounded-2xl mb-4">
             <SafeIconComponent className="h-10 w-10 text-white" />
           </div>
@@ -76,8 +91,17 @@ function CourseCard2({ course }) {
             {asText(courseForRender.subtitle)}
           </p>
         </div>
-        <div className="w-full h-2 shadow-md" style={{ background: 'linear-gradient(to right, #202C5B, #226796, #23A0D0, #30AFC1, #3CBEB3)' }}></div>
+
+        {/* Bottom gradient bar */}
+        <div
+          className="w-full h-2 shadow-md absolute bottom-0 left-0 z-40"
+          style={{
+            background:
+              'linear-gradient(to right, #202C5B, #226796, #23A0D0, #30AFC1, #3CBEB3)',
+          }}
+        ></div>
       </div>
+
 
       {/* محتوى البطاقة */}
       <div className="p-6 relative z-10">

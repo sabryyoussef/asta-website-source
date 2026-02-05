@@ -355,11 +355,15 @@ export default function Navbar() {
                   }}
                 >
                   <div>
-                    <img
-                      src={isRTL ? "/images/saudiFlag.webp" : "/images/uKFlag.webp"}
+                    <img 
+                      src="/images/saudiFlag-28.webp"
+                      srcSet="/images/saudiFlag-14.webp 14w, /images/saudiFlag-28.webp 28w"
+                      sizes="28px"
+                      decoding="async"
                       className="w-[28px]"
-                      alt={isRTL ? "اللغة العربية" : "English Language"}
+                      alt="اللغة العربية"
                     />
+
                   </div>
                   <svg
                     width="22"

@@ -82,8 +82,15 @@ function CourseHeader({ course }) {
                   <span>{isRTL ? 'د.' : 'Dr.'} {localizedCourse.instructor.name}</span>
                 </div> */}
                 <div className="flex items-center gap-3">
-                  <img src="/images/tabby-logo-1.webp" className='w-15' alt="" />
-                  <img src="/images/tamaralogo_ar.webp" className='w-15' alt="" />
+                  <img
+                    src="/images/tabby-logo-1-64.webp"
+                    srcSet="/images/tabby-logo-1-32.webp 16w, /images/tabby-logo-1-64.webp 32w"
+                    sizes="64px"
+                    decoding="async"
+                    className="w-15 h-15 object-contain p-1"
+                    alt="Tabby"
+                  />
+                  <img src="/images/tamaralogo_ar.webp" className='w-15' alt="Tamara" />
                 </div>
               </div>
               

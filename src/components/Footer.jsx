@@ -241,7 +241,7 @@ export default function Footer() {
                   { name: 'mastercard', img: '/svgs/icons/master_card.svg' },
                   { name: 'mada', img: '/svgs/icons/mada.svg' },
                   { name: 'apple-pay', img: '/images/apple.webp' },
-                  { name: 'tabby', img: '/images/tabby-logo-1.webp' },
+                  { name: 'tabby', img: '/images/tabby-logo-1-32.webp' },
                   { name: 'tamara', img: isRTL ? '/images/tamaralogo_ar.webp' : '/images/tamara-en.webp' }
                 ].map((method) => (
                   <div
