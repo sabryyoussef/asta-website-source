@@ -2,10 +2,11 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { asyncCss } from './vite-plugin-async-css.js'
+import { analyzer } from 'vite-bundle-analyzer';
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss(), asyncCss()],
+  plugins: [react(), tailwindcss(), asyncCss(), analyzer({ open: true })], // opens report after build
   build: {
     cssCodeSplit: true,
     cssMinify: true,
