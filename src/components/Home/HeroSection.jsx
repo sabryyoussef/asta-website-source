@@ -112,7 +112,7 @@ export default function Hero() {
       <div className="absolute left-0 top-0 z-0 w-full h-full">
       <img
         src="/images/Rectangle-1024.webp"
-        srcset="
+        srcSet="
           /images/Rectangle-640.webp 640w,
           /images/Rectangle-1024.webp 1024w,
           /images/Rectangle-1600.webp 1600w
@@ -122,7 +122,7 @@ export default function Hero() {
         height="606"
         fetchpriority="high"
         decoding="async"
-        class="w-full h-full"
+        className="w-full h-full"
         alt=""
       />
       </div>
