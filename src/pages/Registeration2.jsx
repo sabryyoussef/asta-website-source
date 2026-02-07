@@ -1,8 +1,8 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { CheckCircleIcon } from '@heroicons/react/24/solid';
 import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/react/24/outline';
 import emailjs from '@emailjs/browser';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 // api
 import Programs, { getProgramData } from '../api/Programs';
@@ -18,12 +18,16 @@ import ProgramSelectionSection from '../components/Registration/ProgramSelection
 emailjs.init("k62cRdPnAvAsP_96b");
 
 const RegistrationPage2 = () => {
-  const { programId, lang } = useParams();
+  const { lang } = useParams();
+  const location = useLocation();
   const navigate = useNavigate();
   const { t } = useTranslation();
   const isRTL = lang === 'ar';
   const programs = Programs;
   const courses = Courses;
+  const preselectedProgramId = location.state?.programId;
+  const preselectedProgramType = location.state?.programType;
+  const isProgramPreselected = Boolean(preselectedProgramId);
   // بيانات الشهادات المتاحة
   const degrees = {
     ar: [
@@ -53,15 +57,18 @@ const RegistrationPage2 = () => {
   ];
 
   // حالة النموذج - simplified form
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState(() => ({
     fullName: '',
     email: '',
     phone: '',
-    programType: 'course',
-    selectedProgram: '',
+    programType: preselectedProgramType === 'diploma' || preselectedProgramType === 'course'
+      ? preselectedProgramType
+      : 'course',
+    selectedProgram: preselectedProgramId || '',
     selectedServices: [],
-    notes: ''
-  });
+    notes: '',
+    scheduleMode: '',
+  }));
 
   // حالة التحقق
   const [errors, setErrors] = useState({});
@@ -184,6 +191,13 @@ const RegistrationPage2 = () => {
       newErrors.email = lang === 'ar' ? 'البريد الإلكتروني مطلوب' : 'Email is required';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = lang === 'ar' ? 'البريد الإلكتروني غير صحيح' : 'Invalid email format';
+    }
+
+    // Require schedule mode selection when a specific diploma/program is preselected
+    if (isProgramPreselected && formData.programType === 'diploma' && !formData.scheduleMode) {
+      newErrors.scheduleMode = lang === 'ar'
+        ? 'يرجى اختيار نمط الدراسة'
+        : 'Please choose the study mode';
     }
 
     return newErrors;
@@ -414,6 +428,28 @@ ${data.notes || 'لا توجد ملاحظات'}
     [formData.selectedProgram, formData.programType, programList]
   );
 
+  const selectedLocalizedProgram = useMemo(
+    () =>
+      localizedProgramList.find(
+        (p) => parseInt(p.id) === parseInt(formData.selectedProgram)
+      ),
+    [localizedProgramList, formData.selectedProgram]
+  );
+
+  const scheduleModeOptions = useMemo(() => {
+    const modeString = selectedLocalizedProgram?.schedule?.mode;
+    if (!modeString || typeof modeString !== 'string') return [];
+
+    // Split possible combined modes like "حضوري - مدمج - عن بعد"
+    const parts = modeString
+      .split(' - ')
+      .map((part) => part.trim())
+      .filter(Boolean);
+
+    // Ensure unique options
+    return Array.from(new Set(parts));
+  }, [selectedLocalizedProgram]);
+
 return (
   <div className="bg-gray-50 min-h-screen pb-12" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
     <SEO 
@@ -430,22 +466,80 @@ return (
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Basic Personal Info */}
         <div className="space-y-6">
-          <BasicPersonalInfo formData={formData} handleInputChange={handleInputChange} errors={errors} lang={lang} t={t} />
+          <BasicPersonalInfo
+            formData={formData}
+            handleInputChange={handleInputChange}
+            errors={errors}
+            lang={lang}
+            t={t}
+          />
         </div>
 
         {/* Program Selection */}
         <div className="space-y-6">
-          <ProgramTypeSelector programType={formData.programType} handleProgramTypeChange={handleProgramTypeChange} lang={lang} t={t} />
-          <ProgramSelectionSection
-            programs={localizedProgramList}
-            formData={formData}
-            handleInputChange={handleInputChange}
-            handleServiceToggle={handleServiceToggle}
-            additionalServices={additionalServices}
-            errors={errors}
-            programType={formData.programType}
-            lang={lang}
-          />
+          {isProgramPreselected ? (
+            <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
+              <div className="mb-6">
+                <h2 className="text-2xl font-bold text-gray-800">
+                  {lang === 'ar' ? 'البرنامج المختار' : 'Selected Program'}
+                </h2>
+                {selectedLocalizedProgram && (
+                  <p className="text-gray-600 mt-2">
+                    {selectedLocalizedProgram.title} - {selectedLocalizedProgram.category}
+                  </p>
+                )}
+              </div>
+
+              {formData.programType === 'diploma' && selectedLocalizedProgram && (
+                <div className="space-y-4">
+                  <label className="block text-gray-700 mb-2 font-medium">
+                    {lang === 'ar' ? 'نمط الدراسة' : 'Study mode'}
+                  </label>
+                  <select
+                    name="scheduleMode"
+                    value={formData.scheduleMode}
+                    onChange={handleInputChange}
+                    className={`w-full pr-10 pl-10 py-3.5 rounded-xl border ${
+                      errors.scheduleMode ? 'border-red-500' : 'border-gray-300'
+                    } focus:outline-none focus:ring-2 focus:ring-[#23A0D0] focus:border-transparent appearance-none`}
+                  >
+                    <option value="">
+                      {lang === 'ar' ? 'اختر نمط الدراسة' : 'Select study mode'}
+                    </option>
+                    {scheduleModeOptions.map((mode) => (
+                      <option key={mode} value={mode}>
+                        {mode}
+                      </option>
+                    ))}
+                  </select>
+                  {errors.scheduleMode && (
+                    <p className="text-red-500 text-sm mt-2">
+                      {errors.scheduleMode}
+                    </p>
+                  )}
+                </div>
+              )}
+            </div>
+          ) : (
+            <>
+              <ProgramTypeSelector
+                programType={formData.programType}
+                handleProgramTypeChange={handleProgramTypeChange}
+                lang={lang}
+                t={t}
+              />
+              <ProgramSelectionSection
+                programs={localizedProgramList}
+                formData={formData}
+                handleInputChange={handleInputChange}
+                handleServiceToggle={handleServiceToggle}
+                additionalServices={additionalServices}
+                errors={errors}
+                programType={formData.programType}
+                lang={lang}
+              />
+            </>
+          )}
         </div>
 
         {/* Submit Button */}

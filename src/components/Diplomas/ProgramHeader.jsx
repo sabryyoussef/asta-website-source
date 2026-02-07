@@ -9,6 +9,65 @@ function ProgramHeader({ program, lang }) {
   // Get localized program data
   const localizedProgram = getProgramData(program, lang);
 
+  const modeString = localizedProgram?.schedule?.mode;
+  const modeParts = modeString && typeof modeString === 'string'
+    ? Array.from(
+        new Set(
+          modeString
+            .split(' - ')
+            .map((part) => part.trim())
+            .filter(Boolean)
+        )
+      )
+    : [];
+
+  // Group حضوري & مدمج (or In-person & Blended) together with same price
+  const groupedModes = (() => {
+    if (!modeParts.length) return [];
+
+    const isArabic = lang === 'ar';
+    const inPersonLabel = isArabic ? 'حضوري' : 'In-person';
+    const blendedLabel = isArabic ? 'مدمج' : 'Blended';
+
+    const hasInPerson = modeParts.includes(inPersonLabel);
+    const hasBlended = modeParts.includes(blendedLabel);
+
+    const result = [];
+
+    if (hasInPerson || hasBlended) {
+      // Combined label for حضوري & مدمج / In-person & Blended
+      const combinedLabel = isArabic
+        ? `${inPersonLabel} / ${blendedLabel}`
+        : `${inPersonLabel} / ${blendedLabel}`;
+      result.push(combinedLabel);
+    }
+
+    modeParts.forEach((mode) => {
+      if (mode === inPersonLabel || mode === blendedLabel) {
+        // Already represented in combined label
+        return;
+      }
+      result.push(mode);
+    });
+
+    return result;
+  })();
+
+  const getModePrice = (mode) => {
+    if (!mode) return program.price;
+
+    const isOnlineMode =
+      (lang === 'ar' && mode === 'عن بعد') ||
+      (lang !== 'ar' && (mode.toLowerCase() === 'remote' || mode.toLowerCase() === 'online'));
+
+    if (isOnlineMode) {
+      if (program.id === 2) return 10850;
+      if (program.id === 4) return 10675;
+    }
+
+    return program.price;
+  };
+
   return (
     <div className="relative bg-gradient-to-r from-[#202C5B] to-[#226796] text-white py-16 bg-no-repeat bg-cover" style={{ backgroundImage: localizedProgram.image ? `url(${localizedProgram.image})` : 'none' }}>
       <div className="absolute inset-0 bg-gradient-to-r from-[#202C5B]/90 to-[#226796]/20"></div>
@@ -60,11 +119,44 @@ function ProgramHeader({ program, lang }) {
           
           <div className="lg:w-1/3 w-full">
             <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-2xl">
-              <div className="flex items-center justify-between mb-6">
-                <div className='flex'>
-                  <div className="text-3xl font-bold">{program.price}</div>
-                  <img src="/svgs/icons/WhiteRiyal.svg" alt="" className='w-10'/>
-                </div>
+              <div className="mb-6 space-y-2">
+                {groupedModes.length > 0 ? (
+                  groupedModes.map((mode) => {
+                    const price = getModePrice(mode);
+                    return (
+                      <div
+                        key={mode}
+                        className="flex items-center justify-between bg-white/10 rounded-xl px-4 py-3"
+                      >
+                        <span className="text-sm text-blue-100">
+                          {lang === 'ar' ? 'نمط الدراسة:' : 'Study mode:'} {mode}
+                        </span>
+                        <div className="flex items-center">
+                          <div className="text-2xl font-bold">
+                            {typeof price === 'number'
+                              ? price.toLocaleString(lang === 'ar' ? 'ar-SA' : 'en-US')
+                              : price}
+                          </div>
+                          <img src="/svgs/icons/WhiteRiyal.svg" alt="" className="w-10 ml-2" />
+                        </div>
+                      </div>
+                    );
+                  })
+                ) : (
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-blue-100">
+                      {lang === 'ar' ? 'السعر' : 'Price'}
+                    </span>
+                    <div className="flex items-center">
+                      <div className="text-3xl font-bold">
+                        {typeof program.price === 'number'
+                          ? program.price.toLocaleString(lang === 'ar' ? 'ar-SA' : 'en-US')
+                          : program.price}
+                      </div>
+                      <img src="/svgs/icons/WhiteRiyal.svg" alt="" className="w-10 ml-2" />
+                    </div>
+                  </div>
+                )}
               </div>
               
               <div className="space-y-4 mb-6">
@@ -93,7 +185,17 @@ function ProgramHeader({ program, lang }) {
                 </div>
               </div>
               
-              <button onClick={() => navigate(`/${lang}/registration`)} className="w-full bg-gradient-to-r from-[#226796] to-[#23A0D0] text-white py-4 rounded-xl font-bold text-lg mb-4 hover:shadow-2xl transition-all duration-300">
+              <button
+                onClick={() =>
+                  navigate(`/${lang}/registration`, {
+                    state: {
+                      programType: 'diploma',
+                      programId: program.id,
+                    },
+                  })
+                }
+                className="w-full bg-gradient-to-r from-[#226796] to-[#23A0D0] text-white py-4 rounded-xl font-bold text-lg mb-4 hover:shadow-2xl transition-all duration-300"
+              >
                 {isRTL ? 'سجل الآن' : 'Register Now'}
               </button>
               

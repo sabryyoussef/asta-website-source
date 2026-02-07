@@ -94,7 +94,16 @@ function CourseHeader({ course }) {
                 </div>
               </div>
               
-              <button onClick={() => navigate(`/${lang}/registration`)} className="w-full bg-gradient-to-r from-[#226796] to-[#23A0D0] text-white py-4 rounded-xl font-bold text-lg mb-4 hover:shadow-2xl transition-all duration-300">
+              <button
+               onClick={() =>
+                navigate(`/${lang}/registration`, {
+                  state: {
+                    programType: 'course',
+                    programId: course.id,
+                  },
+                })
+              }
+              className="w-full bg-gradient-to-r from-[#226796] to-[#23A0D0] text-white py-4 rounded-xl font-bold text-lg mb-4 hover:shadow-2xl transition-all duration-300">
                 {isRTL ? 'سجل الآن' : 'Register now'}
               </button>
               
