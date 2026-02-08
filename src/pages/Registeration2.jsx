@@ -27,6 +27,8 @@ const RegistrationPage2 = () => {
   const courses = Courses;
   const preselectedProgramId = location.state?.programId;
   const preselectedProgramType = location.state?.programType;
+  const preselectedScheduleMode = location.state?.scheduleMode;
+  const preselectedPrice = location.state?.preselectedPrice;
   const isProgramPreselected = Boolean(preselectedProgramId);
   // بيانات الشهادات المتاحة
   const degrees = {
@@ -67,7 +69,7 @@ const RegistrationPage2 = () => {
     selectedProgram: preselectedProgramId || '',
     selectedServices: [],
     notes: '',
-    scheduleMode: '',
+    scheduleMode: preselectedScheduleMode || '',
   }));
 
   // حالة التحقق
@@ -218,7 +220,7 @@ const RegistrationPage2 = () => {
           localizedProgram = formData.programType === 'course'
             ? getCourseData(selectedProgram, 'ar')
             : getProgramData(selectedProgram, 'ar');
-          programPrice = Number(selectedProgram.price) || 0;
+          programPrice = preselectedPrice != null ? Number(preselectedPrice) : (Number(selectedProgram.price) || 0);
         }
       }
 
@@ -324,7 +326,7 @@ ${data.notes || 'لا توجد ملاحظات'}
           localizedProgram = formData.programType === 'course'
             ? getCourseData(selectedProgram, 'ar')
             : getProgramData(selectedProgram, 'ar');
-          programPrice = Number(selectedProgram.price) || 0;
+          programPrice = preselectedPrice != null ? Number(preselectedPrice) : (Number(selectedProgram.price) || 0);
         }
       }
 
@@ -495,27 +497,35 @@ return (
                   <label className="block text-gray-700 mb-2 font-medium">
                     {lang === 'ar' ? 'نمط الدراسة' : 'Study mode'}
                   </label>
-                  <select
-                    name="scheduleMode"
-                    value={formData.scheduleMode}
-                    onChange={handleInputChange}
-                    className={`w-full pr-10 pl-10 py-3.5 rounded-xl border ${
-                      errors.scheduleMode ? 'border-red-500' : 'border-gray-300'
-                    } focus:outline-none focus:ring-2 focus:ring-[#23A0D0] focus:border-transparent appearance-none`}
-                  >
-                    <option value="">
-                      {lang === 'ar' ? 'اختر نمط الدراسة' : 'Select study mode'}
-                    </option>
-                    {scheduleModeOptions.map((mode) => (
-                      <option key={mode} value={mode}>
-                        {mode}
-                      </option>
-                    ))}
-                  </select>
-                  {errors.scheduleMode && (
-                    <p className="text-red-500 text-sm mt-2">
-                      {errors.scheduleMode}
+                  {preselectedScheduleMode ? (
+                    <p className="text-gray-600 mt-2">
+                      {preselectedScheduleMode}
                     </p>
+                  ) : (
+                    <>
+                      <select
+                        name="scheduleMode"
+                        value={formData.scheduleMode}
+                        onChange={handleInputChange}
+                        className={`w-full pr-10 pl-10 py-3.5 rounded-xl border ${
+                          errors.scheduleMode ? 'border-red-500' : 'border-gray-300'
+                        } focus:outline-none focus:ring-2 focus:ring-[#23A0D0] focus:border-transparent appearance-none`}
+                      >
+                        <option value="">
+                          {lang === 'ar' ? 'اختر نمط الدراسة' : 'Select study mode'}
+                        </option>
+                        {scheduleModeOptions.map((mode) => (
+                          <option key={mode} value={mode}>
+                            {mode}
+                          </option>
+                        ))}
+                      </select>
+                      {errors.scheduleMode && (
+                        <p className="text-red-500 text-sm mt-2">
+                          {errors.scheduleMode}
+                        </p>
+                      )}
+                    </>
                   )}
                 </div>
               )}
