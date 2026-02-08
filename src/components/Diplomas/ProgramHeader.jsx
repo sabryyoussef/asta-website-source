@@ -1,4 +1,5 @@
-  import { ArrowLeftIcon, BookOpenIcon, StarIcon, UserIcon, CalendarIcon, ClockIcon, ShareIcon, BookmarkIcon, CurrencyDollarIcon } from '@heroicons/react/24/outline';
+import { useState, useEffect, useMemo } from 'react';
+import { ArrowLeftIcon, BookOpenIcon, StarIcon, UserIcon, CalendarIcon, ClockIcon, ShareIcon, BookmarkIcon, CurrencyDollarIcon, CheckIcon } from '@heroicons/react/24/outline';
 import { useNavigate } from 'react-router-dom';
 import { getProgramData } from '../../api/Programs';
 
@@ -68,6 +69,38 @@ function ProgramHeader({ program, lang }) {
     return program.price;
   };
 
+  // Build selectable attendance options: { label, value, price }
+  // value must match registration dropdown options (raw mode parts)
+  const attendanceOptions = useMemo(() => {
+    if (!groupedModes.length) return [];
+    const isArabic = lang === 'ar';
+    const inPersonLabel = isArabic ? 'حضوري' : 'In-person';
+    const blendedLabel = isArabic ? 'مدمج' : 'Blended';
+    const combinedLabel = isArabic ? `${inPersonLabel} / ${blendedLabel}` : `${inPersonLabel} / ${blendedLabel}`;
+
+    return groupedModes.map((mode) => {
+      const price = getModePrice(mode);
+      const isCombined = mode === combinedLabel;
+      return {
+        label: mode,
+        value: isCombined ? inPersonLabel : mode,
+        price,
+      };
+    });
+  }, [groupedModes, lang, program]);
+
+  const defaultOption = attendanceOptions[0];
+  const [selectedAttendance, setSelectedAttendance] = useState(defaultOption?.value ?? '');
+
+  useEffect(() => {
+    const validValues = attendanceOptions.map((o) => o.value);
+    if (attendanceOptions.length > 0 && !validValues.includes(selectedAttendance)) {
+      setSelectedAttendance(attendanceOptions[0].value);
+    }
+  }, [attendanceOptions, selectedAttendance]);
+
+  const currentPrice = attendanceOptions.find((o) => o.value === selectedAttendance)?.price ?? program.price;
+
   return (
     <div className="relative bg-gradient-to-r from-[#202C5B] to-[#226796] text-white py-16 bg-no-repeat bg-cover" style={{ backgroundImage: localizedProgram.image ? `url(${localizedProgram.image})` : 'none' }}>
       <div className="absolute inset-0 bg-gradient-to-r from-[#202C5B]/90 to-[#226796]/20"></div>
@@ -119,29 +152,64 @@ function ProgramHeader({ program, lang }) {
           
           <div className="lg:w-1/3 w-full">
             <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-2xl">
-              <div className="mb-6 space-y-2">
-                {groupedModes.length > 0 ? (
-                  groupedModes.map((mode) => {
-                    const price = getModePrice(mode);
-                    return (
-                      <div
-                        key={mode}
-                        className="flex items-center justify-between bg-white/10 rounded-xl px-4 py-3"
-                      >
-                        <span className="text-sm text-blue-100">
-                          {lang === 'ar' ? 'نمط الدراسة:' : 'Study mode:'} {mode}
-                        </span>
-                        <div className="flex items-center">
-                          <div className="text-2xl font-bold">
-                            {typeof price === 'number'
-                              ? price.toLocaleString(lang === 'ar' ? 'ar-SA' : 'en-US')
-                              : price}
-                          </div>
-                          <img src="/svgs/icons/WhiteRiyal.svg" alt="" className="w-10 ml-2" />
+              <div className="mb-6 space-y-3">
+                <span className="block text-sm font-medium text-blue-100">
+                  {lang === 'ar' ? 'اختر نمط الدراسة:' : 'Choose attendance style:'}
+                </span>
+                {attendanceOptions.length > 0 ? (
+                  <>
+                    <div className="flex flex-wrap gap-3">
+                      {attendanceOptions.map((opt) => {
+                        const isSelected = selectedAttendance === opt.value;
+                        return (
+                          <label
+                            key={opt.value}
+                            className={`flex-1 min-w-0 flex items-center justify-between cursor-pointer rounded-xl px-4 py-3 transition-all ${
+                              isSelected ? 'bg-white/20 ring-2 ring-white/50' : 'bg-white/10 hover:bg-white/15'
+                            }`}
+                          >
+                            <div className="flex items-center gap-3">
+                              <div
+                                className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${
+                                  isSelected ? 'border-white bg-white/30' : 'border-white/60'
+                                }`}
+                              >
+                                {isSelected && <CheckIcon className="w-3 h-3 text-white" />}
+                              </div>
+                              <input
+                                type="radio"
+                                name="attendanceStyle"
+                                value={opt.value}
+                                checked={isSelected}
+                                onChange={() => setSelectedAttendance(opt.value)}
+                                className="sr-only"
+                              />
+                              <span className="text-sm text-blue-100">{opt.label}</span>
+                            </div>
+                            {/* <span className="text-sm font-semibold text-white">
+                              {typeof opt.price === 'number'
+                                ? opt.price.toLocaleString(lang === 'ar' ? 'ar-SA' : 'en-US')
+                                : opt.price}{' '}
+                              {lang === 'ar' ? 'ر.س' : 'SAR'}
+                            </span> */}
+                          </label>
+                        );
+                      })}
+                    </div>
+                    <div className="flex items-center justify-between pt-2 border-t border-white/20">
+                      <span className="text-sm font-medium text-blue-100">
+                        {lang === 'ar' ? 'السعر :' : ' price:'}
+                      </span>
+                      <div className="flex items-center">
+                        <div className="text-2xl font-bold">
+                          {typeof currentPrice === 'number'
+                            ? currentPrice.toLocaleString(lang === 'ar' ? 'ar-SA' : 'en-US')
+                            : currentPrice}
                         </div>
+                        <img src="/svgs/icons/WhiteRiyal.svg" alt="" className="w-10 ml-2" />
                       </div>
-                    );
-                  })
+                    </div>
+                  </>
                 ) : (
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-blue-100">
@@ -191,6 +259,8 @@ function ProgramHeader({ program, lang }) {
                     state: {
                       programType: 'diploma',
                       programId: program.id,
+                      scheduleMode: attendanceOptions.length > 0 ? selectedAttendance : undefined,
+                      preselectedPrice: attendanceOptions.length > 0 ? currentPrice : program.price,
                     },
                   })
                 }
