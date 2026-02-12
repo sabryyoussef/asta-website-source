@@ -64,8 +64,8 @@ function CourseCard2({ course }) {
       <div className="relative h-48">
         {/* LCP Image */}
         <img
-          src="/images/Diploma-1024.webp"         // mobile version
-          srcSet="/images/Diploma-640.webp 640w, /images/Diploma-1024.webp 1024w"
+          src="/images/Diplomas/Diploma-640.webp"         // mobile version
+          srcSet="/images/Diplomas/Diploma-640.webp"
           sizes="(max-width: 768px) 100vw, 1024px"
           fetchpriority="high"
           decoding="async"
