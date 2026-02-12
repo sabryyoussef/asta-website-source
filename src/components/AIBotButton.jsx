@@ -26,39 +26,47 @@ export default function AIBotButton(){
 
         const sendMessage = () => {
             const message = aiChatInput.value.trim();
-            if (message) {
-                // Add user message
-                const userMessageDiv = document.createElement('div');
-                userMessageDiv.className = 'flex gap-3 mb-4 justify-end';
-                userMessageDiv.innerHTML = `
-                    <div class="bg-gradient-to-r from-[#202c5b] via-[#226796] via-[#23a0d0] via-[#30afc1] to-[#3cbeb3] text-white p-3 rounded-2xl max-w-[80%] shadow-sm">
-                        <p class="text-sm leading-relaxed m-0">${message}</p>
+            if (!message) return;
+        
+            // Create user message
+            const userMessageDiv = document.createElement('div');
+            userMessageDiv.className = 'flex gap-3 mb-4 justify-end';
+            userMessageDiv.innerHTML = `
+                <div class="bg-gradient-to-r from-[#202c5b] via-[#226796] via-[#23a0d0] via-[#30afc1] to-[#3cbeb3] text-white p-3 rounded-2xl max-w-[80%] shadow-sm">
+                    <p class="text-sm leading-relaxed m-0">${message}</p>
+                </div>
+            `;
+        
+            // Clear input immediately
+            aiChatInput.value = '';
+        
+            // Append user message and scroll in next animation frame
+            aiChatMessages.appendChild(userMessageDiv);
+            requestAnimationFrame(() => {
+                userMessageDiv.scrollIntoView({ behavior: 'smooth' });
+            });
+        
+            // Simulate bot response after delay
+            setTimeout(() => {
+                const botMessageDiv = document.createElement('div');
+                botMessageDiv.className = 'flex gap-3 mb-4';
+                botMessageDiv.innerHTML = `
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-r from-[#202c5b] via-[#226796] via-[#23a0d0] via-[#30afc1] to-[#3cbeb3] flex items-center justify-center text-white text-sm flex-shrink-0">
+                        <i class="fas fa-robot text-xs"></i>
+                    </div>
+                    <div class="bg-white p-3 rounded-2xl max-w-[80%] shadow-sm">
+                        <p class="text-sm leading-relaxed m-0">${t('aiBot.responseMessage')}</p>
                     </div>
                 `;
-                aiChatMessages.appendChild(userMessageDiv);
-
-                // Clear input
-                aiChatInput.value = '';
-
-                // Simulate bot response
-                setTimeout(() => {
-                    const botMessageDiv = document.createElement('div');
-                    botMessageDiv.className = 'flex gap-3 mb-4';
-                    botMessageDiv.innerHTML = `
-                        <div class="w-8 h-8 rounded-full bg-gradient-to-r from-[#202c5b] via-[#226796] via-[#23a0d0] via-[#30afc1] to-[#3cbeb3] flex items-center justify-center text-white text-sm flex-shrink-0">
-                            <i class="fas fa-robot text-xs"></i>
-                        </div>
-                        <div class="bg-white p-3 rounded-2xl max-w-[80%] shadow-sm">
-                            <p class="text-sm leading-relaxed m-0">${t('aiBot.responseMessage')}</p>
-                        </div>
-                    `;
-                    aiChatMessages.appendChild(botMessageDiv);
-                    aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
-                }, 1000);
-
-                aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
-            }
+        
+                // Append bot message and scroll efficiently
+                aiChatMessages.appendChild(botMessageDiv);
+                requestAnimationFrame(() => {
+                    botMessageDiv.scrollIntoView({ behavior: 'smooth' });
+                });
+            }, 1000);
         };
+        
 
         const handleQuickAction = (e) => {
             const question = e.target.getAttribute('data-question');
