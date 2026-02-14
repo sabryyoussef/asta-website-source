@@ -25,6 +25,8 @@
       "diploma": "Diploma",
       "allPrograms": "All Programs",
       "registration": "Registration",
+      "ourServices": "Our Services",
+      "testCenter": "Test Center",
       "about": "About Us",
       "aboutAcademy": "About Academy",
       "standarts": "Our Standards",
@@ -111,6 +113,25 @@
       "title": "Choose the Right Program for You",
       "description": "We offer a variety of training programs that suit different professional needs"
     }
+  },
+
+  "testCenter": {
+    "partnerBadge": "Official Partner",
+    "heroTitle": "Our Test Center · Partnered with PSI",
+    "heroSubtitle": "Applied Skills Training Academy is an accredited test center in partnership with PSI. We deliver world-leading tests with trusted science and the best test-taker experience.",
+    "heroImageAlt": "Professional testing environment",
+    "visitPSI": "Visit PSI",
+    "ourPartner": "Our Testing Partner",
+    "psiTagline": "PSI powers world-leading tests. Test development, multi-modal delivery & security. Your trusted testing partner.",
+    "etsCompany": "PSI is an ETS company.",
+    "whatPSIOffers": "What PSI Delivers",
+    "testDevelopmentTitle": "Test Development",
+    "testDevelopmentDesc": "Expert design, rigorous development and world-class psychometrics for tests that are reliable, accurate and fair.",
+    "testDeliveryTitle": "Test Delivery",
+    "testDeliveryDesc": "Innovative testing through global proctored exam centres.",
+    "testSecurityTitle": "Test Security",
+    "testSecurityDesc": "Protect integrity with secure testing. Driven by proven science, cutting-edge technology and decades of experience.",
+    "ctaText": "Learn more about PSI and their global testing solutions."
   },
 
   "forms": {

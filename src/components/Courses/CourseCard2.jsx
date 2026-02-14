@@ -67,7 +67,7 @@ function CourseCard2({ course }) {
           src="/images/Diplomas/Diploma-640.webp"         // mobile version
           srcSet="/images/Diplomas/Diploma-640.webp"
           sizes="(max-width: 768px) 100vw, 1024px"
-          fetchpriority="high"
+          fetchPriority="high"
           decoding="async"
           className="absolute inset-0 w-full h-full object-cover z-0"
           alt={asText(courseForRender.title)}

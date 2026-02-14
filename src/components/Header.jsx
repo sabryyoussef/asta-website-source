@@ -375,7 +375,7 @@ export default function Navbar() {
               <div className="min-h-[37px] w-[1px] mx-[2px] bg-[#1a2555]"></div>
 
               {/* Student services dropdown */}
-              {/* <div className="relative" ref={aboutRef}>
+              <div className="relative" ref={aboutRef}>
                 <button
                   onClick={() => {
                     setStudentServicesDropdown(!studnetServicesDropdown);
@@ -419,9 +419,9 @@ export default function Navbar() {
                     </div>
                   </div>
                 )}
-              </div> */}
+              </div>
 
-              {/* <div className="min-h-[37px] w-[1px] mx-[2px] bg-[#1a2555]"></div> */}
+              <div className="min-h-[37px] w-[1px] mx-[2px] bg-[#1a2555]"></div>
 
               {/* Diplomas dropdown */}
               <div className="relative" ref={programsRef} onMouseEnter={() => handleDropdownHover('diplomas')} onMouseLeave={handleDropdownLeave}>
@@ -637,7 +637,7 @@ export default function Navbar() {
                   <span className="text-black! font-medium! text-lg!">{t("header.nav.diplomas")}</span>
                 </div>
               </a>
-{/* 
+
               <a
                 href={`/${lang}/student-services`}
                 onClick={() => setOpen(false)}
@@ -647,7 +647,7 @@ export default function Navbar() {
                   <UserGroupIcon className="w-5 h-5 text-[#202C5B]" />
                   <span className="text-black! font-medium! text-lg!">{t("header.nav.student-services")}</span>
                 </div>
-              </a> */}
+              </a>
 
               <a
                 href={`/${lang}/about-us`}
