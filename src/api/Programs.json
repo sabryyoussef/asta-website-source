@@ -159,7 +159,7 @@
   {
     "id": 2,
     "icon": "ServerStackIcon",
-    "image": "https://images.unsplash.com/photo-1672552226199-69fbb8ae2bd1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "image": "/images/Diplomas/Supply_Chain_and_Logistics.webp",
     "title": {
       "ar": "دبلوم سلاسل الإمداد والخدمات اللوجستية",
       "en": "Diploma in Supply Chain and Logistics"
@@ -630,7 +630,7 @@
   {
     "id": 5,
     "icon": "ComputerDesktopIcon",
-    "image": "https://plus.unsplash.com/premium_photo-1764705700264-d3a655bcbdf9?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "image": "/images/Diplomas/Computer_Security_and_Networks.webp",
     "title": {
       "ar": "دبلوم أمن وشبكات الحاسب",
       "en": "Diploma in Computer Security and Networks"
@@ -787,7 +787,7 @@
   {
     "id": 6,
     "icon": "DevicePhoneMobileIcon",
-    "image": "https://images.unsplash.com/photo-1591439657848-9f4b9ce436b9?q=80&w=1602&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "image": "/images/Diplomas/Programming_and_Smart_Device_Applications.webp",
     "title": {
       "ar": "دبلوم البرمجة وتطبيقات الأجهزة الذكية",
       "en": "Diploma in Programming and Smart Device Applications"
@@ -944,7 +944,7 @@
   {
     "id": 7,
     "icon": "CircleStackIcon",
-    "image": "https://images.unsplash.com/photo-1517134191118-9d595e4c8c2b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "image": "/images/Diplomas/Databases_and_Web_Development.webp",
     "title": {
       "ar": "دبلوم قواعد البيانات وتطوير الويب",
       "en": "Diploma in Databases and Web Development"
@@ -1101,7 +1101,7 @@
   {
     "id": 8,
     "icon": "ShoppingCartIcon",
-    "image": "https://images.unsplash.com/photo-1763872011479-aa293bf083a8?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "image": "/images/Diplomas/Digital_Marketing_and_E-commerce.webp",
     "title": {
       "ar": "دبلوم التسويق الرقمي والتجارة الإلكترونية",
       "en": "Diploma in Digital Marketing and E-commerce"
@@ -1258,7 +1258,7 @@
   {
     "id": 9,
     "icon": "BuildingOfficeIcon",
-    "image": "https://images.unsplash.com/photo-1666160621105-130f0e983577?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "image": "/images/Diplomas/Tourism_and_Hospitality_Technology.webp",
     "title": {
       "ar": "دبلوم تقنية السياحة والضيافة (الفندقة)",
       "en": "Diploma in Tourism and Hospitality Technology (Hospitality)"
