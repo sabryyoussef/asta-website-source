@@ -111,8 +111,6 @@ export default function Hero() {
     <div className="relative pb-[64px] pt-[48px] overflow-hidden">
       <div className="absolute left-0 top-0 z-0 w-full h-full">
         <img src="/images/Rectangle-640.webp"         // mobile / smaller version
-          srcSet="/images/Rectangle-640.webp 640w"
-          sizes="(max-width: 768px) 100vw, 640px"
           fetchpriority="high"
           decoding="async"
           className="w-full h-full object-cover"
