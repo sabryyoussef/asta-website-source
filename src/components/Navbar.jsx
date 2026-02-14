@@ -16,7 +16,8 @@ import {
   AcademicCapIcon, 
   InformationCircleIcon, 
   ClipboardDocumentCheckIcon, 
-  GlobeAltIcon 
+  GlobeAltIcon,
+  WrenchScrewdriverIcon
 } from '@heroicons/react/24/outline';
 
 export default function Navbar() {
@@ -30,6 +31,8 @@ export default function Navbar() {
   const [url, setUrl] = useState(true);
   const [openCategoryId, setOpenCategoryId] = useState(null);
   const [diplomasDropdown, setDiplomasDropdown] = useState(false);
+  const [servicesDropdown, setServicesDropdown] = useState(false);
+  const [servicesMobileExpanded, setServicesMobileExpanded] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchSuggestions, setSearchSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -39,6 +42,7 @@ export default function Navbar() {
   const coursesRef = useRef(null);
   const aboutRef = useRef(null);
   const diplomasRef = useRef(null);
+  const servicesRef = useRef(null);
   const location = useLocation();
   const { lang = 'ar' } = useParams();
   const { t } = useTranslation();
@@ -55,15 +59,24 @@ export default function Navbar() {
       setDiplomasDropdown(false);
       setAboutDropdown(false);
       setTrainersDropdown(false);
+      setServicesDropdown(false);
     } else if (dropdownName === 'diplomas') {
       setDiplomasDropdown(true);
       setCourses(false);
       setAboutDropdown(false);
       setTrainersDropdown(false);
+      setServicesDropdown(false);
     } else if (dropdownName === 'about') {
       setAboutDropdown(true);
       setCourses(false);
       setDiplomasDropdown(false);
+      setTrainersDropdown(false);
+      setServicesDropdown(false);
+    } else if (dropdownName === 'services') {
+      setServicesDropdown(true);
+      setCourses(false);
+      setDiplomasDropdown(false);
+      setAboutDropdown(false);
       setTrainersDropdown(false);
     }
   };
@@ -75,6 +88,7 @@ export default function Navbar() {
       setDiplomasDropdown(false);
       setAboutDropdown(false);
       setTrainersDropdown(false);
+      setServicesDropdown(false);
     }, 200);
   };
   // const { categories, status, error } = useSelector(
@@ -188,6 +202,12 @@ export default function Navbar() {
       }
       if (coursesRef.current && !coursesRef.current.contains(event.target)) {
         setCourses(false);
+      }
+      if (diplomasRef.current && !diplomasRef.current.contains(event.target)) {
+        setDiplomasDropdown(false);
+      }
+      if (servicesRef.current && !servicesRef.current.contains(event.target)) {
+        setServicesDropdown(false);
       }
       // Close mobile search when clicking outside
       if (search && !event.target.closest('.mobile-search-container')) {
@@ -733,6 +753,7 @@ export default function Navbar() {
                     setCourses(!courses);
                     setAboutDropdown(false);
                     setTrainersDropdown(false);
+                    setServicesDropdown(false);
                   }}
                   className={
                     "flex items-center cursor-pointer gap-1 md:text-[18px] lg:text-[20px] px-[16px] py-[8px] font-medium hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 transition-colors !leading-[1.25] min-h-[44px] rounded-lg " +
@@ -836,6 +857,7 @@ export default function Navbar() {
                     setCourses(false);
                     setAboutDropdown(false);
                     setTrainersDropdown(false);
+                    setServicesDropdown(false);
                   }}
                   className={
                     "flex items-center cursor-pointer gap-1 md:text-[18px] lg:text-[20px] px-[16px] py-[8px] font-medium hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 transition-colors !leading-[1.25] min-h-[44px] rounded-lg " +
@@ -892,6 +914,7 @@ export default function Navbar() {
                   onClick={() => {
                     setAboutDropdown(!aboutDropdown);
                     setTrainersDropdown(false);
+                    setServicesDropdown(false);
                   }}
                   className={
                     "flex items-center cursor-pointer gap-1 md:text-[18px] lg:text-[20px] px-[16px] py-[8px] font-medium transition-colors !leading-[1.25] hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 min-h-[44px] rounded-lg " +
@@ -946,6 +969,57 @@ export default function Navbar() {
                       >
                         {t("header.nav.contact")}
                       </a> */}
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              <div className="min-h-[37px] w-[1px] mx-[2px] bg-[#1a2555]"></div>
+
+              {/* Our Services dropdown */}
+              <div className="relative" ref={servicesRef} onMouseEnter={() => handleDropdownHover('services')} onMouseLeave={handleDropdownLeave}>
+                <button
+                  onClick={() => {
+                    setServicesDropdown(!servicesDropdown);
+                    setCourses(false);
+                    setDiplomasDropdown(false);
+                    setAboutDropdown(false);
+                    setTrainersDropdown(false);
+                  }}
+                  className={
+                    "flex items-center cursor-pointer gap-1 md:text-[18px] lg:text-[20px] px-[16px] py-[8px] font-medium transition-colors !leading-[1.25] hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 min-h-[44px] rounded-lg " +
+                    (location.pathname.includes("/test-center")
+                      ? "text-[#ffffff] bg-gradient-to-r from-[#23A0D0] to-68% to-[#3CBEB3] active-nav-link relative"
+                      : "text-[#202C5B] bg-white")
+                  }
+                >
+                  {t("header.nav.ourServices")}
+                  <svg
+                    className={`w-3 h-3 transition-transform ${
+                      servicesDropdown ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+                {servicesDropdown && (
+                  <div className="absolute top-full right-0 mt-1 w-44 bg-white rounded-lg shadow-[0px_2px_6px_2px_rgba(0,0,0,0.1)] z-20" onMouseEnter={() => setHoveredDropdown('services')} onMouseLeave={handleDropdownLeave}>
+                    <div className="py-1">
+                      <a
+                        href={`/${lang}/test-center`}
+                        onClick={() => setServicesDropdown(false)}
+                        className="block px-4 py-2 md:text-sm lg:text-lg hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff] transition-colors"
+                      >
+                        {t("header.nav.testCenter")}
+                      </a>
                     </div>
                   </div>
                 )}
@@ -1078,6 +1152,39 @@ export default function Navbar() {
                   <span className="text-black! font-medium! text-lg!">{t("header.nav.about")}</span>
                 </div>
               </a>
+
+              {/* Our Services - Mobile */}
+              <div className="border-b border-[#2FAFC2]!">
+                <button
+                  type="button"
+                  onClick={() => setServicesMobileExpanded(!servicesMobileExpanded)}
+                  className="w-full px-3! py-[12px]! flex! items-center! justify-between! "
+                >
+                  <div className="flex! items-center! gap-3!">
+                    <WrenchScrewdriverIcon className="w-5 h-5 text-[#202C5B]" />
+                    <span className="text-black! font-medium! text-lg!">{t("header.nav.ourServices")}</span>
+                  </div>
+                  <svg
+                    className={`w-5 h-5 text-[#202C5B] transition-transform ${
+                      servicesMobileExpanded ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {servicesMobileExpanded && (
+                  <a
+                    href={`/${lang}/test-center`}
+                    onClick={() => { setOpen(false); setServicesMobileExpanded(false); }}
+                    className="block pl-12! pr-3! py-[12px]! flex! items-center! gap-3! hover:bg-[#e0e0e0]"
+                  >
+                    <span className="text-black! font-medium! text-base!">{t("header.nav.testCenter")}</span>
+                  </a>
+                )}
+              </div>
 
               <a
                 href={`/${lang}/vision&mission`}

@@ -22,6 +22,7 @@ import PaymentSuccess from '../pages/PaymentSuccess';
 import PaymentFailed from '../pages/PaymentFailed';
 import NotFound from '../pages/NotFound';
 import SuccessConfirmation from '../pages/SuccessConfirmation';
+import TestCenter from '../pages/TestCenter';
 
 // Styles
 import '../style/App.css';
@@ -47,6 +48,7 @@ export default function App() {
           <Route path="terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="admission&registration" element={<AdmissionAndRegistration />} />
           <Route path="certificate-checker" element={<CertificateChecker />} />
+          <Route path="test-center" element={<TestCenter />} />
           <Route path="payment-test" element={<PaymentTest />} />
           <Route path="payment-success" element={<PaymentSuccess />} />
           <Route path="payment-failed" element={<PaymentFailed />} />
