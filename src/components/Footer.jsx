@@ -204,18 +204,22 @@ export default function Footer() {
                 {lang === 'ar' ? 'موقع الأكاديمية' : 'Academy Location'}
               </h3>
               <div className="relative rounded-lg overflow-hidden shadow-lg border border-white/20">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d915188.4398919921!2d49.597305838532456!3d26.360322505442543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49e5758e374549%3A0x72802ed4f5b4f3e4!2sASTA%20Academy!5e0!3m2!1sen!2ssa!4v1769085223023!5m2!1sen!2ssa"
-                  width="100%"
-                  height="250"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-64 md:h-72"
-                  title={lang === 'ar' ? 'موقع أكاديمية المهارات التطبيقية' : 'Academy of Applied Skills Location'}
-                />
+                <a
+                  href="https://www.google.com/maps/place/ASTA+Academy/@26.3679861,50.1804522,17z/data=!4m6!3m5!1s0x3e49e5758e374549:0x72802ed4f5b4f3e4!8m2!3d26.3680486!4d50.1816538!16s%2Fg%2F11yn_20_3p?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/images/map-location.webp"
+                    alt={lang === 'ar' ? 'موقع الأكاديمية' : 'Academy Location'}
+                    className="w-full h-64 md:h-72 object-cover object-center scale-125"
+                    loading="lazy"
+                    width="800"
+                    height="400"
+                  />
+                </a>
               </div>
+
               {/* <div className="mt-4 space-y-2">
                 <div className="flex items-start gap-3">
                   <i className="fas fa-map-marker-alt text-[#23a0d0] mt-1 text-sm"></i>
