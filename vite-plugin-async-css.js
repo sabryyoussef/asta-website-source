@@ -33,7 +33,8 @@ function injectCriticalPreloads(html) {
   const parts = [];
   // Prevent flash of unstyled content: hide body until main CSS has loaded
   parts.push('<style>html.await-main-css{visibility:hidden}</style>');
-  parts.push('<script>document.documentElement.classList.add("await-main-css");</script>');
+  parts.push('<script>document.documentElement.classList.add("await-main-css");'
+    + 'setTimeout(function(){document.documentElement.classList.remove("await-main-css");},5000);</script>');
   // Main CSS preload is the async link from transformCssLinks; only add modulepreload here
   if (jsMatch) parts.push(`<link rel="modulepreload" href="${jsMatch[1]}">`);
   return html.replace(/(<head[^>]*>)/i, `$1\n    ${parts.join('\n    ')}`);
