@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { 
@@ -7,27 +7,22 @@ import {
   TrophyIcon,
   UserGroupIcon
 } from '@heroicons/react/24/outline';
-import Programs, { getProgramData } from '../../api/Programs.js';
+import { getProgramData } from '../../api/Programs.js';
+
+const PROGRAM_ID = 3;
 
 const AdvertisingSection = () => {
   const { lang } = useParams();
   const { t } = useTranslation();
-  const [program, setProgram] = useState(null);
-  const isRTL = lang === 'ar';
+  const safeLang = lang === 'en' ? 'en' : 'ar';
+  const program = useMemo(() => getProgramData(PROGRAM_ID, safeLang), [safeLang]);
+  const isRTL = safeLang === 'ar';
 
-  useEffect(() => {
-    // Get program with ID 3 and localize it
-    const specificProgram = Programs.find(p => p.id === 3);
-    if (specificProgram) {
-      const localizedProgram = getProgramData(specificProgram, lang);
-      setProgram(localizedProgram);
-    }
-  }, [lang]);
   return (
     <section className="py-16 px-4 bg-gray-50">
       <div className="max-w-7xl mx-auto">
-        {/* Advertising Single Card */}
-        {program && (
+        {/* Advertising Single Card - rendered synchronously to avoid CLS */}
+        {program?.id != null && (
           <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
             <div className={`flex flex-col ${isRTL ? 'md:flex-row' : 'md:flex-row'}`}>
               {/* Content Section */}
@@ -106,12 +101,16 @@ const AdvertisingSection = () => {
                 </div>
               </div>
 
-              {/* Image Section */}
-              <div className="md:w-1/2 h-64 md:h-auto bg-gradient-to-br from-blue-500 to-purple-600">
+              {/* Image Section - fixed aspect ratio reserves space to prevent CLS when image loads */}
+              <div className="w-full md:w-1/2 aspect-[4/3] md:aspect-[3/2] bg-gradient-to-br from-blue-500 to-purple-600">
                 <img 
                   src={program.image} 
                   alt={program.title}
                   className="w-full h-full object-cover"
+                  width={600}
+                  height={400}
+                  loading="eager"
+                  fetchPriority="high"
                 />
               </div>
             </div>
