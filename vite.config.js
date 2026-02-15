@@ -24,10 +24,8 @@ export default defineConfig({
           if (id.includes('node_modules/swiper')) {
             return 'vendor-swiper';
           }
-          // i18n used on every page, keep with main or small vendor
-          if (id.includes('node_modules/i18next') || id.includes('node_modules/react-i18next')) {
-            return 'vendor-i18n';
-          }
+          // Do NOT split i18n: react-i18next uses React.createContext and must run in the same
+          // context as React; a separate vendor-i18n chunk can load before React is ready.
         },
       },
     },
