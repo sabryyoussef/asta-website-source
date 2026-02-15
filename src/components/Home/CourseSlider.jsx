@@ -73,6 +73,7 @@ const CourseSlider = ({ title, bg = "bg-white", courses = [] }) => {
                 key={`course-slider-${lang}`}
                 ref={swiperRef}
                 modules={[Autoplay, Pagination]}
+                resizeObserver={false}
                 spaceBetween={24}
                 loop={true}
                 slidesPerView={3}

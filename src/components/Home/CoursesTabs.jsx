@@ -89,7 +89,7 @@ export default function CoursesTabs() {
         <div className="bg-gradient-to-r from-[#23A0D0] to-68% to-[#3CBEB3] md:pt-[16px] max-md:py-[12px] text-white border-b-[#202C5B] border-[1px]">
           <div className="container">
             {isVisible && (
-            <Swiper spaceBetween={24} slidesPerView={4} className="w-full"
+            <Swiper resizeObserver={false} spaceBetween={24} slidesPerView={4} className="w-full"
               breakpoints={{
                 0: {
                   slidesPerView: "auto",
@@ -123,6 +123,7 @@ export default function CoursesTabs() {
             <Swiper
               ref={swiperRef}
               modules={[Autoplay]}
+              resizeObserver={false}
               spaceBetween={24}
               slidesPerView={1}
               autoplay={{

@@ -76,6 +76,7 @@ export default function PartnersSection() {
           <Swiper
             ref={swiperRef}
             modules={[Navigation, Autoplay]}
+            resizeObserver={false}
             spaceBetween={6}
             slidesPerView={4}
             loop={true}
