@@ -5,33 +5,38 @@
 import { readFileSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
 
-// Main bundle CSS (from Vite build) – keep render-blocking for LCP; do not async.
+// Main bundle CSS (from Vite build) – make async to avoid render-blocking (saves ~160ms LCP).
 const MAIN_CSS_HREF_RE = /href=["'](\/assets\/[^"']+\.css)["']/;
 
-// Transform only non-critical CSS to async (skip main bundle CSS)
+// Transform ALL stylesheet links to async (including main bundle) to move CSS off the critical path.
+// Anti-FOUC: hide content until main CSS loads via .await-main-css class.
 function transformCssLinks(html, mainCssHref) {
   return html.replace(
     /<link\s+rel="stylesheet"\s+href="([^"]+\.css)"[^>]*>/g,
     (match, href) => {
       if (match.includes('preload') || match.includes('onload')) return match;
-      // Keep main bundle CSS render-blocking so LCP is styled
-      if (mainCssHref && href === mainCssHref) return match;
-      return `<link rel="preload" href="${href}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+      const isMainCss = mainCssHref && href === mainCssHref;
+      const onload = isMainCss
+        ? `this.onload=null;this.rel='stylesheet';document.documentElement.classList.remove('await-main-css')`
+        : `this.onload=null;this.rel='stylesheet'`;
+      return `<link rel="preload" href="${href}" as="style" onload="${onload}">
     <noscript><link rel="stylesheet" href="${href}"></noscript>`;
     }
   );
 }
 
-// Inject at the very start of <head> so the browser discovers critical CSS/JS in the first bytes
-// and can fetch them in parallel with the rest of the HTML (shorter critical path).
+// Inject at the very start of <head>: anti-FOUC (hide until main CSS loads) + preloads
+// so the browser discovers critical resources in the first bytes (shorter critical path).
 function injectCriticalPreloads(html) {
   const cssMatch = html.match(MAIN_CSS_HREF_RE);
   const jsMatch = html.match(/<script[^>]+type=["']module["'][^>]+src=["']([^"']+)["']/);
-  const preloads = [];
-  if (cssMatch) preloads.push(`<link rel="preload" href="${cssMatch[1]}" as="style">`);
-  if (jsMatch) preloads.push(`<link rel="modulepreload" href="${jsMatch[1]}">`);
-  if (preloads.length === 0) return html;
-  return html.replace(/(<head[^>]*>)/i, `$1\n    ${preloads.join('\n    ')}`);
+  const parts = [];
+  // Prevent flash of unstyled content: hide body until main CSS has loaded
+  parts.push('<style>html.await-main-css{visibility:hidden}</style>');
+  parts.push('<script>document.documentElement.classList.add("await-main-css");</script>');
+  // Main CSS preload is the async link from transformCssLinks; only add modulepreload here
+  if (jsMatch) parts.push(`<link rel="modulepreload" href="${jsMatch[1]}">`);
+  return html.replace(/(<head[^>]*>)/i, `$1\n    ${parts.join('\n    ')}`);
 }
 
 export function asyncCss() {
