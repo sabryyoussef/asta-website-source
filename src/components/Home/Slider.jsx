@@ -145,6 +145,7 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
                                         key={`slider-${lang}`}
                                         ref={swiperRef}
                                         modules={[Navigation, A11y]}
+                                        resizeObserver={false}
                                         slidesPerView="auto"
                                         spaceBetween={16}
                                         centeredSlides={false}
