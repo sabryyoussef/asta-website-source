@@ -157,10 +157,13 @@ export default function Hero() {
                   <div className="max-md:hidden flex justify-center w-full mb-6">
                     <img
                       src="/images/logo.webp"
+                      srcSet="/images/logo.webp 299w"
+                      sizes="(max-width: 640px) 200px, (max-width: 768px) 292px, (max-width: 1024px) 320px, 434px"
                       alt="ASTA Logo"
-                      width={434}
-                      height={100}
+                      width={299}
+                      height={81}
                       className="w-[200px] sm:w-[292px] md:w-[320px] lg:w-[434px] h-auto"
+                      decoding="async"
                     />
                   </div>
 
@@ -216,10 +219,14 @@ export default function Hero() {
 
                   <img
                     src={slide.img}
+                    srcSet={slide.img + " 333w"}
+                    sizes="(max-width: 640px) 220px, (max-width: 768px) 320px, (max-width: 1024px) 448px, 512px"
                     alt="slide-main"
-                    width={400}
-                    height={533}
+                    width={333}
+                    height={314}
                     className="flex-[80%] max-w-[220px] sm:max-w-xs md:max-w-md lg:max-w-lg w-full z-5"
+                    decoding="async"
+                    fetchPriority={index === 0 ? "high" : undefined}
                     style={index === activeIndex ? { animation: "fadeIn 1s ease-in-out" } : undefined}
                   />
                 </div>
@@ -227,10 +234,13 @@ export default function Hero() {
                 <div className="md:hidden flex justify-center w-full mb-4 mt-4 min-h-[46px] sm:min-h-[67px]">
                   <img
                     src="/images/logo.webp"
+                    srcSet="/images/logo.webp 299w"
+                    sizes="(max-width: 640px) 200px, (max-width: 768px) 292px, 434px"
                     alt="ASTA Logo"
-                    width={434}
-                    height={100}
+                    width={299}
+                    height={81}
                     className="w-[200px] sm:w-[292px] md:w-[320px] lg:w-[434px] h-auto object-contain"
+                    decoding="async"
                   />
                 </div>
 

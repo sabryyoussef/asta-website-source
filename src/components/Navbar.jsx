@@ -413,10 +413,13 @@ export default function Navbar() {
               <Link to={`/${lang}`}>
                 <img
                   src="/images/logo.webp"
+                  srcSet="/images/logo.webp 299w"
+                  sizes="(max-width: 1024px) 120px, 152px"
                   alt="ASTA Logo"
-                  width={152}
-                  height={35}
+                  width={299}
+                  height={81}
                   className="h-auto md:w-[120px] lg:w-[152px]"
+                  decoding="async"
                 />
               </Link>
             </div>
@@ -607,10 +610,13 @@ export default function Navbar() {
                   <Link to={`/${lang}`}>
                     <img
                       src="/images/logo.webp"
+                      srcSet="/images/logo.webp 299w"
+                      sizes="63px"
                       alt="ASTA Logo"
-                      width={63}
-                      height={17}
+                      width={299}
+                      height={81}
                       className="h-auto w-[63px]"
+                      decoding="async"
                     />
                   </Link>
                 </div>
