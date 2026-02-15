@@ -27,6 +27,7 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
     const [currentIndex, setCurrentIndex] = useState(initialProgramIndex);
     const [currentContent, setCurrentContent] = useState(null);
     const [isVisible, setIsVisible] = useState(false);
+    const [mountSwiper, setMountSwiper] = useState(false); // Defer mount to avoid forced reflow on first paint
     const swiperRef = useRef(null);
     const sectionRef = useRef(null);
     
@@ -102,6 +103,15 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
         };
     }, []);
 
+    // Defer Swiper mount to next frame so layout reads (offsetWidth etc.) don't force reflow during first paint
+    useEffect(() => {
+        if (!isVisible) return;
+        const raf = requestAnimationFrame(() => {
+            setMountSwiper(true);
+        });
+        return () => cancelAnimationFrame(raf);
+    }, [isVisible]);
+
 
     // TODO: Replace with loading state when API is ready
     // if (status.getCategories == "loading" || status.getCategories == "idle") {
@@ -140,7 +150,7 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
                                     }}
                                 ></button>
                                 <div className="w-full overflow-hidden px-12 sm:px-16 md:px-20">
-                                    {isVisible && (
+                                    {mountSwiper && (
                                     <Swiper
                                         key={`slider-${lang}`}
                                         ref={swiperRef}

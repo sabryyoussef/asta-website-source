@@ -11,6 +11,7 @@ import { useParams } from "react-router-dom";
 const CourseSlider = ({ title, bg = "bg-white", courses = [] }) => {
   const swiperRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [mountSwiper, setMountSwiper] = useState(false);
   const sectionRef = useRef(null);
   const { lang } = useParams();
   const isRTL = lang === 'ar';
@@ -41,6 +42,13 @@ const CourseSlider = ({ title, bg = "bg-white", courses = [] }) => {
       }
     };
   }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
+    const raf = requestAnimationFrame(() => setMountSwiper(true));
+    return () => cancelAnimationFrame(raf);
+  }, [isVisible]);
+
 //   if (!Array.isArray(courses)) {
 //     return <Loading />;
 //   }
@@ -68,7 +76,7 @@ const CourseSlider = ({ title, bg = "bg-white", courses = [] }) => {
           </div>
 
           <div className="mt-[12px]">
-            {courses.length === 0 ? null : isVisible ? (
+            {courses.length === 0 ? null : mountSwiper ? (
               <Swiper
                 key={`course-slider-${lang}`}
                 ref={swiperRef}

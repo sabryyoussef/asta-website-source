@@ -89,14 +89,10 @@ export default function CoursesTabs() {
         <div className="bg-gradient-to-r from-[#23A0D0] to-68% to-[#3CBEB3] md:pt-[16px] max-md:py-[12px] text-white border-b-[#202C5B] border-[1px]">
           <div className="container">
             {isVisible && (
-            <Swiper resizeObserver={false} spaceBetween={24} slidesPerView={4} className="w-full"
+            <Swiper resizeObserver={false} spaceBetween={24} slidesPerView={2} className="w-full"
               breakpoints={{
-                0: {
-                  slidesPerView: "auto",
-                },
-                767: {
-                  slidesPerView: 4,
-                }
+                0: { slidesPerView: 2 },
+                767: { slidesPerView: 4 },
               }}
             >
               {tabs.map((tab, i) => (

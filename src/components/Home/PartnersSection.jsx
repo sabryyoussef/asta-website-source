@@ -9,9 +9,10 @@ import PartnersData from "../../api/Partners.json";
 import { useParams } from "react-router-dom";
 
 export default function PartnersSection() {
-  const swiperRef = useRef(null)
+  const swiperRef = useRef(null);
   const [partners, setPartners] = useState([]);
   const [isVisible, setIsVisible] = useState(false);
+  const [mountSwiper, setMountSwiper] = useState(false);
   const sectionRef = useRef(null);
   const { lang } = useParams();
   const isRTL = lang === 'ar';
@@ -44,6 +45,12 @@ export default function PartnersSection() {
     };
   }, []);
 
+  useEffect(() => {
+    if (!isVisible) return;
+    const raf = requestAnimationFrame(() => setMountSwiper(true));
+    return () => cancelAnimationFrame(raf);
+  }, [isVisible]);
+
   // if (loading) {
   //   return <Loading />;
   // }
@@ -72,7 +79,7 @@ export default function PartnersSection() {
           onMouseEnter={() => swiperRef.current?.swiper?.autoplay?.stop()}
           onMouseLeave={() => swiperRef.current?.swiper?.autoplay?.start()}
         >
-          {isVisible && (
+          {mountSwiper && (
           <Swiper
             ref={swiperRef}
             modules={[Navigation, Autoplay]}
