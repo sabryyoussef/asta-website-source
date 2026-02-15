@@ -12,8 +12,23 @@ export default defineConfig({
     cssMinify: true,
     rollupOptions: {
       output: {
-        // Optimize CSS chunking
-        manualChunks: undefined,
+        manualChunks(id) {
+          // Vendor chunk: React + router (stable, cacheable)
+          if (id.includes('node_modules/react/') || id.includes('node_modules/react-dom/')) {
+            return 'vendor-react';
+          }
+          if (id.includes('node_modules/react-router')) {
+            return 'vendor-router';
+          }
+          // Swiper in its own chunk so it can load with the Home chunk and be cached
+          if (id.includes('node_modules/swiper')) {
+            return 'vendor-swiper';
+          }
+          // i18n used on every page, keep with main or small vendor
+          if (id.includes('node_modules/i18next') || id.includes('node_modules/react-i18next')) {
+            return 'vendor-i18n';
+          }
+        },
       },
     },
   },
