@@ -88,6 +88,7 @@ export default function CoursesTabs() {
       <div className="w-full mx-auto">
         <div className="bg-gradient-to-r from-[#23A0D0] to-68% to-[#3CBEB3] md:pt-[16px] max-md:py-[12px] text-white border-b-[#202C5B] border-[1px]">
           <div className="container">
+            {isVisible && (
             <Swiper spaceBetween={24} slidesPerView={4} className="w-full"
               breakpoints={{
                 0: {
@@ -113,10 +114,12 @@ export default function CoursesTabs() {
                 </SwiperSlide>
               ))}
             </Swiper>
+            )}
           </div>
         </div>
         <div className="container">
           <div className="md:hidden mt-[12px]">
+            {isVisible && (
             <Swiper
               ref={swiperRef}
               modules={[Autoplay]}
@@ -138,6 +141,7 @@ export default function CoursesTabs() {
                 }
               })}
             </Swiper>
+            )}
           </div>
 
           <div className="hidden md:grid md:mt-[32px] mt-[12px] w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 relative z-0">

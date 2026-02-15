@@ -51,16 +51,17 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
     const handleCategoryClick = (index) => {
         setCurrentIndex(index);
         setCurrentContent(categories[index]);
-        if (swiperRef.current && swiperRef.current.swiper) {
-            swiperRef.current.swiper.slideTo(index, 300, false); // ✅ handles loop mode correctly
+        if (swiperRef.current?.swiper) {
+            swiperRef.current.swiper.slideTo(index, 300, false);
         }
     };
 
     const autoSlide = () => {
         const nextIndex = currentIndex + 1 >= categories.length ? 0 : currentIndex + 1;
         setCurrentIndex(nextIndex);
-        // Use the nextIndex instead of currentIndex
-        swiperRef.current.swiper.slideTo(nextIndex);
+        if (swiperRef.current?.swiper) {
+            swiperRef.current.swiper.slideTo(nextIndex);
+        }
         setCurrentContent(categories[nextIndex]);
     };
 
@@ -139,6 +140,7 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
                                     }}
                                 ></button>
                                 <div className="w-full overflow-hidden px-12 sm:px-16 md:px-20">
+                                    {isVisible && (
                                     <Swiper
                                         key={`slider-${lang}`}
                                         ref={swiperRef}
@@ -176,6 +178,7 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
                                         </SwiperSlide>
                                     ))}
                                     </Swiper>
+                                    )}
                                 </div>
                                 <button
                                     className="category-swiper-next! absolute! cursor-pointer right-0! top-1/2! -translate-y-1/2! z-10! w-0! h-0! border-t-[15px]! border-b-[15px]! border-l-[20px]! border-t-transparent! border-b-transparent! border-l-blue-900! hover:border-l-blue-700! transition-colors! duration-300! max-md:hidden"

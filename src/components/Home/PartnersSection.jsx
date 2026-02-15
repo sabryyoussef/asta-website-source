@@ -52,7 +52,7 @@ export default function PartnersSection() {
   const displayImages = partners.map((partner) => partner.image);
 
   return (
-    <div ref={sectionRef} className={`bg-white transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+    <div ref={sectionRef} className={`bg-white transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
       <div className="w-full h-full mb-[12px] md:mb-8! text-center">
         <h2
           className="py-2! md:text-[32px] font-bold text-white mx-auto"
@@ -72,13 +72,12 @@ export default function PartnersSection() {
           onMouseEnter={() => swiperRef.current?.swiper?.autoplay?.stop()}
           onMouseLeave={() => swiperRef.current?.swiper?.autoplay?.start()}
         >
+          {isVisible && (
           <Swiper
             ref={swiperRef}
             modules={[Navigation, Autoplay]}
             spaceBetween={6}
             slidesPerView={4}
-            observer={true}
-            observeParents={true}
             loop={true}
             dir={isRTL ? "rtl" : "ltr"}
             autoplay={{
@@ -113,6 +112,7 @@ export default function PartnersSection() {
               </SwiperSlide>
             ))}
           </Swiper>
+          )}
 
           {/* Navigation Arrows */}
         </div>
