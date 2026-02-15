@@ -6,7 +6,7 @@ import { analyzer } from 'vite-bundle-analyzer';
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss(), asyncCss(), analyzer({ open: true })], // opens report after build
+  plugins: [react(), tailwindcss(), asyncCss(), analyzer({ openAnalyzer: true, analyzerPort: 'auto' })], // opens report after build
   build: {
     cssCodeSplit: true,
     cssMinify: true,
