@@ -175,6 +175,8 @@ export default function Hero() {
                     width={500}
                     height={400}
                     decoding="async"
+                    loading="eager"
+                    fetchPriority="high"
                     className="absolute bottom-0 left-0 w-full"
                     alt="Base"
                   />
