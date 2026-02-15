@@ -19,22 +19,22 @@ const AdvertisingSection = () => {
   const isRTL = safeLang === 'ar';
 
   return (
-    <section className="py-16 px-4 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
-        {/* Advertising Single Card - rendered synchronously to avoid CLS */}
+    <section className="py-16 px-4 bg-gray-50" aria-label={program?.title || 'Featured program'}>
+      <div className="max-w-7xl mx-auto min-h-[420px]">
+        {/* Advertising Single Card - min-height above reserves space to prevent CLS from font/image load */}
         {program?.id != null && (
           <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
             <div className={`flex flex-col ${isRTL ? 'md:flex-row' : 'md:flex-row'}`}>
               {/* Content Section */}
               <div className="md:w-1/2 p-8 flex flex-col justify-between">
                 <div>
-                  {/* Title */}
-                  <h3 className={`text-3xl font-bold text-gray-900 mb-4 ${isRTL ? 'text-right' : 'text-left'}`}>
+                  {/* Title - min-height reserves space to avoid CLS when fonts load */}
+                  <h3 className={`text-3xl font-bold text-gray-900 mb-4 min-h-[3.5rem] ${isRTL ? 'text-right' : 'text-left'}`}>
                     {program?.title}
                   </h3>
 
-                  {/* Description */}
-                  <p className={`text-gray-600 text-lg mb-6 leading-relaxed ${isRTL ? 'text-right' : 'text-left'}`}>
+                  {/* Description - min-height reserves space for font swap */}
+                  <p className={`text-gray-600 text-lg mb-6 leading-relaxed min-h-[4.5rem] ${isRTL ? 'text-right' : 'text-left'}`}>
                     {program?.overview?.substring(0, 150)}...
                   </p>
 

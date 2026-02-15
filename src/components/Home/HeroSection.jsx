@@ -213,13 +213,14 @@ export default function Hero() {
                     style={index === activeIndex ? { animation: "fadeIn 1s ease-in-out" } : undefined}
                   />
                 </div>
-                <div className="md:hidden flex justify-center w-full mb-4 mt-4">
+                {/* Reserve height for logo to prevent CLS when image loads (aspect 434:100) */}
+                <div className="md:hidden flex justify-center w-full mb-4 mt-4 min-h-[46px] sm:min-h-[67px]">
                   <img
                     src="/images/logo.webp"
                     alt="ASTA Logo"
                     width={434}
                     height={100}
-                    className="w-[200px] sm:w-[292px] md:w-[320px] lg:w-[434px] h-auto"
+                    className="w-[200px] sm:w-[292px] md:w-[320px] lg:w-[434px] h-auto object-contain"
                   />
                 </div>
 
