@@ -39,8 +39,8 @@
     />
 
     <!-- Preconnect to external domains for faster resource loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
     <!-- <link rel="preconnect" href="https://cdnjs.cloudflare.com" /> -->
     <link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -54,16 +54,7 @@
     Google Fonts CSS fallback
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet"> -->
 
-    <!-- Preload main CSS -->
-    <link
-    rel="preload"
-    href="/assets/index-zyAHvEev.css"
-    as="style"
-    onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript>
-    <link rel="stylesheet" href="/assets/index-zyAHvEev.css" />
-    </noscript>
+    <!-- Main CSS is injected by Vite build with correct hash -->
 
     <link
       rel="preload"
