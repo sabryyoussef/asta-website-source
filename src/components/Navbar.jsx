@@ -375,10 +375,12 @@ export default function Navbar() {
                   }}
                 >
                   <div>
-                    <img 
+                    <img
                       src="/images/saudiFlag-28.webp"
                       srcSet="/images/saudiFlag-14.webp 14w, /images/saudiFlag-28.webp 28w"
                       sizes="28px"
+                      width={28}
+                      height={28}
                       decoding="async"
                       className="w-[28px]"
                       alt="اللغة العربية"
@@ -412,6 +414,8 @@ export default function Navbar() {
                 <img
                   src="/images/logo.webp"
                   alt="ASTA Logo"
+                  width={152}
+                  height={35}
                   className="h-auto md:w-[120px] lg:w-[152px]"
                 />
               </Link>
@@ -604,6 +608,8 @@ export default function Navbar() {
                     <img
                       src="/images/logo.webp"
                       alt="ASTA Logo"
+                      width={63}
+                      height={17}
                       className="h-auto w-[63px]"
                     />
                   </Link>

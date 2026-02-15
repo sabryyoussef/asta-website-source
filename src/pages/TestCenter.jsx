@@ -128,6 +128,8 @@ export default function TestCenter() {
               <img
                 src={PSI_HERO_IMAGE}
                 alt={t("testCenter.heroImageAlt")}
+                width={1200}
+                height={800}
                 className="rounded-2xl shadow-lg w-full h-auto object-cover"
               />
 
@@ -217,6 +219,8 @@ export default function TestCenter() {
               <img
                 src={logoSrc}
                 alt="PSI - Test development, multi-modal delivery & security"
+                width={200}
+                height={96}
                 className="h-20 md:h-24 w-auto min-w-[120px] object-contain bg-white rounded-xl p-4 shadow-md border border-gray-200"
                 onError={() => setLogoSrc(PSI_LOGO_FALLBACK)}
               />

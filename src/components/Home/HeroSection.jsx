@@ -111,9 +111,11 @@ export default function Hero() {
   return (
     <div className="relative pb-[64px] pt-[48px] overflow-hidden">
       <div className="absolute left-0 top-0 z-0 w-full h-full">
-        <img src="/images/Rectangle-640.webp"         // mobile / smaller version
+        <img src="/images/Rectangle-640.webp"
           fetchPriority="high"
           decoding="async"
+          width={1920}
+          height={1080}
           className="w-full h-full object-cover"
           alt="Hero Background"
         />
@@ -148,6 +150,8 @@ export default function Hero() {
                     <img
                       src="/images/logo.webp"
                       alt="ASTA Logo"
+                      width={434}
+                      height={100}
                       className="w-[200px] sm:w-[292px] md:w-[320px] lg:w-[434px] h-auto"
                     />
                   </div>
@@ -168,6 +172,8 @@ export default function Hero() {
                     src="/images/triangle-500.webp"
                     srcSet="/images/triangle-250.webp 250w, /images/triangle-500.webp 500w"
                     sizes="(max-width: 768px) 100vw, 500px"
+                    width={500}
+                    height={400}
                     decoding="async"
                     className="absolute bottom-0 left-0 w-full"
                     alt="Base"
@@ -176,18 +182,24 @@ export default function Hero() {
                   <img
                     src="/images/2@4x.webp"
                     alt="floating-1"
+                    width={32}
+                    height={32}
                     className="absolute top-[80%] right-[-1%] w-[32px] z-0 transition-transform duration-150 ease-out"
                     style={{ transform: `translate(${mousePos.x * 20}px, ${mousePos.y * 20}px)` }}
                   />
                   <img
                     src="/images/3@4x.webp"
                     alt="floating-2"
+                    width={48}
+                    height={48}
                     className="absolute top-[55%] left-[1%] w-[48px] z-0 transition-transform duration-150 ease-out"
                     style={{ transform: `translate(-${mousePos.x * 30}px, ${mousePos.y * 30}px)` }}
                   />
                   <img
                     src="/images/4@4x.webp"
                     alt="floating-3"
+                    width={72}
+                    height={72}
                     className="absolute top-[15%] left-[20%] w-[72px] z-0 transition-transform duration-150 ease-out"
                     style={{ transform: `translate(-${mousePos.x * 40}px, ${mousePos.y * 40}px)` }}
                   />
@@ -195,6 +207,8 @@ export default function Hero() {
                   <img
                     src={slide.img}
                     alt="slide-main"
+                    width={400}
+                    height={533}
                     className="flex-[80%] max-w-[220px] sm:max-w-xs md:max-w-md lg:max-w-lg w-full z-5"
                     style={index === activeIndex ? { animation: "fadeIn 1s ease-in-out" } : undefined}
                   />
@@ -203,6 +217,8 @@ export default function Hero() {
                   <img
                     src="/images/logo.webp"
                     alt="ASTA Logo"
+                    width={434}
+                    height={100}
                     className="w-[200px] sm:w-[292px] md:w-[320px] lg:w-[434px] h-auto"
                   />
                 </div>

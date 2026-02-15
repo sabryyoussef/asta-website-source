@@ -211,6 +211,8 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
                                                     <img
                                                         src={currentContent?.image_url}
                                                         alt={currentContent?.name}
+                                                        width={320}
+                                                        height={320}
                                                         className="w-full h-full object-cover"
                                                     />
                                                 </div>

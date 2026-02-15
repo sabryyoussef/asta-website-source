@@ -107,6 +107,8 @@ export default function PartnersSection() {
                   <img
                     src={image}
                     alt={partners[index]?.name || `Partner ${index + 1}`}
+                    width={120}
+                    height={120}
                     className="max-h-full max-w-full object-contain"
                   />
                 </div>
