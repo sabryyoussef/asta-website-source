@@ -76,26 +76,34 @@ export default function Hero() {
   const { t } = useTranslation();
   const isRTL = lang === 'ar';
 
-  // Track mouse position
+  // Track mouse position (throttled + cached dimensions to avoid forced reflows)
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const dimensionsRef = useRef({ w: typeof window !== "undefined" ? window.innerWidth : 1, h: typeof window !== "undefined" ? window.innerHeight : 1 });
+  const rafRef = useRef(null);
 
   useEffect(() => {
+    const updateDimensions = () => {
+      dimensionsRef.current = { w: window.innerWidth, h: window.innerHeight };
+    };
+    updateDimensions();
+    window.addEventListener("resize", updateDimensions);
+
     const handleMouseMove = (e) => {
-      const { innerWidth, innerHeight } = window;
-
-      // Normalize position to range -1 to 1
-      const x = (e.clientX / innerWidth) * 2;
-      const y = (e.clientY / innerHeight) * 2;
-
-      setMousePos({ x, y });
+      if (rafRef.current != null) return;
+      rafRef.current = requestAnimationFrame(() => {
+        rafRef.current = null;
+        const { w, h } = dimensionsRef.current;
+        const x = (e.clientX / w) * 2;
+        const y = (e.clientY / h) * 2;
+        setMousePos({ x, y });
+      });
     };
 
-    // Attach the event listener to the window
     window.addEventListener("mousemove", handleMouseMove);
-
-    // Cleanup on unmount
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("resize", updateDimensions);
+      if (rafRef.current != null) cancelAnimationFrame(rafRef.current);
     };
   }, []);
 

@@ -72,13 +72,12 @@ export default function PartnersSection() {
           onMouseEnter={() => swiperRef.current?.swiper?.autoplay?.stop()}
           onMouseLeave={() => swiperRef.current?.swiper?.autoplay?.start()}
         >
+          {isVisible && (
           <Swiper
             ref={swiperRef}
             modules={[Navigation, Autoplay]}
             spaceBetween={6}
             slidesPerView={4}
-            observer={true}
-            observeParents={true}
             loop={true}
             dir={isRTL ? "rtl" : "ltr"}
             autoplay={{
@@ -113,6 +112,7 @@ export default function PartnersSection() {
               </SwiperSlide>
             ))}
           </Swiper>
+          )}
 
           {/* Navigation Arrows */}
         </div>

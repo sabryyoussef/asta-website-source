@@ -68,7 +68,7 @@ const CourseSlider = ({ title, bg = "bg-white", courses = [] }) => {
           </div>
 
           <div className="mt-[12px]">
-            {courses.length == 0 ? null : (
+            {courses.length === 0 ? null : isVisible ? (
               <Swiper
                 key={`course-slider-${lang}`}
                 ref={swiperRef}
@@ -107,7 +107,7 @@ const CourseSlider = ({ title, bg = "bg-white", courses = [] }) => {
                   </SwiperSlide>
                 ))}
               </Swiper>
-            )}
+            ) : null}
           </div>
 
           <div className="flex justify-center mt-8 md:flex">
