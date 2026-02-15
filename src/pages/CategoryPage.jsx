@@ -150,11 +150,11 @@ const CategoryPage = () => {
       />
       <div className={`min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-8 px-4`} dir={isRTL ? 'rtl' : 'ltr'}>
         <div className="max-w-7xl mx-auto">
-          {/* Page Title */}
+          {/* Page Title - H2 because CategoryHeroSection already has the page H1 */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-800 mb-4">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
               {categoryName}
-            </h1>
+            </h2>
             <div className={`h-1.5 w-48 bg-gradient-to-r from-[#202C5B] via-[#23A0D0] to-[#3CBEB3] mx-auto rounded-full mb-6`}></div>
           </div>
 

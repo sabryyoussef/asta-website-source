@@ -230,9 +230,9 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
                                         </div>
 
                                         <div className={`order-2 flex flex-col justify-start lg:justify-center w-full lg:w-auto grow p-4 lg:p-12 !pt-0 ${isRTL ? 'items-end text-right' : 'items-start text-left'}`}>
-                                            <h1 className="text-[24px] font-bold text-[#202C5B] leading-relaxed mb-4">
+                                            <h2 className="text-[24px] font-bold text-[#202C5B] leading-relaxed mb-4">
                                                 {currentContent?.name}
-                                            </h1>
+                                            </h2>
                                             <p dir={isRTL ? 'rtl' : 'ltr'} className="text-[16px] text-justify leading-relaxed md:text-[18px] font-medium text-[#10193d] mb-4 max-w-xl">
                                                 {currentContent?.description}
                                             </p>

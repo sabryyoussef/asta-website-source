@@ -121,6 +121,14 @@ export default function Hero() {
         />
       </div>
 
+      {/* Single H1 per page for SEO: summarizes the home page and includes key terms */}
+      <div className="sr-only">
+        <h1>
+          {isRTL
+            ? "أكاديمية المهارات التطبيقية | دورات ودبلومات احترافية معتمدة"
+            : "Applied Skills Training Academy | Professional Courses & Accredited Diplomas"}
+        </h1>
+      </div>
       {/* CSS-only carousel: no offsetWidth/getBoundingClientRect, avoids forced reflow */}
       <div className="overflow-hidden w-full" dir={isRTL ? "rtl" : "ltr"}>
         <div
@@ -137,11 +145,11 @@ export default function Hero() {
               style={{ width: `${100 / SLIDE_COUNT}%` }}
             >
               <div className="container relative z-10 flex flex-col md:flex-row items-center justify-between w-full">
-                {/* Text Content */}
+                {/* Text Content - H2 for carousel highlights (one H1 per page) */}
                 <div className="flex flex-col items-center text-center w-full md:w-1/2">
-                  <h1 className="lg:text-[32px] md:text-[32px] sm:text-[32px] text:[32px] font-medium md:mb-2">
+                  <h2 className="lg:text-[32px] md:text-[32px] sm:text-[32px] text:[32px] font-medium md:mb-2">
                     {slide[lang] ? slide[lang].title : (slide.ar ? slide.ar.title : "No title")}
-                  </h1>
+                  </h2>
                   <p className="md:text-[22px] sm:text-[16px] text-[12px] font-medium md:mt-[10px] md:mb-[32px] max-md:mt-[8px] my-[16px] max-w-xl text-justify leading-relaxed">
                     {slide[lang] ? slide[lang].desc : (slide.ar ? slide.ar.desc : "No description")}
                   </p>

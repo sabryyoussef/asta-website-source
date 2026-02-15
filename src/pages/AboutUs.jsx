@@ -212,11 +212,11 @@ export default function AboutUs() {
       {/* WHo Are We Section */}
       <div className={`container max-w-[1300px] mx-auto flex flex-col items-center justify-center px-2 bg-white overflow-x-hidden`} dir={isRTL ? 'rtl' : 'ltr'}>
         <h1 className={`text-[24px] font-bold mt-10 mb-5 ${isRTL ? 'text-right' : 'text-left'}`}>{content.whoAreWe}</h1>
-        <h1 className={`text-2xl my-10 text-justify leading-relaxed ${isRTL ? 'text-right' : 'text-left'}`}>
+        <p className={`text-2xl my-10 text-justify leading-relaxed ${isRTL ? 'text-right' : 'text-left'}`}>
           {content.description}
-        </h1>
+        </p>
         {/* Services Section */}
-        <h1 className={`text-[24px] font-bold mt-10 mb-5 ${isRTL ? 'text-right' : 'text-left'}`}>{content.ourServices}</h1>
+        <h2 className={`text-[24px] font-bold mt-10 mb-5 ${isRTL ? 'text-right' : 'text-left'}`}>{content.ourServices}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
           {CardsData.slice(3, 9).map((item, index) => (
             <AboutUsCard
@@ -228,11 +228,11 @@ export default function AboutUs() {
             />
           ))}
         </div>
-        <h1 className={`text-2xl mt-10 mb-5 text-justify leading-relaxed ${isRTL ? 'text-right' : 'text-left'}`}>
+        <p className={`text-2xl mt-10 mb-5 text-justify leading-relaxed ${isRTL ? 'text-right' : 'text-left'}`}>
           {content.ourGoal}
-        </h1>
+        </p>
         {/* Why Us Section */}
-        <h1 className={`text-[24px] font-bold my-10 ${isRTL ? 'text-right' : 'text-left'}`}>{content.whyUs}</h1>
+        <h2 className={`text-[24px] font-bold my-10 ${isRTL ? 'text-right' : 'text-left'}`}>{content.whyUs}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
           {CardsData.slice(9, 16).map((item, index) => (
             <WhyUsCard
