@@ -121,7 +121,7 @@ export default function Hero() {
         />
       </div>
 
-      {/* Single H1 per page for SEO: summarizes the home page and includes key terms */}
+      {/* Single H1 per page for SEO (hidden visually): summarizes page and includes key terms */}
       <div className="sr-only">
         <h1>
           {isRTL

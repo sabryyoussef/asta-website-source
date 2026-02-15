@@ -60,7 +60,7 @@ export default function Home() {
       <main className="w-full">
               <Hero></Hero>
               <PartnersSection />
-              <Slider />
+              <Slider mainTitle={isRTL ? 'البرامج التدريبية' : 'Training Programs'} />
               <CourseSlider
                 bg="bg-gradient-to-r from-[#23a0d01a] to-[#3CBEB31A]"
                 courses={Courses}

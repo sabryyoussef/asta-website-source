@@ -21,6 +21,10 @@ const AdvertisingSection = () => {
   return (
     <section className="py-16 px-4 bg-gray-50" aria-label={program?.title || 'Featured program'}>
       <div className="max-w-7xl mx-auto min-h-[420px]">
+        {/* Section heading for SEO and document structure */}
+        <h2 className="sr-only">
+          {isRTL ? 'برنامج مميز' : 'Featured Program'}
+        </h2>
         {/* Advertising Single Card - min-height above reserves space to prevent CLS from font/image load */}
         {program?.id != null && (
           <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
@@ -28,7 +32,7 @@ const AdvertisingSection = () => {
               {/* Content Section */}
               <div className="md:w-1/2 p-8 flex flex-col justify-between">
                 <div>
-                  {/* Title - min-height reserves space to avoid CLS when fonts load */}
+                  {/* Title - min-height reserves space to avoid CLS when fonts load (H3 = subsection under section H2) */}
                   <h3 className={`text-3xl font-bold text-gray-900 mb-4 min-h-[3.5rem] ${isRTL ? 'text-right' : 'text-left'}`}>
                     {program?.title}
                   </h3>
