@@ -140,7 +140,9 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
                         <div className="max-w-7xl! mx-auto!">
                             <div className="flex! items-center! justify-center! relative!">
                                 <button
+                                    type="button"
                                     className="category-swiper-prev! absolute! cursor-pointer left-0! top-1/2! -translate-y-1/2! z-10! w-0! h-0! border-t-[15px]! border-b-[15px]! border-r-[20px]! border-t-transparent! border-b-transparent! border-r-blue-900! hover:border-r-blue-700! transition-colors! duration-300! max-md:hidden"
+                                    aria-label={isRTL ? 'الفئة التالية' : 'Next category'}
                                     onClick={() => {
                                         handleCategoryClick(
                                             currentIndex + 1 > categories.length - 1
@@ -192,7 +194,9 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
                                     )}
                                 </div>
                                 <button
+                                    type="button"
                                     className="category-swiper-next! absolute! cursor-pointer right-0! top-1/2! -translate-y-1/2! z-10! w-0! h-0! border-t-[15px]! border-b-[15px]! border-l-[20px]! border-t-transparent! border-b-transparent! border-l-blue-900! hover:border-l-blue-700! transition-colors! duration-300! max-md:hidden"
+                                    aria-label={isRTL ? 'الفئة السابقة' : 'Previous category'}
                                     onClick={() => {
                                         handleCategoryClick(
                                             currentIndex - 1 < 0 ? categories.length - 1 : currentIndex - 1
@@ -250,6 +254,9 @@ export default function ResponsiveDataPathSlider({mainTitle}) {
                                                 {categories.map((_, index) => (
                                                     <button
                                                         key={index}
+                                                        type="button"
+                                                        aria-label={isRTL ? `الانتقال إلى الشريحة ${index + 1}` : `Go to slide ${index + 1}`}
+                                                        aria-current={index === currentIndex ? 'true' : undefined}
                                                         onClick={() => handleCategoryClick(index)}
                                                         className={`h-2! rounded-full! cursor-pointer transition-all! duration-300! ${index === currentIndex
                                                             ? "bg-teal-500! w-6! sm:w-8!"
