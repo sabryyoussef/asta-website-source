@@ -1,0 +1,4 @@
+# Modern browsers only: avoid legacy polyfills in our build (saves ~10 KiB+).
+# Note: Lighthouse "Legacy JavaScript" from TikTok (analytics.tiktok.com) is third-party and cannot be changed.
+defaults and fully supports es6-module
+last 2 years

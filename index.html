@@ -136,12 +136,18 @@
           s.parentNode.insertBefore(n, s);
         };
     
-        // 🚀 DELAY LOAD
+        // Defer until after load, then when main thread is idle (reduces LCP/FCP impact).
+        // Note: The ~10 KiB "Legacy JavaScript" in Lighthouse comes from TikTok's script, not our build.
         window.addEventListener("load", function () {
-          setTimeout(function () {
+          function loadTikTok() {
             ttq.load("D5LMJBBC77UEK8Q4H640");
             ttq.page();
-          }, 2000); // 2 second delay
+          }
+          if (typeof requestIdleCallback !== "undefined") {
+            requestIdleCallback(loadTikTok, { timeout: 4000 });
+          } else {
+            setTimeout(loadTikTok, 2000);
+          }
         });
     
       })(window, document, "ttq");
