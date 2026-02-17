@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 const slides = [
   {
     img: "/images/Student-333.webp",
+    imgDesktop: "/images/Student-666.webp",
     buttonLink: "courses",
     ar: {
       title: "دورات احترافية لتطوير مهاراتك",
@@ -19,6 +20,7 @@ const slides = [
   },
   {
     img: "/images/Student2-333.webp",
+    imgDesktop: "/images/Student2-666.webp",
     buttonLink: "programs",
     ar: {
       title: "برامج تدريبية احترافية",
@@ -33,6 +35,7 @@ const slides = [
   },
   {
     img: "/images/Student-333.webp",
+    imgDesktop: "/images/Student-666.webp",
     buttonLink: "about-us",
     ar: {
       title: "عن أكاديمية المهارات التطبيقية",
@@ -47,6 +50,7 @@ const slides = [
   },
   {
     img: "/images/Student2-333.webp",
+    imgDesktop: "/images/Student2-666.webp",
     buttonLink: "registration",
     ar: {
       title: "سجل الآن وابدأ رحلتك التعليمية",
@@ -110,16 +114,10 @@ export default function Hero() {
 
   return (
     <div className="relative pb-[64px] pt-[48px] overflow-hidden">
-      <div className="absolute left-0 top-0 z-0 w-full h-full">
-        <img src="/images/Rectangle-640.webp"
-          fetchPriority="high"
-          decoding="async"
-          width={1920}
-          height={1080}
-          className="w-full h-full object-cover"
-          alt="Hero Background"
-        />
-      </div>
+      <div
+        className="absolute left-0 top-0 z-0 w-full h-full bg-[#3CBEB3]/15"
+        aria-hidden
+      />
 
       {/* Single H1 per page for SEO (hidden visually): summarizes page and includes key terms */}
       <div className="sr-only">
@@ -156,8 +154,8 @@ export default function Hero() {
 
                   <div className="max-md:hidden flex justify-center w-full mb-6">
                     <img
-                      src="/images/logo.webp"
-                      srcSet="/images/logo.webp 299w"
+                      src="/svgs/ASTA_Nav_Logo.svg"
+                      srcSet="/svgs/ASTA_Nav_Logo.svg 299w"
                       sizes="(max-width: 640px) 200px, (max-width: 768px) 292px, (max-width: 1024px) 320px, 434px"
                       alt="ASTA Logo"
                       width={299}
@@ -188,7 +186,7 @@ export default function Hero() {
                     decoding="async"
                     loading="eager"
                     fetchPriority="high"
-                    className="absolute bottom-0 left-0 w-full"
+                    className="absolute bottom-0 left-0 w-full z-0"
                     alt="Base"
                   />
 
@@ -217,24 +215,31 @@ export default function Hero() {
                     style={{ transform: `translate(-${mousePos.x * 40}px, ${mousePos.y * 40}px)` }}
                   />
 
-                  <img
-                    src={slide.img}
-                    srcSet={slide.img + " 333w"}
-                    sizes="(max-width: 640px) 220px, (max-width: 768px) 320px, (max-width: 1024px) 448px, 512px"
-                    alt="slide-main"
-                    width={333}
-                    height={314}
-                    className="flex-[80%] max-w-[220px] sm:max-w-xs md:max-w-md lg:max-w-lg w-full z-5"
-                    decoding="async"
-                    fetchPriority={index === 0 ? "high" : undefined}
-                    style={index === activeIndex ? { animation: "fadeIn 1s ease-in-out" } : undefined}
-                  />
+                  <picture className="relative z-10">
+                    <source
+                      media="(min-width: 768px)"
+                      srcSet={`${slide.imgDesktop} 666w`}
+                      sizes="(max-width: 1024px) 448px, 512px"
+                    />
+                    <img
+                      src={slide.img}
+                      srcSet={`${slide.img} 333w`}
+                      sizes="(max-width: 640px) 220px, (max-width: 768px) 320px, 448px"
+                      alt="slide-main"
+                      width={333}
+                      height={314}
+                      className="flex-[80%] max-w-[220px] sm:max-w-xs md:max-w-md lg:max-w-lg w-full relative"
+                      decoding="async"
+                      fetchPriority={index === 0 ? "high" : undefined}
+                      style={index === activeIndex ? { animation: "fadeIn 1s ease-in-out" } : undefined}
+                    />
+                  </picture>
                 </div>
                 {/* Reserve height for logo to prevent CLS when image loads (aspect 434:100) */}
                 <div className="md:hidden flex justify-center w-full mb-4 mt-4 min-h-[46px] sm:min-h-[67px]">
                   <img
-                    src="/images/logo.webp"
-                    srcSet="/images/logo.webp 299w"
+                    src="/svgs/ASTA_Nav_Logo.svg"
+                    srcSet="/svgs/ASTA_Nav_Logo.svg 299w"
                     sizes="(max-width: 640px) 200px, (max-width: 768px) 292px, 434px"
                     alt="ASTA Logo"
                     width={299}
