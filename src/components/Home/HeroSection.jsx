@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 const slides = [
   {
     img: "/images/Student-333.webp",
-    imgDesktop: "/images/Student-666.webp",
+    imgDesktop: "/images/Student-500.webp",
     buttonLink: "courses",
     ar: {
       title: "دورات احترافية لتطوير مهاراتك",
@@ -35,7 +35,7 @@ const slides = [
   },
   {
     img: "/images/Student-333.webp",
-    imgDesktop: "/images/Student-666.webp",
+    imgDesktop: "/images/Student-500.webp",
     buttonLink: "about-us",
     ar: {
       title: "عن أكاديمية المهارات التطبيقية",
