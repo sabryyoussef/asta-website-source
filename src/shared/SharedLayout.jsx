@@ -9,6 +9,7 @@ import CallButton from "../components/CallButton";
 // import AIBotButton from "../components/AIBotButton";
 import ScrollToTopButton from "../components/ScrollToTopButton";
 import NotFound from "../pages/NotFound";
+import SEOWrapper from "../components/SEOWrapper";
 
 export default function SharedLayout() {
     const { lang } = useParams();
@@ -31,6 +32,7 @@ export default function SharedLayout() {
 
     return (
         <div>
+            <SEOWrapper />
             <Navbar />
             {/* <Header /> */}
             <Outlet />
