@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import SEO from "../components/SEO";
 import AboutUsCard from "../components/AboutUs/AboutUsCard";
@@ -202,9 +201,6 @@ export default function AboutUs() {
 
   return (
     <>
-      <Helmet>
-        <link rel="canonical" href="https://asta.edu.sa/ar" />
-      </Helmet>
       <SEO 
         titleAr="عن الأكاديمية | اكاديمية المهارات التطبيقية"
         titleEn="About the Academy | Applied Skills Training Academy"
