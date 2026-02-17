@@ -202,9 +202,9 @@ export default function TestCenter() {
         <div className="max-w-7xl mx-auto">
           {/* Page title – same style as category */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-800 mb-4">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
               {t("testCenter.ourPartner")}
-            </h1>
+            </h2>
             <div
               className={`h-1.5 w-48 bg-gradient-to-r from-[#202C5B] via-[#23A0D0] to-[#3CBEB3] mx-auto rounded-full mb-6`}
             />

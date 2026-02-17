@@ -47,12 +47,12 @@ const ProgramsHeroSection = () => {
               <span className="text-sm font-medium">{isRTL ? 'برامج معتمدة دولياً' : 'Programs Approved Internationally'}</span>
             </div>
             
-            <h1 className={`text-4xl ${isRTL ? 'md:text-5xl lg:text-6xl' : 'md:text-5xl lg:text-5xl'} font-bold mb-6 leading-tight`}>
+            <h2 className={`text-4xl ${isRTL ? 'md:text-5xl lg:text-6xl' : 'md:text-5xl lg:text-5xl'} font-bold mb-6 leading-tight`}>
               {isRTL ? 'طور مهاراتك مع' : 'Develop Your Skills With'}
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#23A0D0] to-[#30AFC1] mt-2">
                 {isRTL ? 'أفضل برامج التدريب' : 'Best Training Programs'}
               </span>
-            </h1>
+            </h2>
             
             <p className={`text-lg md:text-xl text-blue-100 mb-8 leading-relaxed max-w-lg ${isRTL ? 'mx-auto lg:mx-0' : 'mx-auto lg:mx-0'}`}>
               {isRTL ? 'انطلق في رحلة التعلم والتطوير مع برامجنا التدريبية المصممة خصيصاً لتواكب متطلبات سوق العمل الحديث وتساعدك على تحقيق أهدافك المهنية.' : 'Launch your journey of learning and development with our training programs designed specifically to keep up with the latest job market requirements and help you achieve your professional goals.'}

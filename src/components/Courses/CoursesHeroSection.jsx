@@ -47,12 +47,12 @@ const CoursesHeroSection = ({ lang = 'ar' }) => {
               <span className="text-sm font-medium"> {t("courses.title")}</span>
             </div>
             
-            <h1 className={`${isRTL ? 'text-right text-4xl md:text-5xl lg:text-6xl' : 'text-left text-4xl md:text-4xl lg:text-5xl'} font-bold mb-6 leading-tight`}>
+            <p className={`${isRTL ? 'text-right text-4xl md:text-5xl lg:text-6xl' : 'text-left text-4xl md:text-4xl lg:text-5xl'} font-bold mb-6 leading-tight`}>
               {t("courses.description.1")}
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#23A0D0] to-[#30AFC1] mt-2">
                 {t("courses.description.2")}
               </span>
-            </h1>
+            </p>
             
             <p className="text-lg md:text-xl text-blue-100 mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">
              {lang === 'ar' ? 'انطلق في رحلة التعلم والتطوير مع برامجنا التدريبية المصممة خصيصاً لتواكب متطلبات سوق العمل الحديث وتساعدك على تحقيق أهدافك المهنية.' 

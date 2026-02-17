@@ -121,9 +121,9 @@ const CategoryPage = () => {
     return (
       <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-8 px-4 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-800 mb-4">
+          <p className="text-2xl font-bold text-gray-800 mb-4">
             {lang === 'ar' ? 'الفئة غير موجودة' : 'Category Not Found'}
-          </h1>
+          </p>
           <p className="text-gray-600">
             {lang === 'ar' ? 'الفئة المطلوبة غير موجودة.' : 'The requested category does not exist.'}
           </p>
