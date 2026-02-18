@@ -3652,6 +3652,164 @@
     }
   },
   {
+    "id": 24,
+    "icon": "BuildingOffice2Icon",
+    "title": {
+      "ar": "شهادة كومبتيا إدارة الحوسبة السحابية Cloud + CompTIA Cloud+",
+      "en": "CompTIA Cloud+ Certification"
+    },
+    "subtitle": {
+      "ar": "شهادة كومبتيا إدارة الحوسبة السحابية Cloud + CompTIA Cloud+",
+      "en": "CompTIA Cloud+ Certification"
+    },
+    "category": {
+      "ar": "تقنية المعلومات و الأمن السيبراني",
+      "en": "Cybersecurity & Information Technology"
+    },
+    "sup_category": {
+      "ar": "الحوسبة السحابية و المنصات",
+      "en": "Cloud Computing & Platforms"
+    },
+    "description": {
+      "ar": "مدخل إلى مفاهيم إدارة الحوسبة السحابية وخدمات CompTIA Cloud+.",
+      "en": "Introduction to cloud computing concepts and CompTIA Cloud+ services."
+    },
+    "overview": {
+      "ar": "يغطي أساسيات إدارة الحوسبة السحابية، خدمات CompTIA Cloud+، والتطبيقات.",
+      "en": "Covers cloud computing fundamentals, CompTIA Cloud+ services, and applications."
+    },
+    "hours": 30,
+    "startDate": {
+      "ar": "قريبا",
+      "en": "soon"
+    },
+    "endDate": {
+      "ar": "قريبا",
+      "en": "soon"
+    },
+    "duration": {
+      "ar": "5 أيام",
+      "en": "5 Days"
+    },
+    "status": {
+      "ar": "مفتوح للتسجيل",
+      "en": "Open for Registration"
+    },
+    "price": 10393,
+    "sponsore": {
+      "ar": "صندوق تنمية الموارد البشرية (هدف)",
+      "en": "Human Resources Development Fund (Hadaf)"
+    },
+    "rating": 4.7,
+    "reviews": 160,
+    "instructor": {
+      "name": "Chaitanya Gaajula",
+      "title": {
+        "ar": "مدرب هندسة مؤسسات",
+        "en": "Enterprise Architecture Trainer"
+      },
+      "experience": {
+        "ar": "15+ سنة في هندسة المؤسسات والتدريب",
+        "en": "15+ years in enterprise architecture and training"
+      },
+      "image": "",
+      "bio": {
+        "ar": "مدرب معتمد في TOGAF مع خبرة في تدريب المهندسين المعماريين.",
+        "en": "TOGAF certified trainer with experience in training architects."
+      }
+    },
+    "admission_requirements": {
+      "ar": [
+        "لا شروط مسبقة، فقط رغبة في التعلم"
+      ],
+      "en": [
+        "No prerequisites, only a desire to learn"
+      ]
+    },
+    "skills": {
+      "ar": ["أساسيات إدارة الحوسبة السحابية", "خدمات CompTIA Cloud+", "التطبيقات", "الأدوات"],
+      "en": ["Cloud Computing Fundamentals", "CompTIA Cloud+ Services", "Applications", "Tools"]
+    },
+    "targetJobs": {
+      "ar": ["مطور حوسبة السحابية", "مهندس برمجيات", "مستشار حوسبة السحابية"],
+      "en": ["Cloud Developer", "Software Engineer", "Cloud Consultant"]
+    },
+    "objectives": {
+      "ar": [
+        "فهم أساسيات إدارة الحوسبة السحابية",
+        "التعرف على خدمات CompTIA Cloud+",
+        "بناء تطبيقات بسيطة باستخدام حوسبة السحابية",
+        "التحضير لامتحان CompTIA Cloud+"
+      ],
+      "en": [
+        "Understand cloud computing fundamentals",
+        "Identify CompTIA Cloud+ services",
+        "Build simple applications using cloud computing",
+        "Prepare for CompTIA Cloud+ exam"
+      ]
+    },
+    "targetAudience": {
+      "ar": "المبتدئون في إدارة الحوسبة السحابية، المطورون، علماء البيانات، وطلاب الحاسوب.",
+      "en": "AI beginners, developers, data scientists, and computer students."
+    },
+    "requirements": {
+      "ar": [
+        "لا توجد متطلبات مسبقة",
+        "اهتمام بإدارة الحوسبة السحابية"
+      ],
+      "en": [
+        "No prerequisites",
+        "Interest in cloud computing"
+      ]
+    },
+    "faqs": {
+      "ar": [
+        {
+          "question": "ما هي شروط القبول في الكورس؟",
+          "answer": "لا توجد شروط مسبقة."
+        },
+        {
+          "question": "ما هي مدة الكورس؟",
+          "answer": "5 أيام (30 ساعة)."
+        },
+        {
+          "question": "هل يوجد دعم مالي؟",
+          "answer": "يمكنك التقسيط على دفعات عن طريق تابي أو تمارا كما تقوم هيئة دعم الموارد البشرية (هدف) بدعم هذه الدورة"
+        },
+        {
+          "question": "ما هي الشهادات التي سأحصل عليها؟",
+          "answer": "شهادة معتمدة عالمية ومن صندوق تنمية الموارد البشرية"
+        },
+        {
+          "question": "ما هي الوظائف التي يمكنني الاتحاق بها بعد اجتياز الاختبار؟",
+          "answer": "مطور حوسبة السحابية، مهندس برمجيات، مستشار حوسبة السحابية."
+        }
+      ],
+      "en": [
+        {
+          "question": "What are the admission requirements for the course?",
+          "answer": "No prerequisites."
+        },
+        {
+          "question": "What is the course duration?",
+          "answer": "5 days (30 hours)."
+        },
+        {
+          "question": "Is financial support available?",
+          "answer": "You can finance the course in installments through Tabi or Tamar as the Human Resources Development Box (Hadaf) supports this course"
+        },
+        {
+          "question": "What certificates will I get?",
+          "answer": "Certified certificate from the Academy & A certificate from the Human Resources Development Box (Hadaf)"
+        },
+        {
+          "question": "What jobs can I apply for after passing the exam?",
+          "answer": "Cloud Developer, Software Engineer, Cloud Consultant."
+        }
+      ]
+    }
+  },
+  {
     "id": 25,
     "icon": "BuildingOffice2Icon",
     "title": {
