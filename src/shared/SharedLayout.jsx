@@ -10,6 +10,8 @@ import CallButton from "../components/CallButton";
 import ScrollToTopButton from "../components/ScrollToTopButton";
 import NotFound from "../pages/NotFound";
 import SEOWrapper from "../components/SEOWrapper";
+import LocalBusinessSchema from "../components/LocalBusinessSchema";
+import OrganizationSchema from "../components/OrganizationSchema";
 
 export default function SharedLayout() {
     const { lang } = useParams();
@@ -34,7 +36,8 @@ export default function SharedLayout() {
         <div>
             <SEOWrapper />
             <Navbar />
-            {/* <Header /> */}
+            <LocalBusinessSchema />
+            <OrganizationSchema />
             <Outlet />
             <Footer />
             <WhatsAppButton />

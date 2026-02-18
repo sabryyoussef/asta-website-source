@@ -12,6 +12,7 @@ import CourseFAQSection from "../components/Courses/CourseFAQSection";
 import RelatedCoursesSection from "../components/Courses/RelatedCoursesSection";
 // data
 import Courses, { getCourseData } from "../api/Courses";
+import ProgramSchema from "../components/ProgramSchema";
 const CourseDetails = () => {
   const { id, lang = 'ar' } = useParams();
   const navigate = useNavigate();
@@ -30,6 +31,13 @@ const CourseDetails = () => {
   
   return (
     <div dir={isRTL ? 'rtl' : 'ltr'}>
+      <ProgramSchema
+        title={localizedCourse.title}
+        description={localizedCourse.description}
+        url={`https://asta.edu.sa/${lang}/courses/${id}`}
+        lang={lang}
+      />
+
       <SEO 
         titleAr={`${localizedCourse.title} | اكاديمية المهارات التطبيقية`}
         titleEn={`${localizedCourse.title} | Applied Skills Training Academy`}
