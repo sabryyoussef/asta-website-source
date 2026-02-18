@@ -6,6 +6,7 @@ import SEO from "../components/SEO";
 import ProgramHeader from "../components/Diplomas/ProgramHeader";
 import OverviewSection from "../components/Diplomas/ProgramOverviewSection";
 import CurriculumSection from "../components/Diplomas/ProgramCurriculumSection";
+import ProgramSchema from "../components/ProgramSchema";
 // TODO: Uncomment when instructor data is needed
 // import InstructorSection from "../components/Diplomas/ProgramInstructorSection";
 import RequirementsSection from "../components/Diplomas/ProgramRequirementsSection";
@@ -34,6 +35,11 @@ const ProgramDetails = () => {
   
   return (
     <div dir={isRTL ? 'rtl' : 'ltr'}>
+      <ProgramSchema
+        title={localizedProgram.title}
+        description={localizedProgram.overview}
+        lang={lang}
+      />
       <SEO 
         titleAr={`${localizedProgram.title} | اكاديمية المهارات التطبيقية`}
         titleEn={`${localizedProgram.title} | Applied Skills Training Academy`}
