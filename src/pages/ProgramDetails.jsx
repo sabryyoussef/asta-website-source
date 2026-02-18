@@ -38,6 +38,7 @@ const ProgramDetails = () => {
       <ProgramSchema
         title={localizedProgram.title}
         description={localizedProgram.overview}
+        url={`https://asta.edu.sa/${lang}/programs/${id}`}
         lang={lang}
       />
       <SEO 

@@ -34,6 +34,7 @@ const CourseDetails = () => {
       <ProgramSchema
         title={localizedCourse.title}
         description={localizedCourse.description}
+        url={`https://asta.edu.sa/${lang}/courses/${id}`}
         lang={lang}
       />
 

@@ -5,6 +5,7 @@ export default function ProgramSchema({ lang = "ar" ,title, description, url}) {
   "@type": "Course",
   "name": title,
   "description": description,
+  "url": url,
   "provider": {
     "@type": "EducationalOrganization",
     "name": "ASTA Academy",
