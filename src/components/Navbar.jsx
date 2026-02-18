@@ -10,6 +10,7 @@ import { useNavigate, useLocation, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import categoriesData from "../api/Categories.json";
 import Programs from "../api/Programs";
+import Courses from "../api/Courses";
 import { 
   Bars3Icon, 
   BookOpenIcon, 
@@ -107,6 +108,7 @@ export default function Navbar() {
   
   // Use localized programs data from Programs.js
   const programs = Programs;
+  const coursesData = Courses;
   
 //   const [isVisible, setIsVisible] = useState(true);
 
@@ -288,6 +290,17 @@ export default function Navbar() {
     });
     
     // Add diplomas with proper language handling
+    coursesData.forEach(course => {
+      const courseTitle = course.title[lang] || course.title.ar || course.title.en || course.title;
+      if (courseTitle.toLowerCase().includes(lowercaseQuery)) {
+        suggestions.push({
+          type: 'course',
+          title: courseTitle,
+          url: `/${lang}/courses/${course.id}`
+        });
+      }
+    });
+    
     programs.forEach(program => {
       const programTitle = program.title[lang] || program.title.ar || program.title.en || program.title;
       if (programTitle.toLowerCase().includes(lowercaseQuery)) {
