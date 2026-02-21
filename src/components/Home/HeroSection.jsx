@@ -164,7 +164,7 @@ export default function Hero() {
                   <img
                     src="/images/Asta logo.png"
                     alt="ASTA Logo"
-                    className="absolute right-5 lg:right-10 top-5 lg:top-10 w-[40%] md:w-[25%] lg:w-[25%] xl:w-[15%]"
+                    className="absolute right-20 lg:right-30 top-20 lg:top-10 w-[60%] md:w-[25%] lg:w-[25%] xl:w-[20%]"
                   />
                   <img
                     src="/images/Y.png"
