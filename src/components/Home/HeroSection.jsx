@@ -3,6 +3,22 @@ import React, { useState, useRef, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 const slides = [
+    {
+    img: "/images/WEB.png",
+    imgDesktop: "/images/WEB.png",
+    buttonLink: "registration",
+    fullWidth: true,
+    ar: {
+      title: "",
+      desc: "",
+      buttonText: ""
+    },
+    en: {
+      title: "",
+      desc: "",
+      buttonText: ""
+    }
+  },
   {
     img: "/images/Student-333.webp",
     imgDesktop: "/images/Student-500.webp",
@@ -47,26 +63,10 @@ const slides = [
       desc: "A leading academy in the field of training and diverse consulting, specialized in providing training programs for international professional certifications. We believe in quality, professionalism and innovation.",
       buttonText: "Learn About Us"
     }
-  },
-  {
-    img: "/images/WEB.png",
-    imgDesktop: "/images/WEB.png",
-    buttonLink: "registration",
-    fullWidth: true,
-    ar: {
-      title: "",
-      desc: "",
-      buttonText: ""
-    },
-    en: {
-      title: "",
-      desc: "",
-      buttonText: ""
-    }
   }
 ];
 
-const SLIDE_COUNT = 5;
+const SLIDE_COUNT = 4;
 const AUTOPLAY_MS = 5000;
 
 export default function Hero() {
@@ -114,9 +114,9 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="relative pb-[64px] pt-[48px] overflow-hidden">
+    <div className="relative overflow-hidden">
       <div
-        className="absolute left-0 top-0 z-0 w-full h-full bg-[#3CBEB3]/15"
+        className="absolute left-0 top-0 z-0 w-full h-[60vh] bg-[#3CBEB3]/15"
         aria-hidden
       />
 
@@ -141,18 +141,46 @@ export default function Hero() {
             <div
               key={`slide-${index}`}
               className={`flex flex-col md:flex-row items-center justify-between flex-shrink-0 w-full ${
-                slide.fullWidth ? 'h-screen' : ''
+                slide.fullWidth ? 'h-[60vh]' : ''
               }`}
               style={{ width: `${100 / SLIDE_COUNT}%` }}
             >
               {slide.fullWidth ? (
                 // Full width slide for WEB.png
-                <div className="relative w-full h-full">
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <div 
+                    className="w-full h-full bg-cover bg-center bg-no-repeat"
+                    style={{ 
+                      backgroundImage: 'url("/images/Bg.png")',
+                      width: '100vw', 
+                      height: '60vh' 
+                    }}
+                  />
                   <img
-                    src={slide.img}
-                    alt="Full Screen Slide"
-                    className="w-full h-full object-cover"
-                    style={{ width: '100vw', height: '100vh' }}
+                    src="/images/F Day Logo.png"
+                    alt="F Day Logo"
+                    className="absolute left-5 lg:left-10 top-5 lg:top-10 w-[40%] md:w-[25%] lg:w-[25%] xl:w-[15%]"
+                  />
+                  <img
+                    src="/images/Asta logo.png"
+                    alt="ASTA Logo"
+                    className="absolute right-5 lg:right-10 top-5 lg:top-10 w-[40%] md:w-[25%] lg:w-[25%] xl:w-[15%]"
+                  />
+                  <img
+                    src="/images/Y.png"
+                    alt="Left decoration"
+                    className="absolute left-10 lg:left-40 top-2/3 lg:top-1/2 -translate-y-1/2 w-[30%] md:w-[20%] lg:w-[15%] xl:w-[10%]"
+                  />
+                  <img
+                    src="/images/Text.png"
+                    alt="Right text decoration"
+                    className="absolute lg:-right-20 top-1/2 lg:top-3/5 -translate-y-1/2 w-[140%] md:w-[110%] lg:w-[70%] xl:w-[60%]"
+                    style={{maxWidth: '140%'}}
+                  />
+                  <img
+                    src="/images/H.png"
+                    alt="Bottom decoration"
+                    className="absolute bottom-0 left-0 w-full md:w-[85%] lg:w-[60%]"
                   />
                 </div>
               ) : (
@@ -160,7 +188,7 @@ export default function Hero() {
                 <div className="container relative z-10 flex flex-col md:flex-row items-center justify-between w-full">
                   {/* Text Content - H2 for carousel highlights (one H1 per page) */}
                   <div className="flex flex-col items-center text-center w-full md:w-1/2">
-                    <h2 className="lg:text-[32px] md:text-[32px] sm:text-[32px] text:[32px] font-medium md:mb-2">
+                    <h2 className="lg:text-[32px] md:text-[32px] sm:text-[32px] text:[32px] font-medium mt-10 md:mt-0 md:mb-2">
                       {slide[lang] ? slide[lang].title : (slide.ar ? slide.ar.title : "No title")}
                     </h2>
                     <p className="md:text-[22px] sm:text-[16px] text-[12px] font-medium md:mt-[10px] md:mb-[32px] max-md:mt-[8px] my-[16px] max-w-xl text-justify leading-relaxed">
@@ -280,7 +308,7 @@ export default function Hero() {
       </div>
 
       {/* Navigation buttons */}
-      <button
+      {/* <button
         type="button"
         onClick={() => setActiveIndex((prev) => (prev - 1 + SLIDE_COUNT) % SLIDE_COUNT)}
         className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
@@ -300,10 +328,10 @@ export default function Hero() {
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
-      </button>
+      </button> */}
 
       {/* Pagination bullets - no layout reads */}
-      <div className="mb-4 gap-[10px] flex justify-center" role="tablist" aria-label="Slide pagination">
+      <div className="gap-[10px] flex justify-center bg-[#23A0D0]" role="tablist" aria-label="Slide pagination">
         {slides.map((_, index) => (
           <button
             key={index}
