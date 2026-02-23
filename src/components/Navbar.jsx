@@ -1045,6 +1045,13 @@ export default function Navbar() {
                       >
                         {t("header.nav.testCenter")}
                       </a>
+                      <a
+                        href={`/${lang}/languagecert-academic`}
+                        onClick={() => setServicesDropdown(false)}
+                        className="block px-4 py-2 md:text-sm lg:text-lg hover:bg-gradient-to-r hover:from-[#23A0D0] hover:to-68% hover:to-[#3CBEB3] hover:text-white duration-300 text-[#202C5B] bg-gradient-to-r from-[#ffffff] to-[#ffffff] transition-colors"
+                      >
+                        {lang === "ar" ? "اختبار LanguageCert الأكاديمي" : "LanguageCert Academic"}
+                      </a>
                     </div>
                   </div>
                 )}
@@ -1201,13 +1208,22 @@ export default function Navbar() {
                   </svg>
                 </button>
                 {servicesMobileExpanded && (
-                  <a
-                    href={`/${lang}/test-center`}
-                    onClick={() => { setOpen(false); setServicesMobileExpanded(false); }}
-                    className="block pl-12! pr-3! py-[12px]! flex! items-center! gap-3! hover:bg-[#e0e0e0]"
-                  >
-                    <span className="text-black! font-medium! text-base!">{t("header.nav.testCenter")}</span>
-                  </a>
+                  <>
+                    <a
+                      href={`/${lang}/test-center`}
+                      onClick={() => { setOpen(false); setServicesMobileExpanded(false); }}
+                      className="block pl-12! pr-3! py-[12px]! flex! items-center! gap-3! hover:bg-[#e0e0e0]"
+                    >
+                      <span className="text-black! font-medium! text-base!">{t("header.nav.testCenter")}</span>
+                    </a>
+                    <a
+                      href={`/${lang}/languagecert-academic`}
+                      onClick={() => { setOpen(false); setServicesMobileExpanded(false); }}
+                      className="block pl-12! pr-3! py-[12px]! flex! items-center! gap-3! hover:bg-[#e0e0e0]"
+                    >
+                      <span className="text-black! font-medium! text-base!">{lang === "ar" ? "اختبار LanguageCert الأكاديمي" : "LanguageCert Academic"}</span>
+                    </a>
+                  </>
                 )}
               </div>
 
