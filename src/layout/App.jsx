@@ -23,6 +23,7 @@ const PaymentFailed = lazy(() => import('../pages/PaymentFailed'));
 const NotFound = lazy(() => import('../pages/NotFound'));
 const SuccessConfirmation = lazy(() => import('../pages/SuccessConfirmation'));
 const TestCenter = lazy(() => import('../pages/TestCenter'));
+const LanguageCertAcademic = lazy(() => import('../pages/LanguageCertAcademic'));
 
 // Styles
 import '../style/App.css';
@@ -57,6 +58,7 @@ export default function App() {
             <Route path="admission&registration" element={<AdmissionAndRegistration />} />
             <Route path="certificate-checker" element={<CertificateChecker />} />
             <Route path="test-center" element={<TestCenter />} />
+            <Route path="languagecert-academic" element={<LanguageCertAcademic />} />
             <Route path="payment-test" element={<PaymentTest />} />
             <Route path="payment-success" element={<PaymentSuccess />} />
             <Route path="payment-failed" element={<PaymentFailed />} />
