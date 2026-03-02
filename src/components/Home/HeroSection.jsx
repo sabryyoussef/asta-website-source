@@ -113,7 +113,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="relative pb-[64px] pt-[48px] overflow-hidden">
+    <div className="relative overflow-hidden">
       <div
         className="absolute left-0 top-0 z-0 w-full h-full bg-[#3CBEB3]/15"
         aria-hidden
@@ -264,7 +264,7 @@ export default function Hero() {
       </div>
 
       {/* Pagination bullets - no layout reads */}
-      <div className="mb-4 gap-[10px] flex justify-center" role="tablist" aria-label="Slide pagination">
+      <div className="py-4 gap-[10px] flex justify-center" role="tablist" aria-label="Slide pagination">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -273,8 +273,8 @@ export default function Hero() {
             aria-selected={index === activeIndex}
             aria-label={`Slide ${index + 1}`}
             onClick={() => setActiveIndex(index)}
-            className={`rounded-full cursor-pointer transition-all duration-300 h-2 ${
-              index === activeIndex ? "bg-teal-500 w-6 sm:w-8" : "bg-white/60 hover:bg-white/80 w-2"
+            className={`rounded-full cursor-pointer transition-all duration-300 h-2 relative z-20 ${
+              index === activeIndex ? "bg-teal-500 w-6 sm:w-8" : "bg-[#3CBEB3]/60 hover:bg-[#3CBEB3]/80 w-2"
             }`}
           />
         ))}
