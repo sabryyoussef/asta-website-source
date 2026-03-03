@@ -9,7 +9,7 @@ import { useNavigate, useLocation, useParams } from "react-router-dom";
 // import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import categoriesData from "../api/Categories.json";
-import Programs from "../api/Programs";
+import Programs, { getProgramData } from "../api/Programs";
 import Courses from "../api/Courses";
 import { 
   Bars3Icon, 
@@ -106,8 +106,8 @@ export default function Navbar() {
     })) || []
   }));
   
-  // Use localized programs data from Programs.js
-  const programs = Programs;
+  // Use localized programs data from Programs.js based on current language
+  const programs = Programs.map((program) => getProgramData(program, lang));
   const coursesData = Courses;
   
 //   const [isVisible, setIsVisible] = useState(true);
@@ -909,7 +909,13 @@ export default function Navbar() {
                   </svg>
                 </button>
                 {diplomasDropdown && (
-                  <div className="absolute top-full right-0 mt-1 pt-4 w-56 bg-white rounded-lg shadow-[0px_2px_6px_2px_rgba(0,0,0,0.1)] z-20" onMouseEnter={() => setHoveredDropdown('diplomas')} onMouseLeave={handleDropdownLeave}>
+                  <div
+                    className={`absolute top-full right-0 mt-1 pt-4 bg-white rounded-lg shadow-[0px_2px_6px_2px_rgba(0,0,0,0.1)] z-20 ${
+                      lang === 'en' ? 'w-72' : 'w-56'
+                    }`}
+                    onMouseEnter={() => setHoveredDropdown('diplomas')}
+                    onMouseLeave={handleDropdownLeave}
+                  >
                     <div className="py-1">
                       <a
                         href={`/${lang}/programs`}
