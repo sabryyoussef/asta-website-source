@@ -17,6 +17,7 @@ function CourseCard2({ course }) {
   const navigate = useNavigate();
   const { lang } = useParams();
   const { t } = useTranslation();
+  const isRTL = lang === 'ar';
   
   // Get localized course data
   const localizedCourse = getCourseData(course, lang);
@@ -55,7 +56,10 @@ function CourseCard2({ course }) {
   };
 
   return (
-    <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white border border-gray-100 hover:-translate-y-1">
+    <div
+      dir={isRTL ? 'rtl' : 'ltr'}
+      className={`group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white border border-gray-100 hover:-translate-y-1 ${isRTL ? 'dir-rtl' : 'dir-ltr'}`}
+    >
       {/* المثلثات الزخرفية */}
       <div className="absolute -top-24 -right-24 w-48 h-48 bg-gradient-to-br from-blue-50 to-blue-100 opacity-50 rounded-full group-hover:opacity-70 transition-opacity duration-300"></div>
       <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tr from-cyan-50 to-cyan-100 opacity-50 rounded-full group-hover:opacity-70 transition-opacity duration-300"></div>
@@ -128,7 +132,7 @@ function CourseCard2({ course }) {
         </div>
 
         {/* الوصف */}
-        <p className="text-gray-600 mb-6 leading-relaxed text-right text-sm">
+        <p className="text-gray-600 mb-6 leading-relaxed text-sm">
           {asText(courseForRender.description)}
         </p>
         {/* تفاصيل البرنامج */}

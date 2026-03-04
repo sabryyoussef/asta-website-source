@@ -4920,5 +4920,85 @@
         }
       ]
     }
+  },
+  {
+    "id": "isoiec-27001-foundation",
+    "icon": "BuildingLibraryIcon",
+    "image": "https://images.pexels.com/photos/5439470/pexels-photo-5439470.jpeg?_gl=1*1izvuqu*_ga*MTE4Mjk4NTMxMS4xNzYzNzkyNjQ2*_ga_8JE65Q40S6*czE3Njc2ODg5ODkkbzQkZzEkdDE3Njc2ODk2ODgkajM1JGwwJGgw",
+    "title": {
+      "ar": "ISO/IEC 27001 Foundation",
+      "en": "ISO/IEC 27001 Foundation"
+    },
+    "subtitle": {
+      "ar": "شهادة ISO/IEC 27001 التأسيسية",
+      "en": "ISO/IEC 27001 Foundation Certification"
+    },
+    "category": {
+      "ar": "أمن المعلومات و الأمن السيبراني",
+      "en": "Information Security & Cybersecurity"
+    },
+    "sup_category": {
+      "ar": "أنظمة إدارة أمن المعلومات (ISMS)",
+      "en": "Information Security Management Systems (ISMS)"
+    },
+    "description": {
+      "ar": "دورة تأسيسية تشرح معيار ISO/IEC 27001:2022 ومفاهيم أنظمة إدارة أمن المعلومات (ISMS) وأهميته في حماية أصول المعلومات في المؤسسات.",
+      "en": "Foundation‑level course that introduces ISO/IEC 27001:2022, the principles of information security, and the role of information security management systems (ISMS) in protecting organizational information assets."
+    },
+    "overview": {
+      "ar": "تغطي الدورة المفاهيم الأساسية لأمن المعلومات، ومتطلبات معيار ISO/IEC 27001:2022 لإنشاء وتشغيل نظام إدارة أمن المعلومات (ISMS)، ومراحل التنفيذ من تحديد نطاق النظام وتقييم المخاطر وحتى تطبيق الضوابط وفق الملحق أ، بالإضافة إلى متطلبات التدقيق الداخلي والمراجعة والتحسين المستمر.",
+      "en": "The course explains the basic concepts of information security, the ISO/IEC 27001:2022 requirements for establishing and managing an ISMS, and the typical implementation steps from defining the scope and assessing risks to selecting and applying Annex A controls, as well as internal audit, management review, and continual improvement requirements."
+    },
+    "objectives": {
+      "ar": [
+        "التعرّف على مفاهيم وأساسيات أمن المعلومات وأهدافه الرئيسية",
+        "فهم متطلبات معيار ISO/IEC 27001:2022 وبنود نظام إدارة أمن المعلومات (ISMS)",
+        "التعرّف على خطوات تنفيذ ISMS من تحديد النطاق وتقييم المخاطر إلى اختيار الضوابط المناسبة",
+        "استيعاب دور المراجعة الداخلية والتحسين المستمر في الحفاظ على فاعلية النظام",
+        "الاستعداد لاجتياز اختبار شهادة ISO/IEC 27001 Foundation"
+      ],
+      "en": [
+        "Understand the fundamental concepts and objectives of information security",
+        "Explain the ISO/IEC 27001:2022 requirements for establishing an information security management system (ISMS)",
+        "Identify the key steps for implementing an ISMS, from defining scope and assessing risks to selecting appropriate controls",
+        "Recognize the role of internal audit, management review, and continual improvement in maintaining an effective ISMS",
+        "Prepare for the ISO/IEC 27001 Foundation certification exam"
+      ]
+    },
+    "hours": 14,
+    "startDate": {
+      "ar": "قريباً",
+      "en": "soon"
+    },
+    "endDate": {
+      "ar": "قريباً",
+      "en": "soon"
+    },
+    "duration": {
+      "ar": "يومان (حضوري أو عن بُعد)",
+      "en": "2 Days (Classroom or Online)"
+    },
+    "status": {
+      "ar": "مفتوح للتسجيل",
+      "en": "Open for Registration"
+    },
+    "price": 7000,
+    "sponsore": {
+      "ar": "صندوق تنمية الموارد البشرية (هدف)",
+      "en": "Human Resources Development Fund (Hadaf)"
+    },
+    "rating": 4.7,
+    "reviews": 160,
+    "instructor": {
+      "name": "Certified ISO/IEC 27001 Trainer",
+      "title": {
+        "ar": "خبير معتمد في ISO/IEC 27001 وإدارة أمن المعلومات",
+        "en": "Certified Expert in ISO/IEC 27001 and Information Security Management"
+      },
+      "experience": {
+        "ar": "أكثر من 15 سنة خبرة في أمن المعلومات وتطبيق أنظمة إدارة أمن المعلومات (ISMS) وفق ISO/IEC 27001",
+        "en": "15+ years of experience in information security and implementing ISO/IEC 27001‑based ISMS in organizations"
+      }
+    }
   }
 ]
