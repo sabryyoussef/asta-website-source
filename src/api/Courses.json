@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": "certified-scrum-master-csm",
     "icon": "UserGroupIcon",
     "image": "https://images.unsplash.com/photo-1586892478025-2b5472316f22?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": {
@@ -159,7 +159,7 @@
     }
   },
   {
-    "id": 2,
+    "id": "agile-scrum-foundation",
     "icon": "LightningBoltIcon",
     "image": "https://images.unsplash.com/photo-1586892477838-2b96e85e0f96?q=80&w=1159&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": {
@@ -316,7 +316,7 @@
     }
   },
   {
-    "id": 3,
+    "id": "certified-information-security-manager-cism",
     "icon": "ShieldCheckIcon",
     "image":"https://images.unsplash.com/photo-1632910138458-5bf601f3835e?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": {
@@ -475,7 +475,7 @@
     }
   },
   {
-    "id": 4,
+    "id": "certified-in-risk-and-information-systems-control-crisc",
     "icon": "ExclamationTriangleIcon",
     "image":"https://images.unsplash.com/photo-1751448555253-f39c06e29d82?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": {
@@ -634,7 +634,7 @@
     }
   },
   {
-    "id": 5,
+    "id": "certified-information-systems-auditor-cisa",
     "icon": "MagnifyingGlassIcon",
     "image":"https://images.unsplash.com/photo-1642775196125-38a9eb496568?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": {
@@ -793,7 +793,7 @@
     }
   },
   {
-    "id": 6,
+    "id": "comp-tia-security-plus",
     "icon": "LockClosedIcon",
     "image":"https://images.unsplash.com/photo-1618060932014-4deda4932554?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": {
@@ -952,7 +952,7 @@
     }
   },
   {
-    "id": 7,
+    "id": "comptia-cybersecurity-analyst-cysa-plus",
     "icon": "BugAntIcon",
     "image":"https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=1106&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": {
@@ -1111,7 +1111,7 @@
     }
   },
   {
-    "id": 8,
+    "id": "comptia-penetration-tester-pentest-plus",
     "icon": "BeakerIcon",
     "image":"https://images.unsplash.com/photo-1760952851538-17a59f691efe?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": {
@@ -1270,7 +1270,7 @@
     }
   },
   {
-    "id": 9,
+    "id": "comptia-linux-plus",
     "icon": "CommandLineIcon",
     "image": "https://images.unsplash.com/photo-1714846200875-006da50cb5b0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": {
@@ -1429,7 +1429,7 @@
     }
   },
   {
-    "id": 10,
+    "id": "comptia-server-plus",
     "icon": "ServerIcon",
     "image":"https://images.unsplash.com/photo-1584169417032-d34e8d805e8b?q=80&w=1609&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": {
@@ -1588,7 +1588,7 @@
     }
   },
   {
-    "id": 11,
+    "id": "comptia-network-plus",
     "icon": "GlobeAltIcon",
     "image":"https://images.unsplash.com/photo-1554098415-4052459dc340?q=80&w=1526&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": {
@@ -1747,7 +1747,7 @@
     }
   },
   {
-    "id": 12,
+    "id": "comptia-a-plus",
     "icon": "CpuChipIcon",
     "title": {
       "ar": "CompTIA A+",
@@ -1905,7 +1905,7 @@
     }
   },
   {
-    "id": 13,
+    "id": "comptia-it-fundamentals-itf-plus",
     "icon": "InformationCircleIcon",
     "image":"https://images.unsplash.com/photo-1508780709619-79562169bc64?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": {
@@ -2062,7 +2062,7 @@
     }
   },
   {
-    "id": 14,
+    "id": "autodesk-maya-certified-user",
     "icon": "PaintBrushIcon",
     "image":"https://images.pexels.com/photos/17485683/pexels-photo-17485683.webp?_gl=1*1cygzwp*_ga*MTE4Mjk4NTMxMS4xNzYzNzkyNjQ2*_ga_8JE65Q40S6*czE3Njc2ODg5ODkkbzQkZzEkdDE3Njc2ODkwMjYkajIzJGwwJGgw",
     "title": {
@@ -2221,7 +2221,7 @@
     }
   },
   {
-    "id": 15,
+    "id": "aws-certified-cloud-practitioner",
     "icon": "CloudIcon",
     "image":"https://images.unsplash.com/photo-1667984390538-3dea7a3fe33d?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": {
@@ -2380,7 +2380,7 @@
     }
   },
   {
-    "id": 16,
+    "id": "aws-certified-solutions-architect-associate",
     "icon": "BuildingLibraryIcon",
     "image":"https://images.pexels.com/photos/6614794/pexels-photo-6614794.jpeg?_gl=1*1qfqq8e*_ga*MTE4Mjk4NTMxMS4xNzYzNzkyNjQ2*_ga_8JE65Q40S6*czE3Njc2ODg5ODkkbzQkZzEkdDE3Njc2ODkyMTgkajE0JGwwJGgw",
     "title": {
@@ -2539,7 +2539,7 @@
     }
   },
   {
-    "id": 17,
+    "id": "aws-certified-devops-engineer-professional",
     "icon": "WrenchScrewdriverIcon",
     "image":"https://images.unsplash.com/photo-1667984390533-64bdefe719ea?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": {
@@ -2698,7 +2698,7 @@
     }
   },
   {
-    "id": 18,
+    "id": "aws-certified-machine-learning-specialty",
     "icon": "BrainIcon",
     "image":"https://images.unsplash.com/photo-1753513291124-4f615bf1f6de?q=80&w=1663&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": {
@@ -2857,7 +2857,7 @@
     }
   },
   {
-    "id": 19,
+    "id": "google-professional-cloud-architect",
     "icon": "BuildingOfficeIcon",
     "image":"https://images.unsplash.com/photo-1753513291124-4f615bf1f6de?q=80&w=1663&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": {
@@ -3016,7 +3016,7 @@
     }
   },
   {
-    "id": 20,
+    "id": "google-professional-cloud-machine-learning-engineer",
     "icon": "CogIcon",
     "image":"https://images.unsplash.com/photo-1753513291124-4f615bf1f6de?q=80&w=1663&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": {
@@ -3175,7 +3175,7 @@
     }
   },
   {
-    "id": 21,
+    "id": "microsoft-certified-azure-administrator-associate-az-104",
     "icon": "ServerIcon",
     "image":"https://images.unsplash.com/photo-1662052955282-da15376f3919?q=80&w=1162&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": {
@@ -3334,7 +3334,7 @@
     }
   },
   {
-    "id": 22,
+    "id": "microsoft-certified-azure-solutions-architect-expert",
     "icon": "BuildingLibraryIcon",
     "image":"https://images.unsplash.com/photo-1662052955282-da15376f3919?q=80&w=1162&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": {
@@ -3493,7 +3493,7 @@
     }
   },
   {
-    "id": 23,
+    "id": "microsoft-certified-azure-ai-fundamentals",
     "icon": "LightBulbIcon",
     "image":"https://images.unsplash.com/photo-1662052955282-da15376f3919?q=80&w=1162&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": {
@@ -3652,7 +3652,7 @@
     }
   },
   {
-    "id": 24,
+    "id": "comptia-cloud-plus",
     "icon": "BuildingOffice2Icon",
     "title": {
       "ar": "شهادة كومبتيا إدارة الحوسبة السحابية Cloud + CompTIA Cloud+",
@@ -3810,7 +3810,7 @@
     }
   },
   {
-    "id": 25,
+    "id": "togaf-foundation",
     "icon": "BuildingOffice2Icon",
     "title": {
       "ar": "TOGAF 10 Foundation",
@@ -3968,7 +3968,7 @@
     }
   },
   {
-    "id": 26,
+    "id": "agile-scrum-product-owner",
     "icon": "UserIcon",
     "image":"https://images.unsplash.com/photo-1542626991-cbc4e32524cc?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": {
@@ -4127,7 +4127,7 @@
     }
   },
   {
-    "id": 27,
+    "id": "certified-in-the-governance-of-enterprise-it-cgeit",
     "icon": "BuildingLibraryIcon",
     "image":"https://images.pexels.com/photos/5439470/pexels-photo-5439470.jpeg?_gl=1*1izvuqu*_ga*MTE4Mjk4NTMxMS4xNzYzNzkyNjQ2*_ga_8JE65Q40S6*czE3Njc2ODg5ODkkbzQkZzEkdDE3Njc2ODk2ODgkajM1JGwwJGgw",
     "title": {
@@ -4286,7 +4286,7 @@
     }
   },
   {
-    "id": 28,
+    "id": "dasa-devops-fundamentals",
     "icon": "Cog6ToothIcon",
     "image":"https://images.unsplash.com/photo-1667984390553-7f439e6ae401?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": {
@@ -4445,7 +4445,7 @@
     }
   },
   {
-    "id": 29,
+    "id": "designing-and-implementing-microsoft-devops-solutions",
     "icon": "WrenchIcon",
     "image":"https://images.unsplash.com/photo-1667984390535-6d03cff0b11a?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": {
@@ -4604,7 +4604,7 @@
     }
   },
   {
-    "id": 30,
+    "id": "power-bi-analyst",
     "icon": "ChartBarIcon",
     "image":"https://images.pexels.com/photos/5439470/pexels-photo-5439470.jpeg?_gl=1*1izvuqu*_ga*MTE4Mjk4NTMxMS4xNzYzNzkyNjQ2*_ga_8JE65Q40S6*czE3Njc2ODg5ODkkbzQkZzEkdDE3Njc2ODk2ODgkajM1JGwwJGgw",
     "title": {
@@ -4763,7 +4763,7 @@
     }
   },
   {
-    "id": 31,
+    "id": "certified-ethical-hacker-ceh",
     "icon": "ShieldExclamationIcon",
     "image":"https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?_gl=1*1an9dd4*_ga*MTE4Mjk4NTMxMS4xNzYzNzkyNjQ2*_ga_8JE65Q40S6*czE3Njc2OTUyMDgkbzUkZzEkdDE3Njc2OTUyNjYkajIkbDAkaDA.",
     "title": {

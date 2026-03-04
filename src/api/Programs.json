@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": "entrepreneurship-diploma",
     "icon": "BuildingOfficeIcon",
     "image": "/images/Diplomas/Entrepreneurship_Diploma.webp",
     "title": {
@@ -157,7 +157,7 @@
     "faqs": []
   },
   {
-    "id": 2,
+    "id": "diploma-in-supply-chain-and-logistics",
     "icon": "ServerStackIcon",
     "image": "/images/Diplomas/Supply_Chain_and_Logistics.webp",
     "title": {
@@ -314,7 +314,7 @@
     "faqs": []
   },
   {
-    "id": 3,
+    "id": "diploma-in-financial-technology",
     "icon": "BanknotesIcon",
     "image": "/images/Diplomas/Financial_Technology.webp",
     "title": {
@@ -471,7 +471,7 @@
     "faqs": []
   },
   {
-    "id": 4,
+    "id": "legal-secretary-diploma",
     "icon": "DocumentTextIcon",
     "image": "/images/Diplomas/Legal_Secretary.webp",
     "title": {
@@ -628,7 +628,7 @@
     "faqs": []
   },
   {
-    "id": 5,
+    "id": "diploma-in-computer-security-and-networks",
     "icon": "ComputerDesktopIcon",
     "image": "/images/Diplomas/Computer_Security_and_Networks.webp",
     "title": {
@@ -785,7 +785,7 @@
     "faqs": []
   },
   {
-    "id": 6,
+    "id": "diploma-in-programming-and-smart-device-applications",
     "icon": "DevicePhoneMobileIcon",
     "image": "/images/Diplomas/Programming_and_Smart_Device_Applications.webp",
     "title": {
@@ -942,7 +942,7 @@
     "faqs": []
   },
   {
-    "id": 7,
+    "id": "diploma-in-databases-and-web-development",
     "icon": "CircleStackIcon",
     "image": "/images/Diplomas/Databases_and_Web_Development.webp",
     "title": {
@@ -1099,7 +1099,7 @@
     "faqs": []
   },
   {
-    "id": 8,
+    "id": "diploma-in-digital-marketing-and-e-commerce",
     "icon": "ShoppingCartIcon",
     "image": "/images/Diplomas/Digital_Marketing_and_E-commerce.webp",
     "title": {
@@ -1256,7 +1256,7 @@
     "faqs": []
   },
   {
-    "id": 9,
+    "id": "diploma-in-tourism-and-hospitality-technology",
     "icon": "BuildingOfficeIcon",
     "image": "/images/Diplomas/Tourism_and_Hospitality_Technology.webp",
     "title": {

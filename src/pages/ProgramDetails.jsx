@@ -26,10 +26,10 @@ const ProgramDetails = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [id]);  
-  const parsedId = parseInt(id);
-  const program = Programs[parsedId - 1]; 
+  const parsedId = id;
+  const program = Programs.find(program => program.id === parsedId); 
   const localizedProgram = getProgramData(program, lang);
-  if (!program || isNaN(parsedId) || parsedId < 1 || parsedId > Programs.length) {
+  if (!program) {
     return <div>{isRTL ? 'البرنامج غير موجود' : 'Program not found'}</div>;
   }
   
