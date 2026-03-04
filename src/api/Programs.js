@@ -135,15 +135,15 @@ export const getProgramData = (programOrId, lang = 'ar') => {
   // Try to resolve the program ID
   const id =
     typeof programOrId === 'number' || typeof programOrId === 'string'
-      ? Number(programOrId)
+      ? programOrId
       : programOrId && typeof programOrId === 'object'
       ? programOrId.id
       : undefined;
 
   // Always localize from the original bilingual JSON when possible
   const sourceFromJson =
-    typeof id === 'number'
-      ? ProgramsData.find((p) => p.id === id)
+    id !== undefined
+      ? ProgramsData.find((p) => String(p.id) === String(id))
       : undefined;
 
   const source = sourceFromJson || programOrId || {};

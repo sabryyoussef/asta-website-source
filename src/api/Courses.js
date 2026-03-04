@@ -142,15 +142,15 @@ export const getCourseData = (courseOrId, lang = 'ar') => {
   // Try to resolve the course ID
   const id =
     typeof courseOrId === 'number' || typeof courseOrId === 'string'
-      ? Number(courseOrId)
+      ? courseOrId
       : courseOrId && typeof courseOrId === 'object'
       ? courseOrId.id
       : undefined;
 
   // Always localize from the original bilingual JSON when possible
   const sourceFromJson =
-    typeof id === 'number'
-      ? CoursesData.find((c) => c.id === id)
+    id !== undefined
+      ? CoursesData.find((c) => String(c.id) === String(id))
       : undefined;
 
   const source = sourceFromJson || courseOrId || {};
