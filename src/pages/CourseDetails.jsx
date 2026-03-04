@@ -22,11 +22,11 @@ const CourseDetails = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [id]);  
-  const parsedId = parseInt(id);
-  const course = Courses[parsedId - 1]; 
+  const parsedId = id;
+  const course = Courses.find(course => course.id === parsedId); 
   const localizedCourse = getCourseData(course, lang);
-  if (!course || isNaN(parsedId) || parsedId < 1 || parsedId > Courses.length) {
-    return <div>Course not found</div>;
+  if (!course) {
+    return <div>{isRTL ? 'الدورة غير موجودة' : 'Course not found'}</div>;
   }
   
   return (
