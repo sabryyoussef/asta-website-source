@@ -8,11 +8,11 @@ function TermsAndConditions() {
   return (
     <div>
       <SEO 
-        titleAr="الشروط والأحكام | اكاديمية المهارات التطبيقية"
-        titleEn="Terms & Conditions | Applied Skills Training Academy"
-        descriptionAr="الشروط والأحكام لاستخدام خدمات اكاديمية المهارات التطبيقية"
-        descriptionEn="Terms and conditions for using Applied Skills Training Academy services"
-        url={`https://asta.edu.sa/${lang}/terms-and-conditions`}
+        titleAr="الشروط والأحكام | عقول بيطرية"
+        titleEn="Terms & Conditions | Vet Brains"
+        descriptionAr="الشروط والأحكام لاستخدام خدمات عقول بيطرية"
+        descriptionEn="Terms and conditions for using Vet Brains services"
+        url={`https://vetbrains.edu.eg/${lang}/terms-and-conditions`}
         isRTL={isRTL}
       />
       <h1>Terms and Conditions</h1>

@@ -2,30 +2,30 @@ export default function OrganizationSchema({ lang = "ar" }) {
     const schema = {
       "@context": "https://schema.org",
       "@type": "EducationalOrganization",
-      "@id": "https://asta.edu.sa/#organization",
-      name: "ASTA Academy",
-      url: "https://asta.edu.sa",
-      logo: "https://asta.edu.sa/logo.png",
-      inLanguage: lang === "ar" ? "ar-SA" : "en-SA",
+      "@id": "https://vetbrains.edu.eg/#organization",
+      name: "Vet Brains",
+      url: "https://vetbrains.edu.eg",
+      logo: "https://vetbrains.edu.eg/logo.png",
+      inLanguage: lang === "ar" ? "ar-EG" : "en-EG",
       sameAs: [
-        "https://x.com/astaacademysa",
-        "https://www.youtube.com/@astaacademysa",
-        "https://www.snapchat.com/@astaacademysa",
-        "https://www.tiktok.com/@asta.academeysa",
-        "https://www.instagram.com/astaacademysa/"
+        "https://x.com/vetbrains_eg",
+        "https://www.youtube.com/@vetbrains_eg",
+        "https://www.snapchat.com/@vetbrains_eg",
+        "https://www.tiktok.com/@vetbrains.eg",
+        "https://www.instagram.com/vetbrains.eg/"
       ],
       contactPoint: [
         {
           "@type": "ContactPoint",
-          telephone: "+966920016205",
+          telephone: "+201003670502",
           contactType: "customer service",
-          areaServed: "SA"
+          areaServed: "EG"
         },
         {
           "@type": "ContactPoint",
-          telephone: "+966555881726",
+          telephone: "+201201568888",
           contactType: "customer service",
-          areaServed: "SA"
+          areaServed: "EG"
         }
       ]
     };

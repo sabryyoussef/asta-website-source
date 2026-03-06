@@ -29,7 +29,7 @@ export default function CTASection({ lang }) {
               {lang === "ar" ? "الهاتف" : "Phone"}
             </h3>
             <p className="text-blue-100">
-              {isRTL ? "966555881726+" : "+966555881726"}
+              {isRTL ? "+201201568888" : "+201201568888"}
             </p>
           </div>
 
@@ -41,7 +41,7 @@ export default function CTASection({ lang }) {
               {lang === "ar" ? "البريد الإلكتروني" : "Email"}
             </h3>
             <p className="text-blue-100">
-              info@asta.edu.sa
+              info@vetbrains.edu.eg
             </p>
           </div>
 
@@ -53,7 +53,7 @@ export default function CTASection({ lang }) {
               {lang === "ar" ? "الموقع" : "Location"}
             </h3>
             <p className="text-blue-100">
-              {lang === "ar" ? "الدمام - المملكة العربية السعودية" : "Dammam - Saudi Arabia"}
+              {lang === "ar" ? "الجيزة - مصر" : "Giza - Egypt"}
             </p>
           </div>
         </div>
@@ -70,14 +70,14 @@ export default function CTASection({ lang }) {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href={`tel:+966555881726`}
+                href={`tel:+201201568888`}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-[#23A0D0] to-[#30AFC1] text-gray-900 rounded-xl font-bold hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
               >
                 <PhoneIcon className="h-5 w-5" />
                 <span>{lang === "ar" ? "اتصل الآن" : "Call Now"}</span>
               </a>
               <a
-                href="mailto:info@asta.edu.sa"
+                href="mailto:info@vetbrains.edu.eg"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/20 backdrop-blur-sm text-white rounded-xl font-bold hover:bg-white/30 transition-all duration-300 border border-white/30"
               >
                 <EnvelopeIcon className="h-5 w-5" />

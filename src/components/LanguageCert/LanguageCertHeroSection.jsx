@@ -57,13 +57,13 @@ export default function LanguageCertHeroSection({ lang }) {
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            {lang === "ar" ? "اختبار LanguageCert الأكاديمي في ASTA" : "LanguageCert Academic Exam at ASTA"}
+            {lang === "ar" ? "اختبار LanguageCert الأكاديمي في Vet Brains" : "LanguageCert Academic Exam at Vet Brains"}
           </h1>
 
           <p className="text-lg md:text-xl text-blue-100 mb-8 leading-relaxed max-w-3xl mx-auto">
             {lang === "ar"
-              ? "ASTA تفتخر بتقديم مؤهلات LanguageCert الأكاديمية للطلاب الذين يسعون للحصول على دليل معترف به دولياً على إتقان اللغة الإنجليزية."
-              : "ASTA is proud to offer LanguageCert Academic qualifications for students seeking internationally recognized proof of English language proficiency."}
+              ? "Vet Brains تفخر بتقديم مؤهلات LanguageCert الأكاديمية للطلاب الذين يسعون للحصول على دليل معترف به دولياً على إتقان اللغة الإنجليزية."
+              : "Vet Brains is proud to offer LanguageCert Academic qualifications for students seeking internationally recognized proof of English language proficiency."}
           </p>
 
           <p className="text-lg md:text-xl text-blue-100 mb-12 leading-relaxed max-w-3xl mx-auto">

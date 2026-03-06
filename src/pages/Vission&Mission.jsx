@@ -7,7 +7,7 @@ export default function VissionAndMission() {
 
     const content = {
         ar: {
-            academyName: "أكاديمية المهارات التطبيقية",
+            academyName: "عقول بيطرية",
             vision: "رؤيتنا",
             visionText: "الريادة والاحترافية والمهنية في بناء مجتمع مهني متطور منتج",
             mission: "رسالتنا",
@@ -17,7 +17,7 @@ export default function VissionAndMission() {
             ourStudents: "طلابنا"
         },
         en: {
-            academyName: "Applied Skills Academy",
+            academyName: "Vet Brains",
             vision: "Our Vision",
             visionText: "Leadership, professionalism and expertise in building a developed and productive professional community",
             mission: "Our Mission",
@@ -143,11 +143,11 @@ export default function VissionAndMission() {
   return (
     <>
       <SEO 
-        titleAr="الرؤية والرسالة | اكاديمية المهارات التطبيقية"
-        titleEn="Vision & Mission | Applied Skills Training Academy"
-        descriptionAr="تعرف على رؤية ورسالة اكاديمية المهارات التطبيقية"
-        descriptionEn="Learn about the vision and mission of Applied Skills Training Academy"
-        url={`https://asta.edu.sa/${lang}/vision&mission`}
+        titleAr="الرؤية والرسالة | عقول بيطرية"
+        titleEn="Vision & Mission | Vet Brains"
+        descriptionAr="تعرف على رؤية ورسالة عقول بيطرية"
+        descriptionEn="Learn about the vision and mission of Vet Brains"
+        url={`https://vetbrains.edu.eg/${lang}/vision&mission`}
         isRTL={isRTL}
       />
       <div className={`container flex flex-col items-center justify-center align-middle py-8 px-2 bg-white`} dir={isRTL ? 'rtl' : 'ltr'}>

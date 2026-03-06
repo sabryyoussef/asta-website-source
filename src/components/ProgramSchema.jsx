@@ -8,8 +8,8 @@ export default function ProgramSchema({ lang = "ar" ,title, description, url}) {
   "url": url,
   "provider": {
     "@type": "EducationalOrganization",
-    "name": "ASTA Academy",
-    "sameAs": "https://asta.edu.sa"
+    "name": "Vet Brains",
+    "sameAs": "https://vetbrains.edu.eg"
   }
 }
   return (

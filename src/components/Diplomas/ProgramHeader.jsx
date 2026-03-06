@@ -188,9 +188,9 @@ function ProgramHeader({ program, lang }) {
                             </div>
                             {/* <span className="text-sm font-semibold text-white">
                               {typeof opt.price === 'number'
-                                ? opt.price.toLocaleString(lang === 'ar' ? 'ar-SA' : 'en-US')
+                                ? opt.price.toLocaleString(lang === 'ar' ? 'ar-EG' : 'en-US')
                                 : opt.price}{' '}
-                              {lang === 'ar' ? 'ر.س' : 'SAR'}
+                              {lang === 'ar' ? 'ج.م' : 'EGP'}
                             </span> */}
                           </label>
                         );
@@ -203,7 +203,7 @@ function ProgramHeader({ program, lang }) {
                       <div className="flex items-center">
                         <div className="text-2xl font-bold">
                           {typeof currentPrice === 'number'
-                            ? currentPrice.toLocaleString(lang === 'ar' ? 'ar-SA' : 'en-US')
+                            ? currentPrice.toLocaleString(lang === 'ar' ? 'ar-EG' : 'en-US')
                             : currentPrice}
                         </div>
                         <img src="/svgs/icons/WhiteRiyal.svg" alt="" className="w-10 ml-2" />
@@ -218,7 +218,7 @@ function ProgramHeader({ program, lang }) {
                     <div className="flex items-center">
                       <div className="text-3xl font-bold">
                         {typeof program.price === 'number'
-                          ? program.price.toLocaleString(lang === 'ar' ? 'ar-SA' : 'en-US')
+                          ? program.price.toLocaleString(lang === 'ar' ? 'ar-EG' : 'en-US')
                           : program.price}
                       </div>
                       <img src="/svgs/icons/WhiteRiyal.svg" alt="" className="w-10 ml-2" />

@@ -24,6 +24,8 @@ export default function Navbar() {
   const [search, setSearch] = useState(false);
   const [open, setOpen] = useState(false);
   const [aboutDropdown, setAboutDropdown] = useState(false);
+  const PHONE_NUMBER_ASCII = "+201003670502";
+  const WHATSAPP_NUMBER_ASCII = "+201201568888";
   const [diplomasDropdown, setDiplomasDropdown] = useState(false);
   const [coursesDropdown, setCoursesDropdown] = useState(false);
   const [studnetServicesDropdown, setStudentServicesDropdown] = useState(false);
@@ -135,31 +137,35 @@ export default function Navbar() {
               <div className="contact-info flex gap-5">
                 <div className="flex items-center gap-3">
                   <a
-                  href="tel:+966920016205"
+                  href={`tel:${PHONE_NUMBER_ASCII}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white no-underline flex items-center gap-2 hover:opacity-80 transition-opacity"
+                  dir="ltr"
+                  style={{ unicodeBidi: 'plaintext', fontFamily: 'Arial, sans-serif' }}
                 >
                   <PhoneIcon className="w-4 h-4 text-white" />
-                  <span>{t('global.phoneNumber')}</span>
+                  <span>{PHONE_NUMBER_ASCII}</span>
                 </a>
                 <i className="fab fa-whatsapp text-white text-lg"></i>
                 <a
-                  href="https://wa.me/966555881726"
+                  href="https://wa.me/201201568888"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white no-underline flex items-center gap-2 hover:opacity-80 transition-opacity"
+                  dir="ltr"
+                  style={{ unicodeBidi: 'plaintext', fontFamily: 'Arial, sans-serif' }}
                 >
-                  <span>{t('global.whatsappNumber')}</span>
+                  <span>{WHATSAPP_NUMBER_ASCII}</span>
                 </a>
               </div>
 
                 <a
-                  href="mailto:info@asta.edu.sa"
+                  href="mailto:info@vetbrains.edu.eg"
                   className="text-white no-underline flex items-center gap-2 hover:opacity-80 transition-opacity"
                 >
                   <EnvelopeIcon className="w-4 h-4 text-white" />
-                  <span>info@asta.edu.sa</span>
+                  <span>info@vetbrains.edu.eg</span>
                 </a>
                 <a
                   href="https://maps.app.goo.gl/rz5CqRh3B1XkF3pC9"
@@ -173,7 +179,7 @@ export default function Navbar() {
               </div>
               <div className="social-links flex gap-4">
                 <a
-                  href="https://x.com/astaacademysa"
+                  href="https://x.com/vetbrains_eg"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white text-lg hover:-translate-y-0.5 transition-transform"
@@ -181,7 +187,7 @@ export default function Navbar() {
                   <i className="fa-brands fa-x-twitter"></i>
                 </a>
                 <a
-                  href="https://www.linkedin.com/school/asta-academy/"
+                  href="https://www.linkedin.com/company/vetbrains-egypt"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white text-lg hover:-translate-y-0.5 transition-transform"
@@ -189,7 +195,7 @@ export default function Navbar() {
                   <i className="fab fa-linkedin"></i>
                 </a>
                 <a
-                  href="https://www.youtube.com/@astaacademysa"
+                  href="https://www.youtube.com/@vetbrains_eg"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white text-lg hover:-translate-y-0.5 transition-transform"
@@ -197,7 +203,7 @@ export default function Navbar() {
                   <i className="fab fa-youtube"></i>
                 </a>
                 <a
-                  href="https://www.instagram.com/astaacademysa/"
+                  href="https://www.instagram.com/vetbrains.eg/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white text-lg hover:-translate-y-0.5 transition-transform"
@@ -220,8 +226,8 @@ export default function Navbar() {
                 <div className="flex-shrink-0">
                   <a href={`/${lang}/`}>
                     <img
-                      src="/svgs/ASTA_Nav_Logo.svg"
-                      alt="ASTA Logo"
+                      src="/svgs/VetBrains_Nav_Logo.svg"
+                      alt="Vet Brains Logo"
                       width={63}
                       height={17}
                       // priority
@@ -260,8 +266,8 @@ export default function Navbar() {
             <div className="flex-shrink-0">
               <a href={`/${lang}/`}>
                 <img
-                  src="/svgs/ASTA_Nav_Logo.svg"
-                  alt="ASTA Logo"
+                  src="/svgs/VetBrains_Nav_Logo.svg"
+                  alt="Vet Brains Logo"
                   width={152}
                   height={42}
                   className="h-auto md:w-[120px] lg:w-[152px] md:mx-8"
@@ -595,8 +601,8 @@ export default function Navbar() {
             <div className="flex items-center justify-between px-3! py-2!">
               <a href={`/${lang}/`} onClick={() => setOpen(false)} className="flex items-center gap-2">
                 <img
-                  src="/svgs/ASTA_Nav_Logo.svg"
-                  alt="ASTA Logo"
+                  src="/svgs/VetBrains_Nav_Logo.svg"
+                  alt="Vet Brains Logo"
                   width={63}
                   height={17}
                   className="h-auto"

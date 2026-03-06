@@ -72,7 +72,7 @@ const RelatedCoursesSection = ({ currentCourseId }) => {
                       </span>
                     </div>
                     <div className="text-lg font-bold text-blue-600">
-                      {localizedCourse.price} {isRTL ? 'ريال' : 'Riyal'}
+                      {localizedCourse.price} {isRTL ? 'جنيه مصري' : 'Egyptian Pound'}
                     </div>
                   </div>
                   <div className="flex items-center gap-4 text-sm text-gray-600">

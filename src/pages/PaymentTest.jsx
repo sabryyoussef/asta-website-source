@@ -19,7 +19,7 @@ export default function PaymentTest() {
           {isRTL ? "المبلغ المعروض للمدفوعات (تجريبي)" : "Amount shown for payment (test)"}
         </p>
         <p className="text-3xl font-semibold text-slate-900">
-          {TEST_AMOUNT.toLocaleString(isRTL ? "ar-SA" : "en-US")} {isRTL ? "ر.س" : "SAR"}
+          {TEST_AMOUNT.toLocaleString(isRTL ? "ar-EG" : "en-US")} {isRTL ? "ج.م" : "EGP"}
         </p>
         <button
           type="button"

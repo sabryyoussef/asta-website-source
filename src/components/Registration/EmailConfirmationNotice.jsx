@@ -14,7 +14,7 @@ function EmailConfirmationNotice ({ formData }) {
               بعد إكمال النموذج، سيتم إرسال البيانات تلقائياً إلى:
             </p>
             <div className="bg-white border border-blue-100 rounded-lg p-3 inline-block">
-              <code className="text-[#202C5B] font-bold">abdelRahman.youssef@asta.edu.sa</code>
+              <code className="text-[#202C5B] font-bold">info@vetbrains.edu.eg</code>
             </div>
             <p className="text-sm text-gray-500 mt-2">
               وسيصلك نسخة على بريدك الإلكتروني ({formData.email || 'بعد إدخاله'}) كتأكيد.

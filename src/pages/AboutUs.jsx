@@ -74,8 +74,8 @@ export default function AboutUs() {
       en: "Professional Certifications"
     },
     description: {
-      ar: "تضم أكاديمية المهارات التطبيقية عديد من الشهادات الاحترافية المهنية والتي تعزز فرص الالتحاق بسوق العمل والحصول على وظيفية مناسبة لمهاراتك وقدراتك المهنية، وتساعدك على التطوير المهني والترقي في مجالات كثيرة منها (تكنولوجيا المعلومات والأمن السيبراني- الإدارة والمال والأعمال – القانون- الضيافة والفندقة- اللغة الانجليزية)",
-      en: "Applied Skills Academy (ASTA) includes many professional certifications that enhance opportunities to join the job market and obtain a position suitable for your skills and professional capabilities, and help you with professional development and advancement in many fields including (Information Technology and Cybersecurity - Management, Finance and Business - Law - Hospitality and Hotel Management - English Language)"
+      ar: "تضم عقول بيطرية عديدًا من الشهادات الاحترافية المهنية التي تعزز فرص الالتحاق بسوق العمل والحصول على وظيفة مناسبة لمهاراتك وقدراتك المهنية، وتساعدك على التطوير المهني والترقي في مجالات كثيرة منها (العلوم البيطرية - الذكاء الاصطناعي - تكنولوجيا المعلومات - الإدارة والأعمال).",
+      en: "Vet Brains includes many professional certifications that enhance opportunities to join the job market and obtain a position suitable for your skills and professional capabilities, and help you with professional development and advancement in many fields including (Veterinary Sciences - Artificial Intelligence - Information Technology - Management and Business)."
     },
   },
   {
@@ -183,16 +183,16 @@ export default function AboutUs() {
   const aboutUsContent = {
     ar: {
       whoAreWe: "من نحن؟",
-      description: "أكاديمية المهارات التطبيقية للتدريب (ASTA) أكاديمية رائدة في مجال التدريب والاستشارات المتنوعة ومتخصصة في تقديم البرامج التدريبية للشهادات الاحترافية المهنية الدولية، والدورات القصيرة والدبلومات المهنية وعقد وتنفيذ الاختبارات الدولية المختلفة من خلال الشراكات الاستراتيجية الدولية. تقوم فلسفة التدريب في أكاديمية المهارات التطبيقية للتدريب (ASTA) على الجودة والاحترافية والابتكارية في تصميم البرامج التدريبية والدبلومات المهنية وعقد وتنفيذ الاختبارات الدولية بدقة عالية لتتوافق مع أفضل الممارسات العالمية وتزويد المتدربين بالمهارات والمعرفة التي يحتاجون إليها لمواجهة التحديات المعاصرة من خلال مدربين أكفاء ومتخصصين.",
+      description: "عقول بيطرية أكاديمية رائدة في مجال التدريب والاستشارات المتنوعة، ومتخصصة في تقديم البرامج التدريبية للشهادات المهنية الدولية، والدورات القصيرة والدبلومات المهنية، وعقد وتنفيذ الاختبارات الدولية المختلفة من خلال الشراكات الاستراتيجية. تقوم فلسفة التدريب في عقول بيطرية على الجودة والاحترافية والابتكار في تصميم البرامج التدريبية والدبلومات المهنية وتنفيذ الاختبارات الدولية بدقة عالية بما يتوافق مع أفضل الممارسات العالمية، وتزويد المتدربين بالمهارات والمعرفة اللازمة لمواجهة التحديات المعاصرة من خلال مدربين أكفاء ومتخصصين.",
       ourServices: "خدماتنا",
-      ourGoal: "هدفنا ان نكون المنصة التعليمية الرائدة في المملكة العربية السعودية التي تمكّن الطلبة والباحثين من اكتساب المعرفة والمهارات الحديثة عبر بيئة تعليمية رقمية مبتكرة، تواكب احتياجات سوق العمل وتسهم في بناء مجتمع معرفي متطور.",
+      ourGoal: "هدفنا أن نكون المنصة التعليمية الرائدة في مصر التي تمكّن الطلبة والباحثين من اكتساب المعرفة والمهارات الحديثة عبر بيئة تعليمية رقمية مبتكرة، تواكب احتياجات سوق العمل وتسهم في بناء مجتمع معرفي متطور.",
       whyUs: "لماذا نحن؟"
     },
     en: {
       whoAreWe: "Who Are We?",
-      description: "Applied Skills Academy for Training (ASTA) is a leading academy in the field of training and diverse consulting, specialized in providing training programs for international professional certifications, short courses and professional diplomas, and conducting and implementing various international examinations through strategic international partnerships. The training philosophy at Applied Skills Academy for Training (ASTA) is based on quality, professionalism and innovation in designing training programs and professional diplomas and conducting and implementing international examinations with high precision to comply with best global practices and provide trainees with the skills and knowledge they need to face contemporary challenges through qualified and specialized trainers.",
+      description: "Vet Brains is a leading academy in training and consulting, specialized in providing programs for international professional certifications, short courses, and professional diplomas, in addition to conducting international examinations through strategic partnerships. The training philosophy at Vet Brains is based on quality, professionalism, and innovation in program design and assessment delivery, aligned with global best practices to equip trainees with practical skills and knowledge.",
       ourServices: "Our Services",
-      ourGoal: "Our goal is to be the leading educational platform in the Kingdom of Saudi Arabia that enables students and researchers to acquire knowledge and modern skills through an innovative digital educational environment that meets the needs of the labor market and contributes to building a developed knowledge society.",
+      ourGoal: "Our goal is to be a leading educational platform in Egypt that enables students and professionals to acquire modern knowledge and skills through an innovative digital learning environment aligned with labor market needs.",
       whyUs: "Why Us?"
     }
   };
@@ -202,11 +202,11 @@ export default function AboutUs() {
   return (
     <>
       <SEO 
-        titleAr="عن الأكاديمية | اكاديمية المهارات التطبيقية"
-        titleEn="About the Academy | Applied Skills Training Academy"
-        descriptionAr="تعرف على اكاديمية المهارات التطبيقية ورؤيتنا ورسالتنا"
-        descriptionEn="Learn about Applied Skills Training Academy, our vision and mission"
-        url={`https://asta.edu.sa/${lang}/about-us`}
+        titleAr="عن الأكاديمية | عقول بيطرية"
+        titleEn="About the Academy | Vet Brains"
+        descriptionAr="تعرف على عقول بيطرية ورؤيتنا ورسالتنا"
+        descriptionEn="Learn about Vet Brains, our vision and mission"
+        url={`https://vetbrains.edu.eg/${lang}/about-us`}
         isRTL={isRTL}
       />
       {/* WHo Are We Section */}

@@ -16,11 +16,11 @@ export default function NotFound({ lang: langProp }) {
       className="min-h-screen flex items-center justify-center bg-gray-50 px-4"
     >
       <SEO 
-        titleAr="الصفحة غير موجودة | اكاديمية المهارات التطبيقية"
-        titleEn="Page Not Found | Applied Skills Training Academy"
+        titleAr="الصفحة غير موجودة | عقول بيطرية"
+        titleEn="Page Not Found | Vet Brains"
         descriptionAr="الصفحة التي تبحث عنها غير موجودة"
         descriptionEn="The page you are looking for does not exist"
-        url={`https://asta.edu.sa/${lang}/404`}
+        url={`https://vetbrains.edu.eg/${lang}/404`}
         isRTL={isRTL}
       />
       <div className="text-center">

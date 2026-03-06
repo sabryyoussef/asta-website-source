@@ -8,11 +8,11 @@ function StudentServices() {
   return (
     <div>
       <SEO 
-        titleAr="خدمات الطلاب | اكاديمية المهارات التطبيقية"
-        titleEn="Student Services | Applied Skills Training Academy"
-        descriptionAr="خدمات دعم الطلاب في اكاديمية المهارات التطبيقية"
-        descriptionEn="Student support services at Applied Skills Training Academy"
-        url={`https://asta.edu.sa/${lang}/student-services`}
+        titleAr="خدمات الطلاب | عقول بيطرية"
+        titleEn="Student Services | Vet Brains"
+        descriptionAr="خدمات دعم الطلاب في عقول بيطرية"
+        descriptionEn="Student support services at Vet Brains"
+        url={`https://vetbrains.edu.eg/${lang}/student-services`}
         isRTL={isRTL}
       />
       <h1>Student Services</h1>

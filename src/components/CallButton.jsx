@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 export default function CallButton({ 
-  phoneNumber = "+966555881726", 
+  phoneNumber = "+201003670502", 
   position = "bottom-right",
   showNotification = true,
   notificationText,

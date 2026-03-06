@@ -88,7 +88,7 @@ const AdvertisingSection = () => {
                   {/* <div>
                       <>
                         <span className="text-3xl font-bold text-blue-600">
-                          {program.price} ر.س
+                          {program.price} ج.م
                         </span>
                       </>
                   </div> */}

@@ -1474,12 +1474,12 @@ const standardsData = {
             },
             points: [
               {
-                ar: 'البريد الإلكتروني: INFO@ASTA.EDU.SA',
-                en: 'Email: INFO@ASTA.EDU.SA'
+                ar: 'البريد الإلكتروني: info@vetbrains.edu.eg',
+                en: 'Email: info@vetbrains.edu.eg'
               },
               {
-                ar: 'رقم الجوال الموحد: +966/920016205',
-                en: 'Unified Mobile Number: +966/920016205'
+                ar: 'رقم الجوال الموحد: +20/1003670502',
+                en: 'Unified Mobile Number: +20/1003670502'
               },
               {
                 ar: 'الدردشة المباشرة: عبر المنصة أثناء أوقات الدوام.',

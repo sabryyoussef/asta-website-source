@@ -144,7 +144,7 @@ function CourseCard2({ course }) {
           <div className="flex flex-col">
             {courseForRender.price && (
               <span className="text-lg font-bold text-[#202C5B]">
-                {courseForRender.price.toLocaleString()} ريال
+                {courseForRender.price.toLocaleString()} جنيه مصري
               </span>
             )}
           </div>

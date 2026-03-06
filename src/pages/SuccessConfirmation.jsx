@@ -50,11 +50,11 @@ function SuccessConfirmation() {
     return (
         <div className="max-w-3xl mx-auto px-4 py-12">
             <SEO 
-              titleAr="تأكيد التسجيل | اكاديمية المهارات التطبيقية"
-              titleEn="Registration Confirmation | Applied Skills Training Academy"
+              titleAr="تأكيد التسجيل | عقول بيطرية"
+              titleEn="Registration Confirmation | Vet Brains"
               descriptionAr="تم استلام طلبك بنجاح"
               descriptionEn="Your request has been successfully received"
-              url={`https://asta.edu.sa/${lang}/registration-success`}
+              url={`https://vetbrains.edu.eg/${lang}/registration-success`}
               isRTL={isRTL}
             />
             <div className="bg-white rounded-2xl p-8 shadow-lg text-center">
@@ -70,11 +70,11 @@ function SuccessConfirmation() {
         return (
             <div className="max-w-3xl mx-auto px-4 py-12">
                 <SEO 
-                  titleAr="تأكيد التسجيل | اكاديمية المهارات التطبيقية"
-                  titleEn="Registration Confirmation | Applied Skills Training Academy"
+                  titleAr="تأكيد التسجيل | عقول بيطرية"
+                  titleEn="Registration Confirmation | Vet Brains"
                   descriptionAr="تم استلام طلبك بنجاح"
                   descriptionEn="Your request has been successfully received"
-                  url={`https://asta.edu.sa/${lang}/registration-success`}
+                  url={`https://vetbrains.edu.eg/${lang}/registration-success`}
                   isRTL={isRTL}
                 />
             <div className="bg-white rounded-2xl p-8 shadow-lg text-center">

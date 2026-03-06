@@ -95,11 +95,11 @@ export default function FAQSection({ lang }) {
             <div className={`flex flex-col sm:flex-row gap-4 justify-center items-center`}>
               <div className="flex items-center gap-2 text-gray-700">
                 <span>📞</span>
-                <span>{isRTL ? "966555881726+" : "+966555881726"}</span>
+                <span>{isRTL ? "+201201568888" : "+201201568888"}</span>
               </div>
               <div className="flex items-center gap-2 text-gray-700">
                 <span>📧</span>
-                <span>info@asta.edu.sa</span>
+                <span>info@vetbrains.edu.eg</span>
               </div>
             </div>
           </div>

@@ -91,11 +91,11 @@ const CoursesPage = () => {
   return (
     <>
     <SEO 
-      titleAr="الدورات | اكاديمية المهارات التطبيقية"
-      titleEn="Courses | Applied Skills Training Academy"
-      descriptionAr="تصفح الدورات الاحترافية في اكاديمية المهارات التطبيقية"
-      descriptionEn="Browse professional courses at Applied Skills Training Academy"
-      url={`https://asta.edu.sa/${lang}/courses`}
+      titleAr="الدورات | عقول بيطرية"
+      titleEn="Courses | Vet Brains"
+      descriptionAr="تصفح الدورات الاحترافية في عقول بيطرية"
+      descriptionEn="Browse professional courses at Vet Brains"
+      url={`https://vetbrains.edu.eg/${lang}/courses`}
       isRTL={isRTL}
     />
     <CoursesHeroSection lang={lang}/>

@@ -9,11 +9,11 @@ export default function PaymentSuccess() {
   return (
     <div dir={isRTL ? "rtl" : "ltr"} className="min-h-[60vh] flex flex-col items-center justify-center px-4 py-12">
       <SEO
-        titleAr="تم الدفع بنجاح | اكاديمية المهارات التطبيقية"
-        titleEn="Payment Successful | Applied Skills Training Academy"
+        titleAr="تم الدفع بنجاح | عقول بيطرية"
+        titleEn="Payment Successful | Vet Brains"
         descriptionAr="تمت عملية الدفع بنجاح"
         descriptionEn="Payment completed successfully"
-        url={`https://asta.edu.sa/${lang}/payment-success`}
+        url={`https://vetbrains.edu.eg/${lang}/payment-success`}
         isRTL={isRTL}
       />
       <div className="max-w-md w-full bg-white rounded-2xl p-8 shadow-lg text-center">

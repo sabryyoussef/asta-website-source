@@ -269,7 +269,7 @@ const RegistrationPage = () => {
       }
 
       const templateParams = {
-        to_email: 'abdelRahman.youssef@asta.edu.sa',
+        to_email: 'info@vetbrains.edu.eg',
         to_name: 'عبدالرحمن يوسف',
         from_name: data.fullName,
         from_email: data.email,
@@ -312,7 +312,7 @@ ${data.notes || 'لا توجد ملاحظات'}
       };
 
       const response = await emailjs.send(
-        'asta',
+        'vetbrains',
         'template_qpi4g3m',
         templateParams
       );
@@ -387,7 +387,7 @@ ${data.notes || 'لا توجد ملاحظات'}
         selectedServices: selectedServicesList,
         servicesTotal: servicesTotal.toLocaleString(),
         totalAmount: totalAmount.toLocaleString(),
-        submissionDate: new Date().toLocaleString('ar-SA'),
+        submissionDate: new Date().toLocaleString('ar-EG'),
         referenceNumber: `REG-${Date.now()}`
       };
 
@@ -398,7 +398,7 @@ ${data.notes || 'لا توجد ملاحظات'}
 
       try {
         await emailjs.send(
-          'asta',
+          'vetbrains',
           'template_8ir9aeh',
           {
             to_email: formData.email,
@@ -456,11 +456,11 @@ ${data.notes || 'لا توجد ملاحظات'}
   return (
     <div className="bg-gray-50 min-h-screen pb-12" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       <SEO 
-        titleAr="التسجيل | اكاديمية المهارات التطبيقية"
-        titleEn="Registration | Applied Skills Training Academy"
+        titleAr="التسجيل | عقول بيطرية"
+        titleEn="Registration | Vet Brains"
         descriptionAr="سجل في برامجنا التدريبية الاحترافية الآن"
         descriptionEn="Register in our professional training programs now"
-        url={`https://asta.edu.sa/${lang}/registration`}
+        url={`https://vetbrains.edu.eg/${lang}/registration`}
         isRTL={isRTL}
       />
       <RegistrationHeader selectedProgram={selectedProgram} lang={lang} t={t} />

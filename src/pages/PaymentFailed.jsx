@@ -9,11 +9,11 @@ export default function PaymentFailed() {
   return (
     <div dir={isRTL ? "rtl" : "ltr"} className="min-h-[60vh] flex flex-col items-center justify-center px-4 py-12">
       <SEO
-        titleAr="فشل الدفع | اكاديمية المهارات التطبيقية"
-        titleEn="Payment Failed | Applied Skills Training Academy"
+        titleAr="فشل الدفع | عقول بيطرية"
+        titleEn="Payment Failed | Vet Brains"
         descriptionAr="فشلت عملية الدفع"
         descriptionEn="Payment failed"
-        url={`https://asta.edu.sa/${lang}/payment-failed`}
+        url={`https://vetbrains.edu.eg/${lang}/payment-failed`}
         isRTL={isRTL}
       />
       <div className="max-w-md w-full bg-white rounded-2xl p-8 shadow-lg text-center">

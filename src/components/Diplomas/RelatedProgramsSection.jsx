@@ -73,7 +73,7 @@ const RelatedProgramsSection = ({ currentProgramId, lang }) => {
                     </span>
                   </div>
                   <span className="text-lg font-bold text-blue-600">
-                    {localizedProgram.price} {isRTL ? 'ريال' : 'Riyal'}
+                    {localizedProgram.price} {isRTL ? 'جنيه مصري' : 'Egyptian Pound'}
                   </span>
                 </div>
                 <div className="flex items-center gap-4 text-sm text-gray-600">

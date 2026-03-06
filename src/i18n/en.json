@@ -1,12 +1,12 @@
 {
   "global": {
-    "academyName": "Applied Skills Training Academy",
+    "academyName": "Vet Brains",
     "loading": "Loading...",
     "readMore": "Read more",
     "downloadProfile": "Profile File",
     "details": "Details",
-    "phoneNumber": "+966920016205",
-    "whatsappNumber": "+966555881726",
+    "phoneNumber": "+201003670502",
+    "whatsappNumber": "+201201568888",
     "callUs": "Call us",
     "contactUsOnWhatsapp": "Contact us on WhatsApp"
   },
@@ -46,24 +46,24 @@
       "signUp": "Sign Up"
     },
     "footer": {
-      "academyName": "Applied Skills Training Academy"
+      "academyName": "Vet Brains"
     }
   },
 
   "footer": {
-    "copyright": "All rights reserved to Applied Skills Training Academy © 2025",
-    "address": "East Region, Dammam, Saudi Arabia",
+    "copyright": "All rights reserved to Vet Brains © 2026",
+    "address": "451 Haram Street, Giza, Egypt",
     "ourDiplomas": "Our Diplomas",
     "quickLinks": "Quick Links",
     "followUs": "Follow Us",
-    "message": "We offer academic and technical training programs based on the General Organization for Technical and Vocational Training to prepare national cadres for the job market in line with Vision 2030",
+    "message": "We offer veterinary training, AI courses, and professional development programs to prepare qualified professionals for the Egyptian and regional job market",
     "newsLetter": "Subscribe to our newsletter",
     "newsLetterDescription": "Subscribe to our newsletter to get the latest news and offers that suit you and help you achieve your professional excellence."
   },
 
   "hero": {
-    "title": "Applied Skills Training Academy",
-    "subtitle": "Your Path to Professional Excellence",
+    "title": "Vet Brains",
+    "subtitle": "Your Path to Professional Excellence in Veterinary and Technical Skills",
     "downloadButton": "Profile File",
     "registerButton": "Register"
   },
@@ -81,9 +81,9 @@
 
   "about": {
     "title": "About Us?",
-    "description1": "Applied Skills Training Academy is not just a training academy; we are a professional training career path that qualifies you for the job market, designed to transform theoretical knowledge into practical, required, accredited, and licensed skills by the General Organization for Technical and Vocational Training. We believe that professional excellence at work begins with training, so we have adopted a flexible applied methodology that ensures you gain real experience.",
-    "description2": "Applied Skills Training Academy is a launch towards acquiring more skills that put you at the forefront of competition.",
-    "description3": "Our professional career path begins with training, and we are ready to guide you towards acquiring more skills that put you at the forefront of competition and the job market."
+    "description1": "Vet Brains is a specialized training academy offering professional programs in veterinary sciences, artificial intelligence, information technology, and business management. We provide accredited training designed to transform theoretical knowledge into practical, market-required skills.",
+    "description2": "Vet Brains is your gateway to acquiring specialized skills in veterinary medicine combined with modern technology, positioning you at the forefront of the competitive job market.",
+    "description3": "Our professional training path begins with quality education. We guide you towards acquiring vital skills that place you at the forefront of the veterinary and technical sectors."
   },
 
   "courses": {
@@ -118,7 +118,7 @@
   "testCenter": {
     "partnerBadge": "Official Partner",
     "heroTitle": "Our Test Center · Partnered with PSI",
-    "heroSubtitle": "Applied Skills Training Academy is an accredited test center in partnership with PSI. We deliver world-leading tests with trusted science and the best test-taker experience.",
+    "heroSubtitle": "Vet Brains is an accredited test center in partnership with PSI. We deliver world-leading tests with trusted science and the best test-taker experience.",
     "heroImageAlt": "Professional testing environment",
     "visitPSI": "Visit PSI",
     "ourPartner": "Our Testing Partner",
@@ -325,34 +325,34 @@
 
   "seo": {
     "default": {
-      "title": "Applied Skills Training Academy | أكاديمة المهارات التطبيقية",
-      "description": "Applied Skills Training Academy is a professional training academy that provides professional training programs and diplomas in Saudi Arabia.",
-      "keywords": "Applied Skills Training Academy, professional training programs, diplomas, Saudi Arabia, دورات ودبلومات مهنية معتمدة في المملكة العربية السعودية",
-      "author": "Applied Skills Training Academy",
+      "title": "Vet Brains | عقول بيطرية",
+      "description": "Vet Brains is a professional training academy that provides veterinary, AI, and technical training programs in Egypt.",
+      "keywords": "Vet Brains, veterinary training, AI training, professional programs, Egypt, تدريب بيطري, دورات ذكاء اصطناعي",
+      "author": "Vet Brains",
       "robots": "index, follow",
-      "country": "SA",
-      "geoRegion": "SA",
-      "geoPlacename": "Dammam",
-      "canonical": "https://asta.edu.sa"
+      "country": "EG",
+      "geoRegion": "EG",
+      "geoPlacename": "Giza",
+      "canonical": "https://vetbrains.edu.eg"
     },
     "home": {
-      "title": "Home | Applied Skills Training Academy",
-      "description": "Join Applied Skills Training Academy and build your future with accredited programs"
+      "title": "Home | Vet Brains",
+      "description": "Join Vet Brains and build your future with accredited programs"
     },
     "courses": {
-      "title": "Courses | Applied Skills Training Academy",
-      "description": "Browse professional courses at Applied Skills Training Academy"
+      "title": "Courses | Vet Brains",
+      "description": "Browse professional courses at Vet Brains"
     },
     "programs": {
-      "title": "Programs | Applied Skills Training Academy",
-      "description": "Explore accredited training programs at Applied Skills Training Academy"
+      "title": "Programs | Vet Brains",
+      "description": "Explore accredited training programs at Vet Brains"
     },
     "about": {
-      "title": "About Us | Applied Skills Training Academy",
-      "description": "Learn about Applied Skills Training Academy, our vision and mission"
+      "title": "About Us | Vet Brains",
+      "description": "Learn about Vet Brains, our vision and mission"
     },
     "registration": {
-      "title": "Registration | Applied Skills Training Academy",
+      "title": "Registration | Vet Brains",
       "description": "Register in our professional training programs now"
     }
   },
@@ -373,10 +373,10 @@
   },
 
   "aiBot": {
-    "title": "Asta AI Assistant",
+    "title": "Vet Brains AI Assistant",
     "status": "Online",
-    "welcomeMessage": "Hello! I'm Asta AI Assistant. How can I help you today? I can provide information about our courses, certifications, registration, and more!",
-    "responseMessage": "Thank you for your message! I'm here to help you with information about ASTA courses, certifications, and registration. How else can I assist you?",
+    "welcomeMessage": "Hello! I'm Vet Brains AI Assistant. How can I help you today? I can provide information about our veterinary courses, AI training, certifications, registration, and more!",
+    "responseMessage": "Thank you for your message! I'm here to help you with information about Vet Brains courses, certifications, and registration. How else can I assist you?",
     "inputPlaceholder": "Type your message...",
     "quickActions": {
       "courses": "Courses",

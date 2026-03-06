@@ -179,11 +179,11 @@ export default function CertificateChecker() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-cyan-50 to-teal-100 flex items-center justify-center p-4 py-8">
       <SEO 
-        titleAr="فحص الشهادة | اكاديمية المهارات التطبيقية"
-        titleEn="Certificate Verification | Applied Skills Training Academy"
-        descriptionAr="تحقق من صحة شهادتك من اكاديمية المهارات التطبيقية"
-        descriptionEn="Verify your certificate from Applied Skills Training Academy"
-        url={`https://asta.edu.sa/${lang}/certificate-checker`}
+        titleAr="فحص الشهادة | عقول بيطرية"
+        titleEn="Certificate Verification | Vet Brains"
+        descriptionAr="تحقق من صحة شهادتك من عقول بيطرية"
+        descriptionEn="Verify your certificate from Vet Brains"
+        url={`https://vetbrains.edu.eg/${lang}/certificate-checker`}
         isRTL={isRTL}
       />
       <div className="w-full max-w-2xl">

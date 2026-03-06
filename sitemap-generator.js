@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // Your base URL
-const BASE_URL = 'https://asta.edu.sa';
+const BASE_URL = 'https://vetbrains.edu.eg';
 
 // Define your static routes for both languages
 const staticRoutes = [

@@ -46,11 +46,11 @@ const TrainingProgramsPage = () => {
   return (
     <>
     <SEO 
-      titleAr="البرامج | اكاديمية المهارات التطبيقية"
-      titleEn="Programs | Applied Skills Training Academy"
-      descriptionAr="استكشف البرامج التدريبية المعتمدة في اكاديمية المهارات التطبيقية"
-      descriptionEn="Explore accredited training programs at Applied Skills Training Academy"
-      url={`https://asta.edu.sa/${lang}/programs`}
+      titleAr="البرامج | عقول بيطرية"
+      titleEn="Programs | Vet Brains"
+      descriptionAr="استكشف البرامج التدريبية المعتمدة في عقول بيطرية"
+      descriptionEn="Explore accredited training programs at Vet Brains"
+      url={`https://vetbrains.edu.eg/${lang}/programs`}
       isRTL={isRTL}
     />
     <ProgramsHeroSection />

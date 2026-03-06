@@ -34,16 +34,16 @@ const CourseDetails = () => {
       <ProgramSchema
         title={localizedCourse.title}
         description={localizedCourse.description}
-        url={`https://asta.edu.sa/${lang}/courses/${id}`}
+        url={`https://vetbrains.edu.eg/${lang}/courses/${id}`}
         lang={lang}
       />
 
       <SEO 
-        titleAr={`${localizedCourse.title} | اكاديمية المهارات التطبيقية`}
-        titleEn={`${localizedCourse.title} | Applied Skills Training Academy`}
-        descriptionAr={localizedCourse.description || "دورة احترافية في اكاديمية المهارات التطبيقية"}
-        descriptionEn={localizedCourse.description || "Professional course at Applied Skills Training Academy"}
-        url={`https://asta.edu.sa/${lang}/courses/${id}`}
+        titleAr={`${localizedCourse.title} | عقول بيطرية`}
+        titleEn={`${localizedCourse.title} | Vet Brains`}
+        descriptionAr={localizedCourse.description || "دورة احترافية في عقول بيطرية"}
+        descriptionEn={localizedCourse.description || "Professional course at Vet Brains"}
+        url={`https://vetbrains.edu.eg/${lang}/courses/${id}`}
         isRTL={isRTL}
       />
       <CourseHeader course={course} />

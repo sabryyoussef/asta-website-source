@@ -5,7 +5,7 @@ import LanguageCertHeroSection from "../components/LanguageCert/LanguageCertHero
 import AboutLanguageCertSection from "../components/LanguageCert/AboutLanguageCertSection";
 import AvailableLevelsSection from "../components/LanguageCert/AvailableLevelsSection";
 import ExamFormatSection from "../components/LanguageCert/ExamFormatSection";
-import WhyChooseASTASection from "../components/LanguageCert/WhyChooseASTASection";
+import WhyChooseVetBrainsSection from "../components/LanguageCert/WhyChooseVetBrainsSection";
 import ResultsCertificationSection from "../components/LanguageCert/ResultsCertificationSection";
 import RegistrationProcessSection from "../components/LanguageCert/RegistrationProcessSection";
 import FAQSection from "../components/LanguageCert/FAQSection";
@@ -18,11 +18,11 @@ export default function LanguageCertAcademic() {
   return (
     <div dir={isRTL ? "rtl" : "ltr"}>
       <SEO
-        titleAr="اختبار LanguageCert الأكاديمي | أكاديمية المهارات التطبيقية"
-        titleEn="LanguageCert Academic Exam | Applied Skills Training Academy"
-        descriptionAr="ASTA تقدم اختبار LanguageCert الأكاديمي المعتمد عالمياً. تعرف على المستويات المتاحة والتنسيق وعملية التسجيل."
-        descriptionEn="ASTA offers the internationally recognized LanguageCert Academic exam. Learn about available levels, format, and registration process."
-        url={`https://asta.edu.sa/${lang}/languagecert-academic`}
+        titleAr="اختبار LanguageCert الأكاديمي | عقول بيطرية"
+        titleEn="LanguageCert Academic Exam | Vet Brains"
+        descriptionAr="عقول بيطرية تقدم اختبار LanguageCert الأكاديمي المعتمد عالمياً. تعرف على المستويات المتاحة والتنسيق وعملية التسجيل."
+        descriptionEn="Vet Brains offers the internationally recognized LanguageCert Academic exam. Learn about available levels, format, and registration process."
+        url={`https://vetbrains.edu.eg/${lang}/languagecert-academic`}
         isRTL={isRTL}
       />
 
@@ -30,7 +30,7 @@ export default function LanguageCertAcademic() {
       <AboutLanguageCertSection lang={lang} />
       <AvailableLevelsSection lang={lang} />
       <ExamFormatSection lang={lang} />
-      <WhyChooseASTASection lang={lang} />
+      <WhyChooseVetBrainsSection lang={lang} />
       <ResultsCertificationSection lang={lang} />
       <RegistrationProcessSection lang={lang} />
       <FAQSection lang={lang} />

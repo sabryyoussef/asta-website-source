@@ -38,12 +38,12 @@ const slides = [
     imgDesktop: "/images/Student-500.webp",
     buttonLink: "about-us",
     ar: {
-      title: "عن أكاديمية المهارات التطبيقية",
+      title: "عن عقول بيطرية",
       desc: "أكاديمية رائدة في مجال التدريب والاستشارات المتنوعة ومتخصصة في تقديم البرامج التدريبية للشهادات الاحترافية المهنية الدولية. نؤمن بالجودة والاحترافية والابتكار.",
       buttonText: "تعرف علينا"
     },
     en: {
-      title: "About Applied Skills Academy",
+      title: "About Vet Brains",
       desc: "A leading academy in the field of training and diverse consulting, specialized in providing training programs for international professional certifications. We believe in quality, professionalism and innovation.",
       buttonText: "Learn About Us"
     }
@@ -123,8 +123,8 @@ export default function Hero() {
       <div className="sr-only">
         <h1>
           {isRTL
-            ? "أكاديمية المهارات التطبيقية | دورات ودبلومات احترافية معتمدة"
-            : "Applied Skills Training Academy | Professional Courses & Accredited Diplomas"}
+            ? "عقول بيطرية | دورات ودبلومات احترافية معتمدة"
+            : "Vet Brains | Professional Courses & Accredited Diplomas"}
         </h1>
       </div>
       {/* CSS-only carousel: no offsetWidth/getBoundingClientRect, avoids forced reflow */}
@@ -154,10 +154,10 @@ export default function Hero() {
 
                   <div className="max-md:hidden flex justify-center w-full mb-6">
                     <img
-                      src="/svgs/ASTA_Nav_Logo.svg"
-                      srcSet="/svgs/ASTA_Nav_Logo.svg 299w"
+                      src="/svgs/VetBrains_Nav_Logo.svg"
+                      srcSet="/svgs/VetBrains_Nav_Logo.svg 299w"
                       sizes="(max-width: 640px) 200px, (max-width: 768px) 292px, (max-width: 1024px) 320px, 434px"
-                      alt="ASTA Logo"
+                      alt="Vet Brains Logo"
                       width={299}
                       height={81}
                       className="w-[200px] sm:w-[292px] md:w-[320px] lg:w-[434px] h-auto"
@@ -238,10 +238,10 @@ export default function Hero() {
                 {/* Reserve height for logo to prevent CLS when image loads (aspect 434:100) */}
                 <div className="md:hidden flex justify-center w-full mb-4 mt-4 min-h-[46px] sm:min-h-[67px]">
                   <img
-                    src="/svgs/ASTA_Nav_Logo.svg"
-                    srcSet="/svgs/ASTA_Nav_Logo.svg 299w"
+                    src="/svgs/VetBrains_Nav_Logo.svg"
+                    srcSet="/svgs/VetBrains_Nav_Logo.svg 299w"
                     sizes="(max-width: 640px) 200px, (max-width: 768px) 292px, 434px"
-                    alt="ASTA Logo"
+                    alt="Vet Brains Logo"
                     width={299}
                     height={81}
                     className="w-[200px] sm:w-[292px] md:w-[320px] lg:w-[434px] h-auto object-contain"

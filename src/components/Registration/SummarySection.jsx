@@ -24,7 +24,7 @@ function SummarySection({ selectedProgram, formData, calculateTotal, additionalS
         <div className="flex justify-between items-center py-2 border-b border-gray-200">
           <span className="text-gray-600">{lang === 'ar' ? 'السعر الأساسي:' : 'Base Price:'}</span>
           <span className="font-bold text-gray-800">
-            {selectedProgram?.price ? selectedProgram.price.toLocaleString() : '0'} {lang === 'ar' ? 'ر.س' : 'SAR'}
+            {selectedProgram?.price ? selectedProgram.price.toLocaleString() : '0'} {lang === 'ar' ? 'ج.م' : 'EGP'}
           </span>
         </div>
 
@@ -36,7 +36,7 @@ function SummarySection({ selectedProgram, formData, calculateTotal, additionalS
               .map(service => (
                 <div key={service.id} className="flex justify-between items-center text-sm mb-1">
                   <span className="text-gray-600">{service.name[lang] || service.name.ar || service.name.en}</span>
-                  <span>{service.price.toLocaleString() || 0} {lang === 'ar' ? 'ر.س' : 'SAR'}</span>
+                  <span>{service.price.toLocaleString() || 0} {lang === 'ar' ? 'ج.م' : 'EGP'}</span>
                 </div>
               ))
             }
@@ -54,7 +54,7 @@ function SummarySection({ selectedProgram, formData, calculateTotal, additionalS
         <div className="flex justify-between items-center py-2">
           <span className="text-xl font-bold text-gray-800">{lang === 'ar' ? 'المجموع الكلي:' : 'Total Amount:'}</span>
           <span className="text-2xl font-bold text-[#202C5B]">
-            {calculateTotal().toLocaleString()} {lang === 'ar' ? 'ر.س' : 'SAR'}
+            {calculateTotal().toLocaleString()} {lang === 'ar' ? 'ج.م' : 'EGP'}
           </span>
         </div>
       </div>

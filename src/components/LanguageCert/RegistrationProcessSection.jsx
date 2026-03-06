@@ -131,11 +131,11 @@ export default function RegistrationProcessSection({ lang }) {
             <div className={`flex flex-col sm:flex-row gap-4 justify-center`}>
               <div className="flex items-center gap-2 text-gray-700">
                 <PhoneIcon className="h-5 w-5" />
-                <span>{lang === "ar" ? "966555881726+" : "+966555881726"}</span>
+                <span>{lang === "ar" ? "+201201568888" : "+201201568888"}</span>
               </div>
               <div className="flex items-center gap-2 text-gray-700">
                 <span>📧</span>
-                <span>info@asta.edu.sa</span>
+                <span>info@vetbrains.edu.eg</span>
               </div>
             </div>
           </div>

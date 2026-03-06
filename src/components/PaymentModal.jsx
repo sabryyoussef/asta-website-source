@@ -1,11 +1,8 @@
 import { useState } from "react";
 
-const INSTALLMENT_BATCHES = 24;
-
 const PAYMENT_METHODS = [
+  { id: "instapay", ar: "إنستاباي", en: "Instapay" },
   { id: "cash", ar: "نقداً", en: "Cash" },
-  { id: "credit", ar: "بطاقات ائتمان", en: "Credit cards" },
-  { id: "installment24", ar: "تقسيط على 24 دفعة", en: "Installment (24 payments)" },
 ];
 
 const labels = {
@@ -13,47 +10,47 @@ const labels = {
     title: "إضافة معلومات الفواتير",
     item: "البرنامج / الدورة",
     amountDue: "المبلغ المستحق",
-    currency: "ر.س",
+    currency: "ج.م",
     email: "البريد الإلكتروني",
     emailPlaceholder: "أدخل البريد الإلكتروني",
     phone: "رقم الجوال",
     phonePlaceholder: "أدخل رقم الجوال",
-    cardholderName: "اسم صاحب البطاقة",
-    cardholderPlaceholder: "أدخل اسم صاحب البطاقة",
-    cardNumber: "رقم البطاقة",
-    cardNumberPlaceholder: "أدخل رقم البطاقة",
-    expiry: "تاريخ الانتهاء",
-    expiryPlaceholder: "أدخل تاريخ الانتهاء",
-    cvv: "رمز الأمان (CVV)",
-    cvvPlaceholder: "أدخل رمز الأمان",
+    cardholderName: "اسم المحول",
+    cardholderPlaceholder: "أدخل اسم المحول",
+    cardNumber: "رقم مرجع التحويل",
+    cardNumberPlaceholder: "أدخل رقم المرجع",
+    expiry: "تاريخ التحويل",
+    expiryPlaceholder: "أدخل تاريخ التحويل",
+    cvv: "رقم Instapay",
+    cvvPlaceholder: "أدخل رقم Instapay",
     cancel: "إلغاء",
     payNow: "ادفع الآن",
     closeAria: "إغلاق",
-    perPayment: "لكل دفعة",
-    installmentNote: "سيتم خصم المبلغ على 24 دفعة شهرية",
+    perPayment: "لكل عملية",
+    installmentNote: "استخدم Instapay لإتمام الدفع فوراً",
   },
   en: {
     title: "Add billing information",
     item: "Item",
     amountDue: "Amount due",
-    currency: "SAR",
+    currency: "EGP",
     email: "Email",
     emailPlaceholder: "Enter your email",
     phone: "Phone number",
     phonePlaceholder: "Enter your phone number",
-    cardholderName: "Cardholder's Name",
-    cardholderPlaceholder: "Enter Cardholder's Name",
-    cardNumber: "Card Number",
-    cardNumberPlaceholder: "Enter Card Number",
-    expiry: "Expiry",
-    expiryPlaceholder: "Enter EXP.",
-    cvv: "CVV",
-    cvvPlaceholder: "Enter CVV",
+    cardholderName: "Payer Name",
+    cardholderPlaceholder: "Enter payer name",
+    cardNumber: "Transfer Reference",
+    cardNumberPlaceholder: "Enter transfer reference",
+    expiry: "Transfer Date",
+    expiryPlaceholder: "Enter transfer date",
+    cvv: "Instapay Number",
+    cvvPlaceholder: "Enter Instapay number",
     cancel: "Cancel",
     payNow: "Pay now",
     closeAria: "Close",
-    perPayment: "Per payment",
-    installmentNote: "Amount will be charged in 24 monthly installments",
+    perPayment: "Per transaction",
+    installmentNote: "Use Instapay to complete payment instantly",
   },
 };
 
@@ -69,7 +66,7 @@ export default function PaymentModal({
   lang = "en",
 }) {
   const [internalOpen, setInternalOpen] = useState(false);
-  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("cash");
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("instapay");
   const [expiry, setExpiry] = useState("");
   const [cvv, setCvv] = useState("");
   const isControlled = controlledOpen !== undefined;
@@ -85,11 +82,7 @@ export default function PaymentModal({
 
   const isOpen = isControlled ? controlledOpen : internalOpen;
 
-  const isInstallment24 = selectedPaymentMethod === "installment24";
-  const installmentAmount =
-    typeof amount === "number" && amount > 0 && isInstallment24
-      ? Math.round((amount / INSTALLMENT_BATCHES) * 100) / 100
-      : null;
+  const installmentAmount = null;
 
   const openModal = () => (isControlled ? onOpen?.() : setInternalOpen(true));
   const closeModal = () => {
@@ -161,7 +154,7 @@ export default function PaymentModal({
                   <p className="text-lg font-semibold text-slate-900">
                     {t.amountDue}:{" "}
                     {typeof amount === "number"
-                      ? amount.toLocaleString(isAr ? "ar-SA" : "en-US")
+                      ? amount.toLocaleString(isAr ? "ar-EG" : "en-US")
                       : amount}{" "}
                     {t.currency}
                   </p>
@@ -219,20 +212,16 @@ export default function PaymentModal({
                 ))}
               </div>
 
-              {isInstallment24 && (
+              {selectedPaymentMethod === "instapay" && (
                 <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
                   <p className="text-sm text-slate-700">{t.installmentNote}</p>
-                  {installmentAmount != null && (
-                    <p className="text-base font-semibold text-slate-900 mt-2">
-                      {t.perPayment}:{" "}
-                      {installmentAmount.toLocaleString(isAr ? "ar-SA" : "en-US")} {t.currency}{" "}
-                      ({INSTALLMENT_BATCHES} {isAr ? "دفعة" : "payments"})
-                    </p>
-                  )}
+                  <p className="text-base font-semibold text-slate-900 mt-2">
+                    {t.perPayment}: {typeof amount === "number" ? amount.toLocaleString(isAr ? "ar-EG" : "en-US") : amount} {t.currency}
+                  </p>
                 </div>
               )}
 
-              {(selectedPaymentMethod === "credit" || selectedPaymentMethod === "installment24") && (
+              {(selectedPaymentMethod === "instapay") && (
                 <div className="grid sm:grid-cols-2 gap-4 mt-8">
                   <div className="max-sm:col-span-full">
                     <label className="text-sm text-slate-900 font-medium block mb-2">

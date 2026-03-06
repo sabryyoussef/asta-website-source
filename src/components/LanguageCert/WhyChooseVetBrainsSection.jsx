@@ -1,5 +1,5 @@
 import React from "react";
-import { 
+import {
   AcademicCapIcon,
   BookOpenIcon,
   ClipboardDocumentCheckIcon,
@@ -7,7 +7,7 @@ import {
   HomeIcon
 } from "@heroicons/react/24/outline";
 
-export default function WhyChooseASTASection({ lang }) {
+export default function WhyChooseVetBrainsSection({ lang }) {
   const isRTL = lang === "ar";
 
   const benefits = [
@@ -58,7 +58,7 @@ export default function WhyChooseASTASection({ lang }) {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            {lang === "ar" ? "لماذا تأخذ الاختبار في ASTA؟" : "Why Take the Exam at ASTA?"}
+            {lang === "ar" ? "لماذا تأخذ الاختبار في Vet Brains؟" : "Why Take the Exam at Vet Brains?"}
           </h2>
           <div className="h-1.5 w-32 bg-gradient-to-r from-[#202C5B] via-[#23A0D0] to-[#3CBEB3] mx-auto rounded-full" />
         </div>
@@ -66,8 +66,8 @@ export default function WhyChooseASTASection({ lang }) {
         <div className="text-center mb-12">
           <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-4">
             {lang === "ar"
-              ? "في ASTA، نقدم:"
-              : "At ASTA, we provide:"}
+              ? "في Vet Brains، نقدم:"
+              : "At Vet Brains, we provide:"}
           </p>
         </div>
 

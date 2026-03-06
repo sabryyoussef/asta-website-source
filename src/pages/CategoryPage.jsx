@@ -135,11 +135,11 @@ const CategoryPage = () => {
   return (
     <>
       <SEO 
-        titleAr={`${categoryName} | اكاديمية المهارات التطبيقية`}
-        titleEn={`${categoryName} | Applied Skills Training Academy`}
-        descriptionAr={`تصفح الدورات في فئة ${categoryName} في اكاديمية المهارات التطبيقية`}
-        descriptionEn={`Browse courses in ${categoryName} category at Applied Skills Training Academy`}
-        url={`https://asta.edu.sa/${lang}/categories/${categoryId}`}
+        titleAr={`${categoryName} | عقول بيطرية`}
+        titleEn={`${categoryName} | Vet Brains`}
+        descriptionAr={`تصفح الدورات في فئة ${categoryName} في عقول بيطرية`}
+        descriptionEn={`Browse courses in ${categoryName} category at Vet Brains`}
+        url={`https://vetbrains.edu.eg/${lang}/categories/${categoryId}`}
         isRTL={isRTL}
       />
       <CategoryHeroSection 

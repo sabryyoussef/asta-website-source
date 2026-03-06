@@ -301,11 +301,11 @@ const AdmissionAndRegistration = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white" dir="rtl">
       <SEO 
-        titleAr="القبول والتسجيل | اكاديمية المهارات التطبيقية"
-        titleEn="Admission & Registration | Applied Skills Training Academy"
-        descriptionAr="معلومات القبول والتسجيل في اكاديمية المهارات التطبيقية"
-        descriptionEn="Admission and registration information at Applied Skills Training Academy"
-        url={`https://asta.edu.sa/${lang}/admission&registration`}
+        titleAr="القبول والتسجيل | عقول بيطرية"
+        titleEn="Admission & Registration | Vet Brains"
+        descriptionAr="معلومات القبول والتسجيل في عقول بيطرية"
+        descriptionEn="Admission and registration information at Vet Brains"
+        url={`https://vetbrains.edu.eg/${lang}/admission&registration`}
         isRTL={isRTL}
       />
       {/* Header */}

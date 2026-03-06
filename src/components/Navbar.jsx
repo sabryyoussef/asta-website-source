@@ -36,6 +36,9 @@ export default function Navbar() {
   const [servicesMobileExpanded, setServicesMobileExpanded] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchSuggestions, setSearchSuggestions] = useState([]);
+
+  const PHONE_NUMBER_ASCII = "+201003670502";
+  const WHATSAPP_NUMBER_ASCII = "+201201568888";
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [hoveredDropdown, setHoveredDropdown] = useState(null);
   const timeoutRef = useRef(null);
@@ -331,11 +334,11 @@ export default function Navbar() {
               <div className="flex gap-4 items-center md:gap-2 lg:gap-4">
                 <div className="flex gap-1 items-center">
                   <a
-                    href="mailto:info@asta.edu.sa"
+                    href="mailto:info@vetbrains.edu.eg"
                     target="_blank"
                     className="md:text-sm lg:text-[16px] hover:opacity-80 transition-opacity"
                   >
-                    info@asta.edu.sa
+                    info@vetbrains.edu.eg
                   </a>
                   <svg
                     width="14"
@@ -349,12 +352,13 @@ export default function Navbar() {
                 </div>
                 <div className="flex gap-1 items-center">
                   <a
-                    href="tel:+966920016205"
+                    href={`tel:${PHONE_NUMBER_ASCII}`}
                     target="_blank"
                     className="md:text-sm lg:text-[16px] hover:opacity-80 transition-opacity"
                     dir="ltr"
+                    style={{ unicodeBidi: 'plaintext', fontFamily: 'Arial, sans-serif' }}
                   >
-                    {t("global.phoneNumber")}
+                    {PHONE_NUMBER_ASCII}
                   </a>
                   <svg
                     width="14"
@@ -368,12 +372,14 @@ export default function Navbar() {
                 </div>
                 <div className="flex gap-1 items-center">
                   <a
-                    href="https://wa.me/966555881726"
+                    href="https://wa.me/201201568888"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="md:text-sm lg:text-[16px] hover:opacity-80 transition-opacity"
+                    dir="ltr"
+                    style={{ unicodeBidi: 'plaintext', fontFamily: 'Arial, sans-serif' }}
                   >
-                    {t("global.whatsappNumber")}
+                    {WHATSAPP_NUMBER_ASCII}
                   </a>
                   <i className="fab fa-whatsapp text-white text-lg"></i>
                 </div>
@@ -387,18 +393,11 @@ export default function Navbar() {
                     navigate(newPath);
                   }}
                 >
-                  <div>
-                    <img
-                      src="/images/saudiFlag-28.webp"
-                      srcSet="/images/saudiFlag-14.webp 14w, /images/saudiFlag-28.webp 28w"
-                      sizes="28px"
-                      width={28}
-                      height={28}
-                      decoding="async"
-                      className="w-[28px]"
-                      alt="اللغة العربية"
-                    />
-
+                  <div
+                    className="w-7 h-7 rounded-full border border-white/60 flex items-center justify-center text-[11px] font-bold text-white"
+                    aria-label={isRTL ? 'Switch to English' : 'التبديل إلى العربية'}
+                  >
+                    {isRTL ? 'EN' : 'AR'}
                   </div>
                   <svg
                     width="22"
@@ -425,10 +424,10 @@ export default function Navbar() {
             <div className="flex-shrink-0">
               <Link to={`/${lang}`}>
                 <img
-                  src="/images/logo.webp"
-                  srcSet="/images/logo.webp 299w"
+                  src="/svgs/VetBrains_Nav_Logo.svg"
+                  srcSet="/svgs/VetBrains_Nav_Logo.svg 299w"
                   sizes="(max-width: 1024px) 120px, 152px"
-                  alt="ASTA Logo"
+                  alt="Vet Brains Logo"
                   width={299}
                   height={81}
                   className="h-auto md:w-[120px] lg:w-[152px]"
@@ -587,10 +586,10 @@ export default function Navbar() {
                 ) : ( */}
                   <div className="flex items-center gap-[12px]">
                     <a
-                      href="https://www.astalearn.org/"
+                      href="https://www.vetbrains.edu.eg/"
                       // onClick={(e) => {
                       //   e.preventDefault();
-                      //   navigate.push("https://www.astalearn.org/");
+                      //   navigate.push("https://www.vetbrains.edu.eg/");
                       // }}
                       className="py-1 md:py-2 lg:py-2 text-sm md:text-sm lg:text-base text-[#202C5B] hover:text-gradient-to-r from-cyan-500 to-emerald-400 hover:bg-[#1A2555] rounded-full hover:text-white font-bold px-3 transition duration-300"
                     >
@@ -598,7 +597,7 @@ export default function Navbar() {
                     </a>
 
                     <a
-                      href="https://www.astalearn.org/"
+                      href="https://www.vetbrains.edu.eg/"
                       // onClick={(e) => {
                       //   e.preventDefault();
                       //   navigate.push("/Register");
@@ -622,10 +621,10 @@ export default function Navbar() {
                 <div className="flex-shrink-0">
                   <Link to={`/${lang}`}>
                     <img
-                      src="/images/logo.webp"
-                      srcSet="/images/logo.webp 299w"
+                      src="/svgs/VetBrains_Nav_Logo.svg"
+                      srcSet="/svgs/VetBrains_Nav_Logo.svg 299w"
                       sizes="63px"
-                      alt="ASTA Logo"
+                      alt="Vet Brains Logo"
                       width={299}
                       height={81}
                       className="h-auto w-[63px]"
@@ -1112,7 +1111,7 @@ export default function Navbar() {
             <div className="bg-[#EEEEEE]! p-3! flex! justify-between! items-center! border-b! border-[#2FAFC2]!">
               <div className="flex! gap-3!">
                 <a
-                  href="https://www.astalearn.org/"
+                  href="https://www.vetbrains.edu.eg/"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
@@ -1121,7 +1120,7 @@ export default function Navbar() {
                  {t("header.actions.signin")}
                 </a>
                 <a
-                  href="https://www.astalearn.org/"
+                  href="https://www.vetbrains.edu.eg/"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
@@ -1137,8 +1136,8 @@ export default function Navbar() {
             <div className="flex items-center justify-between px-3! py-2!">
               <a href={`/${lang}/`} onClick={() => setOpen(false)} className="flex items-center gap-2">
                 <img
-                  src="/svgs/ASTA_Nav_Logo.svg"
-                  alt="ASTA Logo"
+                  src="/svgs/VetBrains_Nav_Logo.svg"
+                  alt="Vet Brains Logo"
                   width={63}
                   height={17}
                   className="h-auto"

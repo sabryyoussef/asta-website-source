@@ -40,11 +40,11 @@ export default function TestCenter() {
   return (
     <>
       <SEO
-        titleAr="مركز الاختبارات | شراكة PSI | أكاديمية المهارات التطبيقية"
-        titleEn="Test Center | PSI Partnership | Applied Skills Training Academy"
-        descriptionAr="أكاديمية المهارات التطبيقية شريك مع PSI لتقديم اختبارات معتمدة عالمياً. تعرف على مركز الاختبارات وخدمات PSI."
-        descriptionEn="Applied Skills Training Academy partners with PSI to deliver world-leading tests. Discover our test center and PSI services."
-        url={`https://asta.edu.sa/${lang}/test-center`}
+        titleAr="مركز الاختبارات | شراكة PSI | عقول بيطرية"
+        titleEn="Test Center | PSI Partnership | Vet Brains"
+        descriptionAr="عقول بيطرية شريك مع PSI لتقديم اختبارات معتمدة عالمياً. تعرف على مركز الاختبارات وخدمات PSI."
+        descriptionEn="Vet Brains partners with PSI to deliver world-leading tests. Discover our test center and PSI services."
+        url={`https://vetbrains.edu.eg/${lang}/test-center`}
         isRTL={isRTL}
       />
 

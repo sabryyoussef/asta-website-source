@@ -5,10 +5,10 @@ function SEOWrapper() {
   const { lang } = useParams(); // 'ar' or 'en'
   const path = window.location.pathname.replace(/^\/(ar|en)/, ''); // remove lang prefix
 
-  const canonical = `https://asta.edu.sa/${lang}${path}`;
-  const alternateAr = `https://asta.edu.sa/ar${path}`;
-  const alternateEn = `https://asta.edu.sa/en${path}`;
-  const xDefault = `https://asta.edu.sa/`;
+  const canonical = `https://vetbrains.edu.eg/${lang}${path}`;
+  const alternateAr = `https://vetbrains.edu.eg/ar${path}`;
+  const alternateEn = `https://vetbrains.edu.eg/en${path}`;
+  const xDefault = `https://vetbrains.edu.eg/`;
 
   return (
     <Helmet>
